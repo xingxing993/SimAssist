@@ -1,0 +1,84 @@
+# 2014-06-11
+V6.1
+1. Short command add new feature: support keyboard arrow operation and ctrl/alt/shift to make it popmenu
+2. Short command now support scope, mux/demux
+3. Fix bug for adder_plus_minus and adder_multiply_divide
+4. Add "datacompare" script to facilitate unit test during AG010 EMS development
+
+V6.1.1
+1. Minor Bug Fix in BlockGroup class
+2. New feature added for Command line
+    - $ABC to set major property
+    - Block support: add Prelookup, Interpolation using prelookup, Gain, Abs
+    - Mofify behavior of Lookup and Lookup2D creation, when given only one variable name, automatically append _X or _Y as axis name
+    - If no match pattern in given command string, default behavior to create a Constant block (prefix with "cnst")
+
+
+V6.2.0
+1. !!!Big change on history mechanism, the previous set_param_and_appendhis was replaced by two newly designed SimAction and ActionRecord to faciliate usage
+2. Add "magnetic", "color", "line2fg" feature in command line
+
+
+V6.2.1
+1. Add support for DataStoreRead/Write
+
+
+V6.2.2
+1. Automatically set Constant to boolean if set to "true", "false", "TRUE", "FALSE"
+2. Type "?" in command line to query variable explanation from INCA
+
+
+V6.2.3 2014-9-2
+1. Optimize usage of from/goto command, if block or line selected, automatically connect the from/goto block with the selection
+2. Add sizing command "shorter", "longer", "narrower", "wider", and associate with hotkey Alt + DirectionArrow
+3. Add Motohawk/Simulink convert command "s2m", "m2s"
+
+
+V6.2.4 2014-9-17
+1. Optimize usage of inport/outport command, if block or line selected, automatically connect the inport/outport block with the selection
+2. Allow customize annotation content as suffix after "anno" keyword
+3. BusCreator allows "bc+2", "bc -2" pattern to add/reduce port numbers
+4. BusSelector allows bsall to select all signals
+5. "cnst" keyword automatically connect to empty inport when block selected
+
+V6.2.5 2014-9-21
+1. Optimize usage of "property assignment"
+	- "$" or "\" is both valid as leading command identification
+	- the number of "$" "\" repetation indicates the Nth property to be assigned
+	- Order of property can be defined in configuration file simassist_majorprop_def.m
+2. Optimize BusCreator usage, when "bc-" entered (without following number), any inports without line connection will be cleared
+3. Add "=>" keyword that supports string replace of properties
+
+
+V6.2.6 2014-10-08
+1. Add support for direct data type setting of MotoHawk blocks
+2. Support creating counterpart of DataStoreRead/Write when using propagation button in reverse (similar to From/Goto creation)
+3. Command line: dsm/dsr/dsw, when DataStore block selected, create corresponding block for each selected one
+
+V6.3.0
+1. AutoLine function added with several assist handle to handle connection functions, hotkey Ctrl in command line
+2. Command line: "color" when Constant block selected, color all the Constant blocks with same name under the same path
+3. Command line: "clean" also cleans blocks that has no line connected, this is useful when trying to delete multiple blocks in cluster of lines and blocks
+2. Other bug fix
+
+V6.3.2
+1. Add support for "CAN Unpack" block for signal propagation
+
+
+
+#############################################################
+V7.0
+1. New architecture and object-oriented designed
+2. Blocks and Macros are registered in seperate way and allows plug-in behavior
+
+V7.0.3
+1. Support stateflow scope dictionary rename
+2. Support stateflow selection dictionary rename
+
+V7.0.4
+1. Refine layout blocks, use new designed neaten_line function to layout around block
+
+V7.0.5 2015-04-24
+1. Adjust some macro naming
+2. Refine layout feature, NeatenLine function
+3. Add TemporaryCurrentBlockBased function to handle the situation when infos like layout shall be retrieved from current block

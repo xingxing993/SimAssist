@@ -1,0 +1,5913 @@
+Library {
+  Name			  "inp_lib"
+  Version		  7.4
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "GBK"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  MaxMDLFileLineLength	  120
+  Created		  "Sat Jan 05 09:35:04 2013"
+  Creator		  "gephn"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "wuqnj"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Mar 15 13:03:11 2013"
+  RTWModifiedTimeStamp	  285253167
+  ModelVersionFormat	  "1.%<AutoIncrement:7>"
+  ConfigurationManager	  "None"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks on
+  BrowserLookUnderMasks	  on
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.6.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.6.0"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.6.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.6.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    7
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.6.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  StrictBusMsg		  "Warning"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.6.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.6.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  8
+	  Version		  "1.6.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  9
+	  Version		  "1.6.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    6
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      10
+	      Version		      "1.6.0"
+	      Array {
+		Type			"Cell"
+		Dimension		19
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      11
+	      Version		      "1.6.0"
+	      Array {
+		Type			"Cell"
+		Dimension		17
+		Cell			"GeneratePreprocessorConditionals"
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"PortableWordSizes"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      TargetFunctionLibrary   "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    " [ 243, 69, 1123, 699 ] "
+    }
+    PropName		    "ConfigurationSets"
+  }
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "fixdt(1,16,0)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit via back propagation"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via back propagation"
+      LockScale		      off
+      ConvertRealWorld	      "Real World Value (RWV)"
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      From
+      IconDisplay	      "Tag"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Logic
+      Operator		      "AND"
+      Inputs		      "2"
+      IconShape		      "rectangular"
+      AllPortsSameDT	      on
+      OutDataTypeMode	      "Logical (see Configuration Parameters: Optimization)"
+      LogicDataType	      "uint(8)"
+      OutDataTypeStr	      "Inherit: Logical (see Configuration Parameters: Optimization)"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      MinMax
+      Function		      "min"
+      Inputs		      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit via internal rule"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      SFunctionDeploymentMode off
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit via internal rule"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+      AllowDiffInputSizes     off
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      UnitDelay
+      X0		      "0"
+      SampleTime	      "1"
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+  }
+  System {
+    Name		    "inp_lib"
+    Location		    [214, 82, 1270, 721]
+    Open		    off
+    ModelBrowserVisibility  on
+    ModelBrowserWidth	    212
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    236
+    Block {
+      BlockType		      SubSystem
+      Name		      "msgactv_ovrd"
+      SID		      91
+      Ports		      [4, 2]
+      Position		      [455, 91, 660, 209]
+      BackgroundColor	      "[0.752941, 0.752941, 0.752941]"
+      LibraryVersion	      "1.762"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskPromptString	      "Override Flag|Override Value|Default Value"
+      MaskStyleString	      "edit,edit,edit"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskVariables	      "cal_ovrdflg=@1;cal_ovrdval=@2;default=@3;"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "0|0|0"
+      System {
+	Name			"msgactv_ovrd"
+	Location		[202, 78, 1278, 956]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"108"
+	Block {
+	  BlockType		  Inport
+	  Name			  "SigIn"
+	  SID			  92
+	  Position		  [70, 268, 100, 282]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "srv_ovrdflg"
+	  SID			  93
+	  Position		  [70, 168, 100, 182]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "srv_ovrdflg"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "srv_ovrdval"
+	  SID			  94
+	  Position		  [70, 123, 100, 137]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "srv_ovrdval"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "MsgActive"
+	  SID			  95
+	  Position		  [70, 298, 100, 312]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  DataTypeConversion
+	  Name			  "Data Type Conversion"
+	  SID			  96
+	  Position		  [615, 226, 690, 244]
+	  ShowName		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "cal_ovrdval"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  DataTypeConversion
+	  Name			  "Data Type Conversion1"
+	  SID			  97
+	  Position		  [280, 326, 355, 344]
+	  ShowName		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From1"
+	  SID			  98
+	  Position		  [515, 468, 620, 492]
+	  ForegroundColor	  "cyan"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "cal_ovrdflg"
+	  Port {
+	    PortNumber		    1
+	    PropagatedSignals	    "cal_ovrdflg"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From3"
+	  SID			  99
+	  Position		  [515, 438, 620, 462]
+	  ForegroundColor	  "magenta"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "service_ovrdflg"
+	  Port {
+	    PortNumber		    1
+	    PropagatedSignals	    "srv_ovrdflg"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto1"
+	  SID			  100
+	  Position		  [720, 190, 820, 210]
+	  ForegroundColor	  "magenta"
+	  ShowName		  off
+	  GotoTag		  "service_ovrdflg"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto2"
+	  SID			  101
+	  Position		  [720, 275, 820, 295]
+	  ForegroundColor	  "cyan"
+	  ShowName		  off
+	  GotoTag		  "cal_ovrdflg"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator2"
+	  SID			  102
+	  Ports			  [2, 1]
+	  Position		  [755, 437, 785, 493]
+	  ShowName		  off
+	  Operator		  "OR"
+	  AllPortsSameDT	  off
+	  OutDataTypeMode	  "boolean"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  SID			  103
+	  Position		  [395, 263, 420, 347]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  InputSameDT		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch3"
+	  SID			  104
+	  Position		  [940, 108, 965, 242]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  Threshold		  "0.5"
+	  InputSameDT		  off
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch4"
+	  SID			  105
+	  Position		  [845, 214, 870, 326]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  Threshold		  "0.5"
+	  InputSameDT		  off
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch5"
+	  SID			  106
+	  Position		  [845, 373, 875, 557]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  Threshold		  "0.5"
+	  InputSameDT		  off
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "True"
+	  SID			  107
+	  Position		  [700, 397, 755, 413]
+	  OutDataTypeMode	  "boolean"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat3"
+	  SID			  108
+	  Position		  [495, 257, 590, 283]
+	  ShowName		  off
+	  Value			  "cal_ovrdflg"
+	  OutDataTypeMode	  "boolean"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "boolean"
+	  Port {
+	    PortNumber		    1
+	    Name		    "cal_ovrdflg"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat4"
+	  SID			  109
+	  Position		  [495, 222, 590, 248]
+	  ShowName		  off
+	  Value			  "cal_ovrdval"
+	  OutDataTypeMode	  "Inherit via back propagation"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat5"
+	  SID			  110
+	  Position		  [160, 322, 255, 348]
+	  ShowName		  off
+	  Value			  "default"
+	  OutDataTypeMode	  "Inherit via back propagation"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "SigOut"
+	  SID			  111
+	  Position		  [1025, 168, 1055, 182]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "SigValid"
+	  SID			  112
+	  Position		  [1025, 458, 1055, 472]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Line {
+	  SrcBlock		  "sat4"
+	  SrcPort		  1
+	  DstBlock		  "Data Type Conversion"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "SigIn"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "MsgActive"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  Branch {
+	    Points		    [0, 220]
+	    DstBlock		    "Switch5"
+	    DstPort		    3
+	  }
+	  Branch {
+	    DstBlock		    "Switch"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "sat5"
+	  SrcPort		  1
+	  DstBlock		  "Data Type Conversion1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Data Type Conversion1"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  3
+	}
+	Line {
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "From1"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator2"
+	  DstPort		  2
+	}
+	Line {
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "From3"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch3"
+	  SrcPort		  1
+	  DstBlock		  "SigOut"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "srv_ovrdflg"
+	  Labels		  [0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "srv_ovrdflg"
+	  SrcPort		  1
+	  Points		  [600, 0]
+	  Branch {
+	    Labels		    [1, 0]
+	    DstBlock		    "Goto1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Labels		    [1, 0]
+	    DstBlock		    "Switch3"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  Name			  "cal_ovrdflg"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "sat3"
+	  SrcPort		  1
+	  Points		  [105, 0]
+	  Branch {
+	    Points		    [0, 15]
+	    DstBlock		    "Goto2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Switch4"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  Name			  "srv_ovrdval"
+	  Labels		  [0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "srv_ovrdval"
+	  SrcPort		  1
+	  DstBlock		  "Switch3"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "cal_ovrdval"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Data Type Conversion"
+	  SrcPort		  1
+	  DstBlock		  "Switch4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch4"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -50]
+	  DstBlock		  "Switch3"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator2"
+	  SrcPort		  1
+	  DstBlock		  "Switch5"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "True"
+	  SrcPort		  1
+	  DstBlock		  "Switch5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch5"
+	  SrcPort		  1
+	  DstBlock		  "SigValid"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  DstBlock		  "Switch4"
+	  DstPort		  3
+	}
+	Annotation {
+	  Name			  "Function:\n1. Calibration override\n2. Default value selection by message inactive\nApplicable for:\n1. C"
+	  "AN flag  (without corresponding valid flag)"
+	  Position		  [68, 51]
+	  HorizontalAlignment	  "left"
+	  DropShadow		  on
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "msgactv_sat_ovrd"
+      SID		      113
+      Ports		      [4, 2]
+      Position		      [750, 264, 965, 371]
+      BackgroundColor	      "[0.752941, 0.752941, 0.752941]"
+      LibraryVersion	      "1.762"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskPromptString	      "Override Flag|Override Value|Default Value|Range High|Range Low"
+      MaskStyleString	      "edit,edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||||"
+      MaskEnableString	      "on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskVariables	      "cal_ovrdflg=@1;cal_ovrdval=@2;default=@3;hi=@4;lo=@5;"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "0|0|0|0|0"
+      System {
+	Name			"msgactv_sat_ovrd"
+	Location		[202, 78, 1347, 687]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"108"
+	Block {
+	  BlockType		  Inport
+	  Name			  "SigIn"
+	  SID			  114
+	  Position		  [60, 338, 90, 352]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "srv_ovrdflg"
+	  SID			  115
+	  Position		  [60, 238, 90, 252]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "srv_ovrdflg"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "srv_ovrdval"
+	  SID			  116
+	  Position		  [60, 193, 90, 207]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "srv_ovrdval"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "MsgActive"
+	  SID			  117
+	  Position		  [60, 368, 90, 382]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  DataTypeConversion
+	  Name			  "Data Type Conversion"
+	  SID			  118
+	  Position		  [590, 296, 665, 314]
+	  ShowName		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "cal_ovrdval"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  DataTypeConversion
+	  Name			  "Data Type Conversion1"
+	  SID			  119
+	  Position		  [270, 396, 345, 414]
+	  ShowName		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From1"
+	  SID			  120
+	  Position		  [490, 538, 595, 562]
+	  ForegroundColor	  "cyan"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "cal_ovrdflg"
+	  Port {
+	    PortNumber		    1
+	    PropagatedSignals	    "cal_ovrdflg"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From3"
+	  SID			  121
+	  Position		  [490, 508, 595, 532]
+	  ForegroundColor	  "magenta"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "service_ovrdflg"
+	  Port {
+	    PortNumber		    1
+	    PropagatedSignals	    "srv_ovrdflg"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto1"
+	  SID			  122
+	  Position		  [745, 260, 845, 280]
+	  ForegroundColor	  "magenta"
+	  ShowName		  off
+	  GotoTag		  "service_ovrdflg"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto2"
+	  SID			  123
+	  Position		  [695, 345, 795, 365]
+	  ForegroundColor	  "cyan"
+	  ShowName		  off
+	  GotoTag		  "cal_ovrdflg"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator2"
+	  SID			  124
+	  Ports			  [2, 1]
+	  Position		  [730, 507, 760, 563]
+	  ShowName		  off
+	  Operator		  "OR"
+	  AllPortsSameDT	  off
+	  OutDataTypeMode	  "boolean"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  MinMax
+	  Name			  "MinMax"
+	  SID			  125
+	  Ports			  [2, 1]
+	  Position		  [540, 363, 565, 412]
+	  ShowName		  off
+	  Function		  "min"
+	  Inputs		  "2"
+	  InputSameDT		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  MinMax
+	  Name			  "MinMax1"
+	  SID			  126
+	  Ports			  [2, 1]
+	  Position		  [605, 376, 630, 429]
+	  ShowName		  off
+	  Function		  "max"
+	  Inputs		  "2"
+	  InputSameDT		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  SID			  127
+	  Position		  [370, 333, 395, 417]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  InputSameDT		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch3"
+	  SID			  128
+	  Position		  [915, 178, 940, 312]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  Threshold		  "0.5"
+	  InputSameDT		  off
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch4"
+	  SID			  129
+	  Position		  [820, 284, 845, 396]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  Threshold		  "0.5"
+	  InputSameDT		  off
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch5"
+	  SID			  130
+	  Position		  [820, 443, 850, 627]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  Threshold		  "0.5"
+	  InputSameDT		  off
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "True"
+	  SID			  131
+	  Position		  [675, 467, 730, 483]
+	  OutDataTypeMode	  "boolean"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat3"
+	  SID			  132
+	  Position		  [470, 327, 565, 353]
+	  ShowName		  off
+	  Value			  "cal_ovrdflg"
+	  OutDataTypeMode	  "boolean"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "boolean"
+	  Port {
+	    PortNumber		    1
+	    Name		    "cal_ovrdflg"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat4"
+	  SID			  133
+	  Position		  [470, 292, 565, 318]
+	  ShowName		  off
+	  Value			  "cal_ovrdval"
+	  OutDataTypeMode	  "Inherit via back propagation"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat5"
+	  SID			  134
+	  Position		  [150, 392, 245, 418]
+	  ShowName		  off
+	  Value			  "default"
+	  OutDataTypeMode	  "Inherit via back propagation"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat6"
+	  SID			  135
+	  Position		  [420, 387, 480, 413]
+	  BackgroundColor	  "gray"
+	  ShowName		  off
+	  Value			  "hi"
+	  OutDataTypeMode	  "Inherit via back propagation"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat7"
+	  SID			  136
+	  Position		  [420, 417, 480, 443]
+	  BackgroundColor	  "gray"
+	  ShowName		  off
+	  Value			  "lo"
+	  OutDataTypeMode	  "Inherit via back propagation"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "SigOut"
+	  SID			  137
+	  Position		  [1000, 238, 1030, 252]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "SigValid"
+	  SID			  138
+	  Position		  [1000, 528, 1030, 542]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Line {
+	  SrcBlock		  "Switch5"
+	  SrcPort		  1
+	  DstBlock		  "SigValid"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "True"
+	  SrcPort		  1
+	  DstBlock		  "Switch5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator2"
+	  SrcPort		  1
+	  DstBlock		  "Switch5"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Switch4"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -50]
+	  DstBlock		  "Switch3"
+	  DstPort		  3
+	}
+	Line {
+	  Name			  "cal_ovrdval"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Data Type Conversion"
+	  SrcPort		  1
+	  DstBlock		  "Switch4"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "srv_ovrdval"
+	  Labels		  [0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "srv_ovrdval"
+	  SrcPort		  1
+	  DstBlock		  "Switch3"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "cal_ovrdflg"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "sat3"
+	  SrcPort		  1
+	  Points		  [105, 0]
+	  Branch {
+	    DstBlock		    "Switch4"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 15]
+	    DstBlock		    "Goto2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Name			  "srv_ovrdflg"
+	  Labels		  [0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "srv_ovrdflg"
+	  SrcPort		  1
+	  Points		  [600, 0]
+	  Branch {
+	    Labels		    [1, 0]
+	    DstBlock		    "Switch3"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Labels		    [1, 0]
+	    Points		    [0, 25]
+	    DstBlock		    "Goto1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Switch3"
+	  SrcPort		  1
+	  DstBlock		  "SigOut"
+	  DstPort		  1
+	}
+	Line {
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "From3"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator2"
+	  DstPort		  1
+	}
+	Line {
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "From1"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Data Type Conversion1"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "sat5"
+	  SrcPort		  1
+	  DstBlock		  "Data Type Conversion1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "MsgActive"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  Branch {
+	    DstBlock		    "Switch"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 220]
+	    DstBlock		    "Switch5"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "SigIn"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sat4"
+	  SrcPort		  1
+	  DstBlock		  "Data Type Conversion"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "MinMax"
+	  SrcPort		  1
+	  DstBlock		  "MinMax1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sat7"
+	  SrcPort		  1
+	  Points		  [105, 0]
+	  DstBlock		  "MinMax1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "sat6"
+	  SrcPort		  1
+	  DstBlock		  "MinMax"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  DstBlock		  "MinMax"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "MinMax1"
+	  SrcPort		  1
+	  Points		  [80, 0; 0, -30]
+	  DstBlock		  "Switch4"
+	  DstPort		  3
+	}
+	Annotation {
+	  Name			  "Function:\n1. Calibration override\n2. Default value selection by message inactive \n3. High/Low saturati"
+	  "on\nApplicable for:\n1. CAN Analog (without corresponding valid flag)\n2. CAN Enum (without corresponding valid fla"
+	  "g)"
+	  Position		  [98, 96]
+	  HorizontalAlignment	  "left"
+	  DropShadow		  on
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "override"
+      SID		      139
+      Ports		      [3, 1]
+      Position		      [750, 100, 955, 210]
+      BackgroundColor	      "[0.752941, 0.752941, 0.752941]"
+      LibraryVersion	      "1.762"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskPromptString	      "Override Flag|Override Value"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "cal_ovrdflg=@1;cal_ovrdval=@2;"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "0|0"
+      System {
+	Name			"override"
+	Location		[202, 82, 1356, 721]
+	Open			on
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"108"
+	Block {
+	  BlockType		  Inport
+	  Name			  "SigIn"
+	  SID			  140
+	  Position		  [75, 348, 105, 362]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "srv_ovrdflg"
+	  SID			  141
+	  Position		  [70, 218, 100, 232]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "srv_ovrdflg"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "srv_ovrdval"
+	  SID			  142
+	  Position		  [70, 173, 100, 187]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "srv_ovrdval"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  DataTypeConversion
+	  Name			  "Data Type Conversion"
+	  SID			  143
+	  Position		  [615, 276, 690, 294]
+	  ShowName		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "cal_ovrdval"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch3"
+	  SID			  149
+	  Position		  [940, 158, 965, 292]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  Threshold		  "0.5"
+	  InputSameDT		  off
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch4"
+	  SID			  150
+	  Position		  [845, 264, 870, 376]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  Threshold		  "0.5"
+	  InputSameDT		  off
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat3"
+	  SID			  153
+	  Position		  [495, 307, 590, 333]
+	  ShowName		  off
+	  Value			  "cal_ovrdflg"
+	  OutDataTypeMode	  "boolean"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "boolean"
+	  Port {
+	    PortNumber		    1
+	    Name		    "cal_ovrdflg"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat4"
+	  SID			  154
+	  Position		  [495, 272, 590, 298]
+	  ShowName		  off
+	  Value			  "cal_ovrdval"
+	  OutDataTypeMode	  "Inherit via back propagation"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "SigOut"
+	  SID			  155
+	  Position		  [1025, 218, 1055, 232]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Line {
+	  SrcBlock		  "Switch4"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -50]
+	  DstBlock		  "Switch3"
+	  DstPort		  3
+	}
+	Line {
+	  Name			  "cal_ovrdval"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Data Type Conversion"
+	  SrcPort		  1
+	  DstBlock		  "Switch4"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "srv_ovrdval"
+	  Labels		  [0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "srv_ovrdval"
+	  SrcPort		  1
+	  DstBlock		  "Switch3"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "cal_ovrdflg"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "sat3"
+	  SrcPort		  1
+	  DstBlock		  "Switch4"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "srv_ovrdflg"
+	  Labels		  [0, 0; 0, 0; 0, 0; 1, 0]
+	  SrcBlock		  "srv_ovrdflg"
+	  SrcPort		  1
+	  DstBlock		  "Switch3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Switch3"
+	  SrcPort		  1
+	  DstBlock		  "SigOut"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "SigIn"
+	  SrcPort		  1
+	  DstBlock		  "Switch4"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "sat4"
+	  SrcPort		  1
+	  DstBlock		  "Data Type Conversion"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "Function:\n1. Calibration override\nApplicable for:\n1. CAN alive\n2. Hardwire digital flag (already debo"
+	  "unced in BSW)"
+	  Position		  [58, 66]
+	  HorizontalAlignment	  "left"
+	  DropShadow		  on
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "valid_msgactv_ovrd"
+      SID		      236
+      Ports		      [5, 2]
+      Position		      [185, 262, 385, 378]
+      BackgroundColor	      "[0.752941, 0.752941, 0.752941]"
+      AncestorBlock	      "inp_lib/valid_msgactv_sat_ovrd"
+      LibraryVersion	      "*1.5"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskPromptString	      "Override Flag|Override Value|Debounce Limit|Debounce Increment|Debounce Decrement|Defaul"
+      "t Value"
+      MaskStyleString	      "edit,edit,edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on,on"
+      MaskCallbackString      "|||||"
+      MaskEnableString	      "on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on"
+      MaskVariables	      "cal_ovrdflg=@1;cal_ovrdval=@2;lim=@3;inc=@4;dec=@5;default=@6;"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "0|0|1|1|1|0"
+      System {
+	Name			"valid_msgactv_ovrd"
+	Location		[218, 82, 1343, 666]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"102"
+	SIDHighWatermark	198
+	SIDPrevWatermark	198
+	Block {
+	  BlockType		  Inport
+	  Name			  "SigIn"
+	  SID			  158
+	  Position		  [60, 223, 90, 237]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "SigValidRaw"
+	  SID			  159
+	  Position		  [60, 303, 90, 317]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "srv_ovrdflg"
+	  SID			  160
+	  Position		  [1200, 353, 1230, 367]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "srv_ovrdflg"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "srv_ovrdval"
+	  SID			  161
+	  Position		  [1200, 308, 1230, 322]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "srv_ovrdval"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "MsgActive"
+	  SID			  162
+	  Position		  [60, 253, 90, 267]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  DataTypeConversion
+	  Name			  "Data Type Conversion"
+	  SID			  163
+	  Position		  [1220, 411, 1295, 429]
+	  ShowName		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "cal_ovrdval"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  DataTypeConversion
+	  Name			  "Data Type Conversion1"
+	  SID			  164
+	  Position		  [235, 281, 310, 299]
+	  ShowName		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From1"
+	  SID			  165
+	  Position		  [950, 658, 1055, 682]
+	  ForegroundColor	  "cyan"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "cal_ovrdflg"
+	  Port {
+	    PortNumber		    1
+	    PropagatedSignals	    "cal_ovrdflg"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From3"
+	  SID			  166
+	  Position		  [950, 628, 1055, 652]
+	  ForegroundColor	  "magenta"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "service_ovrdflg"
+	  Port {
+	    PortNumber		    1
+	    PropagatedSignals	    "srv_ovrdflg"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto1"
+	  SID			  167
+	  Position		  [1325, 375, 1425, 395]
+	  ForegroundColor	  "magenta"
+	  ShowName		  off
+	  GotoTag		  "service_ovrdflg"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto2"
+	  SID			  168
+	  Position		  [1325, 460, 1425, 480]
+	  ForegroundColor	  "cyan"
+	  ShowName		  off
+	  GotoTag		  "cal_ovrdflg"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto3"
+	  SID			  169
+	  Position		  [765, 457, 830, 473]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  GotoTag		  "sig_valid"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto4"
+	  SID			  170
+	  Position		  [245, 242, 330, 258]
+	  ForegroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "MsgActive"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator"
+	  SID			  171
+	  Ports			  [1, 1]
+	  Position		  [710, 474, 740, 506]
+	  ShowName		  off
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	  AllPortsSameDT	  off
+	  OutDataTypeMode	  "boolean"
+	  LogicDataType		  "fixdt(0, 8)"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator1"
+	  SID			  172
+	  Ports			  [1, 1]
+	  Position		  [470, 549, 500, 581]
+	  ShowName		  off
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	  AllPortsSameDT	  off
+	  OutDataTypeMode	  "boolean"
+	  LogicDataType		  "fixdt(0, 8)"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator2"
+	  SID			  173
+	  Ports			  [2, 1]
+	  Position		  [1215, 627, 1245, 683]
+	  ShowName		  off
+	  Operator		  "OR"
+	  AllPortsSameDT	  off
+	  OutDataTypeMode	  "boolean"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator4"
+	  SID			  174
+	  Ports			  [2, 1]
+	  Position		  [1215, 687, 1245, 743]
+	  ShowName		  off
+	  AllPortsSameDT	  off
+	  OutDataTypeMode	  "boolean"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "MsgActive_From"
+	  SID			  177
+	  Position		  [950, 722, 1035, 738]
+	  ForegroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "MsgActive"
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  SID			  178
+	  Position		  [350, 218, 375, 302]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  InputSameDT		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch1"
+	  SID			  179
+	  Position		  [445, 236, 470, 384]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  InputSameDT		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch2"
+	  SID			  180
+	  Position		  [840, 389, 865, 591]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  InputSameDT		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch3"
+	  SID			  181
+	  Position		  [1545, 293, 1570, 427]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  Threshold		  "0.5"
+	  InputSameDT		  off
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch4"
+	  SID			  182
+	  Position		  [1450, 399, 1475, 511]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  Threshold		  "0.5"
+	  InputSameDT		  off
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch5"
+	  SID			  183
+	  Position		  [1305, 563, 1335, 747]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  Threshold		  "0.5"
+	  InputSameDT		  off
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator"
+	  SID			  184
+	  Position		  [745, 545, 765, 565]
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "True"
+	  SID			  185
+	  Position		  [1160, 587, 1215, 603]
+	  OutDataTypeMode	  "boolean"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay"
+	  SID			  186
+	  Position		  [440, 403, 475, 437]
+	  BlockMirror		  on
+	  ShowName		  off
+	  AttributesFormatString  "Init: %<X0>"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "rff_ctl"
+	  SID			  187
+	  Ports			  [4, 2]
+	  Position		  [530, 455, 695, 585]
+	  LibraryVersion	  "1.310"
+	  PermitHierarchicalResolution "ExplicitOnly"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskType		  "Stateflow"
+	  MaskDescription	  "Stateflow diagram"
+	  MaskDisplay		  "plot(sf('Private','sfblk','xIcon'),sf('Private','sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk',"
+	  " 'tIcon'),'HorizontalAl','Center','VerticalAl','Bottom');"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  off
+	  MaskIconOpaque	  off
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "rff_ctl"
+	    Location		    [257, 457, 812, 717]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    26
+	    Block {
+	      BlockType		      Inport
+	      Name		      "sat"
+	      SID		      14
+	      Position		      [20, 101, 40, 119]
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "inc"
+	      SID		      15
+	      Position		      [20, 136, 40, 154]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "dec"
+	      SID		      16
+	      Position		      [20, 171, 40, 189]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "i_fault"
+	      SID		      17
+	      Position		      [20, 206, 40, 224]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      " Demux "
+	      SID		      24
+	      Ports		      [1, 1]
+	      Position		      [270, 205, 320, 245]
+	      Outputs		      "1"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      " SFunction "
+	      SID		      23
+	      Tag		      "Stateflow S-Function inp_lib 2"
+	      Ports		      [4, 3]
+	      Position		      [180, 102, 230, 203]
+	      FunctionName	      "sf_sfun"
+	      PortCounts	      "[4 3]"
+	      EnableBusSupport	      off
+	      Port {
+		PortNumber		2
+		Name			"fault_flg"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"ff_count"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      " Terminator "
+	      SID		      26
+	      Position		      [460, 216, 480, 234]
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "fault_flg"
+	      SID		      21
+	      Position		      [460, 101, 480, 119]
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "ff_count"
+	      SID		      22
+	      Position		      [460, 136, 480, 154]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Line {
+	      SrcBlock		      " SFunction "
+	      SrcPort		      1
+	      DstBlock		      " Demux "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "sat"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "inc"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "dec"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "i_fault"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "fault_flg"
+	      Labels		      [0, 0; 0, 0; 0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      2
+	      DstBlock		      "fault_flg"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "ff_count"
+	      Labels		      [0, 0; 0, 0; 0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      3
+	      DstBlock		      "ff_count"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      " Demux "
+	      SrcPort		      1
+	      DstBlock		      " Terminator "
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat"
+	  SID			  188
+	  Position		  [420, 466, 500, 484]
+	  ShowName		  off
+	  Value			  "lim"
+	  OutDataTypeMode	  "uint8"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat1"
+	  SID			  189
+	  Position		  [420, 496, 500, 514]
+	  ShowName		  off
+	  Value			  "inc"
+	  OutDataTypeMode	  "uint8"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat2"
+	  SID			  190
+	  Position		  [420, 526, 500, 544]
+	  ShowName		  off
+	  Value			  "dec"
+	  OutDataTypeMode	  "uint8"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat3"
+	  SID			  191
+	  Position		  [1100, 442, 1195, 468]
+	  ShowName		  off
+	  Value			  "cal_ovrdflg"
+	  OutDataTypeMode	  "boolean"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "boolean"
+	  Port {
+	    PortNumber		    1
+	    Name		    "cal_ovrdflg"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat4"
+	  SID			  192
+	  Position		  [1100, 407, 1195, 433]
+	  ShowName		  off
+	  Value			  "cal_ovrdval"
+	  OutDataTypeMode	  "Inherit via back propagation"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat5"
+	  SID			  193
+	  Position		  [115, 277, 210, 303]
+	  ShowName		  off
+	  Value			  "default"
+	  OutDataTypeMode	  "Inherit via back propagation"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "sig_valid_From"
+	  SID			  196
+	  Position		  [950, 692, 1035, 708]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  GotoTag		  "sig_valid"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "SigOut"
+	  SID			  197
+	  Position		  [1630, 353, 1660, 367]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "SigValid"
+	  SID			  198
+	  Position		  [1485, 648, 1515, 662]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Line {
+	  SrcBlock		  "sat4"
+	  SrcPort		  1
+	  DstBlock		  "Data Type Conversion"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "SigIn"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "MsgActive"
+	  SrcPort		  1
+	  Points		  [120, 0]
+	  Branch {
+	    DstBlock		    "Switch"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -10]
+	    DstBlock		    "Goto4"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "sat5"
+	  SrcPort		  1
+	  DstBlock		  "Data Type Conversion1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  DstBlock		  "Switch1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sat"
+	  SrcPort		  1
+	  DstBlock		  "rff_ctl"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sat1"
+	  SrcPort		  1
+	  DstBlock		  "rff_ctl"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "sat2"
+	  SrcPort		  1
+	  DstBlock		  "rff_ctl"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "rff_ctl"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "rff_ctl"
+	  SrcPort		  2
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Data Type Conversion1"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  Branch {
+	    DstBlock		    "Switch"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Labels		    [1, 0]
+	    Points		    [0, 345; 505, 0]
+	    DstBlock		    "Switch2"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "Switch1"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  Branch {
+	    Points		    [0, 110]
+	    DstBlock		    "Unit Delay"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [325, 0]
+	    DstBlock		    "Switch2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Unit Delay"
+	  SrcPort		  1
+	  Points		  [-15, 0; 0, -60]
+	  DstBlock		  "Switch1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator1"
+	  SrcPort		  1
+	  DstBlock		  "rff_ctl"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "SigValidRaw"
+	  SrcPort		  1
+	  Points		  [270, 0]
+	  Branch {
+	    DstBlock		    "Switch1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 255]
+	    DstBlock		    "Logical\nOperator1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "From1"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator2"
+	  DstPort		  2
+	}
+	Line {
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "From3"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch3"
+	  SrcPort		  1
+	  DstBlock		  "SigOut"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "srv_ovrdflg"
+	  Labels		  [0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "srv_ovrdflg"
+	  SrcPort		  1
+	  Points		  [75, 0]
+	  Branch {
+	    Labels		    [1, 0]
+	    DstBlock		    "Goto1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Labels		    [1, 0]
+	    DstBlock		    "Switch3"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  Name			  "cal_ovrdflg"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "sat3"
+	  SrcPort		  1
+	  Points		  [105, 0]
+	  Branch {
+	    Points		    [0, 15]
+	    DstBlock		    "Goto2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Switch4"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  Name			  "srv_ovrdval"
+	  Labels		  [0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "srv_ovrdval"
+	  SrcPort		  1
+	  DstBlock		  "Switch3"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "cal_ovrdval"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Data Type Conversion"
+	  SrcPort		  1
+	  DstBlock		  "Switch4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch4"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -50]
+	  DstBlock		  "Switch3"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator2"
+	  SrcPort		  1
+	  DstBlock		  "Switch5"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "True"
+	  SrcPort		  1
+	  DstBlock		  "Switch5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch5"
+	  SrcPort		  1
+	  DstBlock		  "SigValid"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "Switch2"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -25]
+	    DstBlock		    "Goto3"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "MsgActive_From"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "sig_valid_From"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator4"
+	  SrcPort		  1
+	  DstBlock		  "Switch5"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Switch2"
+	  SrcPort		  1
+	  DstBlock		  "Switch4"
+	  DstPort		  3
+	}
+	Annotation {
+	  Name			  "Function:\n1. Calibration override\n2. Default value selection by message inactive \n3. Valid signal debo"
+	  "unce and default value selection\n4. High/Low saturation\nApplicable for:\n1. CAN signals with corresponding valid "
+	  "flag\n2. Analog/Enumeration signals that need saturation"
+	  Position		  [58, 96]
+	  HorizontalAlignment	  "left"
+	  DropShadow		  on
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "valid_msgactv_sat_ovrd"
+      SID		      157
+      Ports		      [5, 2]
+      Position		      [185, 87, 385, 203]
+      BackgroundColor	      "[0.752941, 0.752941, 0.752941]"
+      LibraryVersion	      "1.762"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskPromptString	      "Override Flag|Override Value|Debounce Limit|Debounce Increment|Debounce Decrement|Defaul"
+      "t Value|Range High|Range Low"
+      MaskStyleString	      "edit,edit,edit,edit,edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on,on,on,on"
+      MaskCallbackString      "|||||||"
+      MaskEnableString	      "on,on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on"
+      MaskVariables	      "cal_ovrdflg=@1;cal_ovrdval=@2;lim=@3;inc=@4;dec=@5;default=@6;hi=@7;lo=@8;"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "0|0|1|1|1|0|1|0"
+      System {
+	Name			"valid_msgactv_sat_ovrd"
+	Location		[218, 82, 1343, 666]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"102"
+	Block {
+	  BlockType		  Inport
+	  Name			  "SigIn"
+	  SID			  158
+	  Position		  [60, 223, 90, 237]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "SigValidRaw"
+	  SID			  159
+	  Position		  [60, 303, 90, 317]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "srv_ovrdflg"
+	  SID			  160
+	  Position		  [1200, 398, 1230, 412]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "srv_ovrdflg"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "srv_ovrdval"
+	  SID			  161
+	  Position		  [1200, 353, 1230, 367]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "srv_ovrdval"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "MsgActive"
+	  SID			  162
+	  Position		  [60, 253, 90, 267]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  DataTypeConversion
+	  Name			  "Data Type Conversion"
+	  SID			  163
+	  Position		  [1220, 456, 1295, 474]
+	  ShowName		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "cal_ovrdval"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  DataTypeConversion
+	  Name			  "Data Type Conversion1"
+	  SID			  164
+	  Position		  [235, 281, 310, 299]
+	  ShowName		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From1"
+	  SID			  165
+	  Position		  [950, 658, 1055, 682]
+	  ForegroundColor	  "cyan"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "cal_ovrdflg"
+	  Port {
+	    PortNumber		    1
+	    PropagatedSignals	    "cal_ovrdflg"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From3"
+	  SID			  166
+	  Position		  [950, 628, 1055, 652]
+	  ForegroundColor	  "magenta"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "service_ovrdflg"
+	  Port {
+	    PortNumber		    1
+	    PropagatedSignals	    "srv_ovrdflg"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto1"
+	  SID			  167
+	  Position		  [1325, 420, 1425, 440]
+	  ForegroundColor	  "magenta"
+	  ShowName		  off
+	  GotoTag		  "service_ovrdflg"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto2"
+	  SID			  168
+	  Position		  [1325, 505, 1425, 525]
+	  ForegroundColor	  "cyan"
+	  ShowName		  off
+	  GotoTag		  "cal_ovrdflg"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto3"
+	  SID			  169
+	  Position		  [765, 457, 830, 473]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  GotoTag		  "sig_valid"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto4"
+	  SID			  170
+	  Position		  [245, 242, 330, 258]
+	  ForegroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "MsgActive"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator"
+	  SID			  171
+	  Ports			  [1, 1]
+	  Position		  [710, 474, 740, 506]
+	  ShowName		  off
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	  AllPortsSameDT	  off
+	  OutDataTypeMode	  "boolean"
+	  LogicDataType		  "fixdt(0, 8)"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator1"
+	  SID			  172
+	  Ports			  [1, 1]
+	  Position		  [470, 549, 500, 581]
+	  ShowName		  off
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	  AllPortsSameDT	  off
+	  OutDataTypeMode	  "boolean"
+	  LogicDataType		  "fixdt(0, 8)"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator2"
+	  SID			  173
+	  Ports			  [2, 1]
+	  Position		  [1215, 627, 1245, 683]
+	  ShowName		  off
+	  Operator		  "OR"
+	  AllPortsSameDT	  off
+	  OutDataTypeMode	  "boolean"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator4"
+	  SID			  174
+	  Ports			  [2, 1]
+	  Position		  [1215, 687, 1245, 743]
+	  ShowName		  off
+	  AllPortsSameDT	  off
+	  OutDataTypeMode	  "boolean"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  MinMax
+	  Name			  "MinMax"
+	  SID			  175
+	  Ports			  [2, 1]
+	  Position		  [1005, 478, 1030, 527]
+	  ShowName		  off
+	  Function		  "min"
+	  Inputs		  "2"
+	  InputSameDT		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  MinMax
+	  Name			  "MinMax1"
+	  SID			  176
+	  Ports			  [2, 1]
+	  Position		  [1060, 506, 1085, 559]
+	  ShowName		  off
+	  Function		  "max"
+	  Inputs		  "2"
+	  InputSameDT		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "MsgActive_From"
+	  SID			  177
+	  Position		  [950, 722, 1035, 738]
+	  ForegroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "MsgActive"
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  SID			  178
+	  Position		  [350, 218, 375, 302]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  InputSameDT		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch1"
+	  SID			  179
+	  Position		  [445, 236, 470, 384]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  InputSameDT		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch2"
+	  SID			  180
+	  Position		  [840, 389, 865, 591]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  InputSameDT		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch3"
+	  SID			  181
+	  Position		  [1545, 338, 1570, 472]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  Threshold		  "0.5"
+	  InputSameDT		  off
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch4"
+	  SID			  182
+	  Position		  [1450, 444, 1475, 556]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  Threshold		  "0.5"
+	  InputSameDT		  off
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch5"
+	  SID			  183
+	  Position		  [1305, 563, 1335, 747]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  Threshold		  "0.5"
+	  InputSameDT		  off
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator"
+	  SID			  184
+	  Position		  [745, 545, 765, 565]
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "True"
+	  SID			  185
+	  Position		  [1160, 587, 1215, 603]
+	  OutDataTypeMode	  "boolean"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay"
+	  SID			  186
+	  Position		  [440, 403, 475, 437]
+	  BlockMirror		  on
+	  ShowName		  off
+	  AttributesFormatString  "Init: %<X0>"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "rff_ctl"
+	  SID			  187
+	  Ports			  [4, 2]
+	  Position		  [530, 455, 695, 585]
+	  LibraryVersion	  "1.310"
+	  PermitHierarchicalResolution "ExplicitOnly"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskType		  "Stateflow"
+	  MaskDescription	  "Stateflow diagram"
+	  MaskDisplay		  "plot(sf('Private','sfblk','xIcon'),sf('Private','sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk',"
+	  " 'tIcon'),'HorizontalAl','Center','VerticalAl','Bottom');"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  off
+	  MaskIconOpaque	  off
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "rff_ctl"
+	    Location		    [257, 457, 812, 717]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    22
+	    Block {
+	      BlockType		      Inport
+	      Name		      "sat"
+	      SID		      14
+	      Position		      [20, 101, 40, 119]
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "inc"
+	      SID		      15
+	      Position		      [20, 136, 40, 154]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "dec"
+	      SID		      16
+	      Position		      [20, 171, 40, 189]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "i_fault"
+	      SID		      17
+	      Position		      [20, 206, 40, 224]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      " Demux "
+	      SID		      2
+	      Ports		      [1, 1]
+	      Position		      [270, 205, 320, 245]
+	      Outputs		      "1"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      " SFunction "
+	      SID		      1
+	      Tag		      "Stateflow S-Function inp_lib 7"
+	      Ports		      [4, 3]
+	      Position		      [180, 102, 230, 203]
+	      FunctionName	      "sf_sfun"
+	      PortCounts	      "[4 3]"
+	      EnableBusSupport	      on
+	      Port {
+		PortNumber		2
+		Name			"fault_flg"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"ff_count"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      " Terminator "
+	      SID		      4
+	      Position		      [460, 216, 480, 234]
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "fault_flg"
+	      SID		      21
+	      Position		      [460, 101, 480, 119]
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "ff_count"
+	      SID		      22
+	      Position		      [460, 136, 480, 154]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Line {
+	      SrcBlock		      " SFunction "
+	      SrcPort		      1
+	      DstBlock		      " Demux "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "sat"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "inc"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "dec"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "i_fault"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "fault_flg"
+	      Labels		      [0, 0; 0, 0; 0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      2
+	      DstBlock		      "fault_flg"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "ff_count"
+	      Labels		      [0, 0; 0, 0; 0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      3
+	      DstBlock		      "ff_count"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      " Demux "
+	      SrcPort		      1
+	      DstBlock		      " Terminator "
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat"
+	  SID			  188
+	  Position		  [420, 466, 500, 484]
+	  ShowName		  off
+	  Value			  "lim"
+	  OutDataTypeMode	  "uint8"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat1"
+	  SID			  189
+	  Position		  [420, 496, 500, 514]
+	  ShowName		  off
+	  Value			  "inc"
+	  OutDataTypeMode	  "uint8"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat2"
+	  SID			  190
+	  Position		  [420, 526, 500, 544]
+	  ShowName		  off
+	  Value			  "dec"
+	  OutDataTypeMode	  "uint8"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat3"
+	  SID			  191
+	  Position		  [1100, 487, 1195, 513]
+	  ShowName		  off
+	  Value			  "cal_ovrdflg"
+	  OutDataTypeMode	  "boolean"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "boolean"
+	  Port {
+	    PortNumber		    1
+	    Name		    "cal_ovrdflg"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat4"
+	  SID			  192
+	  Position		  [1100, 452, 1195, 478]
+	  ShowName		  off
+	  Value			  "cal_ovrdval"
+	  OutDataTypeMode	  "Inherit via back propagation"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat5"
+	  SID			  193
+	  Position		  [115, 277, 210, 303]
+	  ShowName		  off
+	  Value			  "default"
+	  OutDataTypeMode	  "Inherit via back propagation"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat6"
+	  SID			  194
+	  Position		  [885, 502, 945, 528]
+	  BackgroundColor	  "gray"
+	  ShowName		  off
+	  Value			  "hi"
+	  OutDataTypeMode	  "Inherit via back propagation"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat7"
+	  SID			  195
+	  Position		  [885, 532, 945, 558]
+	  BackgroundColor	  "gray"
+	  ShowName		  off
+	  Value			  "lo"
+	  OutDataTypeMode	  "Inherit via back propagation"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "sig_valid_From"
+	  SID			  196
+	  Position		  [950, 692, 1035, 708]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  GotoTag		  "sig_valid"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "SigOut"
+	  SID			  197
+	  Position		  [1630, 398, 1660, 412]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "SigValid"
+	  SID			  198
+	  Position		  [1485, 648, 1515, 662]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Line {
+	  SrcBlock		  "sat4"
+	  SrcPort		  1
+	  DstBlock		  "Data Type Conversion"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "SigIn"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "MsgActive"
+	  SrcPort		  1
+	  Points		  [120, 0]
+	  Branch {
+	    DstBlock		    "Switch"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -10]
+	    DstBlock		    "Goto4"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "sat5"
+	  SrcPort		  1
+	  DstBlock		  "Data Type Conversion1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  DstBlock		  "Switch1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sat"
+	  SrcPort		  1
+	  DstBlock		  "rff_ctl"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sat1"
+	  SrcPort		  1
+	  DstBlock		  "rff_ctl"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "sat2"
+	  SrcPort		  1
+	  DstBlock		  "rff_ctl"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "rff_ctl"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "rff_ctl"
+	  SrcPort		  2
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Data Type Conversion1"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  Branch {
+	    DstBlock		    "Switch"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Labels		    [1, 0]
+	    Points		    [0, 345; 505, 0]
+	    DstBlock		    "Switch2"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "Switch1"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  Branch {
+	    Points		    [0, 110]
+	    DstBlock		    "Unit Delay"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [325, 0]
+	    DstBlock		    "Switch2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Unit Delay"
+	  SrcPort		  1
+	  Points		  [-15, 0; 0, -60]
+	  DstBlock		  "Switch1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator1"
+	  SrcPort		  1
+	  DstBlock		  "rff_ctl"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "SigValidRaw"
+	  SrcPort		  1
+	  Points		  [270, 0]
+	  Branch {
+	    DstBlock		    "Switch1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 255]
+	    DstBlock		    "Logical\nOperator1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "From1"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator2"
+	  DstPort		  2
+	}
+	Line {
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "From3"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch3"
+	  SrcPort		  1
+	  DstBlock		  "SigOut"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "srv_ovrdflg"
+	  Labels		  [0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "srv_ovrdflg"
+	  SrcPort		  1
+	  Points		  [75, 0]
+	  Branch {
+	    Labels		    [1, 0]
+	    DstBlock		    "Goto1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Labels		    [1, 0]
+	    DstBlock		    "Switch3"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  Name			  "cal_ovrdflg"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "sat3"
+	  SrcPort		  1
+	  Points		  [105, 0]
+	  Branch {
+	    Points		    [0, 15]
+	    DstBlock		    "Goto2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Switch4"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  Name			  "srv_ovrdval"
+	  Labels		  [0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "srv_ovrdval"
+	  SrcPort		  1
+	  DstBlock		  "Switch3"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "cal_ovrdval"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Data Type Conversion"
+	  SrcPort		  1
+	  DstBlock		  "Switch4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch4"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -50]
+	  DstBlock		  "Switch3"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator2"
+	  SrcPort		  1
+	  DstBlock		  "Switch5"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "True"
+	  SrcPort		  1
+	  DstBlock		  "Switch5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch5"
+	  SrcPort		  1
+	  DstBlock		  "SigValid"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "Switch2"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -25]
+	    DstBlock		    "Goto3"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "MsgActive_From"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "sig_valid_From"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator4"
+	  SrcPort		  1
+	  DstBlock		  "Switch5"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "MinMax"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  DstBlock		  "MinMax1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sat7"
+	  SrcPort		  1
+	  DstBlock		  "MinMax1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "sat6"
+	  SrcPort		  1
+	  DstBlock		  "MinMax"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Switch2"
+	  SrcPort		  1
+	  DstBlock		  "MinMax"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "MinMax1"
+	  SrcPort		  1
+	  DstBlock		  "Switch4"
+	  DstPort		  3
+	}
+	Annotation {
+	  Name			  "Function:\n1. Calibration override\n2. Default value selection by message inactive \n3. Valid signal debo"
+	  "unce and default value selection\n4. High/Low saturation\nApplicable for:\n1. CAN signals with corresponding valid "
+	  "flag\n2. Analog/Enumeration signals that need saturation"
+	  Position		  [58, 96]
+	  HorizontalAlignment	  "left"
+	  DropShadow		  on
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "valid_sat_ovrd"
+      SID		      199
+      Ports		      [4, 2]
+      Position		      [460, 265, 660, 370]
+      BackgroundColor	      "[0.752941, 0.752941, 0.752941]"
+      LibraryVersion	      "1.762"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskPromptString	      "Override Flag|Override Value|Debounce Limit|Debounce Increment|Debounce Decrement|Defaul"
+      "t Value|Range High|Range Low"
+      MaskStyleString	      "edit,edit,edit,edit,edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on,on,on,on"
+      MaskCallbackString      "|||||||"
+      MaskEnableString	      "on,on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on"
+      MaskVariables	      "cal_ovrdflg=@1;cal_ovrdval=@2;lim=@3;inc=@4;dec=@5;default=@6;hi=@7;lo=@8;"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "0|0|1|1|1|0|1|0"
+      System {
+	Name			"valid_sat_ovrd"
+	Location		[202, 82, 1270, 960]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"102"
+	Block {
+	  BlockType		  Inport
+	  Name			  "SigIn"
+	  SID			  200
+	  Position		  [55, 243, 85, 257]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "SigValidRaw"
+	  SID			  201
+	  Position		  [55, 293, 85, 307]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "srv_ovrdflg"
+	  SID			  202
+	  Position		  [1195, 388, 1225, 402]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "srv_ovrdflg"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "srv_ovrdval"
+	  SID			  203
+	  Position		  [1195, 343, 1225, 357]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "srv_ovrdval"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  DataTypeConversion
+	  Name			  "Data Type Conversion"
+	  SID			  204
+	  Position		  [1215, 446, 1290, 464]
+	  ShowName		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "cal_ovrdval"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  DataTypeConversion
+	  Name			  "Data Type Conversion1"
+	  SID			  205
+	  Position		  [645, 616, 720, 634]
+	  ShowName		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From1"
+	  SID			  206
+	  Position		  [945, 648, 1050, 672]
+	  ForegroundColor	  "cyan"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "cal_ovrdflg"
+	  Port {
+	    PortNumber		    1
+	    PropagatedSignals	    "cal_ovrdflg"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From3"
+	  SID			  207
+	  Position		  [945, 618, 1050, 642]
+	  ForegroundColor	  "magenta"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "service_ovrdflg"
+	  Port {
+	    PortNumber		    1
+	    PropagatedSignals	    "srv_ovrdflg"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto1"
+	  SID			  208
+	  Position		  [1320, 410, 1420, 430]
+	  ForegroundColor	  "magenta"
+	  ShowName		  off
+	  GotoTag		  "service_ovrdflg"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto2"
+	  SID			  209
+	  Position		  [1320, 495, 1420, 515]
+	  ForegroundColor	  "cyan"
+	  ShowName		  off
+	  GotoTag		  "cal_ovrdflg"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto3"
+	  SID			  210
+	  Position		  [760, 447, 825, 463]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  GotoTag		  "sig_valid"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator"
+	  SID			  211
+	  Ports			  [1, 1]
+	  Position		  [705, 464, 735, 496]
+	  ShowName		  off
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	  AllPortsSameDT	  off
+	  OutDataTypeMode	  "boolean"
+	  LogicDataType		  "fixdt(0, 8)"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator1"
+	  SID			  212
+	  Ports			  [1, 1]
+	  Position		  [465, 539, 495, 571]
+	  ShowName		  off
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	  AllPortsSameDT	  off
+	  OutDataTypeMode	  "boolean"
+	  LogicDataType		  "fixdt(0, 8)"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator2"
+	  SID			  213
+	  Ports			  [2, 1]
+	  Position		  [1210, 617, 1240, 673]
+	  ShowName		  off
+	  Operator		  "OR"
+	  AllPortsSameDT	  off
+	  OutDataTypeMode	  "boolean"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  MinMax
+	  Name			  "MinMax"
+	  SID			  214
+	  Ports			  [2, 1]
+	  Position		  [1000, 468, 1025, 517]
+	  ShowName		  off
+	  Function		  "min"
+	  Inputs		  "2"
+	  InputSameDT		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  MinMax
+	  Name			  "MinMax1"
+	  SID			  215
+	  Ports			  [2, 1]
+	  Position		  [1055, 496, 1080, 549]
+	  ShowName		  off
+	  Function		  "max"
+	  Inputs		  "2"
+	  InputSameDT		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch1"
+	  SID			  216
+	  Position		  [440, 226, 465, 374]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  InputSameDT		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch2"
+	  SID			  217
+	  Position		  [835, 379, 860, 581]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  InputSameDT		  off
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch3"
+	  SID			  218
+	  Position		  [1540, 328, 1565, 462]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  Threshold		  "0.5"
+	  InputSameDT		  off
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch4"
+	  SID			  219
+	  Position		  [1445, 434, 1470, 546]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  Threshold		  "0.5"
+	  InputSameDT		  off
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch5"
+	  SID			  220
+	  Position		  [1300, 553, 1330, 737]
+	  ShowName		  off
+	  Criteria		  "u2 ~= 0"
+	  Threshold		  "0.5"
+	  InputSameDT		  off
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator"
+	  SID			  221
+	  Position		  [740, 535, 760, 555]
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "True"
+	  SID			  222
+	  Position		  [1155, 577, 1210, 593]
+	  OutDataTypeMode	  "boolean"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay"
+	  SID			  223
+	  Position		  [435, 393, 470, 427]
+	  BlockMirror		  on
+	  ShowName		  off
+	  AttributesFormatString  "Init: %<X0>"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "rff_ctl"
+	  SID			  224
+	  Ports			  [4, 2]
+	  Position		  [525, 445, 690, 575]
+	  LibraryVersion	  "1.310"
+	  PermitHierarchicalResolution "ExplicitOnly"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskType		  "Stateflow"
+	  MaskDescription	  "Stateflow diagram"
+	  MaskDisplay		  "plot(sf('Private','sfblk','xIcon'),sf('Private','sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk',"
+	  " 'tIcon'),'HorizontalAl','Center','VerticalAl','Bottom');"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  off
+	  MaskIconOpaque	  off
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "rff_ctl"
+	    Location		    [257, 457, 812, 717]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    22
+	    Block {
+	      BlockType		      Inport
+	      Name		      "sat"
+	      SID		      14
+	      Position		      [20, 101, 40, 119]
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "inc"
+	      SID		      15
+	      Position		      [20, 136, 40, 154]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "dec"
+	      SID		      16
+	      Position		      [20, 171, 40, 189]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "i_fault"
+	      SID		      17
+	      Position		      [20, 206, 40, 224]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      " Demux "
+	      SID		      2
+	      Ports		      [1, 1]
+	      Position		      [270, 205, 320, 245]
+	      Outputs		      "1"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      " SFunction "
+	      SID		      1
+	      Tag		      "Stateflow S-Function inp_lib 1"
+	      Ports		      [4, 3]
+	      Position		      [180, 102, 230, 203]
+	      FunctionName	      "sf_sfun"
+	      PortCounts	      "[4 3]"
+	      EnableBusSupport	      on
+	      Port {
+		PortNumber		2
+		Name			"fault_flg"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"ff_count"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      " Terminator "
+	      SID		      4
+	      Position		      [460, 216, 480, 234]
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "fault_flg"
+	      SID		      21
+	      Position		      [460, 101, 480, 119]
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "ff_count"
+	      SID		      22
+	      Position		      [460, 136, 480, 154]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Line {
+	      SrcBlock		      " Demux "
+	      SrcPort		      1
+	      DstBlock		      " Terminator "
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "ff_count"
+	      Labels		      [0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      3
+	      DstBlock		      "ff_count"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "fault_flg"
+	      Labels		      [0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      2
+	      DstBlock		      "fault_flg"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "i_fault"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "dec"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "inc"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "sat"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      " SFunction "
+	      SrcPort		      1
+	      DstBlock		      " Demux "
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat"
+	  SID			  225
+	  Position		  [415, 456, 495, 474]
+	  ShowName		  off
+	  Value			  "lim"
+	  OutDataTypeMode	  "uint8"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat1"
+	  SID			  226
+	  Position		  [415, 486, 495, 504]
+	  ShowName		  off
+	  Value			  "inc"
+	  OutDataTypeMode	  "uint8"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat2"
+	  SID			  227
+	  Position		  [415, 516, 495, 534]
+	  ShowName		  off
+	  Value			  "dec"
+	  OutDataTypeMode	  "uint8"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat3"
+	  SID			  228
+	  Position		  [1095, 477, 1190, 503]
+	  ShowName		  off
+	  Value			  "cal_ovrdflg"
+	  OutDataTypeMode	  "boolean"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "boolean"
+	  Port {
+	    PortNumber		    1
+	    Name		    "cal_ovrdflg"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat4"
+	  SID			  229
+	  Position		  [1095, 442, 1190, 468]
+	  ShowName		  off
+	  Value			  "cal_ovrdval"
+	  OutDataTypeMode	  "Inherit via back propagation"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat5"
+	  SID			  230
+	  Position		  [525, 612, 620, 638]
+	  ShowName		  off
+	  Value			  "default"
+	  OutDataTypeMode	  "Inherit via back propagation"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat6"
+	  SID			  231
+	  Position		  [880, 492, 940, 518]
+	  BackgroundColor	  "gray"
+	  ShowName		  off
+	  Value			  "hi"
+	  OutDataTypeMode	  "Inherit via back propagation"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "sat7"
+	  SID			  232
+	  Position		  [880, 522, 940, 548]
+	  BackgroundColor	  "gray"
+	  ShowName		  off
+	  Value			  "lo"
+	  OutDataTypeMode	  "Inherit via back propagation"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "sig_valid_From"
+	  SID			  233
+	  Position		  [945, 697, 1030, 713]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  GotoTag		  "sig_valid"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "SigOut"
+	  SID			  234
+	  Position		  [1625, 388, 1655, 402]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "SigValid"
+	  SID			  235
+	  Position		  [1480, 638, 1510, 652]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Line {
+	  SrcBlock		  "MinMax1"
+	  SrcPort		  1
+	  DstBlock		  "Switch4"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Switch2"
+	  SrcPort		  1
+	  DstBlock		  "MinMax"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sat6"
+	  SrcPort		  1
+	  DstBlock		  "MinMax"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "sat7"
+	  SrcPort		  1
+	  DstBlock		  "MinMax1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "MinMax"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  DstBlock		  "MinMax1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sig_valid_From"
+	  SrcPort		  1
+	  DstBlock		  "Switch5"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [0, -25]
+	    DstBlock		    "Goto3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Switch2"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Switch5"
+	  SrcPort		  1
+	  DstBlock		  "SigValid"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "True"
+	  SrcPort		  1
+	  DstBlock		  "Switch5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator2"
+	  SrcPort		  1
+	  DstBlock		  "Switch5"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Switch4"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -50]
+	  DstBlock		  "Switch3"
+	  DstPort		  3
+	}
+	Line {
+	  Name			  "cal_ovrdval"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "Data Type Conversion"
+	  SrcPort		  1
+	  DstBlock		  "Switch4"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "srv_ovrdval"
+	  Labels		  [0, 0]
+	  SrcBlock		  "srv_ovrdval"
+	  SrcPort		  1
+	  DstBlock		  "Switch3"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "cal_ovrdflg"
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "sat3"
+	  SrcPort		  1
+	  Points		  [105, 0]
+	  Branch {
+	    DstBlock		    "Switch4"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 15]
+	    DstBlock		    "Goto2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Name			  "srv_ovrdflg"
+	  Labels		  [0, 0]
+	  SrcBlock		  "srv_ovrdflg"
+	  SrcPort		  1
+	  Points		  [75, 0]
+	  Branch {
+	    Labels		    [1, 0]
+	    DstBlock		    "Switch3"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Labels		    [1, 0]
+	    DstBlock		    "Goto1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Switch3"
+	  SrcPort		  1
+	  DstBlock		  "SigOut"
+	  DstPort		  1
+	}
+	Line {
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "From3"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator2"
+	  DstPort		  1
+	}
+	Line {
+	  Labels		  [0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0; 0, 0]
+	  SrcBlock		  "From1"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "SigValidRaw"
+	  SrcPort		  1
+	  Points		  [270, 0]
+	  Branch {
+	    Points		    [0, 255]
+	    DstBlock		    "Logical\nOperator1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Switch1"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator1"
+	  SrcPort		  1
+	  DstBlock		  "rff_ctl"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Unit Delay"
+	  SrcPort		  1
+	  Points		  [-15, 0; 0, -60]
+	  DstBlock		  "Switch1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Switch1"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  Branch {
+	    Points		    [325, 0]
+	    DstBlock		    "Switch2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 110]
+	    DstBlock		    "Unit Delay"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Data Type Conversion1"
+	  SrcPort		  1
+	  Points		  [95, 0]
+	  DstBlock		  "Switch2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "rff_ctl"
+	  SrcPort		  2
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "rff_ctl"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sat2"
+	  SrcPort		  1
+	  DstBlock		  "rff_ctl"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "sat1"
+	  SrcPort		  1
+	  DstBlock		  "rff_ctl"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "sat"
+	  SrcPort		  1
+	  DstBlock		  "rff_ctl"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sat5"
+	  SrcPort		  1
+	  DstBlock		  "Data Type Conversion1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "SigIn"
+	  SrcPort		  1
+	  DstBlock		  "Switch1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sat4"
+	  SrcPort		  1
+	  DstBlock		  "Data Type Conversion"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "Function:\n1. Calibration override\n2. Valid signal debounce and default value selection\n3. High/Low sat"
+	  "uration\nApplicable for:\n1. Hardwire analog signals (with corresponding valid flag)"
+	  Position		  [63, 96]
+	  HorizontalAlignment	  "left"
+	  DropShadow		  on
+	}
+      }
+    }
+  }
+}
+# Finite State Machines
+#
+#    Stateflow Version 7.1 (R2009a) dated Jul 17 2009, 10:24:20
+#
+#
+
+
+Stateflow {
+  machine {
+    id			    1
+    name		    "inp_lib"
+    created		    "05-Jan-2013 09:35:08"
+    isLibrary		    1
+    firstTarget		    68
+    sfVersion		    71014000.00001
+  }
+  chart {
+    id			    2
+    name		    "valid_sat_ovrd/rff_ctl"
+    windowPosition	    [159.75 98.25 523.5 376.5]
+    viewLimits		    [0 480 0 340.5]
+    screen		    [1 1 1366 768 1.333333333333333]
+    firstTransition	    8
+    firstJunction	    3
+    viewObj		    2
+    machine		    1
+    toolbarMode		    LIBRARY_TOOLBAR
+    ssIdHighWaterMark	    20
+    decomposition	    CLUSTER_CHART
+    firstData		    16
+    chartFileNumber	    1
+    disableImplicitCasting  1
+    supportVariableSizing   0
+  }
+  junction {
+    id			    3
+    position		    [126.7542 67.5 7]
+    chart		    2
+    linkNode		    [2 0 7]
+    subviewer		    2
+    ssIdNumber		    8
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    4
+    position		    [129.5 140.625 7]
+    chart		    2
+    linkNode		    [2 7 5]
+    subviewer		    2
+    ssIdNumber		    9
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    5
+    position		    [129.5 212.25 7]
+    chart		    2
+    linkNode		    [2 4 6]
+    subviewer		    2
+    ssIdNumber		    10
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    6
+    position		    [129.5 276 7]
+    chart		    2
+    linkNode		    [2 5 0]
+    subviewer		    2
+    ssIdNumber		    11
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    7
+    position		    [129.5 102.75 7]
+    chart		    2
+    linkNode		    [2 3 4]
+    subviewer		    2
+    ssIdNumber		    19
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    8
+    labelPosition	    [119.568 34.75 6.747 13.474]
+    fontSize		    10
+    src {
+      intersection	      [0 0.9398 -0.3417 0 114.1097 32.7276 0 0]
+    }
+    dst {
+      id		      3
+      intersection	      [0 -0.3417 -0.9398 -1 124.3623 60.9214 0 0]
+    }
+    midPoint		    [119.5678 34.7504]
+    chart		    2
+    linkNode		    [2 0 10]
+    dataLimits		    [114.11 123.212 32.559 53.403]
+    subviewer		    2
+    executionOrder	    1
+    ssIdNumber		    1
+  }
+  transition {
+    id			    9
+    labelString		    "{count-=dec;}"
+    labelPosition	    [160.33 67.729 59.221 13.474]
+    fontSize		    10
+    src {
+      id		      3
+      intersection	      [0 0.9965 0.083 -1 133.7297 68.081 0 0]
+    }
+    dst {
+      id		      7
+      intersection	      [0 0.9701 -0.2425 -1 136.291 101.0523 0 0]
+    }
+    midPoint		    [155 80.25]
+    chart		    2
+    linkNode		    [2 10 15]
+    dataLimits		    [133.73 155.229 68.081 99.112]
+    stampAngle		    -1.4036
+    subviewer		    2
+    slide {
+      midPointSticky	      1
+    }
+    executionOrder	    2
+    ssIdNumber		    2
+  }
+  transition {
+    id			    10
+    labelString		    "[i_fault]\n{count+=inc;}"
+    labelPosition	    [35.524 62.32 59.221 25.45]
+    fontSize		    10
+    src {
+      id		      3
+      intersection	      [0 -0.9912 -0.1324 -1 119.8158 66.5732 0 0]
+    }
+    dst {
+      id		      7
+      intersection	      [0 -0.9923 -0.124 -1 122.5541 101.8818 0 0]
+    }
+    midPoint		    [101 84.75]
+    chart		    2
+    linkNode		    [2 8 9]
+    dataLimits		    [101.023 119.816 66.554 100.89]
+    stampAngle		    1.3687
+    subviewer		    2
+    slide {
+      midPointSticky	      1
+    }
+    executionOrder	    1
+    ssIdNumber		    3
+  }
+  transition {
+    id			    11
+    labelString		    "[count>=sat]\n{count=sat;\nfault_flg=1;}"
+    labelPosition	    [179.961 172.416 56.972 37.427]
+    fontSize		    10
+    src {
+      id		      4
+      intersection	      [0 0.979 0.204 -1 136.3529 142.0527 0 0]
+    }
+    dst {
+      id		      5
+      intersection	      [0 0.8713 -0.4907 -1 135.5991 208.8151 0 0]
+    }
+    midPoint		    [172.7954 180.5469]
+    chart		    2
+    linkNode		    [2 15 12]
+    dataLimits		    [136.353 173.54 142.053 204.89]
+    stampAngle		    -1.0579
+    subviewer		    2
+    executionOrder	    1
+    ssIdNumber		    4
+  }
+  transition {
+    id			    12
+    labelString		    "[count<=0]\n{count=0;\nfault_flg=0;}"
+    labelPosition	    [46.749 162.691 51.725 37.427]
+    fontSize		    10
+    src {
+      id		      4
+      intersection	      [0 -0.9545 0.2983 -1 122.8186 142.7129 0 0]
+    }
+    dst {
+      id		      5
+      intersection	      [0 -0.9487 -0.3162 -1 122.8592 210.0364 0 0]
+    }
+    midPoint		    [102.0061 180.1675]
+    chart		    2
+    linkNode		    [2 11 13]
+    dataLimits		    [102.014 122.819 142.713 207.507]
+    stampAngle		    1.249
+    subviewer		    2
+    slide {
+      midPointSticky	      1
+    }
+    executionOrder	    2
+    ssIdNumber		    5
+  }
+  transition {
+    id			    13
+    labelPosition	    [129.5 177.417 6.747 13.474]
+    fontSize		    10
+    src {
+      id		      4
+      intersection	      [0 0 1 -1 129.5 147.625 0 0]
+    }
+    dst {
+      id		      5
+      intersection	      [0 0 -1 -1 129.5 205.25 0 0]
+    }
+    midPoint		    [129.5 173.4295]
+    chart		    2
+    linkNode		    [2 12 14]
+    dataLimits		    [129.5 129.5 147.625 197.25]
+    subviewer		    2
+    drawStyle		    SMART
+    executionOrder	    3
+    ssIdNumber		    6
+  }
+  transition {
+    id			    14
+    labelString		    "{ff_count = count;}"
+    labelPosition	    [133.691 234.271 80.211 13.474]
+    fontSize		    10
+    src {
+      id		      5
+      intersection	      [0 0 1 -1 129.5 219.25 0 0]
+    }
+    dst {
+      id		      6
+      intersection	      [0 0 -1 -1 129.5 269 0 0]
+    }
+    midPoint		    [129.5 240.9458]
+    chart		    2
+    linkNode		    [2 13 0]
+    dataLimits		    [129.5 129.5 219.25 261]
+    subviewer		    2
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    7
+  }
+  transition {
+    id			    15
+    labelPosition	    [129.5 118.999 8.246 14.971]
+    fontSize		    12
+    src {
+      id		      7
+      intersection	      [0 0 1 -1 129.5 109.75 0 0]
+    }
+    dst {
+      id		      4
+      intersection	      [0 0 -1 -1 129.5 133.625 0 0]
+    }
+    midPoint		    [129.5 117.9458]
+    chart		    2
+    linkNode		    [2 9 11]
+    dataLimits		    [129.5 129.5 109.75 125.625]
+    subviewer		    2
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    20
+  }
+  data {
+    id			    16
+    ssIdNumber		    12
+    name		    "sat"
+    linkNode		    [2 0 17]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_UINT8_TYPE
+      }
+    }
+    dataType		    "uint8"
+  }
+  data {
+    id			    17
+    ssIdNumber		    13
+    name		    "inc"
+    linkNode		    [2 16 18]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_UINT8_TYPE
+      }
+    }
+    dataType		    "uint8"
+  }
+  data {
+    id			    18
+    ssIdNumber		    14
+    name		    "dec"
+    linkNode		    [2 17 19]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_UINT8_TYPE
+      }
+    }
+    dataType		    "uint8"
+  }
+  data {
+    id			    19
+    ssIdNumber		    15
+    name		    "i_fault"
+    linkNode		    [2 18 20]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+      }
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    20
+    ssIdNumber		    16
+    name		    "fault_flg"
+    linkNode		    [2 19 21]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      initialValue	      "0"
+      type {
+	primitive		SF_BOOLEAN_TYPE
+      }
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    21
+    ssIdNumber		    17
+    name		    "ff_count"
+    linkNode		    [2 20 22]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_UINT8_TYPE
+      }
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "uint8"
+  }
+  data {
+    id			    22
+    ssIdNumber		    18
+    name		    "count"
+    linkNode		    [2 21 0]
+    scope		    LOCAL_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_INT16_TYPE
+      }
+    }
+    dataType		    "int16"
+  }
+  instance {
+    id			    23
+    name		    "valid_sat_ovrd/rff_ctl"
+    machine		    1
+    chart		    2
+  }
+  chart {
+    id			    24
+    name		    "valid_msgactv_ovrd/rff_ctl"
+    windowPosition	    [159.75 98.25 523.5 376.5]
+    viewLimits		    [0 480 0 340.5]
+    screen		    [1 1 1366 768 1.333333333333333]
+    firstTransition	    30
+    firstJunction	    25
+    viewObj		    24
+    machine		    1
+    toolbarMode		    LIBRARY_TOOLBAR
+    ssIdHighWaterMark	    20
+    decomposition	    CLUSTER_CHART
+    firstData		    38
+    chartFileNumber	    2
+    disableImplicitCasting  1
+    supportVariableSizing   0
+  }
+  junction {
+    id			    25
+    position		    [126.7542 67.5 7]
+    chart		    24
+    linkNode		    [24 0 29]
+    subviewer		    24
+    ssIdNumber		    8
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    26
+    position		    [129.5 140.625 7]
+    chart		    24
+    linkNode		    [24 29 27]
+    subviewer		    24
+    ssIdNumber		    9
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    27
+    position		    [129.5 212.25 7]
+    chart		    24
+    linkNode		    [24 26 28]
+    subviewer		    24
+    ssIdNumber		    10
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    28
+    position		    [129.5 276 7]
+    chart		    24
+    linkNode		    [24 27 0]
+    subviewer		    24
+    ssIdNumber		    11
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    29
+    position		    [129.5 102.75 7]
+    chart		    24
+    linkNode		    [24 25 26]
+    subviewer		    24
+    ssIdNumber		    19
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    30
+    labelPosition	    [119.568 34.75 6.747 13.474]
+    fontSize		    10
+    src {
+      intersection	      [0 0.9398 -0.3417 0 114.1097 32.7276 0 0]
+    }
+    dst {
+      id		      25
+      intersection	      [0 -0.3417 -0.9398 -1 124.3623 60.9214 0 0]
+    }
+    midPoint		    [119.5678 34.7504]
+    chart		    24
+    linkNode		    [24 0 32]
+    dataLimits		    [114.11 123.212 32.559 53.403]
+    subviewer		    24
+    executionOrder	    1
+    ssIdNumber		    1
+  }
+  transition {
+    id			    31
+    labelString		    "{count-=dec;}"
+    labelPosition	    [160.33 67.729 59.221 13.474]
+    fontSize		    10
+    src {
+      id		      25
+      intersection	      [0 0.9965 0.083 -1 133.7297 68.081 0 0]
+    }
+    dst {
+      id		      29
+      intersection	      [0 0.9701 -0.2425 -1 136.291 101.0523 0 0]
+    }
+    midPoint		    [155 80.25]
+    chart		    24
+    linkNode		    [24 32 37]
+    dataLimits		    [133.73 155.229 68.081 99.112]
+    stampAngle		    -1.4036
+    subviewer		    24
+    slide {
+      midPointSticky	      1
+    }
+    executionOrder	    2
+    ssIdNumber		    2
+  }
+  transition {
+    id			    32
+    labelString		    "[i_fault]\n{count+=inc;}"
+    labelPosition	    [35.524 62.32 59.221 25.45]
+    fontSize		    10
+    src {
+      id		      25
+      intersection	      [0 -0.9912 -0.1324 -1 119.8158 66.5732 0 0]
+    }
+    dst {
+      id		      29
+      intersection	      [0 -0.9923 -0.124 -1 122.5541 101.8818 0 0]
+    }
+    midPoint		    [101 84.75]
+    chart		    24
+    linkNode		    [24 30 31]
+    dataLimits		    [101.023 119.816 66.554 100.89]
+    stampAngle		    1.3687
+    subviewer		    24
+    slide {
+      midPointSticky	      1
+    }
+    executionOrder	    1
+    ssIdNumber		    3
+  }
+  transition {
+    id			    33
+    labelString		    "[count>=sat]\n{count=sat;\nfault_flg=1;}"
+    labelPosition	    [179.961 172.416 56.972 37.427]
+    fontSize		    10
+    src {
+      id		      26
+      intersection	      [0 0.979 0.204 -1 136.3529 142.0527 0 0]
+    }
+    dst {
+      id		      27
+      intersection	      [0 0.8713 -0.4907 -1 135.5991 208.8151 0 0]
+    }
+    midPoint		    [172.7954 180.5469]
+    chart		    24
+    linkNode		    [24 37 34]
+    dataLimits		    [136.353 173.54 142.053 204.89]
+    stampAngle		    -1.0579
+    subviewer		    24
+    executionOrder	    1
+    ssIdNumber		    4
+  }
+  transition {
+    id			    34
+    labelString		    "[count<=0]\n{count=0;\nfault_flg=0;}"
+    labelPosition	    [46.749 162.691 51.725 37.427]
+    fontSize		    10
+    src {
+      id		      26
+      intersection	      [0 -0.9545 0.2983 -1 122.8186 142.7129 0 0]
+    }
+    dst {
+      id		      27
+      intersection	      [0 -0.9487 -0.3162 -1 122.8592 210.0364 0 0]
+    }
+    midPoint		    [102.0061 180.1675]
+    chart		    24
+    linkNode		    [24 33 35]
+    dataLimits		    [102.014 122.819 142.713 207.507]
+    stampAngle		    1.249
+    subviewer		    24
+    slide {
+      midPointSticky	      1
+    }
+    executionOrder	    2
+    ssIdNumber		    5
+  }
+  transition {
+    id			    35
+    labelPosition	    [129.5 177.417 6.747 13.474]
+    fontSize		    10
+    src {
+      id		      26
+      intersection	      [0 0 1 -1 129.5 147.625 0 0]
+    }
+    dst {
+      id		      27
+      intersection	      [0 0 -1 -1 129.5 205.25 0 0]
+    }
+    midPoint		    [129.5 173.4295]
+    chart		    24
+    linkNode		    [24 34 36]
+    dataLimits		    [129.5 129.5 147.625 197.25]
+    subviewer		    24
+    drawStyle		    SMART
+    executionOrder	    3
+    ssIdNumber		    6
+  }
+  transition {
+    id			    36
+    labelString		    "{ff_count = count;}"
+    labelPosition	    [133.691 234.271 80.211 13.474]
+    fontSize		    10
+    src {
+      id		      27
+      intersection	      [0 0 1 -1 129.5 219.25 0 0]
+    }
+    dst {
+      id		      28
+      intersection	      [0 0 -1 -1 129.5 269 0 0]
+    }
+    midPoint		    [129.5 240.9458]
+    chart		    24
+    linkNode		    [24 35 0]
+    dataLimits		    [129.5 129.5 219.25 261]
+    subviewer		    24
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    7
+  }
+  transition {
+    id			    37
+    labelPosition	    [129.5 118.999 8.246 14.971]
+    fontSize		    12
+    src {
+      id		      29
+      intersection	      [0 0 1 -1 129.5 109.75 0 0]
+    }
+    dst {
+      id		      26
+      intersection	      [0 0 -1 -1 129.5 133.625 0 0]
+    }
+    midPoint		    [129.5 117.9458]
+    chart		    24
+    linkNode		    [24 31 33]
+    dataLimits		    [129.5 129.5 109.75 125.625]
+    subviewer		    24
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    20
+  }
+  data {
+    id			    38
+    ssIdNumber		    12
+    name		    "sat"
+    linkNode		    [24 0 39]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_UINT8_TYPE
+      }
+    }
+    dataType		    "uint8"
+  }
+  data {
+    id			    39
+    ssIdNumber		    13
+    name		    "inc"
+    linkNode		    [24 38 40]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_UINT8_TYPE
+      }
+    }
+    dataType		    "uint8"
+  }
+  data {
+    id			    40
+    ssIdNumber		    14
+    name		    "dec"
+    linkNode		    [24 39 41]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_UINT8_TYPE
+      }
+    }
+    dataType		    "uint8"
+  }
+  data {
+    id			    41
+    ssIdNumber		    15
+    name		    "i_fault"
+    linkNode		    [24 40 42]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+      }
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    42
+    ssIdNumber		    16
+    name		    "fault_flg"
+    linkNode		    [24 41 43]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      initialValue	      "0"
+      type {
+	primitive		SF_BOOLEAN_TYPE
+      }
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    43
+    ssIdNumber		    17
+    name		    "ff_count"
+    linkNode		    [24 42 44]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_UINT8_TYPE
+      }
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "uint8"
+  }
+  data {
+    id			    44
+    ssIdNumber		    18
+    name		    "count"
+    linkNode		    [24 43 0]
+    scope		    LOCAL_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_INT16_TYPE
+      }
+    }
+    dataType		    "int16"
+  }
+  instance {
+    id			    45
+    name		    "valid_msgactv_ovrd/rff_ctl"
+    machine		    1
+    chart		    24
+  }
+  chart {
+    id			    46
+    name		    "valid_msgactv_sat_ovrd/rff_ctl"
+    windowPosition	    [144.75 113.25 523.5 376.5]
+    viewLimits		    [0 480 0 340.5]
+    screen		    [1 1 1366 768 1.333333333333333]
+    firstTransition	    52
+    firstJunction	    47
+    viewObj		    46
+    machine		    1
+    toolbarMode		    LIBRARY_TOOLBAR
+    ssIdHighWaterMark	    20
+    decomposition	    CLUSTER_CHART
+    firstData		    60
+    chartFileNumber	    7
+    disableImplicitCasting  1
+    supportVariableSizing   0
+  }
+  junction {
+    id			    47
+    position		    [126.7542 67.5 7]
+    chart		    46
+    linkNode		    [46 0 51]
+    subviewer		    46
+    ssIdNumber		    8
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    48
+    position		    [129.5 140.625 7]
+    chart		    46
+    linkNode		    [46 51 49]
+    subviewer		    46
+    ssIdNumber		    9
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    49
+    position		    [129.5 212.25 7]
+    chart		    46
+    linkNode		    [46 48 50]
+    subviewer		    46
+    ssIdNumber		    10
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    50
+    position		    [129.5 276 7]
+    chart		    46
+    linkNode		    [46 49 0]
+    subviewer		    46
+    ssIdNumber		    11
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    51
+    position		    [129.5 102.75 7]
+    chart		    46
+    linkNode		    [46 47 48]
+    subviewer		    46
+    ssIdNumber		    19
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    52
+    labelPosition	    [119.568 34.75 6.747 13.474]
+    fontSize		    10
+    src {
+      intersection	      [0 0.9398 -0.3417 0 114.1097 32.7276 0 0]
+    }
+    dst {
+      id		      47
+      intersection	      [0 -0.3417 -0.9398 -1 124.3623 60.9214 0 0]
+    }
+    midPoint		    [119.5678 34.7504]
+    chart		    46
+    linkNode		    [46 0 54]
+    dataLimits		    [114.11 123.212 32.559 53.403]
+    subviewer		    46
+    executionOrder	    1
+    ssIdNumber		    1
+  }
+  transition {
+    id			    53
+    labelString		    "{count-=dec;}"
+    labelPosition	    [160.33 67.729 59.221 13.474]
+    fontSize		    10
+    src {
+      id		      47
+      intersection	      [0 0.9965 0.083 -1 133.7297 68.081 0 0]
+    }
+    dst {
+      id		      51
+      intersection	      [0 0.9701 -0.2425 -1 136.291 101.0523 0 0]
+    }
+    midPoint		    [155 80.25]
+    chart		    46
+    linkNode		    [46 54 59]
+    dataLimits		    [133.73 155.229 68.081 99.112]
+    stampAngle		    -1.4036
+    subviewer		    46
+    slide {
+      midPointSticky	      1
+    }
+    executionOrder	    2
+    ssIdNumber		    2
+  }
+  transition {
+    id			    54
+    labelString		    "[i_fault]\n{count+=inc;}"
+    labelPosition	    [35.524 62.32 59.221 25.45]
+    fontSize		    10
+    src {
+      id		      47
+      intersection	      [0 -0.9912 -0.1324 -1 119.8158 66.5732 0 0]
+    }
+    dst {
+      id		      51
+      intersection	      [0 -0.9923 -0.124 -1 122.5541 101.8818 0 0]
+    }
+    midPoint		    [101 84.75]
+    chart		    46
+    linkNode		    [46 52 53]
+    dataLimits		    [101.023 119.816 66.554 100.89]
+    stampAngle		    1.3687
+    subviewer		    46
+    slide {
+      midPointSticky	      1
+    }
+    executionOrder	    1
+    ssIdNumber		    3
+  }
+  transition {
+    id			    55
+    labelString		    "[count>=sat]\n{count=sat;\nfault_flg=1;}"
+    labelPosition	    [179.961 172.416 56.972 37.427]
+    fontSize		    10
+    src {
+      id		      48
+      intersection	      [0 0.979 0.204 -1 136.3529 142.0527 0 0]
+    }
+    dst {
+      id		      49
+      intersection	      [0 0.8713 -0.4907 -1 135.5991 208.8151 0 0]
+    }
+    midPoint		    [172.7954 180.5469]
+    chart		    46
+    linkNode		    [46 59 56]
+    dataLimits		    [136.353 173.54 142.053 204.89]
+    stampAngle		    -1.0579
+    subviewer		    46
+    executionOrder	    1
+    ssIdNumber		    4
+  }
+  transition {
+    id			    56
+    labelString		    "[count<=0]\n{count=0;\nfault_flg=0;}"
+    labelPosition	    [46.749 162.691 51.725 37.427]
+    fontSize		    10
+    src {
+      id		      48
+      intersection	      [0 -0.9545 0.2983 -1 122.8186 142.7129 0 0]
+    }
+    dst {
+      id		      49
+      intersection	      [0 -0.9487 -0.3162 -1 122.8592 210.0364 0 0]
+    }
+    midPoint		    [102.0061 180.1675]
+    chart		    46
+    linkNode		    [46 55 57]
+    dataLimits		    [102.014 122.819 142.713 207.507]
+    stampAngle		    1.249
+    subviewer		    46
+    slide {
+      midPointSticky	      1
+    }
+    executionOrder	    2
+    ssIdNumber		    5
+  }
+  transition {
+    id			    57
+    labelPosition	    [129.5 177.417 6.747 13.474]
+    fontSize		    10
+    src {
+      id		      48
+      intersection	      [0 0 1 -1 129.5 147.625 0 0]
+    }
+    dst {
+      id		      49
+      intersection	      [0 0 -1 -1 129.5 205.25 0 0]
+    }
+    midPoint		    [129.5 173.4295]
+    chart		    46
+    linkNode		    [46 56 58]
+    dataLimits		    [129.5 129.5 147.625 197.25]
+    subviewer		    46
+    drawStyle		    SMART
+    executionOrder	    3
+    ssIdNumber		    6
+  }
+  transition {
+    id			    58
+    labelString		    "{ff_count = count;}"
+    labelPosition	    [133.691 234.271 80.211 13.474]
+    fontSize		    10
+    src {
+      id		      49
+      intersection	      [0 0 1 -1 129.5 219.25 0 0]
+    }
+    dst {
+      id		      50
+      intersection	      [0 0 -1 -1 129.5 269 0 0]
+    }
+    midPoint		    [129.5 240.9458]
+    chart		    46
+    linkNode		    [46 57 0]
+    dataLimits		    [129.5 129.5 219.25 261]
+    subviewer		    46
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    7
+  }
+  transition {
+    id			    59
+    labelPosition	    [129.5 118.999 8.246 14.971]
+    fontSize		    12
+    src {
+      id		      51
+      intersection	      [0 0 1 -1 129.5 109.75 0 0]
+    }
+    dst {
+      id		      48
+      intersection	      [0 0 -1 -1 129.5 133.625 0 0]
+    }
+    midPoint		    [129.5 117.9458]
+    chart		    46
+    linkNode		    [46 53 55]
+    dataLimits		    [129.5 129.5 109.75 125.625]
+    subviewer		    46
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    20
+  }
+  data {
+    id			    60
+    ssIdNumber		    12
+    name		    "sat"
+    linkNode		    [46 0 61]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_UINT8_TYPE
+      }
+    }
+    dataType		    "uint8"
+  }
+  data {
+    id			    61
+    ssIdNumber		    13
+    name		    "inc"
+    linkNode		    [46 60 62]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_UINT8_TYPE
+      }
+    }
+    dataType		    "uint8"
+  }
+  data {
+    id			    62
+    ssIdNumber		    14
+    name		    "dec"
+    linkNode		    [46 61 63]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_UINT8_TYPE
+      }
+    }
+    dataType		    "uint8"
+  }
+  data {
+    id			    63
+    ssIdNumber		    15
+    name		    "i_fault"
+    linkNode		    [46 62 64]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+      }
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    64
+    ssIdNumber		    16
+    name		    "fault_flg"
+    linkNode		    [46 63 65]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      initialValue	      "0"
+      type {
+	primitive		SF_BOOLEAN_TYPE
+      }
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    65
+    ssIdNumber		    17
+    name		    "ff_count"
+    linkNode		    [46 64 66]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_UINT8_TYPE
+      }
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "uint8"
+  }
+  data {
+    id			    66
+    ssIdNumber		    18
+    name		    "count"
+    linkNode		    [46 65 0]
+    scope		    LOCAL_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_INT16_TYPE
+      }
+    }
+    dataType		    "int16"
+  }
+  instance {
+    id			    67
+    name		    "valid_msgactv_sat_ovrd/rff_ctl"
+    machine		    1
+    chart		    46
+  }
+  target {
+    id			    68
+    name		    "sfun"
+    description		    "Default Simulink S-Function Target."
+    machine		    1
+    linkNode		    [1 0 0]
+  }
+}

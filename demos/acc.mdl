@@ -1,0 +1,6627 @@
+Library {
+  Name			  "acc"
+  Version		  7.1
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "GBK"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "all"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks on
+  BrowserLookUnderMasks	  off
+  Created		  "Wed Apr 15 08:38:11 2009"
+  Creator		  "diweif"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "xfnyr"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri May 28 12:46:48 2010"
+  RTWModifiedTimeStamp	  0
+  ModelVersionFormat	  "1.%<AutoIncrement:97>"
+  ConfigurationManager	  "None"
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      BusCreator
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      BusSelector
+      OutputAsBus	      off
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit via back propagation"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via back propagation"
+      LockScale		      off
+      ConvertRealWorld	      "Real World Value (RWV)"
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      From
+      IconDisplay	      "Tag"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Logic
+      Operator		      "AND"
+      Inputs		      "2"
+      IconShape		      "rectangular"
+      AllPortsSameDT	      on
+      OutDataTypeMode	      "Logical (see Configuration Parameters: Optimization)"
+      LogicDataType	      "uint(8)"
+      OutDataTypeStr	      "Inherit: Logical (see Configuration Parameters: Optimization)"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      SFunctionDeploymentMode off
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit via internal rule"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      TriggerPort
+      TriggerType	      "rising"
+      StatesWhenEnabling      "inherit"
+      ShowOutputPort	      off
+      OutputDataType	      "auto"
+      SampleTimeType	      "triggered"
+      SampleTime	      "1"
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      UnitDelay
+      X0		      "0"
+      SampleTime	      "1"
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "fixdt(1,16,0)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+    Block {
+      BlockType		      MinMax
+      Function		      "min"
+      Inputs		      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit via internal rule"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      RelationalOperator
+      Operator		      ">="
+      InputSameDT	      on
+      LogicOutDataTypeMode    "Logical (see Configuration Parameters: Optimization)"
+      LogicDataType	      "uint(8)"
+      OutDataTypeStr	      "Inherit: Logical (see Configuration Parameters: Optimization)"
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "acc"
+    Location		    [214, 82, 1270, 753]
+    Open		    on
+    ModelBrowserVisibility  on
+    ModelBrowserWidth	    212
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "ACC"
+      Ports		      [2, 1, 0, 1]
+      Position		      [330, 118, 525, 467]
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Function"
+      RTWFcnNameOpts	      "Use subsystem name"
+      RTWFileNameOpts	      "Use function name"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"ACC"
+	Location		[202, 82, 1236, 749]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "BPMM_outputs"
+	  Position		  [50, 213, 80, 227]
+	  IconDisplay		  "Port number"
+	  BusObject		  "BPMM_outputs"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "BINP_outputs"
+	  Position		  [50, 348, 80, 362]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusObject		  "BINP_outputs"
+	}
+	Block {
+	  BlockType		  TriggerPort
+	  Name			  "trig_ACC"
+	  Ports			  []
+	  Position		  [517, 30, 537, 50]
+	  TriggerType		  "function-call"
+	  StatesWhenEnabling	  "held"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "ACPSubsystem"
+	  Ports			  [7, 2]
+	  Position		  [320, 255, 620, 425]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  Port {
+	    PortNumber		    1
+	    PropagatedSignals	    "VACC_ACPPowerLimit_kW"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    PropagatedSignals	    "VACC_ACPPwrGradAllow_kWps"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  System {
+	    Name		    "ACPSubsystem"
+	    Location		    [202, 82, 1270, 753]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VPMM_PTReady_flg"
+	      Position		      [145, 228, 175, 242]
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      Port {
+		PortNumber		1
+		PropagatedSignals	"VPMM_PTReady_flg"
+		ShowPropagatedSignals	"on"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VINP_AirCondReq_flg"
+	      Position		      [145, 263, 175, 277]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      Port {
+		PortNumber		1
+		PropagatedSignals	"VINP_AirCondReq_flg"
+		ShowPropagatedSignals	"on"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VINP_ACPFault_flg"
+	      Position		      [145, 298, 175, 312]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      Port {
+		PortNumber		1
+		PropagatedSignals	"VINP_ACPFault_flg"
+		ShowPropagatedSignals	"on"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VINP_HVBattSOC_pct"
+	      Position		      [145, 333, 175, 347]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      Port {
+		PortNumber		1
+		PropagatedSignals	"VINP_HVBattSOC_pct"
+		ShowPropagatedSignals	"on"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VINP_HVBattSOCValid_flg"
+	      Position		      [145, 368, 175, 382]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      Port {
+		PortNumber		1
+		PropagatedSignals	"VINP_HVBattSOCValid_flg"
+		ShowPropagatedSignals	"on"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VINP_AccelPedalPosn_pct"
+	      Position		      [150, 83, 180, 97]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VINP_BMSWarning_flg"
+	      Position		      [145, 403, 175, 417]
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      Port {
+		PortNumber		1
+		PropagatedSignals	"VINP_BMSWarning_flg"
+		ShowPropagatedSignals	"on"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "ACP"
+	      Ports		      [7, 1]
+	      Position		      [330, 209, 570, 471]
+	      PermitHierarchicalResolution "ExplicitOnly"
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      MaskType		      "Stateflow"
+	      MaskDescription	      "Stateflow diagram"
+	      MaskDisplay	      "plot(sf('Private','sfblk','xIcon'),sf('Private','sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk', 'tIcon'),'HorizontalAl','Center','VerticalAl','Bottom');"
+	      MaskSelfModifiable      on
+	      MaskIconFrame	      off
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      Port {
+		PortNumber		1
+		PropagatedSignals	"VACC_PTRunActive_flg"
+		ShowPropagatedSignals	"on"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      System {
+		Name			"ACP"
+		Location		[257, 457, 812, 717]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "VPMM_PTReady_flg"
+		  Position		  [20, 101, 40, 119]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "VINP_AirCondReq_flg"
+		  Position		  [20, 136, 40, 154]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "VINP_ACPFault_flg"
+		  Position		  [20, 171, 40, 189]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "VINP_HVBattSOC_pct"
+		  Position		  [20, 206, 40, 224]
+		  Port			  "4"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "VINP_HVBattSOCValid_flg"
+		  Position		  [20, 246, 40, 264]
+		  Port			  "5"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "VINP_BMSWarning_flg"
+		  Position		  [20, 281, 40, 299]
+		  Port			  "6"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "KACC_HVBattSOCThdLow_pct"
+		  Position		  [20, 316, 40, 334]
+		  Port			  "7"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  " Demux "
+		  Ports			  [1, 1]
+		  Position		  [270, 265, 320, 305]
+		  Outputs		  "1"
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  " SFunction "
+		  Tag			  "Stateflow S-Function acc 1"
+		  Ports			  [7, 2]
+		  Position		  [180, 104, 230, 266]
+		  FunctionName		  "sf_sfun"
+		  PortCounts		  "[7 2]"
+		  EnableBusSupport	  off
+		  Port {
+		    PortNumber		    2
+		    Name		    "VACC_PTRunActive_flg"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Terminator
+		  Name			  " Terminator "
+		  Position		  [460, 276, 480, 294]
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "VACC_PTRunActive_flg"
+		  Position		  [460, 101, 480, 119]
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  SrcBlock		  " SFunction "
+		  SrcPort		  1
+		  DstBlock		  " Demux "
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "VPMM_PTReady_flg"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "VINP_AirCondReq_flg"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "VINP_ACPFault_flg"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "VINP_HVBattSOC_pct"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  4
+		}
+		Line {
+		  SrcBlock		  "VINP_HVBattSOCValid_flg"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  5
+		}
+		Line {
+		  SrcBlock		  "VINP_BMSWarning_flg"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  6
+		}
+		Line {
+		  SrcBlock		  "KACC_HVBattSOCThdLow_pct"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  7
+		}
+		Line {
+		  Name			  "VACC_PTRunActive_flg"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  2
+		  DstBlock		  "VACC_PTRunActive_flg"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  " Demux "
+		  SrcPort		  1
+		  DstBlock		  " Terminator "
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Add"
+	      Ports		      [2, 1]
+	      Position		      [330, 73, 350, 137]
+	      Inputs		      "+-"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^-10"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [620, 380, 650, 410]
+	      ShowName		      off
+	      Value		      "0"
+	      OutDataTypeMode	      "double"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      Position		      [220, 163, 340, 187]
+	      ShowName		      off
+	      Value		      "C_TICK_TIME_S"
+	      OutDataTypeMode	      "double"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Divide"
+	      Ports		      [2, 1]
+	      Position		      [385, 78, 410, 182]
+	      Inputs		      "*/"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^-10"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      RndMeth		      "Floor"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "KACC_CurrGradAllow_Aps"
+	      Ports		      [0, 1]
+	      Position		      [440, 523, 595, 547]
+	      ShowName		      off
+	      SourceBlock	      "MotoHawk_lib/Calibration & Probing Blocks/motohawk_calibration"
+	      SourceType	      "MotoHawk Calibration"
+	      nam		      "'KACC_ACPPwrGradAllow_kWps'"
+	      val		      "KACC_ACPPwrGradAllow_kWps"
+	      storage		      "Calibration"
+	      show_more		      on
+	      name_source	      "Use Parameter"
+	      data_type		      "double"
+	      read_level	      "1"
+	      write_level	      "1"
+	      ovr_cals		      on
+	      view_as		      "Number"
+	      enum_struct	      "{'Disabled', 'Enabled'}"
+	      vector_style	      "Wide Row"
+	      use_help_units	      off
+	      help		      "''"
+	      units		      "''"
+	      use_header_enum	      off
+	      row_header_enum	      "{}"
+	      col_header_enum	      "{}"
+	      use_min_max	      off
+	      min_val		      "-inf"
+	      max_val		      "inf"
+	      use_precision	      off
+	      precision		      "''"
+	      gain		      "1"
+	      offset		      "0"
+	      exp		      "1"
+	      use_mototune_group      off
+	      mototune_group	      "motohawk_vardec_path(gcb)"
+	      Port {
+		PortNumber		1
+		Name			"VACC_ACPPwrGradAllow_kWps"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "KACC_CurrGradAllow_Aps1"
+	      Ports		      [0, 1]
+	      Position		      [110, 432, 295, 458]
+	      ShowName		      off
+	      SourceBlock	      "MotoHawk_lib/Calibration & Probing Blocks/motohawk_calibration"
+	      SourceType	      "MotoHawk Calibration"
+	      nam		      "'KACC_HVBattSOCThdLow_pct'"
+	      val		      "KACC_HVBattSOCThdLow_pct"
+	      storage		      "Calibration"
+	      show_more		      on
+	      name_source	      "Use Parameter"
+	      data_type		      "double"
+	      read_level	      "1"
+	      write_level	      "1"
+	      ovr_cals		      on
+	      view_as		      "Number"
+	      enum_struct	      "{'Disabled', 'Enabled'}"
+	      vector_style	      "Wide Row"
+	      use_help_units	      off
+	      help		      "''"
+	      units		      "''"
+	      use_header_enum	      off
+	      row_header_enum	      "{}"
+	      col_header_enum	      "{}"
+	      use_min_max	      off
+	      min_val		      "-inf"
+	      max_val		      "inf"
+	      use_precision	      off
+	      precision		      "''"
+	      gain		      "1"
+	      offset		      "0"
+	      exp		      "1"
+	      use_mototune_group      off
+	      mototune_group	      "motohawk_vardec_path(gcb)"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "MTQD_PedalMapBaseInter"
+	      Ports		      [2, 1]
+	      Position		      [480, 32, 495, 128]
+	      ShowName		      off
+	      SourceBlock	      "MotoHawk_lib/Lookup Tables/motohawk_interpolation_2d"
+	      SourceType	      "MotoHawk Interpolation (2-D)"
+	      nam		      "'MACC_ACPPwrLimit_kW'"
+	      table_data	      "MACC_ACPPwrLimit_kW"
+	      show_more		      off
+	      data_type		      "Inherit from 'Table Data'"
+	      storage		      "NonAdaptive"
+	      read_level	      "1"
+	      write_level	      "1"
+	      ovr_cals		      on
+	      use_help		      off
+	      help		      "''"
+	      units		      "''"
+	      use_min_max	      off
+	      min_val		      "-inf"
+	      max_val		      "inf"
+	      use_precision	      off
+	      precision		      "''"
+	      gain		      "1"
+	      offset		      "0"
+	      exp		      "1"
+	      use_links		      off
+	      row_prelookup_block     "''"
+	      col_prelookup_block     "''"
+	      output_name	      "''"
+	      use_mototune_group      off
+	      mototune_group	      "motohawk_vardec_path(gcb)"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "MTQD_PedalMapBasePreLookc"
+	      Ports		      [1, 1]
+	      Position		      [445, 89, 460, 121]
+	      ShowName		      off
+	      SourceBlock	      "MotoHawk_lib/Lookup Tables/motohawk_prelookup"
+	      SourceType	      "MotoHawk Prelookup Index Search"
+	      nam		      "'MACC_ACPPwrLimit_Y'"
+	      breakpoint_data	      "MACC_ACPPwrLimit_Y"
+	      show_more		      off
+	      data_type		      "double"
+	      storage		      "Constant"
+	      read_level	      "1"
+	      write_level	      "1"
+	      ovr_cals		      on
+	      use_help		      off
+	      help		      "''"
+	      units		      "''"
+	      use_min_max	      off
+	      min_val		      "-inf"
+	      max_val		      "inf"
+	      use_precision	      off
+	      precision		      "''"
+	      gain		      "1"
+	      offset		      "0"
+	      exp		      "1"
+	      use_links		      off
+	      input_name	      "''"
+	      use_mototune_group      off
+	      mototune_group	      "motohawk_vardec_path(gcb)"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "MTQD_PedalMapBasePreLookr"
+	      Ports		      [1, 1]
+	      Position		      [445, 40, 460, 70]
+	      ShowName		      off
+	      SourceBlock	      "MotoHawk_lib/Lookup Tables/motohawk_prelookup"
+	      SourceType	      "MotoHawk Prelookup Index Search"
+	      nam		      "'MACC_ACPPwrLimit_X'"
+	      breakpoint_data	      "MACC_ACPPwrLimit_X"
+	      show_more		      off
+	      data_type		      "double"
+	      storage		      "Constant"
+	      read_level	      "1"
+	      write_level	      "1"
+	      ovr_cals		      on
+	      use_help		      off
+	      help		      "''"
+	      units		      "''"
+	      use_min_max	      off
+	      min_val		      "-inf"
+	      max_val		      "inf"
+	      use_precision	      off
+	      precision		      "''"
+	      gain		      "1"
+	      offset		      "0"
+	      exp		      "1"
+	      use_links		      off
+	      input_name	      "''"
+	      use_mototune_group      off
+	      mototune_group	      "motohawk_vardec_path(gcb)"
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      Position		      [725, 260, 755, 420]
+	      Criteria		      "u2 ~= 0"
+	      InputSameDT	      off
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      SaturateOnIntegerOverflow	off
+	      Port {
+		PortNumber		1
+		Name			"VACC_ACPPowerLimit_kW"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      UnitDelay
+	      Name		      "init=0"
+	      Position		      [270, 107, 295, 133]
+	      SampleTime	      "-1"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "VACC_ACPPowerLimit_kW"
+	      Position		      [945, 333, 975, 347]
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "VACC_ACPPwrGradAllow_kWps"
+	      Position		      [965, 528, 995, 542]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Line {
+	      SrcBlock		      "Divide"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, -25]
+	      DstBlock		      "MTQD_PedalMapBasePreLookc"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, -20]
+	      DstBlock		      "Divide"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Add"
+	      SrcPort		      1
+	      DstBlock		      "Divide"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "VACC_ACPPowerLimit_kW"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "VACC_ACPPowerLimit_kW"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "MTQD_PedalMapBaseInter"
+	      SrcPort		      1
+	      Points		      [210, 0]
+	      DstBlock		      "Switch"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "MTQD_PedalMapBasePreLookr"
+	      SrcPort		      1
+	      DstBlock		      "MTQD_PedalMapBaseInter"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "MTQD_PedalMapBasePreLookc"
+	      SrcPort		      1
+	      DstBlock		      "MTQD_PedalMapBaseInter"
+	      DstPort		      2
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "VINP_BMSWarning_flg"
+	      SrcPort		      1
+	      DstBlock		      "ACP"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      DstBlock		      "Switch"
+	      DstPort		      3
+	    }
+	    Line {
+	      Labels		      [0, 0; 0, 0]
+	      SrcBlock		      "ACP"
+	      SrcPort		      1
+	      DstBlock		      "Switch"
+	      DstPort		      2
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "VINP_AirCondReq_flg"
+	      SrcPort		      1
+	      DstBlock		      "ACP"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "VACC_ACPPwrGradAllow_kWps"
+	      Labels		      [0, 0]
+	      SrcBlock		      "KACC_CurrGradAllow_Aps"
+	      SrcPort		      1
+	      DstBlock		      "VACC_ACPPwrGradAllow_kWps"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "init=0"
+	      SrcPort		      1
+	      DstBlock		      "Add"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "VINP_AccelPedalPosn_pct"
+	      SrcPort		      1
+	      Points		      [55, 0]
+	      Branch {
+		Points			[0, -35]
+		DstBlock		"MTQD_PedalMapBasePreLookr"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Add"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 30]
+		DstBlock		"init=0"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "VINP_HVBattSOCValid_flg"
+	      SrcPort		      1
+	      DstBlock		      "ACP"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "KACC_CurrGradAllow_Aps1"
+	      SrcPort		      1
+	      DstBlock		      "ACP"
+	      DstPort		      7
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "VINP_HVBattSOC_pct"
+	      SrcPort		      1
+	      DstBlock		      "ACP"
+	      DstPort		      4
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "VPMM_PTReady_flg"
+	      SrcPort		      1
+	      DstBlock		      "ACP"
+	      DstPort		      1
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "VINP_ACPFault_flg"
+	      SrcPort		      1
+	      DstBlock		      "ACP"
+	      DstPort		      3
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  BusCreator
+	  Name			  "Bus\nCreator"
+	  Ports			  [6, 1]
+	  Position		  [815, 119, 820, 661]
+	  ShowName		  off
+	  Inputs		  "6"
+	  DisplayOption		  "bar"
+	  UseBusObject		  on
+	  BusObject		  "BACC_outputs"
+	  Port {
+	    PortNumber		    1
+	    Name		    "BACC_outputs"
+	    PropagatedSignals	    "VACC_CoolPumpCmd_flg, VACC_ACPPowerLimit_kW, VACC_ACPPwrGradAllow_kWps, VACC_EFanLowSpeedReq_flg, VACC_EFanHighSpeedReq_flg, VACC_AfterRunCheck_flg"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  BusSelector
+	  Name			  "Bus\nSelector"
+	  Ports			  [1, 1]
+	  Position		  [130, 196, 135, 244]
+	  ShowName		  off
+	  OutputSignals		  "VPMM_PTReady_flg"
+	  Port {
+	    PortNumber		    1
+	    Name		    "<VPMM_PTReady_flg>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  BusSelector
+	  Name			  "Bus\nSelector1"
+	  Ports			  [1, 6]
+	  Position		  [130, 280, 135, 425]
+	  ShowName		  off
+	  OutputSignals		  "VINP_AirCondReq_flg,VINP_ACPFault_flg,VINP_HVBattSOC_pct,VINP_HVBattSOCValid_flg,VINP_AccelPedalPosn_pct,VINP_BMSWarning_flg"
+	  Port {
+	    PortNumber		    1
+	    Name		    "<VINP_AirCondReq_flg>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "<VINP_ACPFault_flg>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "<VINP_HVBattSOC_pct>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "<VINP_HVBattSOCValid_flg>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    5
+	    Name		    "<VINP_AccelPedalPosn_pct>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    6
+	    Name		    "<VINP_BMSWarning_flg>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  BusSelector
+	  Name			  "Bus\nSelector2"
+	  Ports			  [1, 5]
+	  Position		  [130, 499, 135, 641]
+	  ShowName		  off
+	  OutputSignals		  "VINP_LVBattVoltage_V,VINP_TMMotorTemp_C,VINP_TMInverterTemp_C,VINP_AirCondReq_flg,VINP_DCDCFault_flg"
+	  Port {
+	    PortNumber		    1
+	    Name		    "<VINP_LVBattVoltage_V>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "<VINP_TMMotorTemp_C>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "<VINP_TMInverterTemp_C>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "<VINP_AirCondReq_flg>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    5
+	    Name		    "<VINP_DCDCFault_flg>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  BusSelector
+	  Name			  "Bus\nSelector3"
+	  Ports			  [1, 1]
+	  Position		  [130, 446, 135, 494]
+	  ShowName		  off
+	  OutputSignals		  "VPMM_SystemState_enum"
+	  Port {
+	    PortNumber		    1
+	    Name		    "<VPMM_SystemState_enum>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "CoolingFanSubsystem"
+	  Ports			  [6, 3]
+	  Position		  [320, 465, 620, 645]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  Port {
+	    PortNumber		    1
+	    PropagatedSignals	    "VACC_EFanLowSpeedReq_flg"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    PropagatedSignals	    "VACC_EFanHighSpeedReq_flg"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    3
+	    PropagatedSignals	    "VACC_AfterRunCheck_flg"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  System {
+	    Name		    "CoolingFanSubsystem"
+	    Location		    [202, 82, 1270, 753]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VPMM_SystemState_enum"
+	      Position		      [50, 138, 80, 152]
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      Port {
+		PortNumber		1
+		PropagatedSignals	"VPMM_SystemState_enum"
+		ShowPropagatedSignals	"on"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VINP_LVBattVoltage_V"
+	      Position		      [50, 63, 80, 77]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      Port {
+		PortNumber		1
+		PropagatedSignals	"VINP_LVBattVoltage_V"
+		ShowPropagatedSignals	"on"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VINP_TMMotorTemp_C"
+	      Position		      [105, 433, 135, 447]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      Port {
+		PortNumber		1
+		PropagatedSignals	"VINP_TMMotorTemp_C"
+		ShowPropagatedSignals	"on"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VINP_TMInverterTemp_C"
+	      Position		      [105, 473, 135, 487]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      Port {
+		PortNumber		1
+		PropagatedSignals	"VINP_TMInverterTemp_C"
+		ShowPropagatedSignals	"on"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VINP_AirCondReq_flg"
+	      Position		      [105, 553, 135, 567]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VINP_DCDCFault_flg"
+	      Position		      [50, 228, 80, 242]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "ConditionChart"
+	      Ports		      [5, 1]
+	      Position		      [615, 40, 870, 320]
+	      PermitHierarchicalResolution "ExplicitOnly"
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      MaskType		      "Stateflow"
+	      MaskDescription	      "Stateflow diagram"
+	      MaskDisplay	      "plot(sf('Private','sfblk','xIcon'),sf('Private','sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk', 'tIcon'),'HorizontalAl','Center','VerticalAl','Bottom');"
+	      MaskSelfModifiable      on
+	      MaskIconFrame	      off
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      Port {
+		PortNumber		1
+		PropagatedSignals	"VACC_EFan_Enable_flg"
+		ShowPropagatedSignals	"on"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      System {
+		Name			"ConditionChart"
+		Location		[257, 457, 812, 717]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "VACC_PowerSupply_flg"
+		  Position		  [20, 101, 40, 119]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "VACC_PowerUpToNormal_flg"
+		  Position		  [20, 136, 40, 154]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "KACC_FanEnableTimeDelay_s"
+		  Position		  [20, 171, 40, 189]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "VINP_DCDCFault_flg"
+		  Position		  [20, 206, 40, 224]
+		  Port			  "4"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "VACC_RelayComplete_flg"
+		  Position		  [20, 246, 40, 264]
+		  Port			  "5"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  " Demux "
+		  Ports			  [1, 1]
+		  Position		  [270, 220, 320, 260]
+		  Outputs		  "1"
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  " SFunction "
+		  Tag			  "Stateflow S-Function acc 2"
+		  Ports			  [5, 2]
+		  Position		  [180, 100, 230, 220]
+		  FunctionName		  "sf_sfun"
+		  PortCounts		  "[5 2]"
+		  EnableBusSupport	  off
+		  Port {
+		    PortNumber		    2
+		    Name		    "VACC_EFan_Enable_flg"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Terminator
+		  Name			  " Terminator "
+		  Position		  [460, 231, 480, 249]
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "VACC_EFan_Enable_flg"
+		  Position		  [460, 101, 480, 119]
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  SrcBlock		  " SFunction "
+		  SrcPort		  1
+		  DstBlock		  " Demux "
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "VACC_PowerSupply_flg"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "VACC_PowerUpToNormal_flg"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "KACC_FanEnableTimeDelay_s"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "VINP_DCDCFault_flg"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  4
+		}
+		Line {
+		  SrcBlock		  "VACC_RelayComplete_flg"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  5
+		}
+		Line {
+		  Name			  "VACC_EFan_Enable_flg"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  2
+		  DstBlock		  "VACC_EFan_Enable_flg"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  " Demux "
+		  SrcPort		  1
+		  DstBlock		  " Terminator "
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "EfanEnableControl"
+	      Ports		      [5, 4]
+	      Position		      [405, 380, 660, 580]
+	      TreatAsAtomicUnit	      on
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      Port {
+		PortNumber		1
+		PropagatedSignals	"VACC_EFanLowSpeedReq_flg"
+		ShowPropagatedSignals	"on"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		PropagatedSignals	"VACC_AfterRunCheck_flg"
+		ShowPropagatedSignals	"on"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		PropagatedSignals	"VACC_EFanHighSpeedReq_flg"
+		ShowPropagatedSignals	"on"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		PropagatedSignals	"VACC_RelayComplete_flg"
+		ShowPropagatedSignals	"on"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      System {
+		Name			"EfanEnableControl"
+		Location		[202, 78, 1261, 732]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"117"
+		Block {
+		  BlockType		  Inport
+		  Name			  "VACC_EFan_Enable_flg"
+		  Position		  [880, 283, 910, 297]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "VINP_TMMotorTemp_C"
+		  Position		  [50, 113, 80, 127]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "VINP_TMInverterTemp_C"
+		  Position		  [50, 148, 80, 162]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "PD_Process"
+		  Position		  [890, 503, 920, 517]
+		  Port			  "4"
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "VINP_AirCondReq_flg"
+		  Position		  [50, 178, 80, 192]
+		  Port			  "5"
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "AfterRunCkeck"
+		  Ports			  [4, 4]
+		  Position		  [955, 127, 1235, 563]
+		  MinAlgLoopOccurrences	  off
+		  PropExecContextOutsideSubsystem off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  Opaque		  off
+		  RequestExecContextInheritance	off
+		  MaskHideContents	  off
+		  Port {
+		    PortNumber		    1
+		    PropagatedSignals	    "VACC_EFanLowSpeedReq_flg"
+		    ShowPropagatedSignals   "on"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    2
+		    PropagatedSignals	    "VACC_AfterRunCheck_flg"
+		    ShowPropagatedSignals   "on"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    3
+		    PropagatedSignals	    "VACC_EFanHighSpeedReq_flg"
+		    ShowPropagatedSignals   "on"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    4
+		    PropagatedSignals	    "VACC_RelayComplete_flg"
+		    ShowPropagatedSignals   "on"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  System {
+		    Name		    "AfterRunCkeck"
+		    Location		    [202, 82, 1278, 736]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "A4"
+		    PaperUnits		    "centimeters"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "152"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "VACC_EFanLowSpeedReqINP_flg"
+		    Position		    [50, 28, 80, 42]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "VACC_EFan_Enable_flg"
+		    Position		    [35, 68, 65, 82]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "VACC_EFanHighSpeedReqINP_flg"
+		    Position		    [135, 298, 165, 312]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "PD_Process"
+		    Position		    [315, 113, 345, 127]
+		    Port		    "4"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [110, 85, 190, 105]
+		    ShowName		    off
+		    Value		    "FALSE"
+		    OutDataTypeMode	    "boolean"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    OutDataTypeStr	    "boolean"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant1"
+		    Position		    [90, 354, 170, 376]
+		    ShowName		    off
+		    Value		    "FALSE"
+		    OutDataTypeMode	    "boolean"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    OutDataTypeStr	    "boolean"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant2"
+		    Position		    [680, 280, 760, 300]
+		    ShowName		    off
+		    Value		    "TRUE"
+		    OutDataTypeMode	    "boolean"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    OutDataTypeStr	    "boolean"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Counter"
+		    Ports		    [2, 1]
+		    Position		    [585, 119, 735, 246]
+		    PermitHierarchicalResolution "ExplicitOnly"
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    MaskType		    "Stateflow"
+		    MaskDescription	    "Stateflow diagram"
+		    MaskDisplay		    "plot(sf('Private','sfblk','xIcon'),sf('Private','sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk', 'tIcon'),'HorizontalAl','Center','VerticalAl','Bottom');"
+		    MaskSelfModifiable	    on
+		    MaskIconFrame	    off
+		    MaskIconOpaque	    off
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    Port {
+		    PortNumber		    1
+		    Name		    "VACC_RelayComplete_flg"
+		    PropagatedSignals	    "VACC_RelayComplete_flg"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    System {
+		    Name		    "Counter"
+		    Location		    [257, 457, 812, 717]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "A4"
+		    PaperUnits		    "centimeters"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "CounterStart_flg"
+		    Position		    [20, 101, 40, 119]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "KACC_FanAfterRunTimeDelay_s"
+		    Position		    [20, 136, 40, 154]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Demux
+		    Name		    " Demux "
+		    Ports		    [1, 1]
+		    Position		    [270, 160, 320, 200]
+		    Outputs		    "1"
+		    }
+		    Block {
+		    BlockType		    "S-Function"
+		    Name		    " SFunction "
+		    Tag			    "Stateflow S-Function acc 4"
+		    Ports		    [2, 2]
+		    Position		    [180, 100, 230, 160]
+		    FunctionName	    "sf_sfun"
+		    PortCounts		    "[2 2]"
+		    EnableBusSupport	    off
+		    Port {
+		    PortNumber		    2
+		    Name		    "VACC_RelayComplete_flg"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Terminator
+		    Name		    " Terminator "
+		    Position		    [460, 171, 480, 189]
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "VACC_RelayComplete_flg"
+		    Position		    [460, 101, 480, 119]
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    " SFunction "
+		    SrcPort		    1
+		    DstBlock		    " Demux "
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "CounterStart_flg"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "KACC_FanAfterRunTimeDelay_s"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    2
+		    }
+		    Line {
+		    Name		    "VACC_RelayComplete_flg"
+		    Labels		    [0, 0]
+		    SrcBlock		    " SFunction "
+		    SrcPort		    2
+		    DstBlock		    "VACC_RelayComplete_flg"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    " Demux "
+		    SrcPort		    1
+		    DstBlock		    " Terminator "
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    From
+		    Name		    "From"
+		    Position		    [835, 228, 890, 252]
+		    BackgroundColor	    "lightBlue"
+		    ShowName		    off
+		    CloseFcn		    "tagdialog Close"
+		    GotoTag		    "PD"
+		    }
+		    Block {
+		    BlockType		    Goto
+		    Name		    "Goto"
+		    Position		    [500, 88, 555, 112]
+		    BackgroundColor	    "lightBlue"
+		    ShowName		    off
+		    GotoTag		    "PD"
+		    TagVisibility	    "local"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "KACC_FanAfterRunTimeDelay_s"
+		    Ports		    [0, 1]
+		    Position		    [385, 203, 565, 227]
+		    ShowName		    off
+		    SourceBlock		    "MotoHawk_lib/Calibration & Probing Blocks/motohawk_calibration"
+		    SourceType		    "MotoHawk Calibration"
+		    nam			    "'KACC_FanAfterRunTimeDelay_s'"
+		    val			    "KACC_FanAfterRunTimeDelay_s"
+		    storage		    "Calibration"
+		    show_more		    on
+		    name_source		    "Use Parameter"
+		    data_type		    "double"
+		    read_level		    "1"
+		    write_level		    "1"
+		    ovr_cals		    on
+		    view_as		    "Number"
+		    enum_struct		    "{'Disabled', 'Enabled'}"
+		    vector_style	    "Wide Row"
+		    use_help_units	    off
+		    help		    "''"
+		    units		    "''"
+		    use_header_enum	    off
+		    row_header_enum	    "{}"
+		    col_header_enum	    "{}"
+		    use_min_max		    off
+		    min_val		    "-inf"
+		    max_val		    "inf"
+		    use_precision	    off
+		    precision		    "''"
+		    gain		    "1"
+		    offset		    "0"
+		    exp			    "1"
+		    use_mototune_group	    off
+		    mototune_group	    "motohawk_vardec_path(gcb)"
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator"
+		    Ports		    [2, 1]
+		    Position		    [320, 158, 350, 202]
+		    ShowName		    off
+		    Operator		    "OR"
+		    AllPortsSameDT	    off
+		    OutDataTypeMode	    "boolean"
+		    OutDataTypeStr	    "boolean"
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator1"
+		    Ports		    [2, 1]
+		    Position		    [940, 223, 970, 287]
+		    ShowName		    off
+		    AllPortsSameDT	    off
+		    OutDataTypeMode	    "boolean"
+		    OutDataTypeStr	    "boolean"
+		    Port {
+		    PortNumber		    1
+		    Name		    "VACC_AfterRunCheck_flg"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator2"
+		    Ports		    [2, 1]
+		    Position		    [395, 108, 425, 152]
+		    ShowName		    off
+		    AllPortsSameDT	    off
+		    OutDataTypeMode	    "boolean"
+		    OutDataTypeStr	    "boolean"
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator3"
+		    Ports		    [2, 1]
+		    Position		    [1010, 173, 1040, 217]
+		    ShowName		    off
+		    Operator		    "OR"
+		    AllPortsSameDT	    off
+		    OutDataTypeMode	    "boolean"
+		    OutDataTypeStr	    "boolean"
+		    Port {
+		    PortNumber		    1
+		    Name		    "VACC_RelayComplete_flg"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Switch
+		    Name		    "Switch"
+		    Position		    [225, 16, 260, 114]
+		    ShowName		    off
+		    Criteria		    "u2 ~= 0"
+		    InputSameDT		    off
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    SaturateOnIntegerOverflow off
+		    Port {
+		    PortNumber		    1
+		    Name		    "VACC_EFanLowSpeedReq_flg"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Switch
+		    Name		    "Switch1"
+		    Position		    [225, 291, 260, 379]
+		    ShowName		    off
+		    Criteria		    "u2 ~= 0"
+		    InputSameDT		    off
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    SaturateOnIntegerOverflow off
+		    Port {
+		    PortNumber		    1
+		    Name		    "VACC_EFanHighSpeedReq_flg"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Switch
+		    Name		    "Switch2"
+		    Position		    [790, 238, 820, 302]
+		    ShowName		    off
+		    Criteria		    "u2 ~= 0"
+		    InputSameDT		    off
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "VACC_EFanLowSpeedReq_flg"
+		    Position		    [410, 58, 440, 72]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "VACC_AfterRunCheck_flg"
+		    Position		    [1090, 248, 1120, 262]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "VACC_EFanHighSpeedReq_flg"
+		    Position		    [465, 328, 495, 342]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "VACC_RelayComplete_flg"
+		    Position		    [1090, 188, 1120, 202]
+		    Port		    "4"
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    "From"
+		    SrcPort		    1
+		    DstBlock		    "Logical\nOperator1"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "VACC_RelayComplete_flg"
+		    Labels		    [0, 0]
+		    SrcBlock		    "Logical\nOperator3"
+		    SrcPort		    1
+		    DstBlock		    "VACC_RelayComplete_flg"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "KACC_FanAfterRunTimeDelay_s"
+		    SrcPort		    1
+		    DstBlock		    "Counter"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "PD_Process"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    Points		    [0, -20]
+		    DstBlock		    "Goto"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Logical\nOperator2"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Logical\nOperator2"
+		    SrcPort		    1
+		    Points		    [105, 0; 0, 20]
+		    DstBlock		    "Counter"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "VACC_RelayComplete_flg"
+		    Labels		    [0, 1]
+		    SrcBlock		    "Counter"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    Branch {
+		    DstBlock		    "Logical\nOperator3"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 65]
+		    DstBlock		    "Switch2"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Switch2"
+		    SrcPort		    1
+		    DstBlock		    "Logical\nOperator1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant2"
+		    SrcPort		    1
+		    DstBlock		    "Switch2"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Logical\nOperator"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    Points		    [0, -40]
+		    DstBlock		    "Logical\nOperator2"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 90]
+		    DstBlock		    "Switch2"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "VACC_EFanHighSpeedReqINP_flg"
+		    SrcPort		    1
+		    DstBlock		    "Switch1"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "VACC_AfterRunCheck_flg"
+		    Labels		    [0, 0]
+		    SrcBlock		    "Logical\nOperator1"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    Points		    [0, -50]
+		    DstBlock		    "Logical\nOperator3"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "VACC_AfterRunCheck_flg"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "VACC_EFanLowSpeedReqINP_flg"
+		    SrcPort		    1
+		    DstBlock		    "Switch"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant1"
+		    SrcPort		    1
+		    DstBlock		    "Switch1"
+		    DstPort		    3
+		    }
+		    Line {
+		    Name		    "VACC_EFanHighSpeedReq_flg"
+		    Labels		    [0, 0]
+		    SrcBlock		    "Switch1"
+		    SrcPort		    1
+		    Points		    [30, 0]
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "VACC_EFanHighSpeedReq_flg"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -145]
+		    DstBlock		    "Logical\nOperator"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    Name		    "VACC_EFanLowSpeedReq_flg"
+		    Labels		    [0, 1]
+		    SrcBlock		    "Switch"
+		    SrcPort		    1
+		    Points		    [30, 0; 0, 10]
+		    Branch {
+		    Points		    [0, -10]
+		    DstBlock		    "VACC_EFanLowSpeedReq_flg"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 105]
+		    DstBlock		    "Logical\nOperator"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "VACC_EFan_Enable_flg"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    Branch {
+		    Points		    [0, 260]
+		    DstBlock		    "Switch1"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [135, 0]
+		    DstBlock		    "Switch"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    DstBlock		    "Switch"
+		    DstPort		    3
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "EfanEnableControlChart"
+		  Ports			  [11, 6]
+		  Position		  [465, 150, 745, 610]
+		  PermitHierarchicalResolution "ExplicitOnly"
+		  MinAlgLoopOccurrences	  off
+		  PropExecContextOutsideSubsystem off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  Opaque		  off
+		  RequestExecContextInheritance	off
+		  MaskHideContents	  off
+		  MaskType		  "Stateflow"
+		  MaskDescription	  "Stateflow diagram"
+		  MaskDisplay		  "plot(sf('Private','sfblk','xIcon'),sf('Private','sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk', 'tIcon'),'HorizontalAl','Center','VerticalAl','Bottom');"
+		  MaskSelfModifiable	  on
+		  MaskIconFrame		  off
+		  MaskIconOpaque	  off
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  Port {
+		    PortNumber		    5
+		    PropagatedSignals	    "VACC_EFanLowSpeedReq_flg"
+		    ShowPropagatedSignals   "on"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    6
+		    PropagatedSignals	    "VACC_EFanHighSpeedReq_flg"
+		    ShowPropagatedSignals   "on"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  System {
+		    Name		    "EfanEnableControlChart"
+		    Location		    [257, 457, 812, 717]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "A4"
+		    PaperUnits		    "centimeters"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "VINP_TMMotorTemp_C"
+		    Position		    [20, 101, 40, 119]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "VINP_TMInverterTemp_C"
+		    Position		    [20, 136, 40, 154]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "VINP_AirCondReq_flg"
+		    Position		    [20, 171, 40, 189]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "KACC_LowFanOnMachSetpt_C"
+		    Position		    [20, 206, 40, 224]
+		    Port		    "4"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "KACC_LowFanOffMachSetpt_C"
+		    Position		    [20, 246, 40, 264]
+		    Port		    "5"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "KACC_HighFanOnMachSetpt_C"
+		    Position		    [20, 281, 40, 299]
+		    Port		    "6"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "KACC_HighFanOffMachSetpt_C"
+		    Position		    [20, 316, 40, 334]
+		    Port		    "7"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "KACC_LowFanOnHWSetpt_C"
+		    Position		    [20, 351, 40, 369]
+		    Port		    "8"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "KACC_LowFanOffHWSetpt_C"
+		    Position		    [20, 386, 40, 404]
+		    Port		    "9"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "KACC_HighFanOnHWSetpt_C"
+		    Position		    [20, 426, 40, 444]
+		    Port		    "10"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "KACC_HighFanOffHWSetpt_C"
+		    Position		    [20, 461, 40, 479]
+		    Port		    "11"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Demux
+		    Name		    " Demux "
+		    Ports		    [1, 1]
+		    Position		    [270, 355, 320, 395]
+		    Outputs		    "1"
+		    }
+		    Block {
+		    BlockType		    "S-Function"
+		    Name		    " SFunction "
+		    Tag			    "Stateflow S-Function acc 5"
+		    Ports		    [11, 7]
+		    Position		    [180, 114, 230, 356]
+		    FunctionName	    "sf_sfun"
+		    PortCounts		    "[11 7]"
+		    EnableBusSupport	    off
+		    Port {
+		    PortNumber		    2
+		    Name		    "VACC_MachineLowReq_flg"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    Port {
+		    PortNumber		    3
+		    Name		    "VACC_InverterLowReq_flg"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    Port {
+		    PortNumber		    4
+		    Name		    "VACC_MachineHighReq_flg"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    Port {
+		    PortNumber		    5
+		    Name		    "VACC_InverterHighReq_flg"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    Port {
+		    PortNumber		    6
+		    Name		    "VACC_EFanLowSpeedReq_flg"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    Port {
+		    PortNumber		    7
+		    Name		    "VACC_EFanHighSpeedReq_flg"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Terminator
+		    Name		    " Terminator "
+		    Position		    [460, 366, 480, 384]
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "VACC_MachineLowReq_flg"
+		    Position		    [460, 101, 480, 119]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "VACC_InverterLowReq_flg"
+		    Position		    [460, 136, 480, 154]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "VACC_MachineHighReq_flg"
+		    Position		    [460, 171, 480, 189]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "VACC_InverterHighReq_flg"
+		    Position		    [460, 206, 480, 224]
+		    Port		    "4"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "VACC_EFanLowSpeedReq_flg"
+		    Position		    [460, 246, 480, 264]
+		    Port		    "5"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "VACC_EFanHighSpeedReq_flg"
+		    Position		    [460, 281, 480, 299]
+		    Port		    "6"
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    " SFunction "
+		    SrcPort		    1
+		    DstBlock		    " Demux "
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "VINP_TMMotorTemp_C"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "VINP_TMInverterTemp_C"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "VINP_AirCondReq_flg"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "KACC_LowFanOnMachSetpt_C"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "KACC_LowFanOffMachSetpt_C"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    5
+		    }
+		    Line {
+		    SrcBlock		    "KACC_HighFanOnMachSetpt_C"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    6
+		    }
+		    Line {
+		    SrcBlock		    "KACC_HighFanOffMachSetpt_C"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    7
+		    }
+		    Line {
+		    SrcBlock		    "KACC_LowFanOnHWSetpt_C"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    8
+		    }
+		    Line {
+		    SrcBlock		    "KACC_LowFanOffHWSetpt_C"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    9
+		    }
+		    Line {
+		    SrcBlock		    "KACC_HighFanOnHWSetpt_C"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    10
+		    }
+		    Line {
+		    SrcBlock		    "KACC_HighFanOffHWSetpt_C"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    11
+		    }
+		    Line {
+		    Name		    "VACC_MachineLowReq_flg"
+		    Labels		    [0, 0]
+		    SrcBlock		    " SFunction "
+		    SrcPort		    2
+		    DstBlock		    "VACC_MachineLowReq_flg"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "VACC_InverterLowReq_flg"
+		    Labels		    [0, 0]
+		    SrcBlock		    " SFunction "
+		    SrcPort		    3
+		    DstBlock		    "VACC_InverterLowReq_flg"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "VACC_MachineHighReq_flg"
+		    Labels		    [0, 0]
+		    SrcBlock		    " SFunction "
+		    SrcPort		    4
+		    DstBlock		    "VACC_MachineHighReq_flg"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "VACC_InverterHighReq_flg"
+		    Labels		    [0, 0]
+		    SrcBlock		    " SFunction "
+		    SrcPort		    5
+		    DstBlock		    "VACC_InverterHighReq_flg"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "VACC_EFanLowSpeedReq_flg"
+		    Labels		    [0, 0]
+		    SrcBlock		    " SFunction "
+		    SrcPort		    6
+		    DstBlock		    "VACC_EFanLowSpeedReq_flg"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "VACC_EFanHighSpeedReq_flg"
+		    Labels		    [0, 0]
+		    SrcBlock		    " SFunction "
+		    SrcPort		    7
+		    DstBlock		    "VACC_EFanHighSpeedReq_flg"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    " Demux "
+		    SrcPort		    1
+		    DstBlock		    " Terminator "
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "KACC_HighFanOffHWSetpt_C"
+		  Ports			  [0, 1]
+		  Position		  [45, 583, 250, 607]
+		  ShowName		  off
+		  SourceBlock		  "MotoHawk_lib/Calibration & Probing Blocks/motohawk_calibration"
+		  SourceType		  "MotoHawk Calibration"
+		  nam			  "'KACC_HighFanOffHWSetpt_C'"
+		  val			  "KACC_HighFanOffHWSetpt_C"
+		  storage		  "Calibration"
+		  show_more		  on
+		  name_source		  "Use Parameter"
+		  data_type		  "double"
+		  read_level		  "1"
+		  write_level		  "1"
+		  ovr_cals		  on
+		  view_as		  "Number"
+		  enum_struct		  "{'Disabled', 'Enabled'}"
+		  vector_style		  "Wide Row"
+		  use_help_units	  off
+		  help			  "''"
+		  units			  "''"
+		  use_header_enum	  off
+		  row_header_enum	  "{}"
+		  col_header_enum	  "{}"
+		  use_min_max		  off
+		  min_val		  "-inf"
+		  max_val		  "inf"
+		  use_precision		  off
+		  precision		  "''"
+		  gain			  "1"
+		  offset		  "0"
+		  exp			  "1"
+		  use_mototune_group	  off
+		  mototune_group	  "motohawk_vardec_path(gcb)"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "KACC_HighFanOffMachSetpt_C"
+		  Ports			  [0, 1]
+		  Position		  [45, 423, 250, 447]
+		  ShowName		  off
+		  SourceBlock		  "MotoHawk_lib/Calibration & Probing Blocks/motohawk_calibration"
+		  SourceType		  "MotoHawk Calibration"
+		  nam			  "'KACC_HighFanOffMachSetpt_C'"
+		  val			  "KACC_HighFanOffMachSetpt_C"
+		  storage		  "Calibration"
+		  show_more		  on
+		  name_source		  "Use Parameter"
+		  data_type		  "double"
+		  read_level		  "1"
+		  write_level		  "1"
+		  ovr_cals		  on
+		  view_as		  "Number"
+		  enum_struct		  "{'Disabled', 'Enabled'}"
+		  vector_style		  "Wide Row"
+		  use_help_units	  off
+		  help			  "''"
+		  units			  "''"
+		  use_header_enum	  off
+		  row_header_enum	  "{}"
+		  col_header_enum	  "{}"
+		  use_min_max		  off
+		  min_val		  "-inf"
+		  max_val		  "inf"
+		  use_precision		  off
+		  precision		  "''"
+		  gain			  "1"
+		  offset		  "0"
+		  exp			  "1"
+		  use_mototune_group	  off
+		  mototune_group	  "motohawk_vardec_path(gcb)"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "KACC_HighFanOnHWSetpt_C"
+		  Ports			  [0, 1]
+		  Position		  [45, 543, 250, 567]
+		  ShowName		  off
+		  SourceBlock		  "MotoHawk_lib/Calibration & Probing Blocks/motohawk_calibration"
+		  SourceType		  "MotoHawk Calibration"
+		  nam			  "'KACC_HighFanOnHWSetpt_C'"
+		  val			  "KACC_HighFanOnHWSetpt_C"
+		  storage		  "Calibration"
+		  show_more		  on
+		  name_source		  "Use Parameter"
+		  data_type		  "double"
+		  read_level		  "1"
+		  write_level		  "1"
+		  ovr_cals		  on
+		  view_as		  "Number"
+		  enum_struct		  "{'Disabled', 'Enabled'}"
+		  vector_style		  "Wide Row"
+		  use_help_units	  off
+		  help			  "''"
+		  units			  "''"
+		  use_header_enum	  off
+		  row_header_enum	  "{}"
+		  col_header_enum	  "{}"
+		  use_min_max		  off
+		  min_val		  "-inf"
+		  max_val		  "inf"
+		  use_precision		  off
+		  precision		  "''"
+		  gain			  "1"
+		  offset		  "0"
+		  exp			  "1"
+		  use_mototune_group	  off
+		  mototune_group	  "motohawk_vardec_path(gcb)"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "KACC_HighFanOnMachSetpt_C"
+		  Ports			  [0, 1]
+		  Position		  [45, 383, 250, 407]
+		  ShowName		  off
+		  SourceBlock		  "MotoHawk_lib/Calibration & Probing Blocks/motohawk_calibration"
+		  SourceType		  "MotoHawk Calibration"
+		  nam			  "'KACC_HighFanOnMachSetpt_C'"
+		  val			  "KACC_HighFanOnMachSetpt_C"
+		  storage		  "Calibration"
+		  show_more		  on
+		  name_source		  "Use Parameter"
+		  data_type		  "double"
+		  read_level		  "1"
+		  write_level		  "1"
+		  ovr_cals		  on
+		  view_as		  "Number"
+		  enum_struct		  "{'Disabled', 'Enabled'}"
+		  vector_style		  "Wide Row"
+		  use_help_units	  off
+		  help			  "''"
+		  units			  "''"
+		  use_header_enum	  off
+		  row_header_enum	  "{}"
+		  col_header_enum	  "{}"
+		  use_min_max		  off
+		  min_val		  "-inf"
+		  max_val		  "inf"
+		  use_precision		  off
+		  precision		  "''"
+		  gain			  "1"
+		  offset		  "0"
+		  exp			  "1"
+		  use_mototune_group	  off
+		  mototune_group	  "motohawk_vardec_path(gcb)"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "KACC_LowFanOffHWSetpt_C"
+		  Ports			  [0, 1]
+		  Position		  [45, 503, 250, 527]
+		  ShowName		  off
+		  SourceBlock		  "MotoHawk_lib/Calibration & Probing Blocks/motohawk_calibration"
+		  SourceType		  "MotoHawk Calibration"
+		  nam			  "'KACC_LowFanOffHWSetpt_C'"
+		  val			  "KACC_LowFanOffHWSetpt_C"
+		  storage		  "Calibration"
+		  show_more		  on
+		  name_source		  "Use Parameter"
+		  data_type		  "double"
+		  read_level		  "1"
+		  write_level		  "1"
+		  ovr_cals		  on
+		  view_as		  "Number"
+		  enum_struct		  "{'Disabled', 'Enabled'}"
+		  vector_style		  "Wide Row"
+		  use_help_units	  off
+		  help			  "''"
+		  units			  "''"
+		  use_header_enum	  off
+		  row_header_enum	  "{}"
+		  col_header_enum	  "{}"
+		  use_min_max		  off
+		  min_val		  "-inf"
+		  max_val		  "inf"
+		  use_precision		  off
+		  precision		  "''"
+		  gain			  "1"
+		  offset		  "0"
+		  exp			  "1"
+		  use_mototune_group	  off
+		  mototune_group	  "motohawk_vardec_path(gcb)"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "KACC_LowFanOffMachSetpt_C"
+		  Ports			  [0, 1]
+		  Position		  [45, 343, 250, 367]
+		  ShowName		  off
+		  SourceBlock		  "MotoHawk_lib/Calibration & Probing Blocks/motohawk_calibration"
+		  SourceType		  "MotoHawk Calibration"
+		  nam			  "'KACC_LowFanOffMachSetpt_C'"
+		  val			  "KACC_LowFanOffMachSetpt_C"
+		  storage		  "Calibration"
+		  show_more		  on
+		  name_source		  "Use Parameter"
+		  data_type		  "double"
+		  read_level		  "1"
+		  write_level		  "1"
+		  ovr_cals		  on
+		  view_as		  "Number"
+		  enum_struct		  "{'Disabled', 'Enabled'}"
+		  vector_style		  "Wide Row"
+		  use_help_units	  off
+		  help			  "''"
+		  units			  "''"
+		  use_header_enum	  off
+		  row_header_enum	  "{}"
+		  col_header_enum	  "{}"
+		  use_min_max		  off
+		  min_val		  "-inf"
+		  max_val		  "inf"
+		  use_precision		  off
+		  precision		  "''"
+		  gain			  "1"
+		  offset		  "0"
+		  exp			  "1"
+		  use_mototune_group	  off
+		  mototune_group	  "motohawk_vardec_path(gcb)"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "KACC_LowFanOnHWSetpt_C"
+		  Ports			  [0, 1]
+		  Position		  [45, 463, 250, 487]
+		  ShowName		  off
+		  SourceBlock		  "MotoHawk_lib/Calibration & Probing Blocks/motohawk_calibration"
+		  SourceType		  "MotoHawk Calibration"
+		  nam			  "'KACC_LowFanOnHWSetpt_C'"
+		  val			  "KACC_LowFanOnHWSetpt_C"
+		  storage		  "Calibration"
+		  show_more		  on
+		  name_source		  "Use Parameter"
+		  data_type		  "double"
+		  read_level		  "1"
+		  write_level		  "1"
+		  ovr_cals		  on
+		  view_as		  "Number"
+		  enum_struct		  "{'Disabled', 'Enabled'}"
+		  vector_style		  "Wide Row"
+		  use_help_units	  off
+		  help			  "''"
+		  units			  "''"
+		  use_header_enum	  off
+		  row_header_enum	  "{}"
+		  col_header_enum	  "{}"
+		  use_min_max		  off
+		  min_val		  "-inf"
+		  max_val		  "inf"
+		  use_precision		  off
+		  precision		  "''"
+		  gain			  "1"
+		  offset		  "0"
+		  exp			  "1"
+		  use_mototune_group	  off
+		  mototune_group	  "motohawk_vardec_path(gcb)"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "KACC_LowFanOnMachSetpt_C"
+		  Ports			  [0, 1]
+		  Position		  [45, 303, 250, 327]
+		  ShowName		  off
+		  SourceBlock		  "MotoHawk_lib/Calibration & Probing Blocks/motohawk_calibration"
+		  SourceType		  "MotoHawk Calibration"
+		  nam			  "'KACC_LowFanOnMachSetpt_C'"
+		  val			  "KACC_LowFanOnMachSetpt_C"
+		  storage		  "Calibration"
+		  show_more		  on
+		  name_source		  "Use Parameter"
+		  data_type		  "double"
+		  read_level		  "1"
+		  write_level		  "1"
+		  ovr_cals		  on
+		  view_as		  "Number"
+		  enum_struct		  "{'Disabled', 'Enabled'}"
+		  vector_style		  "Wide Row"
+		  use_help_units	  off
+		  help			  "''"
+		  units			  "''"
+		  use_header_enum	  off
+		  row_header_enum	  "{}"
+		  col_header_enum	  "{}"
+		  use_min_max		  off
+		  min_val		  "-inf"
+		  max_val		  "inf"
+		  use_precision		  off
+		  precision		  "''"
+		  gain			  "1"
+		  offset		  "0"
+		  exp			  "1"
+		  use_mototune_group	  off
+		  mototune_group	  "motohawk_vardec_path(gcb)"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "KACC_LowFanOnMachSetpt_C1"
+		  Ports			  [0, 1]
+		  Position		  [15, 249, 180, 271]
+		  ShowName		  off
+		  SourceBlock		  "MotoHawk_lib/Calibration & Probing Blocks/motohawk_calibration"
+		  SourceType		  "MotoHawk Calibration"
+		  nam			  "'KACC_ACRequestTurnOnDelay_s'"
+		  val			  "0.5"
+		  storage		  "Calibration"
+		  show_more		  on
+		  name_source		  "Use Parameter"
+		  data_type		  "double"
+		  read_level		  "1"
+		  write_level		  "1"
+		  ovr_cals		  on
+		  view_as		  "Number"
+		  enum_struct		  "{'Disabled', 'Enabled'}"
+		  vector_style		  "Wide Row"
+		  use_help_units	  off
+		  help			  "''"
+		  units			  "''"
+		  use_header_enum	  off
+		  row_header_enum	  "{}"
+		  col_header_enum	  "{}"
+		  use_min_max		  off
+		  min_val		  "-inf"
+		  max_val		  "inf"
+		  use_precision		  off
+		  precision		  "''"
+		  gain			  "1"
+		  offset		  "0"
+		  exp			  "1"
+		  use_mototune_group	  off
+		  mototune_group	  "motohawk_vardec_path(gcb)"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "KTQS_PosDampDelay_s"
+		  Ports			  [0, 1]
+		  Position		  [145, 273, 285, 297]
+		  ShowName		  off
+		  SourceBlock		  "MotoHawk_lib/Calibration & Probing Blocks/motohawk_calibration"
+		  SourceType		  "MotoHawk Calibration"
+		  nam			  "'KACC_ACRequestTurnOffDelay_s'"
+		  val			  "20"
+		  storage		  "Calibration"
+		  show_more		  on
+		  name_source		  "Use Parameter"
+		  data_type		  "double"
+		  read_level		  "1"
+		  write_level		  "1"
+		  ovr_cals		  on
+		  view_as		  "Number"
+		  enum_struct		  "{'Disabled', 'Enabled'}"
+		  vector_style		  "Wide Row"
+		  use_help_units	  off
+		  help			  "''"
+		  units			  "''"
+		  use_header_enum	  off
+		  row_header_enum	  "{}"
+		  col_header_enum	  "{}"
+		  use_min_max		  off
+		  min_val		  "-inf"
+		  max_val		  "inf"
+		  use_precision		  off
+		  precision		  "''"
+		  gain			  "1"
+		  offset		  "0"
+		  exp			  "1"
+		  use_mototune_group	  off
+		  mototune_group	  "motohawk_vardec_path(gcb)"
+		}
+		Block {
+		  BlockType		  Terminator
+		  Name			  "Terminator"
+		  Position		  [770, 190, 790, 210]
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  Terminator
+		  Name			  "Terminator1"
+		  Position		  [770, 260, 790, 280]
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  Terminator
+		  Name			  "Terminator2"
+		  Position		  [770, 335, 790, 355]
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  Terminator
+		  Name			  "Terminator3"
+		  Position		  [770, 410, 790, 430]
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "TurnOffDelay"
+		  Ports			  [2, 1]
+		  Position		  [340, 253, 430, 282]
+		  SourceBlock		  "Syslib/TurnOffDelay"
+		  SourceType		  "SubSystem"
+		  ShowPortLabels	  "FromPortIcon"
+		  SystemSampleTime	  "-1"
+		  FunctionWithSeparateData off
+		  RTWMemSecFuncInitTerm	  "Inherit from model"
+		  RTWMemSecFuncExecute	  "Inherit from model"
+		  RTWMemSecDataConstants  "Inherit from model"
+		  RTWMemSecDataInternal	  "Inherit from model"
+		  RTWMemSecDataParameters "Inherit from model"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "TurnOnDelay"
+		  Ports			  [2, 1]
+		  Position		  [215, 239, 305, 266]
+		  SourceBlock		  "Syslib/TurnOnDelay"
+		  SourceType		  "SubSystem"
+		  ShowPortLabels	  "FromPortIcon"
+		  SystemSampleTime	  "-1"
+		  FunctionWithSeparateData off
+		  RTWMemSecFuncInitTerm	  "Inherit from model"
+		  RTWMemSecFuncExecute	  "Inherit from model"
+		  RTWMemSecDataConstants  "Inherit from model"
+		  RTWMemSecDataInternal	  "Inherit from model"
+		  RTWMemSecDataParameters "Inherit from model"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "VACC_EFanLowSpeedReq_flg"
+		  Position		  [1405, 173, 1435, 187]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "VACC_AfterRunCheck_flg"
+		  Position		  [1405, 283, 1435, 297]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  DataType		  "boolean"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		  OutDataTypeStr	  "boolean"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "VACC_EFanHighSpeedReq_flg"
+		  Position		  [1405, 393, 1435, 407]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "VACC_RelayComplete_flg"
+		  Position		  [1405, 503, 1435, 517]
+		  Port			  "4"
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Line {
+		  SrcBlock		  "KTQS_PosDampDelay_s"
+		  SrcPort		  1
+		  Points		  [15, 0; 0, -10]
+		  DstBlock		  "TurnOffDelay"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "TurnOffDelay"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  DstBlock		  "EfanEnableControlChart"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "TurnOnDelay"
+		  SrcPort		  1
+		  Points		  [5, 0; 0, 5]
+		  DstBlock		  "TurnOffDelay"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "KACC_LowFanOnMachSetpt_C1"
+		  SrcPort		  1
+		  DstBlock		  "TurnOnDelay"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "VINP_AirCondReq_flg"
+		  SrcPort		  1
+		  Points		  [100, 0; 0, 60]
+		  DstBlock		  "TurnOnDelay"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "PD_Process"
+		  SrcPort		  1
+		  DstBlock		  "AfterRunCkeck"
+		  DstPort		  4
+		}
+		Line {
+		  Labels		  [0, 0]
+		  SrcBlock		  "AfterRunCkeck"
+		  SrcPort		  4
+		  DstBlock		  "VACC_RelayComplete_flg"
+		  DstPort		  1
+		}
+		Line {
+		  Labels		  [0, 0]
+		  SrcBlock		  "AfterRunCkeck"
+		  SrcPort		  3
+		  DstBlock		  "VACC_EFanHighSpeedReq_flg"
+		  DstPort		  1
+		}
+		Line {
+		  Labels		  [0, 0]
+		  SrcBlock		  "AfterRunCkeck"
+		  SrcPort		  2
+		  DstBlock		  "VACC_AfterRunCheck_flg"
+		  DstPort		  1
+		}
+		Line {
+		  Labels		  [0, 0]
+		  SrcBlock		  "AfterRunCkeck"
+		  SrcPort		  1
+		  DstBlock		  "VACC_EFanLowSpeedReq_flg"
+		  DstPort		  1
+		}
+		Line {
+		  Labels		  [0, 0]
+		  SrcBlock		  "VACC_EFan_Enable_flg"
+		  SrcPort		  1
+		  DstBlock		  "AfterRunCkeck"
+		  DstPort		  2
+		}
+		Line {
+		  Labels		  [0, 0]
+		  SrcBlock		  "EfanEnableControlChart"
+		  SrcPort		  5
+		  Points		  [105, 0; 0, -315]
+		  DstBlock		  "AfterRunCkeck"
+		  DstPort		  1
+		}
+		Line {
+		  Labels		  [0, 0]
+		  SrcBlock		  "EfanEnableControlChart"
+		  SrcPort		  6
+		  Points		  [120, 0; 0, -170]
+		  DstBlock		  "AfterRunCkeck"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "KACC_HighFanOffHWSetpt_C"
+		  SrcPort		  1
+		  Points		  [195, 0]
+		  DstBlock		  "EfanEnableControlChart"
+		  DstPort		  11
+		}
+		Line {
+		  SrcBlock		  "KACC_HighFanOnHWSetpt_C"
+		  SrcPort		  1
+		  Points		  [195, 0]
+		  DstBlock		  "EfanEnableControlChart"
+		  DstPort		  10
+		}
+		Line {
+		  SrcBlock		  "KACC_LowFanOffHWSetpt_C"
+		  SrcPort		  1
+		  Points		  [195, 0]
+		  DstBlock		  "EfanEnableControlChart"
+		  DstPort		  9
+		}
+		Line {
+		  SrcBlock		  "KACC_LowFanOnHWSetpt_C"
+		  SrcPort		  1
+		  Points		  [195, 0]
+		  DstBlock		  "EfanEnableControlChart"
+		  DstPort		  8
+		}
+		Line {
+		  SrcBlock		  "KACC_HighFanOffMachSetpt_C"
+		  SrcPort		  1
+		  Points		  [195, 0]
+		  DstBlock		  "EfanEnableControlChart"
+		  DstPort		  7
+		}
+		Line {
+		  SrcBlock		  "KACC_HighFanOnMachSetpt_C"
+		  SrcPort		  1
+		  Points		  [195, 0]
+		  DstBlock		  "EfanEnableControlChart"
+		  DstPort		  6
+		}
+		Line {
+		  SrcBlock		  "KACC_LowFanOffMachSetpt_C"
+		  SrcPort		  1
+		  Points		  [195, 0]
+		  DstBlock		  "EfanEnableControlChart"
+		  DstPort		  5
+		}
+		Line {
+		  SrcBlock		  "KACC_LowFanOnMachSetpt_C"
+		  SrcPort		  1
+		  Points		  [195, 0]
+		  DstBlock		  "EfanEnableControlChart"
+		  DstPort		  4
+		}
+		Line {
+		  SrcBlock		  "VINP_TMMotorTemp_C"
+		  SrcPort		  1
+		  Points		  [365, 0]
+		  DstBlock		  "EfanEnableControlChart"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "VINP_TMInverterTemp_C"
+		  SrcPort		  1
+		  Points		  [360, 0; 0, 65]
+		  DstBlock		  "EfanEnableControlChart"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "EfanEnableControlChart"
+		  SrcPort		  1
+		  Points		  [0, 5]
+		  DstBlock		  "Terminator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "EfanEnableControlChart"
+		  SrcPort		  4
+		  DstBlock		  "Terminator3"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "EfanEnableControlChart"
+		  SrcPort		  3
+		  DstBlock		  "Terminator2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "EfanEnableControlChart"
+		  SrcPort		  2
+		  DstBlock		  "Terminator1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From"
+	      Position		      [90, 506, 170, 534]
+	      BackgroundColor	      "yellow"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "PD_Process"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto"
+	      Position		      [495, 116, 565, 144]
+	      BackgroundColor	      "yellow"
+	      ShowName		      off
+	      GotoTag		      "PD_Process"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "KACC_FanEnableTimeDelay_s"
+	      Ports		      [0, 1]
+	      Position		      [315, 194, 475, 216]
+	      ShowName		      off
+	      SourceBlock	      "MotoHawk_lib/Calibration & Probing Blocks/motohawk_calibration"
+	      SourceType	      "MotoHawk Calibration"
+	      nam		      "'KACC_FanEnableTimeDelay_s'"
+	      val		      "KACC_FanEnableTimeDelay_s"
+	      storage		      "Calibration"
+	      show_more		      on
+	      name_source	      "Use Parameter"
+	      data_type		      "double"
+	      read_level	      "1"
+	      write_level	      "1"
+	      ovr_cals		      on
+	      view_as		      "Number"
+	      enum_struct	      "{'Disabled', 'Enabled'}"
+	      vector_style	      "Wide Row"
+	      use_help_units	      off
+	      help		      "''"
+	      units		      "''"
+	      use_header_enum	      off
+	      row_header_enum	      "{}"
+	      col_header_enum	      "{}"
+	      use_min_max	      off
+	      min_val		      "-inf"
+	      max_val		      "inf"
+	      use_precision	      off
+	      precision		      "''"
+	      gain		      "1"
+	      offset		      "0"
+	      exp		      "1"
+	      use_mototune_group      off
+	      mototune_group	      "motohawk_vardec_path(gcb)"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "PowerSupplyDetermination"
+	      Ports		      [1, 1]
+	      Position		      [230, 48, 475, 92]
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      System {
+		Name			"PowerSupplyDetermination"
+		Location		[300, 363, 1253, 663]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "VINP_LVBattVoltage_V"
+		  Position		  [245, 108, 275, 122]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "KACC_PwrSupplyHighThreshold_v"
+		  Ports			  [0, 1]
+		  Position		  [65, 187, 285, 213]
+		  ShowName		  off
+		  SourceBlock		  "MotoHawk_lib/Calibration & Probing Blocks/motohawk_calibration"
+		  SourceType		  "MotoHawk Calibration"
+		  nam			  "'KACC_PwrSupplyHighThreshold_v'"
+		  val			  "KACC_PwrSupplyHighThreshold_v"
+		  storage		  "Calibration"
+		  show_more		  on
+		  name_source		  "Use Parameter"
+		  data_type		  "double"
+		  read_level		  "1"
+		  write_level		  "1"
+		  ovr_cals		  on
+		  view_as		  "Number"
+		  enum_struct		  "{'Disabled', 'Enabled'}"
+		  vector_style		  "Wide Row"
+		  use_help_units	  off
+		  help			  "''"
+		  units			  "''"
+		  use_header_enum	  off
+		  row_header_enum	  "{}"
+		  col_header_enum	  "{}"
+		  use_min_max		  off
+		  min_val		  "-inf"
+		  max_val		  "inf"
+		  use_precision		  off
+		  precision		  "''"
+		  gain			  "1"
+		  offset		  "0"
+		  exp			  "1"
+		  use_mototune_group	  off
+		  mototune_group	  "motohawk_vardec_path(gcb)"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "KACC_PwrSupplyLowThreshold_v"
+		  Ports			  [0, 1]
+		  Position		  [60, 37, 280, 63]
+		  ShowName		  off
+		  SourceBlock		  "MotoHawk_lib/Calibration & Probing Blocks/motohawk_calibration"
+		  SourceType		  "MotoHawk Calibration"
+		  nam			  "'KACC_PwrSupplyLowThreshold_v'"
+		  val			  "KACC_PwrSupplyLowThreshold_v"
+		  storage		  "Calibration"
+		  show_more		  on
+		  name_source		  "Use Parameter"
+		  data_type		  "double"
+		  read_level		  "1"
+		  write_level		  "1"
+		  ovr_cals		  on
+		  view_as		  "Number"
+		  enum_struct		  "{'Disabled', 'Enabled'}"
+		  vector_style		  "Wide Row"
+		  use_help_units	  off
+		  help			  "''"
+		  units			  "''"
+		  use_header_enum	  off
+		  row_header_enum	  "{}"
+		  col_header_enum	  "{}"
+		  use_min_max		  off
+		  min_val		  "-inf"
+		  max_val		  "inf"
+		  use_precision		  off
+		  precision		  "''"
+		  gain			  "1"
+		  offset		  "0"
+		  exp			  "1"
+		  use_mototune_group	  off
+		  mototune_group	  "motohawk_vardec_path(gcb)"
+		}
+		Block {
+		  BlockType		  Logic
+		  Name			  "Logical\nOperator"
+		  Ports			  [2, 1]
+		  Position		  [455, 85, 485, 205]
+		  ShowName		  off
+		  AllPortsSameDT	  off
+		  OutDataTypeMode	  "boolean"
+		  OutDataTypeStr	  "boolean"
+		  Port {
+		    PortNumber		    1
+		    Name		    "VACC_PowerSupply_flg"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator"
+		  Position		  [380, 60, 410, 135]
+		  ShowName		  off
+		  Operator		  "<="
+		  InputSameDT		  off
+		  LogicOutDataTypeMode	  "boolean"
+		  OutDataTypeStr	  "boolean"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator1"
+		  Position		  [380, 145, 410, 220]
+		  ShowName		  off
+		  Operator		  "<="
+		  InputSameDT		  off
+		  LogicOutDataTypeMode	  "boolean"
+		  OutDataTypeStr	  "boolean"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "VACC_PowerSupply_flg"
+		  Position		  [655, 138, 685, 152]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Line {
+		  SrcBlock		  "VINP_LVBattVoltage_V"
+		  SrcPort		  1
+		  Points		  [55, 0]
+		  Branch {
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		  }
+		  Branch {
+		    Points		    [0, 50]
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "KACC_PwrSupplyLowThreshold_v"
+		  SrcPort		  1
+		  Points		  [70, 0; 0, 30]
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "KACC_PwrSupplyHighThreshold_v"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Relational\nOperator"
+		  SrcPort		  1
+		  Points		  [10, 0; 0, 15]
+		  DstBlock		  "Logical\nOperator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Relational\nOperator1"
+		  SrcPort		  1
+		  Points		  [10, 0; 0, -10]
+		  DstBlock		  "Logical\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  Name			  "VACC_PowerSupply_flg"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Logical\nOperator"
+		  SrcPort		  1
+		  DstBlock		  "VACC_PowerSupply_flg"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "SystemStateDetermination"
+	      Ports		      [1, 2]
+	      Position		      [230, 116, 475, 169]
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      System {
+		Name			"SystemStateDetermination"
+		Location		[2, 82, 1053, 753]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "VPMM_SystemState_enum"
+		  Position		  [115, 238, 145, 252]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant"
+		  Position		  [320, 197, 460, 223]
+		  ShowName		  off
+		  Value			  "ENUM_PMM_NORMAL"
+		  OutDataTypeMode	  "uint8"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		  OutDataTypeStr	  "uint8"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  Position		  [320, 312, 460, 338]
+		  ShowName		  off
+		  Value			  "ENUM_PMM_POWER_UP"
+		  OutDataTypeMode	  "uint8"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		  OutDataTypeStr	  "uint8"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant2"
+		  Position		  [325, 457, 465, 483]
+		  ShowName		  off
+		  Value			  "ENUM_PMM_NORMAL"
+		  OutDataTypeMode	  "uint8"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		  OutDataTypeStr	  "uint8"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant3"
+		  Position		  [310, 521, 465, 549]
+		  ShowName		  off
+		  Value			  "ENUM_PMM_POWER_DOWN"
+		  OutDataTypeMode	  "uint8"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		  OutDataTypeStr	  "uint8"
+		}
+		Block {
+		  BlockType		  Logic
+		  Name			  "Logical\nOperator"
+		  Ports			  [2, 1]
+		  Position		  [570, 208, 600, 337]
+		  ShowName		  off
+		  AllPortsSameDT	  off
+		  OutDataTypeMode	  "boolean"
+		  OutDataTypeStr	  "boolean"
+		  Port {
+		    PortNumber		    1
+		    Name		    "VACC_PowerUpToNormal_flg"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Logic
+		  Name			  "Logical\nOperator1"
+		  Ports			  [2, 1]
+		  Position		  [570, 458, 600, 587]
+		  ShowName		  off
+		  AllPortsSameDT	  off
+		  OutDataTypeMode	  "boolean"
+		  OutDataTypeStr	  "boolean"
+		  Port {
+		    PortNumber		    1
+		    Name		    "VACC_NormalToPowerDown_flg"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Logic
+		  Name			  "Logical\nOperator2"
+		  Ports			  [2, 1]
+		  Position		  [755, 126, 785, 324]
+		  ShowName		  off
+		  Operator		  "OR"
+		  AllPortsSameDT	  off
+		  OutDataTypeMode	  "boolean"
+		  OutDataTypeStr	  "boolean"
+		  Port {
+		    PortNumber		    1
+		    Name		    "VACC_PowerUpToNormal_flg"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Logic
+		  Name			  "Logical\nOperator3"
+		  Ports			  [2, 1]
+		  Position		  [755, 476, 785, 674]
+		  ShowName		  off
+		  Operator		  "OR"
+		  AllPortsSameDT	  off
+		  OutDataTypeMode	  "boolean"
+		  OutDataTypeStr	  "boolean"
+		  Port {
+		    PortNumber		    1
+		    Name		    "VACC_NormalToPowerDown_flg"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator"
+		  Position		  [495, 191, 520, 264]
+		  ShowName		  off
+		  Operator		  "=="
+		  InputSameDT		  off
+		  LogicOutDataTypeMode	  "boolean"
+		  OutDataTypeStr	  "boolean"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator1"
+		  Position		  [495, 270, 520, 345]
+		  ShowName		  off
+		  Operator		  "=="
+		  InputSameDT		  off
+		  LogicOutDataTypeMode	  "boolean"
+		  OutDataTypeStr	  "boolean"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator2"
+		  Position		  [495, 416, 520, 489]
+		  ShowName		  off
+		  Operator		  "=="
+		  InputSameDT		  off
+		  LogicOutDataTypeMode	  "boolean"
+		  OutDataTypeStr	  "boolean"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator3"
+		  Position		  [495, 515, 520, 590]
+		  ShowName		  off
+		  Operator		  "=="
+		  InputSameDT		  off
+		  LogicOutDataTypeMode	  "boolean"
+		  OutDataTypeStr	  "boolean"
+		}
+		Block {
+		  BlockType		  UnitDelay
+		  Name			  "Unit Delay"
+		  Position		  [260, 273, 295, 307]
+		  ShowName		  off
+		  X0			  "ENUM_PMM_IDLE"
+		  SampleTime		  "-1"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "VACC_NormalToPowerDown_flg"
+		  Position		  [995, 568, 1025, 582]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "VACC_PowerUpToNormal_flg"
+		  Position		  [975, 218, 1005, 232]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Line {
+		  SrcBlock		  "VPMM_SystemState_enum"
+		  SrcPort		  1
+		  Points		  [50, 0]
+		  Branch {
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		  }
+		  Branch {
+		    Points		    [0, 45]
+		    Branch {
+		    DstBlock		    "Unit Delay"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 280]
+		    DstBlock		    "Relational\nOperator3"
+		    DstPort		    2
+		    }
+		  }
+		}
+		Line {
+		  SrcBlock		  "Unit Delay"
+		  SrcPort		  1
+		  Points		  [10, 0]
+		  Branch {
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 145]
+		    DstBlock		    "Relational\nOperator2"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Constant"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Relational\nOperator"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  Branch {
+		    Points		    [15, 0]
+		    DstBlock		    "Logical\nOperator"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, -55]
+		    DstBlock		    "Logical\nOperator2"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Relational\nOperator1"
+		  SrcPort		  1
+		  Points		  [30, 0]
+		  DstBlock		  "Logical\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Constant2"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator2"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Constant3"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator3"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Relational\nOperator2"
+		  SrcPort		  1
+		  Points		  [15, 0; 0, 35]
+		  DstBlock		  "Logical\nOperator1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Relational\nOperator3"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  Branch {
+		    DstBlock		    "Logical\nOperator1"
+		    DstPort		    2
+		  }
+		  Branch {
+		    Points		    [0, 70]
+		    DstBlock		    "Logical\nOperator3"
+		    DstPort		    2
+		  }
+		}
+		Line {
+		  Name			  "VACC_PowerUpToNormal_flg"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Logical\nOperator"
+		  SrcPort		  1
+		  DstBlock		  "Logical\nOperator2"
+		  DstPort		  2
+		}
+		Line {
+		  Name			  "VACC_PowerUpToNormal_flg"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Logical\nOperator2"
+		  SrcPort		  1
+		  DstBlock		  "VACC_PowerUpToNormal_flg"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "VACC_NormalToPowerDown_flg"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Logical\nOperator1"
+		  SrcPort		  1
+		  DstBlock		  "Logical\nOperator3"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "VACC_NormalToPowerDown_flg"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Logical\nOperator3"
+		  SrcPort		  1
+		  DstBlock		  "VACC_NormalToPowerDown_flg"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      UnitDelay
+	      Name		      "Unit Delay"
+	      Position		      [810, 538, 845, 572]
+	      ShowName		      off
+	      SampleTime	      "-1"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "VACC_EFanLowSpeedReq_flg"
+	      Position		      [855, 398, 885, 412]
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "VACC_EFanHighSpeedReq_flg"
+	      Position		      [855, 498, 885, 512]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      DataType		      "boolean"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "VACC_AfterRunCheck_flg"
+	      Position		      [855, 448, 885, 462]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      DataType		      "boolean"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Line {
+	      SrcBlock		      "VINP_DCDCFault_flg"
+	      SrcPort		      1
+	      DstBlock		      "ConditionChart"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "SystemStateDetermination"
+	      SrcPort		      2
+	      Points		      [120, 0]
+	      DstBlock		      "ConditionChart"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "VINP_AirCondReq_flg"
+	      SrcPort		      1
+	      DstBlock		      "EfanEnableControl"
+	      DstPort		      5
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "Unit Delay"
+	      SrcPort		      1
+	      Points		      [25, 0; 0, 50; -825, 0; 0, -315]
+	      DstBlock		      "ConditionChart"
+	      DstPort		      5
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "EfanEnableControl"
+	      SrcPort		      4
+	      DstBlock		      "Unit Delay"
+	      DstPort		      1
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "EfanEnableControl"
+	      SrcPort		      3
+	      DstBlock		      "VACC_EFanHighSpeedReq_flg"
+	      DstPort		      1
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "EfanEnableControl"
+	      SrcPort		      2
+	      DstBlock		      "VACC_AfterRunCheck_flg"
+	      DstPort		      1
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "EfanEnableControl"
+	      SrcPort		      1
+	      DstBlock		      "VACC_EFanLowSpeedReq_flg"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From"
+	      SrcPort		      1
+	      DstBlock		      "EfanEnableControl"
+	      DstPort		      4
+	    }
+	    Line {
+	      Labels		      [0, 1]
+	      SrcBlock		      "ConditionChart"
+	      SrcPort		      1
+	      Points		      [110, 0; 0, 170; -605, 0; 0, 50]
+	      DstBlock		      "EfanEnableControl"
+	      DstPort		      1
+	    }
+	    Line {
+	      Labels		      [0, 0; 0, 0]
+	      SrcBlock		      "VINP_TMInverterTemp_C"
+	      SrcPort		      1
+	      DstBlock		      "EfanEnableControl"
+	      DstPort		      3
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "VINP_TMMotorTemp_C"
+	      SrcPort		      1
+	      DstBlock		      "EfanEnableControl"
+	      DstPort		      2
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "VINP_LVBattVoltage_V"
+	      SrcPort		      1
+	      DstBlock		      "PowerSupplyDetermination"
+	      DstPort		      1
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "VPMM_SystemState_enum"
+	      SrcPort		      1
+	      DstBlock		      "SystemStateDetermination"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "SystemStateDetermination"
+	      SrcPort		      1
+	      DstBlock		      "Goto"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "PowerSupplyDetermination"
+	      SrcPort		      1
+	      DstBlock		      "ConditionChart"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "KACC_FanEnableTimeDelay_s"
+	      SrcPort		      1
+	      Points		      [120, 0]
+	      DstBlock		      "ConditionChart"
+	      DstPort		      3
+	    }
+	    Annotation {
+	      Name		      "init:0"
+	      Position		      [822, 581]
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "WaterPumpSubsystem"
+	  Ports			  [3, 1]
+	  Position		  [320, 107, 620, 203]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  Port {
+	    PortNumber		    1
+	    PropagatedSignals	    "VACC_CoolPumpCmd_flg"
+	    ShowPropagatedSignals   "on"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  System {
+	    Name		    "WaterPumpSubsystem"
+	    Location		    [202, 82, 1270, 753]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VPMM_PTReady_flg"
+	      Position		      [410, 148, 440, 162]
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VINP_TMMotorTemp_C"
+	      Position		      [60, 118, 90, 132]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      Port {
+		PortNumber		1
+		PropagatedSignals	"VINP_TMMotorTemp_C"
+		ShowPropagatedSignals	"on"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VINP_TMInverterTemp_C"
+	      Position		      [60, 158, 90, 172]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      Port {
+		PortNumber		1
+		PropagatedSignals	"VINP_TMInverterTemp_C"
+		ShowPropagatedSignals	"on"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "CoolPumpOFF"
+	      Position		      [555, 195, 585, 225]
+	      Value		      "0"
+	      OutDataTypeMode	      "boolean"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "CoolPumpOn"
+	      Position		      [555, 135, 585, 165]
+	      OutDataTypeMode	      "boolean"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Hysteresis"
+	      Ports		      [3, 1]
+	      Position		      [285, 112, 370, 308]
+	      ForegroundColor	      "blue"
+	      SourceBlock	      "Syslib/Hysteresis"
+	      SourceType	      "Stateflow"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "KACC_ACPwrLimit_kW"
+	      Ports		      [0, 1]
+	      Position		      [65, 197, 220, 223]
+	      ShowName		      off
+	      SourceBlock	      "MotoHawk_lib/Calibration & Probing Blocks/motohawk_calibration"
+	      SourceType	      "MotoHawk Calibration"
+	      nam		      "'KACC_CoolPumpOff_C'"
+	      val		      "KACC_CoolPumpOff_C"
+	      storage		      "Calibration"
+	      show_more		      on
+	      name_source	      "Use Parameter"
+	      data_type		      "double"
+	      read_level	      "1"
+	      write_level	      "1"
+	      ovr_cals		      on
+	      view_as		      "Number"
+	      enum_struct	      "{'Disabled', 'Enabled'}"
+	      vector_style	      "Wide Row"
+	      use_help_units	      off
+	      help		      "''"
+	      units		      "''"
+	      use_header_enum	      off
+	      row_header_enum	      "{}"
+	      col_header_enum	      "{}"
+	      use_min_max	      off
+	      min_val		      "-inf"
+	      max_val		      "inf"
+	      use_precision	      off
+	      precision		      "''"
+	      gain		      "1"
+	      offset		      "0"
+	      exp		      "1"
+	      use_mototune_group      off
+	      mototune_group	      "motohawk_vardec_path(gcb)"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "KACC_ACPwrLimit_kW1"
+	      Ports		      [0, 1]
+	      Position		      [65, 262, 220, 288]
+	      ShowName		      off
+	      SourceBlock	      "MotoHawk_lib/Calibration & Probing Blocks/motohawk_calibration"
+	      SourceType	      "MotoHawk Calibration"
+	      nam		      "'KACC_CoolPumpOn_C'"
+	      val		      "KACC_CoolPumpOn_C"
+	      storage		      "Calibration"
+	      show_more		      on
+	      name_source	      "Use Parameter"
+	      data_type		      "double"
+	      read_level	      "1"
+	      write_level	      "1"
+	      ovr_cals		      on
+	      view_as		      "Number"
+	      enum_struct	      "{'Disabled', 'Enabled'}"
+	      vector_style	      "Wide Row"
+	      use_help_units	      off
+	      help		      "''"
+	      units		      "''"
+	      use_header_enum	      off
+	      row_header_enum	      "{}"
+	      col_header_enum	      "{}"
+	      use_min_max	      off
+	      min_val		      "-inf"
+	      max_val		      "inf"
+	      use_precision	      off
+	      precision		      "''"
+	      gain		      "1"
+	      offset		      "0"
+	      exp		      "1"
+	      use_mototune_group      off
+	      mototune_group	      "motohawk_vardec_path(gcb)"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator"
+	      Ports		      [2, 1]
+	      Position		      [480, 128, 510, 237]
+	      ShowName		      off
+	      AllPortsSameDT	      off
+	      OutDataTypeMode	      "boolean"
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      MinMax
+	      Name		      "MinMax"
+	      Ports		      [2, 1]
+	      Position		      [230, 105, 260, 185]
+	      ShowName		      off
+	      Function		      "max"
+	      Inputs		      "2"
+	      InputSameDT	      off
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch1"
+	      Position		      [645, 170, 675, 200]
+	      ShowName		      off
+	      Criteria		      "u2 ~= 0"
+	      Threshold		      "0.5"
+	      InputSameDT	      off
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      SaturateOnIntegerOverflow	off
+	      Port {
+		PortNumber		1
+		Name			"VACC_CoolPumpCmd_flg"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "VACC_CoolPumpCmd_flg"
+	      Position		      [855, 178, 885, 192]
+	      IconDisplay	      "Port number"
+	      DataType		      "boolean"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator"
+	      SrcPort		      1
+	      DstBlock		      "Switch1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Hysteresis"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "VPMM_PTReady_flg"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "KACC_ACPwrLimit_kW1"
+	      SrcPort		      1
+	      DstBlock		      "Hysteresis"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "KACC_ACPwrLimit_kW"
+	      SrcPort		      1
+	      DstBlock		      "Hysteresis"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "MinMax"
+	      SrcPort		      1
+	      DstBlock		      "Hysteresis"
+	      DstPort		      1
+	    }
+	    Line {
+	      Labels		      [0, 0; 0, 0]
+	      SrcBlock		      "VINP_TMInverterTemp_C"
+	      SrcPort		      1
+	      DstBlock		      "MinMax"
+	      DstPort		      2
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "VINP_TMMotorTemp_C"
+	      SrcPort		      1
+	      DstBlock		      "MinMax"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "VACC_CoolPumpCmd_flg"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Switch1"
+	      SrcPort		      1
+	      DstBlock		      "VACC_CoolPumpCmd_flg"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "CoolPumpOFF"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, -15]
+	      DstBlock		      "Switch1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "CoolPumpOn"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, 25]
+	      DstBlock		      "Switch1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "BACC_outputs"
+	  Position		  [975, 383, 1005, 397]
+	  IconDisplay		  "Port number"
+	  UseBusObject		  on
+	  BusObject		  "BACC_outputs"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Line {
+	  Labels		  [0, 0]
+	  SrcBlock		  "CoolingFanSubsystem"
+	  SrcPort		  3
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  6
+	}
+	Line {
+	  Labels		  [0, 0]
+	  SrcBlock		  "CoolingFanSubsystem"
+	  SrcPort		  2
+	  Points		  [175, 0]
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  5
+	}
+	Line {
+	  Labels		  [0, 0]
+	  SrcBlock		  "CoolingFanSubsystem"
+	  SrcPort		  1
+	  Points		  [175, 0]
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  4
+	}
+	Line {
+	  Labels		  [0, 0]
+	  SrcBlock		  "ACPSubsystem"
+	  SrcPort		  2
+	  Points		  [175, 0]
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  3
+	}
+	Line {
+	  Labels		  [0, 0; 0, 0]
+	  SrcBlock		  "ACPSubsystem"
+	  SrcPort		  1
+	  Points		  [175, 0]
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "<VINP_BMSWarning_flg>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector1"
+	  SrcPort		  6
+	  DstBlock		  "ACPSubsystem"
+	  DstPort		  7
+	}
+	Line {
+	  Name			  "<VINP_AccelPedalPosn_pct>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector1"
+	  SrcPort		  5
+	  DstBlock		  "ACPSubsystem"
+	  DstPort		  6
+	}
+	Line {
+	  Name			  "<VINP_DCDCFault_flg>"
+	  Labels		  [0, 0; 0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  5
+	  DstBlock		  "CoolingFanSubsystem"
+	  DstPort		  6
+	}
+	Line {
+	  Name			  "<VINP_HVBattSOCValid_flg>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector1"
+	  SrcPort		  4
+	  DstBlock		  "ACPSubsystem"
+	  DstPort		  5
+	}
+	Line {
+	  Name			  "<VINP_AirCondReq_flg>"
+	  Labels		  [0, 0; 0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  4
+	  DstBlock		  "CoolingFanSubsystem"
+	  DstPort		  5
+	}
+	Line {
+	  Name			  "<VINP_HVBattSOC_pct>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector1"
+	  SrcPort		  3
+	  DstBlock		  "ACPSubsystem"
+	  DstPort		  4
+	}
+	Line {
+	  Name			  "BACC_outputs"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nCreator"
+	  SrcPort		  1
+	  DstBlock		  "BACC_outputs"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "BPMM_outputs"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  Branch {
+	    DstBlock		    "Bus\nSelector"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 250]
+	    DstBlock		    "Bus\nSelector3"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Name			  "<VPMM_PTReady_flg>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  1
+	  Points		  [110, 0]
+	  Branch {
+	    Points		    [0, 45]
+	    DstBlock		    "ACPSubsystem"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -95]
+	    DstBlock		    "WaterPumpSubsystem"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "BINP_outputs"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  Branch {
+	    DstBlock		    "Bus\nSelector1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 215]
+	    DstBlock		    "Bus\nSelector2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Name			  "<VINP_AirCondReq_flg>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector1"
+	  SrcPort		  1
+	  DstBlock		  "ACPSubsystem"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "<VINP_ACPFault_flg>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector1"
+	  SrcPort		  2
+	  DstBlock		  "ACPSubsystem"
+	  DstPort		  3
+	}
+	Line {
+	  Name			  "<VINP_LVBattVoltage_V>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  1
+	  DstBlock		  "CoolingFanSubsystem"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "<VINP_TMMotorTemp_C>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  2
+	  Points		  [130, 0]
+	  Branch {
+	    Points		    [0, -385]
+	    DstBlock		    "WaterPumpSubsystem"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "CoolingFanSubsystem"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  Name			  "<VINP_TMInverterTemp_C>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  3
+	  Points		  [150, 0]
+	  Branch {
+	    Points		    [0, -385]
+	    DstBlock		    "WaterPumpSubsystem"
+	    DstPort		    3
+	  }
+	  Branch {
+	    DstBlock		    "CoolingFanSubsystem"
+	    DstPort		    4
+	  }
+	}
+	Line {
+	  Name			  "<VPMM_SystemState_enum>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector3"
+	  SrcPort		  1
+	  Points		  [165, 0]
+	  DstBlock		  "CoolingFanSubsystem"
+	  DstPort		  1
+	}
+	Line {
+	  Labels		  [0, 0]
+	  SrcBlock		  "WaterPumpSubsystem"
+	  SrcPort		  1
+	  Points		  [175, 0]
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  1
+	}
+	Annotation {
+	  Position		  [659, 494]
+	}
+      }
+    }
+  }
+}
+# Finite State Machines
+#
+#    Stateflow Version 7.1 (R2008a) dated Feb  7 2008, 21:38:28
+#
+#
+
+
+Stateflow {
+  machine {
+    id			    1
+    name		    "acc"
+    created		    "15-Apr-2009 08:38:33"
+    isLibrary		    1
+    firstTarget		    120
+    sfVersion		    71014000.000003
+  }
+  chart {
+    id			    2
+    name		    "ACC/ACPSubsystem/ACP"
+    windowPosition	    [18.75 7.5 960 522]
+    viewLimits		    [226.405 599.195 144.419 342.101]
+    zoomFactor		    0.407
+    screen		    [1 1 1280 800 1.333333333333333]
+    firstTransition	    8
+    firstJunction	    3
+    viewObj		    2
+    machine		    1
+    subviewS {
+      x1		      297.238
+      y1		      105.984
+      zoomFactor	      0.478
+    }
+    ssIdHighWaterMark	    41
+    decomposition	    CLUSTER_CHART
+    firstData		    12
+    chartFileNumber	    1
+    disableImplicitCasting  1
+  }
+  junction {
+    id			    3
+    position		    [350 201 7]
+    chart		    2
+    linkNode		    [2 0 5]
+    subviewer		    2
+    ssIdNumber		    8
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    4
+    position		    [350.0401 325.0043 7]
+    chart		    2
+    linkNode		    [2 5 6]
+    subviewer		    2
+    ssIdNumber		    27
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    5
+    position		    [542.484 201 7]
+    chart		    2
+    linkNode		    [2 3 4]
+    subviewer		    2
+    ssIdNumber		    28
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    6
+    position		    [542.484 325.5264 7]
+    chart		    2
+    linkNode		    [2 4 0]
+    subviewer		    2
+    ssIdNumber		    30
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    7
+    labelString		    "{VACC_PTRunActive_flg=0;}"
+    labelPosition	    [358.298 264.552 77.449 7.612]
+    fontSize		    6
+    src {
+      id		      3
+      intersection	      [0 0.0003 1 -1 350.0023 208 0 0]
+    }
+    dst {
+      id		      4
+      intersection	      [0 -0.0003 -1 -1 350.0378 318.0043 0 0]
+    }
+    midPoint		    [350.0194 261.1328]
+    chart		    2
+    linkNode		    [2 9 10]
+    dataLimits		    [350.002 350.035 208 310.004]
+    subviewer		    2
+    drawStyle		    SMART
+    executionOrder	    2
+    ssIdNumber		    10
+  }
+  transition {
+    id			    8
+    labelPosition	    [358.566 168.003 3.964 7.612]
+    fontSize		    6
+    src {
+      intersection	      [0 0 1 0 350 153.9934 0 0]
+    }
+    dst {
+      id		      3
+      intersection	      [0 -0 -1 -1 350 194 0 0]
+    }
+    midPoint		    [350 170.6057]
+    chart		    2
+    linkNode		    [2 0 9]
+    dataLimits		    [350 350 153.993 186]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    12
+  }
+  transition {
+    id			    9
+    labelString		    "[VPMM_PTReady_flg &&...\n VINP_AirCondReq_flg &&...\n !VINP_ACPFault_flg &&...\n !VINP_BMSWarning_flg &&...\n VINP_HVBattSOC_pct>KACC_HVBattSOCThdLow_pct &&...\n VINP_HVBattSOCValid_flg]"
+    labelPosition	    [375.195 155.542 166.79 42.626]
+    fontSize		    6
+    src {
+      id		      3
+      intersection	      [0 1 0 -1 357 201 0 0]
+    }
+    dst {
+      id		      5
+      intersection	      [0 -1 0 -1 535.484 201 0 0]
+    }
+    midPoint		    [445.8614 201]
+    chart		    2
+    linkNode		    [2 8 7]
+    dataLimits		    [357 527.484 201 201]
+    subviewer		    2
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    29
+  }
+  transition {
+    id			    10
+    labelString		    "{VACC_PTRunActive_flg=1;}"
+    labelPosition	    [548.577 265.133 77.449 7.612]
+    fontSize		    6
+    src {
+      id		      5
+      intersection	      [0 0 1 -1 542.484 208 0 0]
+    }
+    dst {
+      id		      6
+      intersection	      [0 0 -1 -1 542.484 318.5264 0 0]
+    }
+    midPoint		    [542.484 261.4052]
+    chart		    2
+    linkNode		    [2 7 11]
+    dataLimits		    [542.484 542.484 208 310.526]
+    subviewer		    2
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    31
+  }
+  transition {
+    id			    11
+    labelPosition	    [432.15 325.227 7.318 14.31]
+    fontSize		    12
+    src {
+      id		      6
+      intersection	      [0 -1 -0.0027 -1 535.4841 325.5074 0 0]
+    }
+    dst {
+      id		      4
+      intersection	      [0 1 0.0027 -1 357.04 325.0233 0 0]
+    }
+    midPoint		    [446.6435 325.2664]
+    chart		    2
+    linkNode		    [2 10 0]
+    dataLimits		    [365.04 535.484 325.045 325.507]
+    subviewer		    2
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    32
+  }
+  data {
+    id			    12
+    ssIdNumber		    1
+    name		    "VPMM_PTReady_flg"
+    linkNode		    [2 0 13]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    13
+    ssIdNumber		    40
+    name		    "VINP_AirCondReq_flg"
+    linkNode		    [2 12 14]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    14
+    ssIdNumber		    34
+    name		    "VINP_ACPFault_flg"
+    linkNode		    [2 13 15]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    15
+    ssIdNumber		    35
+    name		    "VINP_HVBattSOC_pct"
+    linkNode		    [2 14 16]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    16
+    ssIdNumber		    37
+    name		    "VINP_HVBattSOCValid_flg"
+    linkNode		    [2 15 17]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    17
+    ssIdNumber		    41
+    name		    "VINP_BMSWarning_flg"
+    linkNode		    [2 16 18]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    18
+    ssIdNumber		    2
+    name		    "VACC_PTRunActive_flg"
+    linkNode		    [2 17 19]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    19
+    ssIdNumber		    36
+    name		    "KACC_HVBattSOCThdLow_pct"
+    linkNode		    [2 18 0]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  instance {
+    id			    20
+    name		    "ACC/ACPSubsystem/ACP"
+    machine		    1
+    chart		    2
+  }
+  chart {
+    id			    21
+    name		    "ACC/CoolingFanSubsystem/ConditionChart"
+    windowPosition	    [59.063 -43.313 960 522]
+    viewLimits		    [0 1145.625 0 607.5]
+    zoomFactor		    1.25
+    screen		    [1 1 1280 800 1.333333333333333]
+    treeNode		    [0 25 0 0]
+    firstTransition	    31
+    viewObj		    21
+    machine		    1
+    subviewS {
+      zoomFactor	      1.25
+    }
+    ssIdHighWaterMark	    46
+    decomposition	    CLUSTER_CHART
+    firstData		    44
+    chartFileNumber	    2
+    disableImplicitCasting  1
+  }
+  state {
+    id			    22
+    labelString		    "DISABLE\nen:\nVACC_EFan_Enable_flg=FALSE;"
+    position		    [82.375 152.25 244.8768 321.8746]
+    fontSize		    10
+    chart		    21
+    treeNode		    [21 24 25 0]
+    firstTransition	    33
+    subviewer		    21
+    ssIdNumber		    6
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    23
+    labelString		    "COUNTER\ndu:\ncounter_disable+=C_TICK_TIME_S;"
+    position		    [95.991 403.443 212.625 55.875]
+    fontSize		    10
+    chart		    21
+    treeNode		    [22 0 24 0]
+    subviewer		    21
+    ssIdNumber		    14
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    24
+    labelString		    "WAIT\nen:\ncounter_disable=0;"
+    position		    [93 248.25 216.5 55.5]
+    fontSize		    10
+    chart		    21
+    treeNode		    [22 0 0 23]
+    subviewer		    21
+    ssIdNumber		    13
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    25
+    labelString		    "ENABLE"
+    position		    [694.7295 146.9946 338.1785 318.4244]
+    fontSize		    10
+    chart		    21
+    treeNode		    [21 0 0 22]
+    firstTransition	    37
+    firstJunction	    26
+    subviewer		    21
+    ssIdNumber		    22
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  junction {
+    id			    26
+    position		    [760.9152 260.9453 6]
+    chart		    21
+    linkNode		    [25 0 28]
+    subviewer		    21
+    quantum		    [0 0 0 39]
+    ssIdNumber		    33
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    27
+    position		    [760.9152 356.5163 6]
+    chart		    21
+    linkNode		    [25 28 29]
+    subviewer		    21
+    ssIdNumber		    34
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    28
+    position		    [877.2733 260.9453 6]
+    chart		    21
+    linkNode		    [25 26 27]
+    subviewer		    21
+    ssIdNumber		    35
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    29
+    position		    [876.6582 356.5163 6]
+    chart		    21
+    linkNode		    [25 27 30]
+    subviewer		    21
+    ssIdNumber		    36
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    30
+    position		    [760.9152 420.3533 6]
+    chart		    21
+    linkNode		    [25 29 0]
+    subviewer		    21
+    ssIdNumber		    37
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    31
+    labelPosition	    [209.881 112.747 7.496 14.971]
+    fontSize		    10
+    src {
+      intersection	      [0 0 1 0 198.2088 79.5 0 0]
+    }
+    dst {
+      id		      22
+      intersection	      [1 0 -1 0.473 198.2088 152.25 0 0]
+    }
+    midPoint		    [198.2088 113.1958]
+    chart		    21
+    linkNode		    [21 0 32]
+    dataLimits		    [198.209 198.209 79.5 144.25]
+    subviewer		    21
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    8
+  }
+  transition {
+    id			    32
+    labelString		    "[VACC_PowerSupply_flg &&  counter_disable>KACC_FanEnableTimeDelay_s]"
+    labelPosition	    [337.449 202.552 355.141 14.971]
+    fontSize		    10
+    src {
+      id		      22
+      intersection	      [2 1 0 0.2292 327.2518 226.037 0 -79.2367]
+    }
+    dst {
+      id		      25
+      intersection	      [4 -1 0 0.7518 694.7295 226.037 0 79.2367]
+    }
+    midPoint		    [514.7186 226.037]
+    chart		    21
+    linkNode		    [21 31 35]
+    dataLimits		    [327.252 686.73 226.037 226.037]
+    stampAngle		    NaN
+    subviewer		    21
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    12
+  }
+  transition {
+    id			    33
+    labelPosition	    [192.262 226.641 7.496 14.971]
+    fontSize		    10
+    src {
+      intersection	      [0 0 1 0 206.6625 218.25 0 0]
+    }
+    dst {
+      id		      24
+      intersection	      [1 0 -1 0.525 206.6625 248.25 0 0]
+    }
+    midPoint		    [206.6625 229.6415]
+    chart		    21
+    linkNode		    [22 0 34]
+    dataLimits		    [206.662 206.662 218.25 240.25]
+    subviewer		    21
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    15
+  }
+  transition {
+    id			    34
+    labelString		    "[VACC_PowerUpToNormal_flg &&...\nVACC_PowerSupply_flg]"
+    labelPosition	    [122.433 323.954 163.983 28.07]
+    fontSize		    10
+    src {
+      id		      24
+      intersection	      [3 0 1 0.8848 117.9339 303.75 0 84.3692]
+    }
+    dst {
+      id		      23
+      intersection	      [1 -0 -1 0.1032 117.9339 403.443 0 -84.3692]
+    }
+    midPoint		    [117.9344 351.503]
+    chart		    21
+    linkNode		    [22 33 36]
+    dataLimits		    [117.934 117.934 303.75 395.443]
+    stampAngle		    NaN
+    subviewer		    21
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    18
+  }
+  transition {
+    id			    35
+    labelString		    "[!VACC_PowerSupply_flg || VACC_RelayComplete_flg]"
+    labelPosition	    [384.113 372.867 247.38 14.971]
+    fontSize		    10
+    src {
+      id		      25
+      intersection	      [4 -1 0 0.2071 694.7295 399.4744 0 -94.2129]
+    }
+    dst {
+      id		      22
+      intersection	      [2 1 0 0.7681 327.2518 399.4744 0 94.2129]
+    }
+    midPoint		    [507.2627 399.4744]
+    chart		    21
+    linkNode		    [21 32 0]
+    dataLimits		    [335.252 694.729 399.474 399.474]
+    stampAngle		    NaN
+    subviewer		    21
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    27
+  }
+  transition {
+    id			    36
+    labelString		    "[!VACC_PowerSupply_flg]"
+    labelPosition	    [164.593 366.985 120.879 14.971]
+    fontSize		    10
+    src {
+      id		      23
+      intersection	      [1 -0 -1 0.8939 286.0565 403.443 0 83.7552]
+    }
+    dst {
+      id		      24
+      intersection	      [3 0 1 0.1083 286.0565 303.75 0 -83.7552]
+    }
+    midPoint		    [286.0587 355.6899]
+    chart		    21
+    linkNode		    [22 34 0]
+    dataLimits		    [286.057 286.059 311.75 403.443]
+    stampAngle		    NaN
+    subviewer		    21
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    28
+  }
+  transition {
+    id			    37
+    labelString		    "{\nVACC_EFan_Enable_flg=TRUE;\ncounter_disable=0;\n}"
+    labelPosition	    [768.295 184.455 143.368 54.269]
+    fontSize		    10
+    src {
+      intersection	      [0 0 1 0 760.9152 173.4923 0 0]
+    }
+    dst {
+      id		      26
+      intersection	      [0 -0 -1 -1 760.9152 254.9453 0 0]
+    }
+    midPoint		    [760.9152 211.7288]
+    chart		    21
+    linkNode		    [25 0 39]
+    dataLimits		    [760.915 760.915 173.492 246.945]
+    subviewer		    21
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    38
+  }
+  transition {
+    id			    38
+    labelString		    "[VINP_DCDCFault_flg]"
+    labelPosition	    [776.905 237.329 99.327 14.971]
+    fontSize		    10
+    src {
+      id		      26
+      intersection	      [0 1 0 -1 766.9152 260.9453 0 0]
+    }
+    dst {
+      id		      28
+      intersection	      [0 -1 0 -1 871.2733 260.9453 0 0]
+    }
+    midPoint		    [817.1022 260.9453]
+    chart		    21
+    linkNode		    [25 39 41]
+    dataLimits		    [766.915 863.273 260.945 260.945]
+    subviewer		    21
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    39
+  }
+  transition {
+    id			    39
+    labelPosition	    [726.081 260.945 7.496 14.971]
+    fontSize		    10
+    src {
+      id		      25
+      intersection	      [4 1 0 0.6421 694.7295 260.9453 0 0]
+    }
+    dst {
+      id		      26
+      intersection	      [0 -1 0 -1 754.9152 260.9453 0 0]
+    }
+    midPoint		    [721.8701 260.9453]
+    chart		    21
+    linkNode		    [25 37 38]
+    dataLimits		    [694.73 746.915 260.945 260.945]
+    stampAngle		    NaN
+    subviewer		    21
+    drawStyle		    SMART
+    slide {
+      sticky		      DST_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    42
+  }
+  transition {
+    id			    40
+    labelPosition	    [760.915 312.531 7.496 14.971]
+    fontSize		    10
+    src {
+      id		      26
+      intersection	      [0 0 1 -1 760.9152 266.9453 0 0]
+    }
+    dst {
+      id		      27
+      intersection	      [0 0 -1 -1 760.9152 350.5163 0 0]
+    }
+    midPoint		    [760.9152 306.2869]
+    chart		    21
+    linkNode		    [25 41 42]
+    dataLimits		    [760.915 760.915 266.945 342.516]
+    subviewer		    21
+    drawStyle		    SMART
+    executionOrder	    2
+    ssIdNumber		    43
+  }
+  transition {
+    id			    41
+    labelString		    "{\nVACC_EFan_Enable_flg=FALSE;\n}"
+    labelPosition	    [881.213 286.008 149.927 41.17]
+    fontSize		    10
+    src {
+      id		      28
+      intersection	      [0 -0.0064 1 -1 877.2346 266.9452 0 0]
+    }
+    dst {
+      id		      29
+      intersection	      [0 0.0064 -1 -1 876.6969 350.5164 0 0]
+    }
+    midPoint		    [876.9815 306.2869]
+    chart		    21
+    linkNode		    [25 38 40]
+    dataLimits		    [876.748 877.235 266.945 342.516]
+    subviewer		    21
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    44
+  }
+  transition {
+    id			    42
+    labelPosition	    [812.794 356.516 7.496 14.971]
+    fontSize		    10
+    src {
+      id		      29
+      intersection	      [0 -1 0 -1 870.6582 356.5163 0 0]
+    }
+    dst {
+      id		      27
+      intersection	      [0 1 0 -1 766.9152 356.5163 0 0]
+    }
+    midPoint		    [820.7922 356.5163]
+    chart		    21
+    linkNode		    [25 40 43]
+    dataLimits		    [774.915 870.658 356.516 356.516]
+    subviewer		    21
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    45
+  }
+  transition {
+    id			    43
+    labelPosition	    [760.915 388.785 7.496 14.971]
+    fontSize		    10
+    src {
+      id		      27
+      intersection	      [0 0 1 -1 760.9152 362.5163 0 0]
+    }
+    dst {
+      id		      30
+      intersection	      [0 0 -1 -1 760.9152 414.3533 0 0]
+    }
+    midPoint		    [760.9152 385.301]
+    chart		    21
+    linkNode		    [25 42 0]
+    dataLimits		    [760.915 760.915 362.516 406.353]
+    subviewer		    21
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    46
+  }
+  data {
+    id			    44
+    ssIdNumber		    1
+    name		    "VACC_PowerSupply_flg"
+    linkNode		    [21 0 45]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    45
+    ssIdNumber		    2
+    name		    "VACC_PowerUpToNormal_flg"
+    linkNode		    [21 44 46]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    46
+    ssIdNumber		    9
+    name		    "FALSE"
+    linkNode		    [21 45 47]
+    scope		    PARAMETER_DATA
+    initFromWorkspace	    1
+    paramIndexForInitFromWorkspace 1
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    47
+    ssIdNumber		    10
+    name		    "TRUE"
+    linkNode		    [21 46 48]
+    scope		    PARAMETER_DATA
+    initFromWorkspace	    1
+    paramIndexForInitFromWorkspace 2
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    48
+    ssIdNumber		    17
+    name		    "counter_disable"
+    linkNode		    [21 47 49]
+    scope		    LOCAL_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    49
+    ssIdNumber		    19
+    name		    "C_TICK_TIME_S"
+    linkNode		    [21 48 50]
+    scope		    PARAMETER_DATA
+    initFromWorkspace	    1
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    50
+    ssIdNumber		    20
+    name		    "KACC_FanEnableTimeDelay_s"
+    linkNode		    [21 49 51]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    51
+    ssIdNumber		    32
+    name		    "VINP_DCDCFault_flg"
+    linkNode		    [21 50 52]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    52
+    ssIdNumber		    30
+    name		    "VACC_EFan_Enable_flg"
+    linkNode		    [21 51 53]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    53
+    ssIdNumber		    31
+    name		    "VACC_RelayComplete_flg"
+    linkNode		    [21 52 0]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "boolean"
+  }
+  instance {
+    id			    54
+    name		    "ACC/CoolingFanSubsystem/ConditionChart"
+    machine		    1
+    chart		    21
+  }
+  chart {
+    id			    55
+    name		    "ACC/CoolingFanSubsystem/EfanEnableControl/AfterRunCkeck/Counter"
+    windowPosition	    [198.75 -172.5 960 522]
+    viewLimits		    [20.013 936.513 1.875 487.875]
+    screen		    [1 1 1280 800 1.333333333333333]
+    treeNode		    [0 57 0 0]
+    firstTransition	    60
+    viewObj		    55
+    machine		    1
+    subviewS {
+      x1		      20.013
+      y1		      1.875
+    }
+    ssIdHighWaterMark	    20
+    decomposition	    CLUSTER_CHART
+    firstData		    66
+    chartFileNumber	    4
+    disableImplicitCasting  1
+  }
+  state {
+    id			    56
+    labelString		    "Default\nen:\nVACC_RelayComplete_flg=FALSE;\ncounter=0;"
+    position		    [92.875 151.125 224 217.5]
+    fontSize		    10
+    chart		    55
+    treeNode		    [55 0 57 0]
+    subviewer		    55
+    ssIdNumber		    4
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    57
+    labelString		    "Start"
+    position		    [470 146.625 386.125 217.125]
+    fontSize		    10
+    chart		    55
+    treeNode		    [55 0 0 56]
+    firstTransition	    62
+    firstJunction	    58
+    subviewer		    55
+    ssIdNumber		    5
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  junction {
+    id			    58
+    position		    [648.125 214.125 7]
+    chart		    55
+    linkNode		    [57 0 59]
+    subviewer		    55
+    quantum		    [0 0 0 64]
+    ssIdNumber		    10
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    59
+    position		    [648.125 327.375 7]
+    chart		    55
+    linkNode		    [57 58 0]
+    subviewer		    55
+    ssIdNumber		    11
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    60
+    labelPosition	    [183.287 129.516 6.747 13.474]
+    fontSize		    10
+    src {
+      intersection	      [0 0 1 0 197.6873 121.125 0 0]
+    }
+    dst {
+      id		      56
+      intersection	      [1 0 -1 0.4679 197.6873 151.125 0 0]
+    }
+    midPoint		    [197.6873 132.5165]
+    chart		    55
+    linkNode		    [55 0 61]
+    dataLimits		    [197.687 197.687 121.125 143.125]
+    subviewer		    55
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    6
+  }
+  transition {
+    id			    61
+    labelString		    "[CounterStart_flg]"
+    labelPosition	    [353.793 174.75 77.213 13.474]
+    fontSize		    10
+    src {
+      id		      56
+      intersection	      [2 1 -0 0.219 316.875 198.75 0 -61.125]
+    }
+    dst {
+      id		      57
+      intersection	      [4 -1 0 0.7599 470 198.75 0 61.125]
+    }
+    midPoint		    [392.5056 198.75]
+    chart		    55
+    linkNode		    [55 60 65]
+    dataLimits		    [316.875 462 198.75 198.75]
+    stampAngle		    NaN
+    subviewer		    55
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    9
+  }
+  transition {
+    id			    62
+    labelString		    "{counter=0;}"
+    labelPosition	    [660.875 185.625 53.974 13.474]
+    fontSize		    10
+    src {
+      intersection	      [0 0.0145 0.9999 0 647.5888 177.1289 0 0]
+    }
+    dst {
+      id		      58
+      intersection	      [0 -0.0145 -0.9999 -1 648.0236 207.1257 0 0]
+    }
+    midPoint		    [647.7539 188.5192]
+    chart		    55
+    linkNode		    [57 0 64]
+    dataLimits		    [647.589 647.908 177.129 199.126]
+    subviewer		    55
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    12
+  }
+  transition {
+    id			    63
+    labelString		    "[counter>=KACC_FanAfterRunTimeDelay_s]...\n{VACC_RelayComplete_flg=TRUE;}"
+    labelPosition	    [660.5 256.973 203.152 25.45]
+    fontSize		    10
+    src {
+      id		      58
+      intersection	      [0 0 1 -1 648.125 221.125 0 0]
+    }
+    dst {
+      id		      59
+      intersection	      [0 0 -1 -1 648.125 320.375 0 0]
+    }
+    midPoint		    [648.125 268.6469]
+    chart		    55
+    linkNode		    [57 64 0]
+    dataLimits		    [648.125 648.125 221.125 312.375]
+    subviewer		    55
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    14
+  }
+  transition {
+    id			    64
+    labelString		    "{counter+=C_TICK_TIME_S;}"
+    labelPosition	    [494.005 193.5 127.438 13.474]
+    fontSize		    10
+    src {
+      id		      57
+      intersection	      [4 1 0 0.6891 470 214.125 0 0]
+    }
+    dst {
+      id		      58
+      intersection	      [0 -1 0 -1 641.125 214.125 0 0]
+    }
+    midPoint		    [555.0219 214.125]
+    chart		    55
+    linkNode		    [57 62 63]
+    dataLimits		    [470 633.125 214.125 214.125]
+    stampAngle		    NaN
+    subviewer		    55
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    18
+  }
+  transition {
+    id			    65
+    labelString		    "[!CounterStart_flg]"
+    labelPosition	    [353.897 303.375 79.462 13.474]
+    fontSize		    10
+    src {
+      id		      57
+      intersection	      [4 -1 0 0.1831 470 324 0 -64.125]
+    }
+    dst {
+      id		      56
+      intersection	      [2 1 -0 0.7948 316.875 324 0 64.125]
+    }
+    midPoint		    [394.3694 324]
+    chart		    55
+    linkNode		    [55 61 0]
+    dataLimits		    [324.875 470 324 324]
+    stampAngle		    NaN
+    subviewer		    55
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    20
+  }
+  data {
+    id			    66
+    ssIdNumber		    2
+    name		    "CounterStart_flg"
+    linkNode		    [55 0 67]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    67
+    ssIdNumber		    1
+    name		    "KACC_FanAfterRunTimeDelay_s"
+    linkNode		    [55 66 68]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    68
+    ssIdNumber		    3
+    name		    "VACC_RelayComplete_flg"
+    linkNode		    [55 67 69]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    69
+    ssIdNumber		    7
+    name		    "FALSE"
+    linkNode		    [55 68 70]
+    scope		    PARAMETER_DATA
+    initFromWorkspace	    1
+    paramIndexForInitFromWorkspace 1
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    70
+    ssIdNumber		    8
+    name		    "TRUE"
+    linkNode		    [55 69 71]
+    scope		    PARAMETER_DATA
+    initFromWorkspace	    1
+    paramIndexForInitFromWorkspace 2
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    71
+    ssIdNumber		    13
+    name		    "counter"
+    linkNode		    [55 70 72]
+    scope		    LOCAL_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    72
+    ssIdNumber		    19
+    name		    "C_TICK_TIME_S"
+    linkNode		    [55 71 0]
+    scope		    PARAMETER_DATA
+    initFromWorkspace	    1
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  instance {
+    id			    73
+    name		    "ACC/CoolingFanSubsystem/EfanEnableControl/AfterRunCkeck/Counter"
+    machine		    1
+    chart		    55
+  }
+  chart {
+    id			    74
+    name		    "ACC/CoolingFanSubsystem/EfanEnableControl/EfanEnableControlChart"
+    windowPosition	    [198.75 -172.5 960 522]
+    viewLimits		    [0 1112.631 138.672 728.676]
+    zoomFactor		    1.214
+    screen		    [1 1 1280 800 1.333333333333333]
+    treeNode		    [0 75 0 0]
+    firstTransition	    83
+    viewObj		    74
+    machine		    1
+    subviewS {
+      y1		      138.672
+      zoomFactor	      1.214
+    }
+    ssIdHighWaterMark	    46
+    decomposition	    CLUSTER_CHART
+    firstData		    100
+    chartFileNumber	    5
+    userSpecifiedStateTransitionExecutionOrder 1
+    disableImplicitCasting  1
+  }
+  state {
+    id			    75
+    labelString		    "RUN"
+    position		    [41.3449 168.1657 961.3102 560.965]
+    fontSize		    10
+    chart		    74
+    treeNode		    [74 0 0 0]
+    firstTransition	    98
+    firstJunction	    76
+    subviewer		    74
+    ssIdNumber		    43
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  junction {
+    id			    76
+    position		    [203.0846 251.1679 7]
+    chart		    74
+    linkNode		    [75 0 77]
+    subviewer		    74
+    quantum		    [0 0 0 99]
+    ssIdNumber		    16
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    77
+    position		    [203.0846 343.4179 7]
+    chart		    74
+    linkNode		    [75 76 78]
+    subviewer		    74
+    ssIdNumber		    18
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    78
+    position		    [202.2748 437.5429 7]
+    chart		    74
+    linkNode		    [75 77 79]
+    subviewer		    74
+    ssIdNumber		    22
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    79
+    position		    [203.0248 520.0429 7]
+    chart		    74
+    linkNode		    [75 78 80]
+    subviewer		    74
+    ssIdNumber		    26
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    80
+    position		    [203.0248 577.7929 7]
+    chart		    74
+    linkNode		    [75 79 81]
+    subviewer		    74
+    ssIdNumber		    30
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    81
+    position		    [203.0248 642.6679 7]
+    chart		    74
+    linkNode		    [75 80 82]
+    subviewer		    74
+    ssIdNumber		    34
+    type		    CONNECTIVE_JUNCTION
+  }
+  junction {
+    id			    82
+    position		    [203.0248 711.5448 7]
+    chart		    74
+    linkNode		    [75 81 0]
+    subviewer		    74
+    ssIdNumber		    39
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    83
+    labelString		    "{VACC_MachineLowReq_flg=FALSE;\nVACC_MachineHighReq_flg=FALSE;\nVACC_InverterLowReq_flg=FALSE;\nVACC_InverterHighReq_flg=FALSE;\nVACC_EFanHighSpeedReq_flg=FALSE;\nVACC_EFanLowSpeedReq_flg=FALSE;}"
+    labelPosition	    [542.406 78.986 180.192 78.15]
+    fontSize		    10
+    src {
+      intersection	      [0 0 1 0 523.6342 58.6941 0 0]
+    }
+    dst {
+      id		      75
+      intersection	      [1 0 -1 0.5017 523.6342 168.1657 0 0]
+    }
+    midPoint		    [523.6342 111.549]
+    chart		    74
+    linkNode		    [74 0 0]
+    dataLimits		    [523.634 523.634 58.694 160.166]
+    subviewer		    74
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    17
+  }
+  transition {
+    id			    84
+    labelString		    "[VINP_TMMotorTemp_C<KACC_LowFanOffMachSetpt_C]{VACC_MachineLowReq_flg=FALSE;}"
+    labelPosition	    [240.65 257.918 421.358 14.54]
+    fontSize		    10
+    src {
+      id		      76
+      intersection	      [0 -0.7672 0.6414 -1 197.7142 255.6577 0 0]
+    }
+    dst {
+      id		      77
+      intersection	      [0 -0.7672 -0.6414 -1 197.7142 338.9281 0 0]
+    }
+    midPoint		    [171.9055 297.1257]
+    chart		    74
+    linkNode		    [75 86 85]
+    dataLimits		    [171.938 197.714 255.658 333.797]
+    stampAngle		    0.8745
+    subviewer		    74
+    drawStyle		    SMART
+    slide {
+      sticky		      SRC_STICK
+    }
+    executionOrder	    2
+    ssIdNumber		    19
+  }
+  transition {
+    id			    85
+    labelPosition	    [203.085 300.515 7.28 14.54]
+    fontSize		    10
+    src {
+      id		      76
+      intersection	      [0 -0 1 -1 203.0846 258.1679 0 0]
+    }
+    dst {
+      id		      77
+      intersection	      [0 0 -1 -1 203.0846 336.4179 0 0]
+    }
+    midPoint		    [203.0846 294.7333]
+    chart		    74
+    linkNode		    [75 84 88]
+    dataLimits		    [203.085 203.085 258.168 328.418]
+    subviewer		    74
+    drawStyle		    SMART
+    executionOrder	    3
+    ssIdNumber		    20
+  }
+  transition {
+    id			    86
+    labelString		    "[VINP_TMMotorTemp_C>KACC_LowFanOnMachSetpt_C]{VACC_MachineLowReq_flg=TRUE;}"
+    labelPosition	    [243.525 283.043 413.167 14.54]
+    fontSize		    10
+    src {
+      id		      76
+      intersection	      [0 0.8917 0.4527 -1 209.3265 254.3368 0 0]
+    }
+    dst {
+      id		      77
+      intersection	      [0 0.8917 -0.4527 -1 209.3265 340.249 0 0]
+    }
+    midPoint		    [241.7679 297.0511]
+    chart		    74
+    linkNode		    [75 99 84]
+    dataLimits		    [209.327 241.744 254.337 336.627]
+    stampAngle		    -1.101
+    subviewer		    74
+    drawStyle		    SMART
+    slide {
+      sticky		      SRC_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    21
+  }
+  transition {
+    id			    87
+    labelString		    "[VINP_TMMotorTemp_C>KACC_HighFanOnMachSetpt_C]{VACC_MachineHighReq_flg=TRUE;}"
+    labelPosition	    [244.4 373.418 411.347 14.54]
+    fontSize		    10
+    src {
+      id		      77
+      intersection	      [0 0.7629 0.6465 -1 208.4249 347.9434 0 0]
+    }
+    dst {
+      id		      78
+      intersection	      [0 0.774 -0.6332 -1 207.6928 433.1105 0 0]
+    }
+    midPoint		    [234.209 390.8758]
+    chart		    74
+    linkNode		    [75 88 89]
+    dataLimits		    [208.425 234.196 347.943 428.045]
+    stampAngle		    -0.8765
+    subviewer		    74
+    drawStyle		    SMART
+    slide {
+      sticky		      SRC_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    23
+  }
+  transition {
+    id			    88
+    labelString		    "[VINP_TMMotorTemp_C<KACC_HighFanOffMachSetpt_C]{VACC_MachineHighReq_flg=FALSE;}"
+    labelPosition	    [243.65 346.418 419.537 14.54]
+    fontSize		    10
+    src {
+      id		      77
+      intersection	      [0 -0.8102 0.5861 -1 197.4132 347.5206 0 0]
+    }
+    dst {
+      id		      78
+      intersection	      [0 -0.8 -0.6 -1 196.6748 433.3429 0 0]
+    }
+    midPoint		    [169.166 390.3983]
+    chart		    74
+    linkNode		    [75 85 87]
+    dataLimits		    [169.21 197.413 347.521 428.543]
+    stampAngle		    0.9359
+    subviewer		    74
+    drawStyle		    SMART
+    slide {
+      sticky		      SRC_STICK
+    }
+    executionOrder	    2
+    ssIdNumber		    24
+  }
+  transition {
+    id			    89
+    labelPosition	    [202.651 393.906 7.28 14.54]
+    fontSize		    10
+    src {
+      id		      77
+      intersection	      [0 -0.0086 1 -1 203.0244 350.4179 0 0]
+    }
+    dst {
+      id		      78
+      intersection	      [0 0.0086 -1 -1 202.335 430.5429 0 0]
+    }
+    midPoint		    [202.7014 387.9617]
+    chart		    74
+    linkNode		    [75 87 90]
+    dataLimits		    [202.404 203.024 350.418 422.543]
+    subviewer		    74
+    drawStyle		    SMART
+    executionOrder	    3
+    ssIdNumber		    25
+  }
+  transition {
+    id			    90
+    labelString		    "[VINP_TMInverterTemp_C>KACC_LowFanOnHWSetpt_C]{VACC_InverterLowReq_flg=TRUE;}"
+    labelPosition	    [248.9 467.918 411.347 14.54]
+    fontSize		    10
+    src {
+      id		      78
+      intersection	      [0 0.8889 0.458 -1 208.4971 440.7489 0 0]
+    }
+    dst {
+      id		      79
+      intersection	      [0 0.8805 -0.4741 -1 209.1883 516.7242 0 0]
+    }
+    midPoint		    [237.6929 477.4982]
+    chart		    74
+    linkNode		    [75 89 91]
+    dataLimits		    [208.497 237.653 440.749 512.931]
+    stampAngle		    -1.086
+    subviewer		    74
+    drawStyle		    SMART
+    slide {
+      sticky		      SRC_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    27
+  }
+  transition {
+    id			    91
+    labelString		    "[VINP_TMInverterTemp_C<KACC_LowFanOffHWSetpt_C]{VACC_InverterLowReq_flg=FALSE;}"
+    labelPosition	    [243.65 440.168 419.537 14.54]
+    fontSize		    10
+    src {
+      id		      78
+      intersection	      [0 -0.8545 0.5195 -1 196.2933 441.1794 0 0]
+    }
+    dst {
+      id		      79
+      intersection	      [0 -0.8638 -0.5039 -1 196.9782 516.5156 0 0]
+    }
+    midPoint		    [169.3813 478.898]
+    chart		    74
+    linkNode		    [75 90 92]
+    dataLimits		    [169.411 196.293 441.179 512.484]
+    stampAngle		    1.0336
+    subviewer		    74
+    drawStyle		    SMART
+    slide {
+      sticky		      SRC_STICK
+    }
+    executionOrder	    2
+    ssIdNumber		    28
+  }
+  transition {
+    id			    92
+    labelPosition	    [202.67 480.955 7.28 14.54]
+    fontSize		    10
+    src {
+      id		      78
+      intersection	      [0 0.0091 1 -1 202.3385 444.5429 0 0]
+    }
+    dst {
+      id		      79
+      intersection	      [0 -0.0091 -1 -1 202.9611 513.0429 0 0]
+    }
+    midPoint		    [202.6246 476.0215]
+    chart		    74
+    linkNode		    [75 91 94]
+    dataLimits		    [202.339 202.888 444.543 505.043]
+    subviewer		    74
+    drawStyle		    SMART
+    executionOrder	    3
+    ssIdNumber		    29
+  }
+  transition {
+    id			    93
+    labelString		    "[VINP_TMInverterTemp_C>KACC_HighFanOnHWSetpt_C]{VACC_InverterHighReq_flg=TRUE;}"
+    labelPosition	    [245.9 550.418 409.527 14.54]
+    fontSize		    10
+    src {
+      id		      79
+      intersection	      [0 0.9899 -0.1414 -1 209.9541 519.0531 0 0]
+    }
+    dst {
+      id		      80
+      intersection	      [0 0.9899 0.1414 -1 209.9541 578.7827 0 0]
+    }
+    midPoint		    [241.3953 548.6795]
+    chart		    74
+    linkNode		    [75 94 95]
+    dataLimits		    [209.954 241.381 518.97 579.914]
+    stampAngle		    -1.7127
+    subviewer		    74
+    drawStyle		    SMART
+    slide {
+      sticky		      SRC_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    31
+  }
+  transition {
+    id			    94
+    labelString		    "[VINP_TMInverterTemp_C<KACC_HighFanOffHWSetpt_C]{VACC_InverterHighReq_flg=FALSE;}"
+    labelPosition	    [244.525 519.293 417.717 14.54]
+    fontSize		    10
+    src {
+      id		      79
+      intersection	      [0 -0.9417 -0.3363 -1 196.4329 517.6888 0 0]
+    }
+    dst {
+      id		      80
+      intersection	      [0 -0.9417 0.3363 -1 196.4329 580.147 0 0]
+    }
+    midPoint		    [161.6359 552.0365]
+    chart		    74
+    linkNode		    [75 92 93]
+    dataLimits		    [161.62 196.433 517.129 583.235]
+    stampAngle		    1.9138
+    subviewer		    74
+    drawStyle		    SMART
+    slide {
+      sticky		      SRC_STICK
+    }
+    executionOrder	    2
+    ssIdNumber		    32
+  }
+  transition {
+    id			    95
+    labelPosition	    [203.025 548.39 7.28 14.54]
+    fontSize		    10
+    src {
+      id		      79
+      intersection	      [0 0 1 -1 203.0248 527.0429 0 0]
+    }
+    dst {
+      id		      80
+      intersection	      [0 0 -1 -1 203.0248 570.7929 0 0]
+    }
+    midPoint		    [203.0248 545.6083]
+    chart		    74
+    linkNode		    [75 93 96]
+    dataLimits		    [203.025 203.025 527.043 562.793]
+    subviewer		    74
+    drawStyle		    SMART
+    executionOrder	    3
+    ssIdNumber		    33
+  }
+  transition {
+    id			    96
+    labelString		    "{VACC_EFanHighSpeedReq_flg=VACC_InverterHighReq_flg ||  VACC_MachineHighReq_flg || VINP_AirCondReq_flg;\nVACC_EFanLowSpeedReq_flg=VACC_InverterLowReq_flg || VACC_MachineLowReq_flg;}"
+    labelPosition	    [225.635 599.418 506.903 27.262]
+    fontSize		    10
+    src {
+      id		      80
+      intersection	      [0 0 1 -1 203.0248 584.7929 0 0]
+    }
+    dst {
+      id		      81
+      intersection	      [0 0 -1 -1 203.0248 635.6679 0 0]
+    }
+    midPoint		    [203.0248 607.0757]
+    chart		    74
+    linkNode		    [75 95 97]
+    dataLimits		    [203.025 203.025 584.793 627.668]
+    subviewer		    74
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    35
+  }
+  transition {
+    id			    97
+    labelString		    "{VACC_EFanLowSpeedReq_flg= (!VACC_EFanHighSpeedReq_flg) && VACC_EFanLowSpeedReq_flg;}"
+    labelPosition	    [224.646 666.677 455.94 14.54]
+    fontSize		    10
+    src {
+      id		      81
+      intersection	      [0 0 1 -1 203.0248 649.6679 0 0]
+    }
+    dst {
+      id		      82
+      intersection	      [0 0 -1 -1 203.0248 704.5448 0 0]
+    }
+    midPoint		    [203.0248 674.0386]
+    chart		    74
+    linkNode		    [75 96 0]
+    dataLimits		    [203.025 203.025 649.668 696.545]
+    subviewer		    74
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    40
+  }
+  transition {
+    id			    98
+    labelPosition	    [189.623 221.001 7.28 14.54]
+    fontSize		    10
+    src {
+      intersection	      [0 -0.0375 0.9993 0 204.4732 214.1939 0 0]
+    }
+    dst {
+      id		      76
+      intersection	      [0 0.0375 -0.9993 -1 203.3473 244.1728 0 0]
+    }
+    midPoint		    [204.0916 224.3554]
+    chart		    74
+    linkNode		    [75 0 99]
+    dataLimits		    [203.647 204.473 214.194 236.178]
+    subviewer		    74
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    44
+  }
+  transition {
+    id			    99
+    labelPosition	    [129.284 251.168 7.28 14.54]
+    fontSize		    10
+    src {
+      id		      75
+      intersection	      [4 1 0 0.852 41.3449 251.1679 0 0]
+    }
+    dst {
+      id		      76
+      intersection	      [0 -1 0 -1 196.0846 251.1679 0 0]
+    }
+    midPoint		    [117.818 251.1679]
+    chart		    74
+    linkNode		    [75 98 86]
+    dataLimits		    [41.345 188.085 251.168 251.168]
+    stampAngle		    NaN
+    subviewer		    74
+    drawStyle		    SMART
+    slide {
+      sticky		      DST_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    45
+  }
+  data {
+    id			    100
+    ssIdNumber		    1
+    name		    "VINP_TMMotorTemp_C"
+    linkNode		    [74 0 101]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    101
+    ssIdNumber		    3
+    name		    "VINP_TMInverterTemp_C"
+    linkNode		    [74 100 102]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    102
+    ssIdNumber		    46
+    name		    "VINP_AirCondReq_flg"
+    linkNode		    [74 101 103]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    103
+    ssIdNumber		    4
+    name		    "KACC_LowFanOnMachSetpt_C"
+    linkNode		    [74 102 104]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    104
+    ssIdNumber		    5
+    name		    "KACC_LowFanOffMachSetpt_C"
+    linkNode		    [74 103 105]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    105
+    ssIdNumber		    6
+    name		    "KACC_HighFanOnMachSetpt_C"
+    linkNode		    [74 104 106]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    106
+    ssIdNumber		    7
+    name		    "KACC_HighFanOffMachSetpt_C"
+    linkNode		    [74 105 107]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    107
+    ssIdNumber		    8
+    name		    "KACC_LowFanOnHWSetpt_C"
+    linkNode		    [74 106 108]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    108
+    ssIdNumber		    9
+    name		    "KACC_LowFanOffHWSetpt_C"
+    linkNode		    [74 107 109]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    109
+    ssIdNumber		    10
+    name		    "KACC_HighFanOnHWSetpt_C"
+    linkNode		    [74 108 110]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    110
+    ssIdNumber		    11
+    name		    "KACC_HighFanOffHWSetpt_C"
+    linkNode		    [74 109 111]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    111
+    ssIdNumber		    12
+    name		    "VACC_MachineLowReq_flg"
+    linkNode		    [74 110 112]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    112
+    ssIdNumber		    14
+    name		    "VACC_InverterLowReq_flg"
+    linkNode		    [74 111 113]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    113
+    ssIdNumber		    13
+    name		    "VACC_MachineHighReq_flg"
+    linkNode		    [74 112 114]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    114
+    ssIdNumber		    15
+    name		    "VACC_InverterHighReq_flg"
+    linkNode		    [74 113 115]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    115
+    ssIdNumber		    36
+    name		    "VACC_EFanLowSpeedReq_flg"
+    linkNode		    [74 114 116]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    116
+    ssIdNumber		    38
+    name		    "VACC_EFanHighSpeedReq_flg"
+    linkNode		    [74 115 117]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    117
+    ssIdNumber		    41
+    name		    "TRUE"
+    linkNode		    [74 116 118]
+    scope		    PARAMETER_DATA
+    initFromWorkspace	    1
+    paramIndexForInitFromWorkspace 1
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    118
+    ssIdNumber		    42
+    name		    "FALSE"
+    linkNode		    [74 117 0]
+    scope		    PARAMETER_DATA
+    initFromWorkspace	    1
+    machine		    1
+    props {
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "boolean"
+  }
+  instance {
+    id			    119
+    name		    "ACC/CoolingFanSubsystem/EfanEnableControl/EfanEnableControlChart"
+    machine		    1
+    chart		    74
+  }
+  target {
+    id			    120
+    name		    "sfun"
+    description		    "Default Simulink S-Function Target."
+    machine		    1
+    linkNode		    [1 0 121]
+  }
+  target {
+    id			    121
+    name		    "rtw"
+    codeFlags		    " comments=1 statebitsets=1 databitsets=1 emitlogicalops=1 elseifdetection=1 constantfolding=1 redundantloadelimination=0 preservenames=0 preservenameswithparent=0 exportcharts=0"
+    machine		    1
+    linkNode		    [1 120 0]
+  }
+}
