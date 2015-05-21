@@ -58,6 +58,8 @@ if ~isempty(pattern)
     newbt.RoutineType = 'value_only';
     sam = newbt.CreateRoutineMacro; % new default block macro
     console.AddMacro(sam);
+    % backup newly added objects
+    console.Newer = [console.Newer; newbt];
 end
 end
 

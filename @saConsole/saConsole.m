@@ -13,6 +13,8 @@ classdef saConsole < handle
         SessionPara % always renewed on each run
         
         PromptBuffer = struct
+        
+        Newer
     end
     
     methods

@@ -7,6 +7,7 @@ sepidx = strfind(p, filesep);
 regfolder = [p(1:sepidx(end-1)), '_BlockRegistration'];
 fs = what(regfolder);
 regfs = [fs.m, fs.p];
+regfs_mat = fs.mat;
 regfs = regexprep(regfs, '\.(m|p)$','');
 cd(regfolder);
 
@@ -33,6 +34,21 @@ for i=1:numel(regfs)
         end
     end
 end
+% append block types stored in .mat file, 'Newer' variable
+for i=1:numel(regfs_mat)
+    matbts = whos('-file',regfs_mat{i},'newer');
+    if ~isempty(matbts)
+        load(regfs_mat{i}, 'newer');
+        regobjs = newer;
+        for k=1:numel(regobjs)
+            if ~isempty(regobjs(k).MapKey)
+                regobjs(k).Console = obj;
+                regmap(regobjs(k).MapKey) = regobjs(k);
+            end
+        end
+    end
+end
+
 obj.BlockMap = regmap;
 % create routine macros
 routinemacros = [];
