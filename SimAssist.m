@@ -182,12 +182,12 @@ function SimAssist_CloseRequestFcn(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: delete(hObject) closes the figure
-% if ~isempty(handles.Console.Newer)
-%     sapath = fileparts(mfilename('fullpath'));
-%     buffile = fullfile(sapath, ['_BlockRegistration\regblock_custom', datestr(now, 'yyyymmddHHMMSS')]);
-%     newer = handles.Console.Newer;
-%     save(buffile, 'newer');
-% end
+if ~isempty(handles.Console.Newer)
+    sapath = fileparts(mfilename('fullpath'));
+    buffile = fullfile(sapath, ['_BlockRegistration\regblock_custom', datestr(now, 'yyyymmddHHMMSS')]);
+    newer = handles.Console.Newer;
+    save(buffile, 'newer');
+end
 
 SAVEONCLOSE = false;
 if isfield(handles, 'Console') && SAVEONCLOSE
