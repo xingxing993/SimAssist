@@ -4,6 +4,7 @@ function sam = regmacro_adder_datastore
 
 sam = saMacro('adder_datastore');
 sam.Pattern = '^ds(w|r|m)';
+sam.PromptMethod = {'dsm','dsr','dsw'};
 sam.Callback = @adder_datastore;
 
 end
