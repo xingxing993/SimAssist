@@ -6,12 +6,14 @@ sabt = saBlock('BusAssignment');
 sabt.RoutineType = 'value_num';
 sabt.RoutinePattern = '^busassignment';
 
+sabt.PropagateUpstreamStringMethod = @propagate_upstream;
+sabt.PropagateDownstreamStringMethod = @propagate_downstream;
 sabt.InportStringMethod = @inport_string_busassignement;
 
 end
 
 
-function thestr = inport_string_busassignement(pthdl)
+function thestr = inport_string_busassignement(pthdl, appdata)
 ptnum = get_param(pthdl, 'PortNumber');
 parblk = get_param(pthdl, 'Parent');
 pttyp = get_param(pthdl, 'PortType');
@@ -19,6 +21,32 @@ sigs=regexp(get_param(parblk,'AssignedSignals'),',','split');
 if ptnum>1
     thestr=sigs{ptnum-1};
 else
-    thestr = get_param(parblk,'Name');
+    pts = get_param(parblk, 'PortHandles');
+    thestr = appdata.Console.GetDownstreamString(pts.Outport(1));
+end
+end
+
+
+function actrec = propagate_upstream(blkhdl, instr)
+actrec = saRecorder;
+sigstr = '';
+sigs=regexp(get_param(blkhdl,'AssignedSignals'),',','split');
+for i=2:numel(instr)
+    if ~isempty(instr{i})
+        sigs{i-1} = instr{i};
+    end
+end
+sigstr = sprintf('%s,',sigs{:}); sigstr(end)='';
+actrec.SetParam(blkhdl, 'AssignedSignals', sigstr);
+end
+
+function actrec = propagate_downstream(blkhdl)
+actrec = saRecorder;
+bussigs = saBusTraceForward(blkhdl);
+if numel(bussigs)<1
+    return;
+else
+    sigstr = sprintf('%s,',bussigs{:}); sigstr(end)='';
+    actrec.SetParam(blkhdl, 'AssignedSignals', sigstr);
 end
 end
