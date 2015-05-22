@@ -6,7 +6,7 @@ sabt = saBlock('BusSelector');
 
 sabt.OutportStringMethod = @getportstring_busselector; % pass through the 3rd inport
 sabt.PropagateDownstreamStringMethod = @propagate_downstream_busselector;
-sabt.PropagateUpstreamStringMethod = @propagate_downstream_busselector;
+sabt.PropagateUpstreamStringMethod = @(blkhdl)operator_plus(blkhdl, '+'); % equivalent to '++'
 
 sabt.BlockSize = [5, 70];
 
