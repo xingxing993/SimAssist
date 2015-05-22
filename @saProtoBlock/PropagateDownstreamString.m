@@ -16,10 +16,12 @@ end
 
 if isa(down_prpg_method, 'function_handle')
     nn = nargout(down_prpg_method);
+    ni = nargin(down_prpg_method);
+    argsin = {blkhdl, blkostr};
     if nn~=0 %if mandatory output exist, must be saRecorder
-        actrec.Merge(down_prpg_method(blkhdl, blkostr));
+        actrec.Merge(down_prpg_method(argsin{1:ni}));
     else
-        down_prpg_method(blkhdl, blkostr);
+        down_prpg_method(argsin{1:ni});
     end
 elseif isstr(down_prpg_method) && ~isempty(blkostr)
     if iscell(blkostr)
