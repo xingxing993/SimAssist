@@ -15,6 +15,6 @@ optstr = regexprep(cmdstr, '^(dt|datatype)\s*', '', 'once');
 optstr = regexprep(optstr, '(sgl|dbl|bool|u8|u16|u32|i8|i16|i32)', '${saStandardDataTypeStr($1)}', 'once');
 optstr2 = saStandardDataTypeStr(optstr);
 console.SessionPara.ExplicitDataType = optstr2; % renew global options
-actrec + btobj.RunRoutine(optstr);
+actrec + btobj.RunRoutine(optstr2);
 success = true;
 end

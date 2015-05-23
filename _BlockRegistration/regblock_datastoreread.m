@@ -15,6 +15,8 @@ sabt.DictRenameMethod = 1; % use major property
 
 sabt.PropagateDownstreamStringMethod = 'DataStoreName';
 sabt.OutportStringMethod = 'DataStoreName';
+sabt.RefineMethod = @refine_method;
+
 
 sabt.BlockSize = [100, 30];
 sabt.LayoutSize.CharWidth = 6;
@@ -22,4 +24,11 @@ sabt.LayoutSize.CharWidth = 6;
 sabt.AutoSizeMethod = -2; % leftwards expand to show string
 
 sabt.GetBroMethod = @saFindBroBlocks;
+end
+
+
+function actrec = refine_method(blkhdl)
+actrec = saRecorder;
+nam = get_param(blkhdl, 'DataStoreName');
+actrec.SetParam(blkhdl, 'Name', [nam, '_DSRead']);
 end
