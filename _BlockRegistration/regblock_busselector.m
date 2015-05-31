@@ -168,7 +168,11 @@ oldnamestr=get_param(blkhdl,'OutputSignals');
 newnames=regexp(oldnamestr,',','split');
 sigoutstrs=cellstr(sigoutstrs);
 for kk=1:numel(sigoutstrs)
-    tmpname=newnames{kk};
+    if numel(newnames)<kk
+        tmpname = 'tmp';
+    else
+        tmpname=newnames{kk};
+    end
     nameparts=regexp(tmpname,'\.','split'); %split
     if ~isempty(sigoutstrs{kk})
         nameparts{end}=sigoutstrs{kk};
