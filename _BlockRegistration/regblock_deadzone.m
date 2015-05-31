@@ -7,7 +7,7 @@ sabt = saBlock('DeadZone');
 sabt.RoutineType = 'multiprop';
 sabt.RoutinePattern = '^(dzone|dz|deadzone)';
 
-sabt.MajorProperty = {'UpperValue','_Hi'; 'LowerValue', '_Lo'};
+sabt.MajorProperty = {'LowerValue', '_Lb';'UpperValue','_Ub'};
 sabt.DictRenameMethod = {'UpperValue','LowerValue'};
 
 sabt.PropagateUpstreamStringMethod = @set_string;
