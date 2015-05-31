@@ -154,7 +154,7 @@ if iscell(poss)
 else
     posmat = poss;
 end
-boundary = [min(posmat(:,1:2)), max(posmat(:,3:4))];
+boundary = [min(posmat(:,1:2), [], 1), max(posmat(:,3:4), [], 1)];
 %inport
 if iptnum>0
     pos1 = [boundary(1), boundary(4)+50]; % default first inport position
