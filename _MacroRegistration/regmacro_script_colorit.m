@@ -18,7 +18,7 @@ else
     bg = false;
 end
 optstr=strtrim(regexprep(cmdstr,'^b?color\s*','','once'));
-if ismember(optstr, {'rand', 'random', 'same', 'uniform'})
+if ismember(optstr, {'same','=', '=='})
     optstr = mat2str(rand(1,3));
 end
 tgtblks = saFindSystem(rtsys, 'block');
