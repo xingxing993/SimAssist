@@ -77,7 +77,7 @@ blkpos([2,4]) = max(blkpos([2,4])+yofs, 0);
 set_param(blkhdl, 'Position', blkpos);%adjust block position to align the inport with the line
 newlnpos(end,1) = iptpos(1); % extend X to inport
 newlnhdl = actrec.AddLine(parsys, newlnpos);
-set_param(newlnhdl, 'Name', lnname);
+actrec.SetParam(newlnhdl, 'Name', lnname);
 % add outgoing line
 optpos  = get_param(pthdls.Outport(cnntport(2)), 'Position');
 ln2pos(1,:) = ceil((ln2pos(1,:)+ln2pos(2,:))/2); %shrink the starting line
