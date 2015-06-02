@@ -20,7 +20,7 @@ catch
             unlock_library(obj.Handle);
         case {'Simulink:SL_LookupMismatchedParams','Simulink:SL_RowMismatch'}
             act = 'ignore';
-        case 'Simulink:SL_BlkParamEvalErr'
+        case {'Simulink:SL_BlkParamEvalErr','Simulink:blocks:BusSelectorCantChangeSignalLabel'}
             act = 'ignore';
         otherwise
     end

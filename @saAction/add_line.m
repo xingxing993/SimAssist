@@ -11,7 +11,9 @@ if size(varargin{1}, 2)==2 %given points format
     if numel(varargin)>1
         name = varargin{2};
     end
-    set_param(lnhdl,'Name',name);
+    try % in cases for blocks that outport line cannot be renamed like BusSelector, etc.
+        set_param(lnhdl,'Name',name);
+    end
 else
     [pt1,pt2] = deal(varargin{1:2});
     lnhdl=add_line(sys,pt1,pt2,'autorouting','on');
@@ -19,7 +21,9 @@ else
     if numel(varargin)>2
         name = varargin{3};
     end
-    set_param(lnhdl,'Name',name);
+    try % in cases for blocks that outport line cannot be renamed like BusSelector, etc.
+        set_param(lnhdl,'Name',name);
+    end
 end
 obj.Property = {'Name',name};
 obj.Data.System = sys;
