@@ -25,7 +25,12 @@ end
 blks=saFindSystem(gcs, 'block');
 for i=1:numel(blks)
     btobj = console.MapTo(blks(i));
-    actrec = btobj.SetProperty(blks(i), opt, nthprop);
+    if strcmp(btobj.MapKey, '#NO_MATCH#')
+        dlgparas = fieldnames(get_param(blks(i), 'DialogParameters'));
+        actrec.SetParam(blks(i), dlgparas{min(end, nthprop)}, opt);
+    else
+        actrec = btobj.SetProperty(blks(i), opt, nthprop);
+    end
 end
 success = true;
 end
