@@ -798,6 +798,11 @@ else
             actrec.Merge(sabt.DictRename(objs(i)));
         end
     end
+    lns = saFindSystem(gcs,'line');
+    saln = handles.Console.MapTo('line');
+    for i=1:numel(lns)
+        actrec.Merge(saln.DictRename(lns(i)));
+    end
 end
 savehistory(handles,actrec);
 end

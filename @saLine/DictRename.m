@@ -1,7 +1,7 @@
 function actrec = DictRename(obj, blkhdl)
 %
 actrec = saRecorder;
-nam=get_param(objs(i),'Name');
+nam=get_param(blkhdl,'Name');
 newnam=saDictRenameString(nam,obj.Dictionary);
-actrec.SetParam(objs(i), 'Name', newnam);
+actrec.SetParam(blkhdl, 'Name', newnam);
 end

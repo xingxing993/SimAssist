@@ -12,6 +12,10 @@ classdef saLine < saObject
         
     end
     
+    properties (Constant)
+        Dictionary = SACFG_DICTIONARY;
+    end
+    
     methods
         function obj = saLine(varargin)
             obj = obj@saObject('line');
