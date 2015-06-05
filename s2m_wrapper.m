@@ -10,7 +10,9 @@ end
 if nargin<3 || isempty(flink_flg)
     flink_flg = false;
 end
+bkcs = gcs;
 load_system('MotoHawk_lib');
+load_system(bkcs);
 rtsys = gcs;
 typespec = strrep(typespec, 'all', 'pl, i1, i2, 1d, 2d, cal, probe');
 typespec = strrep(typespec, 'table', '1d, 2d');

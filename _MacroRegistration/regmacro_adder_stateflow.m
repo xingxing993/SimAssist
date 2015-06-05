@@ -53,7 +53,9 @@ end
 % add stateflow block
 rtsys = gcs;
 if ~bdIsLoaded('sflib')
+    bkcs = gcs;
     load_system('sflib');
+    load_system(bkcs);
     open_system(rtsys); % restore current system
 end
 %

@@ -10,7 +10,9 @@ end
 
 function [actrec, success] =replace_latchon(cmdstr, console)
 actrec=saRecorder;success = false;
+bkcs = gcs;
 load_system('legionlib');
+load_system(bkcs);
 actrec.ReplaceBlock(gcbh, sprintf('legionlib/Signals/S-R\nFlip-Flop'));
 success = true;
 end

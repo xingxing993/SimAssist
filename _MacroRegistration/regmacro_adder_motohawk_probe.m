@@ -13,7 +13,9 @@ function [actrec, success] = adder_motohawk_probe(cmdstr, console)
 actrec=saRecorder;success = false;
 rtsys = gcs;
 if ~bdIsLoaded('MotoHawk_lib')
+    bkcs = gcs;
     load_system('MotoHawk_lib');
+    load_system(bkcs);
     open_system(rtsys); % restore current system
 end
 btobj = console.MapTo('MotoHawk Probe');
