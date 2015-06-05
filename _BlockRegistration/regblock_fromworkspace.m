@@ -4,8 +4,17 @@ function sabt = regblock_fromworkspace
 
 sabt = saBlock('FromWorkspace');
 
+sabt.RoutineType = 'value_num';
+sabt.RoutinePattern = '^(fromws|fromworkspace)';
+sabt.RoutinePriority = 15;
+
+sabt.BroBlockType = {'ToWorkspace'};
+sabt.CreateBroBlockMethod = -1;
+sabt.ConnectPort = [0, 1];
+
 sabt.MajorProperty = 'VariableName';
 sabt.DictRenameMethod = 1; % use major property
+sabt.BlockSize = [70, 20];
 
 sabt.PropagateDownstreamStringMethod = 'VariableName';
 sabt.OutportStringMethod = 'VariableName';
