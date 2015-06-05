@@ -8,7 +8,7 @@ classdef saProtoBlock < saObject
         %
         RoutineType = ''; % value_only/value_num/multiprop/dynamicinport... see @RunRoutine
         RoutinePattern
-        RoutinePriority = 50;
+        RoutinePriority = 20;
         RoutinePara
         % 
         MajorProperty % string or cell of strings with 2 column {Prop, StringAdaptMethod}

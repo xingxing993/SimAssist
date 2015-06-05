@@ -22,7 +22,7 @@ switch obj.RoutineType
     otherwise
         sam.Callback = [];
 end
-sam.Priority = 20; %promote priority
+sam.Priority = obj.RoutinePriority; %promote priority
 end
 
 function [actrec, success] = block_routine_nooptstr(cmdstr, pattern, btobj)
