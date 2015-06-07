@@ -1,36 +1,27 @@
-function varargout = saParseOptionStr(opttype, optstr, varargin)
-switch opttype
-    case 'value_only'
-        [varargout{1:nargout}] = parsetype_value_only(optstr);
-    case 'value_num'
-        [varargout{1:nargout}] = parsetype_value_num(optstr);
-    case 'values'
-        varargout{1} = parsetype_multiprop(optstr);
-    otherwise
-        varargout = varargin;
-end
-end
-
-%%
-function [val, num] = parsetype_value_num(optstr)
-valpattern = '[a-zA-Z]\w*';
-val = regexp(optstr, valpattern, 'match','once');
-numstr = strtrim(regexprep(optstr, valpattern, '', 'once'));
+function varargout = saParseOptionStr(optstr, varargin)
+optstr = strtrim(optstr);
+% extract value expression string
+valpattern = '[a-zA-Z_]\w*';
+alphastr = regexp(optstr, valpattern, 'match','once');
+% extract numeric value
+reststr = strtrim(regexprep(optstr, valpattern, '', 'once'));
+numpattern = '[-+]?\d+[.]?\d*([eE][-+]?\d+)?';
+numstr = regexp(reststr, numpattern, 'match','once');
 if isempty(numstr)
     num=[];
 else
     num=str2double(numstr);
 end
-end
+% split segments pattern
+segs = regexp(optstr, '\s+|,', 'split');
+segs = segs(~cellfun('isempty',segs));
 
-%%
-function [val,num] = parsetype_value_only(optstr)
-val = strtrim(optstr);
-num=[];
-end
+% output
+varargout{1} = struct(...
+    'RawStr', optstr,...
+    'ValueStr', alphastr,...
+    'Num', num,...
+    'NumStr', numstr,...
+    'Segments', {segs});
 
-%%
-function cvals = parsetype_multiprop(optstr)
-cvals = regexp(optstr, '\s+|,', 'split');
-cvals = cvals(~cellfun('isempty',cvals));
 end
