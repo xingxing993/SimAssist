@@ -4,6 +4,9 @@ function sabt = regblock_math
 
 sabt = saBlock('Math');
 
+sabt.RoutineType = 'value_num';
+sabt.RoutinePattern = '^math';
+
 sabt.MajorProperty = 'Operator';
 sabt.RollPropertyMethod = -1;
 end
