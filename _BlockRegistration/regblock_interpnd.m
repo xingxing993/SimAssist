@@ -4,7 +4,7 @@ function sabt = regblock_interpnd
 
 sabt = saBlock('Interpolation_n-D');
 
-sabt.ConnectPort = [0, 0];
+sabt.ConnectPort = [0, 1];
 
 sabt.MajorProperty = 'Table';
 sabt.DictRenameMethod = {'Table'};
