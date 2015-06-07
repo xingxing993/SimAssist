@@ -10,7 +10,7 @@ classdef saConsole < handle
         Macros
         
         RunOption % if not specified, keep last value
-        SessionPara % always renewed on each run
+        SessionPara = struct % always renewed on each run
         
         PromptBuffer = struct
         

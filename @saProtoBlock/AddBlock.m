@@ -43,6 +43,7 @@ if isempty(argnumeric)
 elseif numel(argnumeric)==1
     if numel(argnumeric{1})==4 % given [L T R B] form 
         pos = argnumeric{1};
+        blksize = pos(3:4)-pos(1:2);
     else % given only size [W, H]
         xy0 = saGetMousePosition;
         blksize = argnumeric{1};
@@ -53,6 +54,16 @@ else
     blksize = argnumeric{2};
     pos = [xy0, xy0+blksize];
 end
+
+% in case of multi-execution, add offset
+if ~isempty(obj.Console) && isfield(obj.Console.SessionPara, 'IndexOfMulti')
+    imulti = obj.Console.SessionPara.IndexOfMulti;
+else
+    imulti = 1;
+end
+offset = (imulti-1)*[0, (blksize(2)+obj.LayoutSize.VerticalMargin)];
+pos = pos + [offset, offset];
+
 
 argfh = argnstr(cellfun(@(c)isa(c, 'function_handle'), argnstr));
 if isempty(argfh)

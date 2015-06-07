@@ -57,17 +57,20 @@ if ~isempty(regtmp)
     cmdstr = regexprep(cmdstr, testpattern, '', 'once');
 end
 
-% >> test suffix with *N (refresh on every run)
-testpattern  = '\*\s*(\d+)$';
-regtmp = regexp(cmdstr, testpattern, 'tokens','once');
-if ~isempty(regtmp)
-    obj.SessionPara.MultiSuffix = str2double(regtmp{1});
-    cmdstr = regexprep(cmdstr, testpattern, '', 'once');
-end
-
 % >> test Inport/Outport side specification ([])
 cnnt_side = [true, true];
 [obj.SessionPara.ConnectSide, cmdstr] = determine_cnnt_side(cnnt_side, cmdstr);
+
+% >> test suffix with *N
+testpattern  = '\*\s*(\d+)$';
+regtmp = regexp(cmdstr, testpattern, 'tokens','once');
+if ~isempty(regtmp)
+    nmulti = str2double(regtmp{1});
+    obj.SessionPara.MultiSuffix = nmulti;
+    cmdstr = regexprep(cmdstr, testpattern, '', 'once');
+else
+    nmulti = 1;
+end
 
 % ###### PERSISTENT SESSION PARAMETER SHALL BE STORED INTO RUNOPTION #################
 flds = fieldnames(obj.RunOption);
@@ -79,18 +82,21 @@ end
 
 
 %% RUN
-if isempty(strtrim(cmdstr))
-    return;
-end
-submacros = obj.Macros.MatchPattern(cmdstr);
-if numel(submacros)>0
-    [actrec, success] = submacros.Run(cmdstr);
-else
-    success = false;
-end
-if ~success
-    [actrec, success] = obj.MapTo('Constant').RunRoutine(cmdstr);
-    return;
+for i=1:nmulti
+    obj.SessionPara.IndexOfMulti = i;
+    if isempty(strtrim(cmdstr))
+        return;
+    end
+    submacros = obj.Macros.MatchPattern(cmdstr);
+    if numel(submacros)>0
+        [actrec, success] = submacros.Run(cmdstr);
+    else
+        success = false;
+    end
+    if ~success
+        [actrec, success] = obj.MapTo('Constant').RunRoutine(cmdstr);
+        return;
+    end
 end
 end
 

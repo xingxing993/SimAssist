@@ -41,12 +41,7 @@ if nargin<2
     pvpair = {};
 end
 option = struct;
-if ~isempty(console) && isfield(console.SessionPara, 'MultiSuffix') %multi suffix takes priority
-    num = console.SessionPara.MultiSuffix;
-else
-    num=[];
-end
-actrec + routine_generic_add(btobj, num, pvpair, option);
+actrec + routine_generic_add(btobj, [], pvpair, option);
 success = true;
 end
 
@@ -79,11 +74,7 @@ else
     if ~isempty(remstr) % if optstr not all number characters
         success = false; return;
     end 
-    if ~isempty(console) && isfield(console.SessionPara, 'MultiSuffix')
-        actrec + btobj.AddBlockArray(console.SessionPara.MultiSuffix, pvpair{:}, inportprop, numipt);
-    else
-        actrec + btobj.AddBlock(pvpair{:}, inportprop, numipt);
-    end
+    actrec + btobj.AddBlock(pvpair{:}, inportprop, numipt);
     success = true;
 end
 end
@@ -115,12 +106,7 @@ else
     end
     option.PropagateString = false; % turn off propagate behaviour to avoid override
 end
-if ~isempty(console) && isfield(console.SessionPara, 'MultiSuffix') %multi suffix takes priority
-    num = console.SessionPara.MultiSuffix;
-else
-    num=[];
-end
-actrec + routine_generic_add(btobj, num, pvpair, option);
+actrec + routine_generic_add(btobj, [], pvpair, option);
 success = true;
 end
 
@@ -151,9 +137,6 @@ if ~isempty(val) && ~isempty(tgtprop)
     option.PropagateString = false; % turn off propagate behaviour to avoid override
 else
     option = struct;
-end
-if ~isempty(console) && isfield(console.SessionPara, 'MultiSuffix') %multi suffix takes priority
-    num = console.SessionPara.MultiSuffix;
 end
 actrec + routine_generic_add(btobj, num, pvpair, option);
 success = true;
