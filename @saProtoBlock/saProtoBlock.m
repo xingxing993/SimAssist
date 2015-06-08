@@ -2,20 +2,20 @@ classdef saProtoBlock < saObject
     properties
         % ProtoBlock Properties
         ProtoType
-        ProtoPriority = 10 % priority of this proto block when checking the same block
+        ProtoPriority = 10; % priority of this proto block when checking the same block
         CheckMethod
-        ProtoProperty = {} % key properties to be inherited when use this proto block type
+        ProtoProperty = {}; % key properties to be inherited when use this proto block type
+        InstantiatePara = struct;
         %
-        RoutineType = ''; % value_only/value_num/multiprop/dynamicinport... see @RunRoutine
         RoutinePattern
-        RoutinePriority = 20;
-        RoutinePara
+        RoutinePriority = 20;        
         % 
         MajorProperty % string or cell of strings with 2 column {Prop, StringAdaptMethod}
         
         % if have other bro-blocks, like From/Goto/GotoVisibility, DataStoreRead/Write/Memory
         BroBlockType % combined with ConnectPort to determine BroType
         CreateBroBlockMethod
+        GetBroMethod
         
         % PROPERTIES USED IN ADD OPERATION
         BlockSize %[Width, Height]
@@ -62,7 +62,6 @@ classdef saProtoBlock < saObject
         ColorMethod = -1
         CleanMethod
         DataTypeMethod% = -1
-        GetBroMethod
         ArrangePortMethod = {[], []}
         
         

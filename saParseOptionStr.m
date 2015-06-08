@@ -4,7 +4,7 @@ optstr = strtrim(optstr);
 valpattern = '[a-zA-Z_]\w*';
 alphastr = regexp(optstr, valpattern, 'match','once');
 % extract numeric value
-reststr = strtrim(regexprep(optstr, valpattern, '', 'once'));
+reststr = strtrim(regexprep(optstr, valpattern, ' ', 'once'));
 numpattern = '[-+]?\d+[.]?\d*([eE][-+]?\d+)?';
 numstr = regexp(reststr, numpattern, 'match','once');
 if isempty(numstr)
