@@ -3,7 +3,7 @@ function sabt = regprotoblock_siltest
 % Registration of ??? type in SimAssist
 
 sabt = saProtoBlock('ricardo_siltest');
-sabt.CheckMethod = @check_proto;
+sabt.ProtoCheckMethod = @check_proto;
 sabt.ProtoProperty = {'MajorProperty', 'InportStringMethod', 'OutportStringMethod',...
     'PropagateUpstreamStringMethod', 'PropagateDownstreamStringMethod'};
 

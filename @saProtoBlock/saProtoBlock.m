@@ -2,9 +2,11 @@ classdef saProtoBlock < saObject
     properties
         % ProtoBlock Properties
         ProtoType
-        ProtoPriority = 10 % priority of this proto block when checking the same block
-        CheckMethod
-        ProtoProperty = {} % key properties to be inherited when use this proto block type
+
+        ProtoPriority = 10; % priority of this proto block when checking the same block
+        ProtoCheckMethod
+        ProtoProperty = {}; % key properties to be inherited when use this proto block type
+
         %
         RoutineType = ''; % value_only/value_num/multiprop/dynamicinport... see @RunRoutine
         RoutinePattern

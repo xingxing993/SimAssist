@@ -1,4 +1,4 @@
-classdef saObject < handle
+classdef saObject < dynamicprops %handle
     %SA_SLOBJECT Summary of this class goes here
     %   Detailed explanation goes here
     
