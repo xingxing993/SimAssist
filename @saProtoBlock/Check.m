@@ -1,6 +1,6 @@
 function tf = Check(obj, blkhdl)
 tf = false;
-if ~isa(obj.CheckMethod, 'function_handle')
+if ~isa(obj.ProtoCheckMethod, 'function_handle')
     return;
 end
 if isstr(blkhdl)
@@ -10,5 +10,5 @@ if isstr(blkhdl)
         return;
     end
 end
-tf = obj.CheckMethod(blkhdl);
+tf = obj.ProtoCheckMethod(blkhdl);
 end

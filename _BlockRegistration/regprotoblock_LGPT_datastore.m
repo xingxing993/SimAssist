@@ -3,7 +3,7 @@ function sabt = regprotoblock_LGPT_datastore
 % Registration of ??? type in SimAssist
 
 sabt = saProtoBlock('LGPT_datastore');
-sabt.CheckMethod = @check_proto;
+sabt.ProtoCheckMethod = @check_proto;
 sabt.ProtoProperty = {'MajorProperty', 'InportStringMethod', 'OutportStringMethod'};
 
 

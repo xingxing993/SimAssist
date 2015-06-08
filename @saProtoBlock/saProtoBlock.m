@@ -3,9 +3,8 @@ classdef saProtoBlock < saObject
         % ProtoBlock Properties
         ProtoType
         ProtoPriority = 10; % priority of this proto block when checking the same block
-        CheckMethod
+        ProtoCheckMethod
         ProtoProperty = {}; % key properties to be inherited when use this proto block type
-        InstantiatePara = struct;
         %
         RoutinePattern
         RoutinePriority = 20;        

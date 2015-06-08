@@ -4,7 +4,7 @@ function sabt = regprotoblock_subsystem
 
 sabt = saProtoBlock('#SubSystem');
 sabt.ProtoPriority = 1; % subsystem generally should be first checked
-sabt.CheckMethod = @check_proto;
+sabt.ProtoCheckMethod = @check_proto;
 
 sabt.ProtoProperty = {'MajorProperty','DictRenameMethod','InportStringMethod', 'OutportStringMethod', ...
     'PropagateUpstreamStringMethod', 'PropagateDownstreamStringMethod', ...
