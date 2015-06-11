@@ -8,6 +8,7 @@ classdef saProtoBlock < saObject
         %
         RoutinePattern
         RoutineMethod
+        RoutinePara
         RoutinePriority = 20;
         % 
         MajorProperty % string or cell of strings with 2 column {Prop, StringAdaptMethod}

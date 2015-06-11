@@ -9,9 +9,8 @@ obj.OldValue = get_param(varargin{1}, varargin{2});
 obj.NewValue = varargin{3};
 try
     set_param(varargin{1}, varargin{2}, varargin{3});
-catch
+catch err
     act = 'retry';
-    err=lasterror;
     switch err.identifier
         case 'Simulink:SL_DupBlockName'
             parsys=get_param(obj.Handle,'Parent');
