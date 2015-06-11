@@ -7,7 +7,8 @@ classdef saProtoBlock < saObject
         ProtoProperty = {}; % key properties to be inherited when use this proto block type
         %
         RoutinePattern
-        RoutinePriority = 20;        
+        RoutineMethod
+        RoutinePriority = 20;
         % 
         MajorProperty % string or cell of strings with 2 column {Prop, StringAdaptMethod}
         
