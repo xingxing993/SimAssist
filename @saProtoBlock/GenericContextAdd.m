@@ -8,7 +8,9 @@ i_stru = cellfun(@isstruct, varargin);% get option argument
 option = varargin{i_stru};
 argsin = varargin(~i_stru); % remove from argument cell
 i_argnum = find(cellfun(@isnumeric, argsin), 1); % get block number argument
-blknum = varargin{i_argnum};
+if ~isempty(i_argnum) blknum = varargin{i_argnum};
+else blknum = 1;
+end
 argsin(i_argnum) = [];% remove from argument cell
 pvpair = argsin; % the rest are property-value pairs
 

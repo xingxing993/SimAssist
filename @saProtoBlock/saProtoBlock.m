@@ -10,13 +10,9 @@ classdef saProtoBlock < saObject
         %
         RoutineType = ''; % value_only/value_num/multiprop/dynamicinport... see @RunRoutine
         RoutinePattern
-<<<<<<< HEAD
-        RoutinePriority = 20;
-        RoutinePara
-=======
         RoutineMethod
+        RoutinePara
         RoutinePriority = 20;
->>>>>>> e0e193b... make GenericContextAdd a seperate function
         % 
         MajorProperty % string or cell of strings with 2 column {Prop, StringAdaptMethod}
         
