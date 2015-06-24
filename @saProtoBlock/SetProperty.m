@@ -23,7 +23,7 @@ elseif isequal(setpropmethod, -1)
         dlgpstru = get_param(blkhdl,'DialogParameters');
         if isstruct(dlgpstru)
             dlgp = fieldnames(dlgpstru);
-            if isempty(dlgp)
+            if ~isempty(dlgp)
                 actrec.SetParamHighlight(blkhdl, dlgp{min(nthprop, end)}, propval);
             end
         end
