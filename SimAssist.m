@@ -145,6 +145,12 @@ handles.hispointer=0;
 
 handles.ExtraDlgParas={'AttributesFormatString';};
 
+% BEGIN TO BUILD DATABASE
+current_sys = gcs;
+if isempty(current_sys)
+    open_system(new_system);
+    current_sys = gcs;
+end
 sapath = fileparts(mfilename('fullpath'));
 addpath(fullfile(sapath, '_BlockRegistration'));
 addpath(fullfile(sapath, '_MacroRegistration'));
@@ -156,6 +162,7 @@ else
     handles.Console.BuildMap;
     handles.Console.BuildMacros;
 end
+open_system(current_sys); % restore current system because it might have been changed by load_system
 % Update handles structure
 guidata(hObject, handles);
 
