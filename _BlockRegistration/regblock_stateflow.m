@@ -3,6 +3,12 @@ function sabt = regblock_stateflow
 % Registration of Stateflow block type in SimAssist
 
 sabt = saBlock('sflib/Chart');
+
+sabt.RoutinePattern = '^(sf|stateflow)';
+sabt.RoutineMethod = @routine_stateflow;
+
+
+
 ssproto = regprotoblock_subsystem;
 sabt.UseProto(ssproto);
 % override features
@@ -248,7 +254,7 @@ end
 
 
 
-function [iptnum, optnum, fc, eventnum] = parse_stateflow(operandstr)
+function [iptnum, optnum, fc, eventnum, reststr] = parse_stateflow(operandstr)
 [mstr, iptnum] = regexp(operandstr, 'in?(\d*)', 'match','tokens','once'); % inport
 if isempty(mstr)
     iptnum = 0;
@@ -288,4 +294,56 @@ if ~isempty(strfind(operandstr, 'fc')) %function call
 else
     fc = false;
 end
+reststr = strtrim(operandstr);
+end
+
+
+function [actrec, success] = routine_stateflow(cmdstr, console)
+actrec=saRecorder;success = false;
+btobj = console.MapTo('Stateflow');
+srchdls = saFindSystem(gcs,'line_sender');
+dsthdls = saFindSystem(gcs,'inport_unconnected');
+%parse input command
+optstr = regexprep(cmdstr, '^(sf|stateflow)\s*', '', 'once');
+[iptnum, optnum, fc, eventnum, sfname] = parse_stateflow(optstr);
+if ~isempty(sfname)
+    chartname = sfname;
+else
+    chartname = 'Chart';
+end
+% add stateflow block
+saLoadLib('sflib');
+%
+[actrec, block] = btobj.AddBlock(chartname);
+sfssobj = get_param(block,'Object');
+objchart = sfssobj.find('-isa', 'Stateflow.Chart');
+% add inport
+for i=1:iptnum
+    tmpdata = Stateflow.Data(objchart);
+    tmpdata.Scope = 'Input';
+    tmpdata.Name = ['In', int2str(i)];
+end
+% add outport
+for i=1:optnum
+    tmpdata = Stateflow.Data(objchart);
+    tmpdata.Scope = 'Output';
+    tmpdata.Name = ['Out', int2str(i)];
+end
+% add function-call
+if fc
+    tmpdata = Stateflow.Event(objchart);
+    tmpdata.Scope = 'Input';
+    tmpdata.Trigger = 'Function call';
+    tmpdata.Name = 'Fcn';
+end
+btobj.AutoSize(block);
+if ~isempty(srchdls)
+    actrec.MultiAutoLine(srchdls, block);
+    actrec + btobj.PropagateUpstreamString(block);
+end
+if ~isempty(dsthdls)
+    actrec.MultiAutoLine(block, dsthdls);
+    actrec + btobj.PropagateDownstreamString(block);
+end
+success = true;
 end

@@ -4,7 +4,7 @@ function sabt = regblock_constant
 
 sabt = saBlock('Constant');
 
-sabt.RoutineType = 'value_only';
+sabt.RoutineMethod = 'majorprop_value';
 sabt.RoutinePattern = '^(cnst|const|constant)';
 
 sabt.ConnectPort = [0, 1];

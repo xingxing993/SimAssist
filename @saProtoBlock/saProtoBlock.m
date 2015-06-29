@@ -5,11 +5,13 @@ classdef saProtoBlock < saObject
         ProtoPriority = 10; % priority of this proto block when checking the same block
         ProtoCheckMethod
         ProtoProperty = {}; % key properties to be inherited when use this proto block type
-        %
+        
+        % Routine macro properties
         RoutinePattern
+        RoutinePrompts = {};
+        RoutinePriority
         RoutineMethod
-        RoutinePara
-        RoutinePriority = 20;
+        RoutinePara = struct;
         % 
         MajorProperty % string or cell of strings with 2 column {Prop, StringAdaptMethod}
         

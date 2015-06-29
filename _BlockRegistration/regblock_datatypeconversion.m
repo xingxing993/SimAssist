@@ -1,8 +1,14 @@
-function sabt = regblock_datatypeconverstion
+function sabt = regblock_datatypeconversion
 %REGTYPE_???
 % Registration of ??? type in SimAssist
 
 sabt = saBlock('DataTypeConversion');
+
+% routine definition
+sabt.RoutinePattern = '^(dt|datatype)';
+sabt.RoutineMethod = 'num_only';
+
+
 
 sabt.MajorProperty = 'OutDataTypeStr';
 

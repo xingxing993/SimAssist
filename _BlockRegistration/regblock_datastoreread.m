@@ -3,7 +3,10 @@ function sabt = regblock_datastoreread
 % Registration of ??? type in SimAssist
 
 sabt = saBlock('DataStoreRead');
-sabt.RoutineType = 'value_num';
+
+% routines for DataStore family are combined as a seperate macro, see macro
+% registration file
+sabt.RoutinePattern = '';
 
 %bro-block properties
 sabt.BroBlockType = {'DataStoreWrite', 'DataStoreMemory'};

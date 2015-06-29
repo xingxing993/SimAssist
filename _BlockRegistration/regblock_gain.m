@@ -4,7 +4,7 @@ function sabt = regblock_gain
 
 sabt = saBlock('Gain');
 
-sabt.RoutineType = 'value_only';
+sabt.RoutineMethod = 'majorprop_value';
 sabt.RoutinePattern = '^gain';
 
 sabt.MajorProperty = 'Gain';

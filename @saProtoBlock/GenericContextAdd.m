@@ -5,12 +5,12 @@ console = btobj.Console;
 actrec = saRecorder;
 
 i_stru = cellfun(@isstruct, varargin);% get option argument
-if ~isempty(i_stru) option = varargin{i_stru};
+if any(i_stru) option = varargin{i_stru};
 else option = struct;
 end
 argsin = varargin(~i_stru); % remove from argument cell
 i_argnum = find(cellfun(@isnumeric, argsin), 1); % get block number argument
-if ~isempty(i_argnum) blknum = varargin{i_argnum};
+if any(i_argnum) blknum = varargin{i_argnum};
 else blknum = 1;
 end
 argsin(i_argnum) = [];% remove from argument cell

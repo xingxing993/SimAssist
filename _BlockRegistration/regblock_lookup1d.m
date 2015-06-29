@@ -4,7 +4,7 @@ function sabt = regblock_lookup1d
 
 sabt = saBlock('Lookup');
 
-sabt.RoutineType = 'multiprop';
+sabt.RoutineMethod = 'multiprop';
 sabt.RoutinePattern = '^(l1|lookup|lu1d)';
 
 sabt.MajorProperty = {'Table','';'InputValues','_X'};

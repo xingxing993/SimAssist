@@ -4,8 +4,9 @@ function sabt = regblock_logic
 
 sabt = saBlock('Logic');
 
-sabt.RoutineType = 'dynamicinport';
+sabt.RoutineMethod = @routine_logical;
 sabt.RoutinePara.InportProperty = 'Inputs';
+sabt.RoutinePattern = '^(and|or|not|xor|nor|nand)';
 
 sabt.ArrangePortMethod{1} = 1;
 sabt.BlockPreferOption.AutoDataType = false;
@@ -42,4 +43,12 @@ parpts = get_param(parblk, 'PortHandles');
 opstr = get_param(parblk, 'Operator');
 instr = cellstr(appdata.Console.GetUpstreamString(parblk));
 str = [opstr, '_', instr{:}];
+end
+
+
+function [actrec, success] =routine_logical(cmdstr, console)
+btobj = console.MapTo('Logic');
+cmdpsr = saCmdParser(cmdstr, btobj.RoutinePattern);
+[actrec, success] = Routines.dynamicinport(btobj, cmdpsr.OptionStr, '', ...
+    'Operator', cmdpsr.PatternStr);
 end

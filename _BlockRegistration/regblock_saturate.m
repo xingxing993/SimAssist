@@ -3,7 +3,7 @@ function sabt = regblock_saturate
 % Registration of ??? type in SimAssist
 
 sabt = saBlock('Saturate');
-sabt.RoutineType = 'multiprop';
+sabt.RoutineMethod = 'multiprop';
 sabt.RoutinePattern = '^(sat|saturate)';
 
 

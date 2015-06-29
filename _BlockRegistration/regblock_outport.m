@@ -3,7 +3,7 @@ function sabt = regblock_outport
 % Registration of ??? type in SimAssist
 
 sabt = saBlock('Outport');
-sabt.RoutineType = 'value_num';
+sabt.RoutineMethod = 'majorprop_str_num';
 sabt.RoutinePattern = '^(outport|opt|op)';
 
 sabt.ConnectPort = [1, 0];

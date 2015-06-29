@@ -4,7 +4,7 @@ function sabt = regblock_fromworkspace
 
 sabt = saBlock('FromWorkspace');
 
-sabt.RoutineType = 'value_num';
+sabt.RoutineMethod = 'majorprop_str_num';
 sabt.RoutinePattern = '^(fromws|fromworkspace)';
 sabt.RoutinePriority = 15;
 

@@ -4,9 +4,16 @@ function sabt = regblock_math
 
 sabt = saBlock('Math');
 
-sabt.RoutineType = 'value_num';
-sabt.RoutinePattern = '^math';
+sabt.RoutineMethod = @routine_math;
+sabt.RoutinePattern = '^(exp|log|log10|square|sqrt|reciprocal|pow|rem|mod)';
 
 sabt.MajorProperty = 'Operator';
 sabt.RollPropertyMethod = -1;
+end
+
+function [actrec, success] = routine_math(cmdstr, console)
+btobj = console.MapTo('Math');
+%parse input command
+cmdpsr = saCmdParser(cmdstr, btobj.RoutinePattern);
+[actrec, success] = Routines.num_only(btobj, cmdpsr.OptionStr, '', 'Operator', cmdpsr.PatternStr);
 end

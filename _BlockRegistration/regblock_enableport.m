@@ -4,9 +4,11 @@ function sabt = regblock_enableport
 
 sabt = saBlock('EnablePort');
 
-sabt.RoutineType = 'value_only';
+sabt.RoutineMethod = 'majorprop_value';
 sabt.RoutinePattern = '^(en|enable)';
 sabt.RoutinePriority = 40;
+
+sabt.MajorProperty = 'Name';
 
 sabt.BlockSize = [20, 20];
 end

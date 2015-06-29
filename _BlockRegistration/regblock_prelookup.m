@@ -3,7 +3,7 @@ function sabt = regblock_prelookup
 % Registration of ??? type in SimAssist
 
 sabt = saBlock('PreLookup');
-sabt.RoutineType = 'value_num';
+sabt.RoutineMethod = 'majorprop_str_num';
 sabt.RoutinePattern = '^(pl|prelookup)';
 
 
@@ -21,7 +21,6 @@ sabt.OutportStringMethod = @outport_string;
 sabt.AnnotationMethod = sprintf('%%<BreakpointsData>\n%%<IndexSearchMethod>');
 
 sabt.BlockSize = [80, 40];
-
 end
 
 

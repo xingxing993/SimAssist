@@ -94,7 +94,7 @@ for i=1:nmulti
         success = false;
     end
     if ~success
-        [actrec, success] = obj.MapTo('Constant').RunRoutine(cmdstr);
+        [actrec, success] = Routines.majorprop_value(obj.MapTo('Constant'), cmdstr, '');
         return;
     end
 end

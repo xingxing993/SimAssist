@@ -3,8 +3,8 @@ function sabt = regblock_ratetransition
 % Registration of ??? type in SimAssist
 
 sabt = saBlock('RateTransition');
-sabt.RoutineType = 'value_num';
-sabt.RoutinePattern = '^(rate|ratetransation)';
+sabt.RoutineMethod = 'num_only';
+sabt.RoutinePattern = '^(rt|rate|ratetrans)';
 
 
 sabt.MajorProperty = '';

@@ -4,7 +4,7 @@ function sabt = regblock_ground
 
 sabt = saBlock('Ground');
 
-sabt.RoutineType = 'value_num';
+sabt.RoutineMethod = 'num_only';
 sabt.RoutinePattern = '^(gnd|ground)';
 
 sabt.BlockSize = [20, 20];

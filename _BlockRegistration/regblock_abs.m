@@ -3,8 +3,10 @@ function sabt = regblock_abs
 % Registration of ??? type in SimAssist
 
 sabt = saBlock('Abs');
-sabt.RoutineType = 'value_num';
+
 sabt.RoutinePattern = '^abs';
+sabt.RoutineMethod = 'num_only';
+
 
 sabt.BlockSize = [30, 30];
 

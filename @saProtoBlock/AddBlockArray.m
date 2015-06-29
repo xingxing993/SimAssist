@@ -36,7 +36,7 @@ DH = obj.LayoutSize.VerticalMargin + blksize(2);
 for i=1:N
     ltpos = startpos+[0, DH*(i-1)];
     blkpos = [ltpos, ltpos+blksize];
-    [actrec2, blkhdl] = obj.AddBlock(blkpos, argnnum{:});
+    [actrec2, blkhdl] = obj.AddBlock(blkpos, argnnum{:});  actrec + actrec2;
     blkhdls = [blkhdls; blkhdl];
 end
 end
