@@ -4,7 +4,7 @@ function sabt = regblock_buscreator
 
 sabt = saBlock('BusCreator');
 
-sabt.RoutineType = 'dynamicinport';
+sabt.RoutineMethod = 'dynamicinport';
 sabt.RoutinePattern = '^(bc|buscreator)';
 sabt.RoutinePara.InportProperty = 'Inputs';
 

@@ -12,35 +12,18 @@ if pattern(1)~='^'
 else
     sam.Pattern = pattern;
 end
-switch obj.RoutineType
-    case 'nooptstr'
-        sam.Callback = @(cmdstr)block_routine_nooptstr(cmdstr, pattern, obj);
-    case {'value_num', 'value_only', 'multiprop'}
-        sam.Callback = @(cmdstr)block_routine_generic(cmdstr, pattern, obj);
-    case 'dynamicinport'
-        sam.Callback = @(cmdstr)block_routine_dynamicinport(cmdstr, pattern, obj);    
-    otherwise
-        sam.Callback = [];
-end
-sam.Priority = obj.RoutinePriority; %promote priority
-end
 
-function [actrec, success] = block_routine_nooptstr(cmdstr, pattern, btobj)
-optstr = regexprep(cmdstr, [pattern, '\s*'], '','once');
-if ~isempty(optstr)
-    actrec = saRecorder; success = false;
-else
-    [actrec, success] = btobj.RunRoutine;
+rtmethod = obj.RoutineMethod;
+if isa(rtmethod, 'function_handle')
+    sam.Callback = rtmethod;
+else %isstr
+    fcn = str2func(['Routines.', rtmethod]);
+    sam.Callback = @(cmdstr) feval(fcn, obj, cmdstr, pattern);
 end
+if ~isempty(obj.RoutinePrompts)
+    sam.PromptMethod = obj.RoutinePrompts;
 end
-
-
-function [actrec, success] = block_routine_generic(cmdstr, pattern, btobj)
-optstr = regexprep(cmdstr, [pattern, '\s*'], '','once');
-[actrec, success] = btobj.RunRoutine(optstr);
+if ~isempty(obj.RoutinePriority)
+    sam.Priority = obj.RoutinePriority; %promote priority
 end
-
-function [actrec, success] = block_routine_dynamicinport(cmdstr, pattern, btobj)
-optstr = regexprep(cmdstr, [pattern, '\s*'], '','once');
-[actrec, success] = btobj.RunRoutine(optstr, btobj.RoutinePara.InportProperty);
 end

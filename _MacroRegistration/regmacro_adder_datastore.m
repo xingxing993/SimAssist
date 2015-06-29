@@ -29,7 +29,7 @@ switch dstype
         btobj = console.MapTo('DataStoreMemory');
 end
 if isempty(dsblksel)
-    actrec + btobj.RunRoutine(optstr);
+    actrec + Routines.majorprop_str_num(btobj, optstr, '');
 else
     for i=1:numel(dsblksel)
         dsbtobj = console.MapTo(dsblksel(i));

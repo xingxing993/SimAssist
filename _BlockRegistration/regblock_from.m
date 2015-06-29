@@ -4,7 +4,7 @@ function sabt = regblock_from
 
 sabt = saBlock('From');
 
-sabt.RoutineType = 'value_num';
+sabt.RoutineMethod = 'majorprop_str_num';
 sabt.RoutinePattern = '^from';
 
 %bro-block properties

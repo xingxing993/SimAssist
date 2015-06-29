@@ -3,7 +3,7 @@ function sabt = regblock_merge
 % Registration of ??? type in SimAssist
 
 sabt = saBlock('Merge');
-sabt.RoutineType = 'dynamicinport';
+sabt.RoutineMethod = 'dynamicinport';
 sabt.RoutinePattern = '^(mg|merge)';
 sabt.RoutinePara.InportProperty = 'Inputs';
 

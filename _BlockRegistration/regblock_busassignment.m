@@ -3,8 +3,11 @@ function sabt = regblock_busassignment
 % Registration of ??? type in SimAssist
 
 sabt = saBlock('BusAssignment');
-sabt.RoutineType = 'value_num';
-sabt.RoutinePattern = '^busassignment';
+sabt.RoutineMethod = 'majorprop_str_num';
+sabt.RoutinePattern = '^(busassign|busassignment)';
+
+sabt.MajorProperty = 'Name';
+sabt.BlockSize = [100, 120];
 
 sabt.PropagateUpstreamStringMethod = @propagate_upstream;
 sabt.PropagateDownstreamStringMethod = @propagate_downstream;

@@ -3,7 +3,7 @@ function sabt = regblock_goto
 % Registration of ??? type in SimAssist
 
 sabt = saBlock('Goto');
-sabt.RoutineType = 'value_num';
+sabt.RoutineMethod = 'majorprop_str_num';
 sabt.RoutinePattern = '^goto';
 
 %bro-block properties

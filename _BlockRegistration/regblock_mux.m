@@ -3,7 +3,7 @@ function sabt = regblock_mux
 % Registration of ??? type in SimAssist
 
 sabt = saBlock('Mux');
-sabt.RoutineType = 'dynamicinport';
+sabt.RoutineMethod = 'dynamicinport';
 sabt.RoutinePattern = '^mux';
 sabt.RoutinePara.InportProperty = 'Inputs';
 

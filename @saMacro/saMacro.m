@@ -1,4 +1,4 @@
-classdef saMacro < saRecorder
+classdef saMacro < handle
     %SAMACRO Summary of this class goes here
     %   Detailed explanation goes here
     
@@ -21,7 +21,6 @@ classdef saMacro < saRecorder
     
     methods
         function obj=saMacro(varargin)
-            obj = obj@saRecorder;
             if isstr(varargin{1})
                 obj.Name = varargin{1};
             end

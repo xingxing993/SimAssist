@@ -7,7 +7,7 @@ sabt.MajorProperty = 'VariableName';
 sabt.DictRenameMethod = 1; % use major property
 sabt.BlockSize = [70, 20];
 
-sabt.RoutineType = 'value_num';
+sabt.RoutineMethod = 'majorprop_str_num';
 sabt.RoutinePattern = '^(tows|toworkspace)';
 sabt.RoutinePriority = 15;
 

@@ -4,6 +4,9 @@ function sabt = regblock_busselector
 
 sabt = saBlock('BusSelector');
 
+sabt.RoutineMethod = @routine_buscreator;
+sabt.RoutinePattern = '^(bs|busselector)';
+
 sabt.OutportStringMethod = @getportstring_busselector; % pass through the 3rd inport
 sabt.PropagateDownstreamStringMethod = @propagate_downstream_busselector;
 sabt.PropagateUpstreamStringMethod = @(blkhdl)operator_plus(blkhdl, '+'); % equivalent to '++'
@@ -184,4 +187,47 @@ for kk=1:numel(sigoutstrs)
 end
 newnamestr=sprintf('%s,',newnames{:});newnamestr(end)='';
 actrec.SetParam(blkhdl, 'OutputSignals', newnamestr);
+end
+
+function [actrec, success] = routine_busselector(cmdstr, console)
+actrec=saRecorder;success = false;
+btobj = console.MapTo('BusSelector');
+%parse input command
+cmdpsr = saCmdParser(cmdstr, btobj.RoutinePattern);
+[numopt, bclean] = cmdpsr.ParseInteger;
+%
+if ~bclean
+    [actrec, success] = deal(saRecorder, false);return;
+end
+if isempty(numopt)
+    dsthdls = saFindSystem(gcs,'line_receiver');
+    if ~isempty(dsthdls)
+        pvpair = {'OutputSignals', create_outputsig_string(numel(dsthdls))};
+        autoline = true;
+    else
+        pvpair = {};
+        autoline = false;
+    end
+    [actrec2, blkhdl] = btobj.AddBlock(pvpair{:}); actrec + actrec2;
+    if autoline
+        actrec.MultiAutoLine(blkhdl, dsthdls);
+        actrec + btobj.PropagateDownstreamString(blkhdl);
+    end
+    srchdl = saFindSystem(gcs,'line_sender');
+    if numel(srchdl)==1
+        actrec.AutoLine(srchdl, blkhdl);
+    end
+    success = true;
+else
+    outsigstr = create_outputsig_string(numopt);
+    actrec + btobj.AddBlock('OutputSignals', outsigstr);
+    success = true;
+end
+end
+
+function outsigstr = create_outputsig_string(ptnum)
+outsigstr = 'signal1';
+for k=2:ptnum
+    outsigstr=[outsigstr, ',signal', int2str(k)];
+end
 end

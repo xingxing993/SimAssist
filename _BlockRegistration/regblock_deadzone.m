@@ -4,7 +4,7 @@ function sabt = regblock_deadzone
 
 sabt = saBlock('DeadZone');
 
-sabt.RoutineType = 'multiprop';
+sabt.RoutineMethod = 'multiprop';
 sabt.RoutinePattern = '^(dzone|dz|deadzone)';
 
 sabt.MajorProperty = {'LowerValue', '_Lb';'UpperValue','_Ub'};

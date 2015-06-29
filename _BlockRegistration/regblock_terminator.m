@@ -3,7 +3,7 @@ function sabt = regblock_terminator
 % Registration of ??? type in SimAssist
 
 sabt = saBlock('Terminator');
-sabt.RoutineType = 'value_num';
+sabt.RoutineMethod = 'num_only';
 sabt.RoutinePattern = '^(term|terminator)';
 
 sabt.ConnectPort = [1, 0];

@@ -55,7 +55,8 @@ options.WindowStyle='normal';
 pattern = inputdlg('Shortcut pattern:', 'New block type', 1, {defaultpattern},options);
 if ~isempty(pattern)
     newbt.RoutinePattern = pattern{1};
-    newbt.RoutineType = 'value_only';
+    newbt.RoutineMethod = 'value_only';
+    newbt.RoutinePriority = 20;
     sam = newbt.CreateRoutineMacro; % new default block macro
     console.AddMacro(sam);
     % backup newly added objects

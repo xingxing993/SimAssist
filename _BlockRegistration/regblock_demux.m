@@ -4,6 +4,9 @@ function sabt = regblock_demux
 
 sabt = saBlock('Demux');
 
+sabt.RoutineMethod = @routine_demux;
+sabt.RoutinePattern = '^demux';
+
 sabt.OutportStringMethod = @outport_string;
 
 sabt.BlockSize = [5, 70];
@@ -45,4 +48,32 @@ else
     end
 end
 actrec.SetParam(blkhdl, 'Outputs', int2str(output1));
+end
+
+
+function [actrec, success] = routine_demux(cmdstr, console)
+[actrec, success] = deal(saRecorder, false);
+btobj = console.MapTo('Demux');
+%parse input command
+cmdpsr = saCmdParser(cmdstr, btobj.RoutinePattern);
+[numopt, bclean] = cmdpsr.ParseInteger;
+if ~bclean return; end
+
+if ~isempty(numopt)
+    actrec + btobj.AddBlock('Outputs', int2str(optstr));
+else
+    dsthdls = saFindSystem(gcs,'line_receiver');
+    if ~isempty(dsthdls)
+        pvpair = {'Outputs', int2str(numel(dsthdls))};
+        autoline = true;
+    else
+        pvpair = {};
+        autoline = false;
+    end
+    [actrec2, blkhdl] = btobj.AddBlock(pvpair{:}); actrec + actrec2;
+    if autoline
+        actrec.MultiAutoLine(blkhdl, dsthdls);
+    end
+end
+success = true;
 end

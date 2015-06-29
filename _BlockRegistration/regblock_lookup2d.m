@@ -3,7 +3,7 @@ function sabt = regblock_lookup2d
 % Registration of ??? type in SimAssist
 
 sabt = saBlock('Lookup2D');
-sabt.RoutineType = 'multiprop';
+sabt.RoutineMethod = 'multiprop';
 sabt.RoutinePattern = '^(l2|lookup2d|lu2d)';
 
 

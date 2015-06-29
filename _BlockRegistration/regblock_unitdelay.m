@@ -4,7 +4,7 @@ function sabt = regblock_unitdelay
 
 sabt = saBlock('UnitDelay');
 
-sabt.RoutineType = 'value_only';
+sabt.RoutineMethod = 'majorprop_value';
 sabt.RoutinePattern = '^(ud|dly|unitdelay)';
 
 

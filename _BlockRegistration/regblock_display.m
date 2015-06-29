@@ -4,7 +4,7 @@ function sabt = regblock_display
 
 sabt = saBlock('Display');
 
-sabt.RoutineType = 'value_num';
+sabt.RoutineMethod = 'num_only';
 sabt.RoutinePattern = '^(disp|display)';
 
 
