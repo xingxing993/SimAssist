@@ -44,7 +44,7 @@ str = [parname, '_', int2str(portnum)];
 end
 
 
-function [actrec, success] =adder_scope(cmdstr, console)
+function [actrec, success] =routine_scope(cmdstr, console)
 actrec=saRecorder;success = false;
 btobj = console.MapTo('Scope');
 regtmp = regexp(cmdstr, '^scope(s)?\s*(\d*)', 'tokens','once');
