@@ -23,7 +23,7 @@ else
     operator = cmdpsr.PatternStr;
 end
 [operand, bclean] = cmdpsr.ParseValueString;
-if ~bclean [actrec, success]=deal(saRecorder, false); end
+if ~bclean [actrec, success]=deal(saRecorder, false); return; end
 
 [actrec2, block] = btobj.AddBlock('Inputs', operator); actrec.Merge(actrec2);
 if ~isempty(operand) %add 2nd operand

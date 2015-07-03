@@ -11,10 +11,9 @@ end
 if isempty(numipt)
     tgtobjs = saFindSystem(gcs,'line_sender');
     if isempty(tgtobjs)
-        autoline = false;
+        numipt = 1;  autoline = false;
     else
-        numipt = int2str(numel(tgtobjs));
-        autoline = true;
+        numipt = int2str(numel(tgtobjs)); autoline = true;
     end
     [actrec2, block] = btobj.AddBlock(varargin{:}, btobj.RoutinePara.InportProperty, numipt);
     actrec + actrec2;

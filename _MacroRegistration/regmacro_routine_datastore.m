@@ -1,4 +1,4 @@
-function sam = regmacro_adder_datastore
+function sam = regmacro_routine_datastore
 %REGMACRO_???
 % Registration of ??? macro in SimAssist
 

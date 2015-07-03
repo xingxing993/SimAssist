@@ -5,7 +5,7 @@ function sabt = regblock_signalspecification
 sabt = saBlock('SignalSpecification');
 
 sabt.RoutineMethod = 'num_only';
-sabt.RoutinePattern = '^sigspec';
+sabt.RoutinePattern = '^sigspec|signalspec';
 
 sabt.DefaultDataType = 'Inherit: auto';
 sabt.DataTypeMethod = -1;

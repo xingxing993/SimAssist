@@ -29,10 +29,10 @@ else
         iptnum = 1;
     end
 end
-optnum = regexp(optstr, 'o[ut]*(\d+)', 'tokens','once'); % outport
+optnum = regexp(optstr, 'o(?:ut)?*(\d+)', 'tokens','once'); % outport
 if ~isempty(optnum)
     optnum = str2double(optnum{1});
-    optstr=regexprep(optstr, 'o[ut]*(\d+)', '','once');
+    optstr=regexprep(optstr, 'o(?:ut)?*(\d+)', '','once');
 else
     if ~isempty(dsthdls)
         optnum = numel(dsthdls);

@@ -33,7 +33,7 @@ saLoadLib('MotoHawk_lib');
 btobj = console.MapTo('MotoHawk Probe');
 cmdpsr = saCmdParser(cmdstr, btobj.RoutinePattern);
 [result, bclean] = cmdpsr.ParseStringAndInteger;
-if ~bclean [actrec, success]=deal(saRecorder, false); end
+if ~bclean [actrec, success]=deal(saRecorder, false); return;end
 if isempty(result.String)
     pvpair = {};
 else

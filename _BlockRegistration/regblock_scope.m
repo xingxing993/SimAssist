@@ -22,6 +22,12 @@ sabt.LayoutSize.HorizontalMargin = 25;
 sabt.LayoutSize.PortSpacing = 15;
 sabt.LayoutSize.ToLineOffset = [50 100];
 
+sabt.PlusMethod = @(blkhdl, operand) operator_plus_minus(blkhdl, '+', operand);
+sabt.MinusMethod = @(blkhdl, operand) operator_plus_minus(blkhdl, '-', operand);
+
+sabt.ArrangePortMethod{1} = 1;
+sabt.CleanMethod = @clean;
+
 sabt.DefaultParameters = {'LimitDataPoints', 'off'};
 end
 
@@ -55,4 +61,50 @@ else
     actrec + Routines.dynamicinport(btobj, optstr, '');
 end
 success = true;
+end
+
+function actrec = operator_plus_minus(blkhdl, operator, operand)
+actrec = saRecorder;
+input0 = str2double(get_param(blkhdl,'NumInputPorts'));
+if operator=='+' sn = 1;
+else sn = -1;
+end
+if isempty(operand) % default add/minus 1
+    input1 = max(input0 + sn, 1);
+    actrec.SetParam(blkhdl, 'NumInputPorts', int2str(input1));
+else
+    if operator=='+'&& isequal(operand, '+') % '++' auto increase accroding to selection
+        tgtobjs = saFindSystem(gcs,'line_sender');
+        if isempty(tgtobjs)
+            input1 = max(input0 + 1);
+        else
+            tmp=get_param(cellstr(get_param(tgtobjs,'Parent')), 'Handle');
+            tgtobjs = setdiff([tmp{:}], blkhdl);
+            dn = numel(tgtobjs);
+            input1 = max(input0 + dn);
+            actrec.SetParam(blkhdl, 'NumInputPorts', int2str(input1));
+            pts = get_param(blkhdl, 'PortHandles');% auto line
+            actrec.MultiAutoLine(tgtobjs, pts.Inport(end-dn+1:end));
+        end
+        actrec.SetParam(blkhdl, 'NumInputPorts', int2str(input1));
+    elseif operator=='-'&& isequal(operand, '-')
+        input1 = max(input0 + sn, 1);
+        actrec.SetParam(blkhdl, 'NumInputPorts', int2str(input1));
+    else
+        operand = str2double(operand);
+        if isnan(operand) || isempty(operand)
+            return;
+        else
+            input1 = max(input0 + sn*(operand), 1);
+        end
+        actrec.SetParam(blkhdl, 'NumInputPorts', int2str(input1));
+    end
+end
+end
+
+function actrec = clean(blkhdl)
+actrec = saRecorder;
+lns = get_param(blkhdl, 'LineHandles');
+input1 = sum(lns.Inport>0);
+actrec.SetParam(blkhdl, 'NumInputPorts', int2str(input1));
 end

@@ -3,7 +3,7 @@ function sabt = regblock_sigconv
 % Registration of ??? type in SimAssist
 
 sabt = saBlock('SignalConversion');
-sabt.RoutineMethod = 'simple';
+sabt.RoutineMethod = 'num_only';
 sabt.RoutinePattern = '^(sigconv|signalconv)';
 sabt.BlockSize = [30, 30];
 end

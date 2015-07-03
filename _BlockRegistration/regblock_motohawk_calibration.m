@@ -34,7 +34,7 @@ saLoadLib('MotoHawk_lib');
 btobj = console.MapTo('MotoHawk Calibration');
 cmdpsr = saCmdParser(cmdstr, btobj.RoutinePattern);
 [result, bclean] = cmdpsr.ParseNumericAndString;
-if ~bclean [actrec, success]=deal(saRecorder, false); end
+if ~bclean [actrec, success]=deal(saRecorder, false); return;end
 [num, val] = deal(result.NumericStr, result.String);
 
 if isempty(num) && isempty(val)
@@ -46,5 +46,6 @@ elseif ~isempty(num) && isempty(val)
 else
     pvpair={'nam', ['''',val,''''], 'val', num};
 end
-[actrec, success] = btobj.GenericContextAdd(pvpair{:});
+actrec = btobj.GenericContextAdd(pvpair{:});
+success = true;
 end

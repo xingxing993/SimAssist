@@ -159,7 +159,7 @@ subsys = getfullname(blkhdl);
 sfobj = get_param(blkhdl, 'object');
 chartobj = sfobj.find('-isa', 'Stateflow.Chart');
 %inport
-if iptnum>0
+if ~isempty(iptnum) && iptnum>0
     for i=1:iptnum
         tmpdata = Stateflow.Data(chartobj);
         tmpdata.Scope = 'Input';
@@ -170,7 +170,7 @@ if iptnum>0
     end
 end
 %outport
-if optnum>0
+if ~isempty(optnum) && optnum>0
     for i=1:optnum
         tmpdata = Stateflow.Data(chartobj);
         tmpdata.Scope = 'Output';
@@ -217,7 +217,7 @@ cntr = 0;
 if isequal(optstr, '-')
     iptnum = numel(tmpobjs);
 end
-if iptnum>0 && side(1)
+if ~isempty(iptnum)&&iptnum>0 && side(1)
     for i=numel(tmpobjs):-1:1
         if lns.Inport(tmpobjs(i).Port)<0
             delete(tmpobjs(i));
@@ -234,7 +234,7 @@ cntr = 0;
 if isequal(optstr, '-')
     optnum = numel(tmpobjs);
 end
-if optnum>0 && side(2)
+if ~isempty(optnum) && optnum>0 && side(2)
     for i=numel(tmpobjs):-1:1
         if lns.Outport(tmpobjs(i).Port)<0
             delete(tmpobjs(i));
@@ -257,7 +257,7 @@ end
 function [iptnum, optnum, fc, eventnum, reststr] = parse_stateflow(operandstr)
 [mstr, iptnum] = regexp(operandstr, 'in?(\d*)', 'match','tokens','once'); % inport
 if isempty(mstr)
-    iptnum = 0;
+    iptnum = [];
 else
     if~isempty(iptnum{1})
         iptnum = str2double(iptnum{1});
@@ -268,7 +268,7 @@ else
 end
 [mstr, optnum] = regexp(operandstr, 'o(?:ut)?(\d*)', 'match','tokens','once'); % outport
 if isempty(mstr)
-    optnum = 0;
+    optnum = [];
 else
     if~isempty(optnum{1})
         optnum = str2double(optnum{1});
@@ -279,7 +279,7 @@ else
 end
 [mstr, eventnum] = regexp(operandstr, 'e(?:vent)?(\d*)', 'match','tokens','once'); % outport
 if isempty(mstr)
-    eventnum = 0;
+    eventnum = [];
 else
     if~isempty(eventnum{1})
         eventnum = str2double(eventnum{1});
@@ -306,6 +306,12 @@ dsthdls = saFindSystem(gcs,'inport_unconnected');
 %parse input command
 optstr = regexprep(cmdstr, '^(sf|stateflow)\s*', '', 'once');
 [iptnum, optnum, fc, eventnum, sfname] = parse_stateflow(optstr);
+if isempty(iptnum)
+    iptnum = numel(srchdls);
+end
+if isempty(optnum)
+    optnum = numel(dsthdls);
+end
 if ~isempty(sfname)
     chartname = sfname;
 else
@@ -324,6 +330,12 @@ for i=1:iptnum
     tmpdata.Name = ['In', int2str(i)];
 end
 % add outport
+for i=1:eventnum
+    tmpdata = Stateflow.Event(objchart);
+    tmpdata.Scope = 'Output';
+    tmpdata.Name = ['trig', int2str(i)];
+end
+% add event output
 for i=1:optnum
     tmpdata = Stateflow.Data(objchart);
     tmpdata.Scope = 'Output';

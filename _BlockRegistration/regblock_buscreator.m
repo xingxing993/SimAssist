@@ -10,7 +10,7 @@ sabt.RoutinePara.InportProperty = 'Inputs';
 
 sabt.ArrangePortMethod{1} = 1;
 
-sabt.InportStringMethod = @getportstring_buscreator; % pass through the 3rd inport
+sabt.InportStringMethod = @getportstring_buscreator;
 sabt.PropagateDownstreamStringMethod = @propagate_downstream_buscreator;
 
 sabt.BlockSize = [5, 70];
