@@ -1,4 +1,6 @@
 function AddsaBlock(obj, sabt)
 sabt.Console = obj;
-obj.BlockMap(sabt.MapKey) = sabt;
+if ~obj.BlockMap.isKey(sabt.MapKey)
+    obj.BlockMap(sabt.MapKey) = sabt;
+end
 end

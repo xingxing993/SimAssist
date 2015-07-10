@@ -64,10 +64,10 @@ handles.output = hObject;
 
 
 %%%%%%%%%%%%% Licensing Code Begin %%%%%%%%%%%%%%%%%%%%%%%%%
-LIC_CHK.Enable = false;
+LIC_CHK.Enable = true;
 LIC_CHK.CheckUser = false;
-LIC_CHK.CheckDomain = false;
-LIC_CHK.CheckDate = true;
+LIC_CHK.CheckDomain = true;
+LIC_CHK.CheckDate = false;
 if LIC_CHK.Enable
     %-----------------------------------------------
     validusers={'ahlmq','iexsk','galfd','cnhfe','jiangxin'};

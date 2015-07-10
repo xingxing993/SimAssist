@@ -7,10 +7,12 @@ packdir = ['.\releases\SimAssist_V', datestr(now, 'yyyymmddHHMM')];
 mkdir(packdir);
 
 df = dir;
-df = df(3:end);
-copy_exlist = {'releases', 'demos','releasepack'};
+copy_exlist = {'releases','demos','releasepack','^\.git'};
 for i=1:numel(df)
-    if isempty(cell2mat(regexp(df(i).name, copy_exlist)))
+    if ismember(df(i).name, {'.', '..'})
+        continue;
+    end
+    if isempty(cell2mat(regexp(df(i).name, copy_exlist, 'once')))
         copyfile(df(i).name, fullfile(packdir, df(i).name));
     end
 end

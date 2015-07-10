@@ -15,7 +15,7 @@ if isempty(numipt)
     else
         numipt = int2str(numel(tgtobjs)); autoline = true;
     end
-    [actrec2, block] = btobj.AddBlock(varargin{:}, btobj.RoutinePara.InportProperty, numipt);
+    [actrec2, block] = btobj.AddBlock(varargin{:}, btobj.RoutinePara.InportProperty, int2str(numipt));
     actrec + actrec2;
     if autoline
         actrec.MultiAutoLine(tgtobjs, block);

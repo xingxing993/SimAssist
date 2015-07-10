@@ -28,6 +28,7 @@ else
             mapkey = refblk;
         elseif ~isempty(ancblk)
             mapkey = ancblk;
+%         elseif
         else
             mapkey = blktyp;
         end

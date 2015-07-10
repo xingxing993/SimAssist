@@ -31,9 +31,6 @@ elseif strcmp(optstr, 'cmdlist')
 elseif strcmp(optstr, 'saveas')
     saveas(console);
     success = true;
-elseif strcmp(optstr, 'tom')
-    to_mfile(console);
-    success = true;
 elseif strcmp(optstr, 'import')
     success = true;
 else
@@ -52,11 +49,12 @@ else
 end
 options.Resize='on';
 options.WindowStyle='normal';
-pattern = inputdlg('Shortcut pattern:', 'New block type', 1, {defaultpattern},options);
-if ~isempty(pattern)
-    newbt.RoutinePattern = pattern{1};
-    newbt.RoutineMethod = 'value_only';
-    newbt.RoutinePriority = 20;
+info = saDlg_AddNewBlock;
+if ~isempty(info) && ~isempty(info.RoutinePattern)
+    flds = fieldnames(info);
+    for i=1:numel(flds)
+        newbt.(flds{i}) = info.(flds{i});
+    end
     sam = newbt.CreateRoutineMacro; % new default block macro
     console.AddMacro(sam);
     % backup newly added objects

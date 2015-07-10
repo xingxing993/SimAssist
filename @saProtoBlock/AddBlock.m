@@ -44,9 +44,13 @@ elseif numel(argnumeric)==1
     if numel(argnumeric{1})==4 % given [L T R B] form 
         pos = argnumeric{1};
         blksize = pos(3:4)-pos(1:2);
-    else % given only size [W, H]
+    elseif numel(argnumeric{1})==4 % given only size [W, H]
         xy0 = saGetMousePosition;
         blksize = argnumeric{1};
+        pos = [xy0, xy0+blksize];
+    else
+        xy0 = saGetMousePosition;
+        blksize = obj.GetBlockSize;
         pos = [xy0, xy0+blksize];
     end
 else

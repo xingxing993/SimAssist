@@ -5,7 +5,7 @@ function sabt = regblock_trigonometry
 sabt = saBlock('Trigonometry');
 
 sabt.RoutineMethod = @routine_trigonometry;
-sabt.RoutinePattern = '^(sin|cos|tan|asin|acos|atan|atan2|sinh|cosh|tanh|asinh|acosh|atanh|sincos)';
+sabt.RoutinePattern = '^(sinh|cosh|tanh|asinh|acosh|atanh|sincos|sin|cos|tan|asin|acos|atan)';
 
 
 sabt.MajorProperty = 'Operator';
