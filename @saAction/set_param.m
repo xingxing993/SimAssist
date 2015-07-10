@@ -12,7 +12,7 @@ try
 catch err
     act = 'retry';
     switch err.identifier
-        case 'Simulink:SL_DupBlockName'
+        case {'Simulink:SL_DupBlockName',  'Simulink:blocks:DupBlockName'}
             parsys=get_param(obj.Handle,'Parent');
             obj.NewValue = gen_unique_name(parsys, obj.NewValue);
         case 'Simulink:SL_LockViolation'
