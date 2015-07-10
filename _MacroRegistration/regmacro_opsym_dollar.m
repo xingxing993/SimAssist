@@ -41,14 +41,6 @@ end
 function add_new_block(console)
 newbt = saBlock(gcbh);
 console.AddsaBlock(newbt);
-msktyp = get_param(gcbh,'MaskType');
-if ~isempty(msktyp)
-    defaultpattern = lower(msktyp);
-else
-    defaultpattern = lower(get_param(gcbh,'Name'));
-end
-options.Resize='on';
-options.WindowStyle='normal';
 info = saDlg_AddNewBlock;
 if ~isempty(info) && ~isempty(info.RoutinePattern)
     flds = fieldnames(info);
@@ -82,7 +74,6 @@ if ~isempty(liststr)
             console.BlockMap.remove(maprmvs{i});
         end
     end
-    
 end
 end
 
