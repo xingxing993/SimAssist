@@ -4,7 +4,7 @@ function sabt = regblock_relationaloperator
 
 sabt = saBlock('RelationalOperator');
 
-sabt.RoutinePattern = '^[><=~]';
+sabt.RoutinePattern = '^[><=~]+';
 sabt.RoutineMethod = @routine_compare;
 sabt.RoutinePrompts = {'=='  '~='  '<'  '<='  '>='  '>'};
 
@@ -30,7 +30,7 @@ if ~ismember(cmdpsr.PatternStr, {'=='  '~='  '<'  '<='  '>='  '>'})
     return;
 end
 option1.AutoDataType = false; % disable auto-datatype coz output always boolean
-[actrec2, block] = btobj.AddBlock('RelationalOperator','Operator', opsym, option1); actrec.Merge(actrec2);
+[actrec2, block] = btobj.AddBlock('RelationalOperator','Operator', cmdpsr.PatternStr, option1); actrec.Merge(actrec2);
 % add second operand if necessary
 if isempty(cmdpsr.OptionStr)
     srchdls = saFindSystem(gcs,'line_sender');

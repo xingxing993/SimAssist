@@ -4,7 +4,7 @@ function sam = regmacro_script_colorit
 
 sam = saMacro('script_colorit');
 sam.Pattern = '^b?color';
-sam.PromptMethod = {'bcolor','color'};
+sam.PromptMethod = {'bcolor','color','fcolor','color=='};
 sam.Callback = @script_colorit;
 
 end

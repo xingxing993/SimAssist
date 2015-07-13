@@ -4,7 +4,7 @@ function sabt = regblock_busselector
 
 sabt = saBlock('BusSelector');
 
-sabt.RoutineMethod = @routine_buscreator;
+sabt.RoutineMethod = @routine_busselector;
 sabt.RoutinePattern = '^(bs|busselector)';
 
 sabt.OutportStringMethod = @getportstring_busselector; % pass through the 3rd inport
