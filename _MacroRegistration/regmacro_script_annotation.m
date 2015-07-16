@@ -20,6 +20,9 @@ else %customize annotation
     for i=1:numel(tgtobjs)
         if strcmp(optstr, '-')
             actrec.SetParam(tgtobjs(i),'AttributesFormatString','');
+        elseif strncmp(optstr,'+',1)
+            oldanno = get_param(tgtobjs(i),'AttributesFormatString');
+            actrec.SetParam(tgtobjs(i),'AttributesFormatString',[oldanno, optstr(2:end)]);
         else
             actrec.SetParam(tgtobjs(i),'AttributesFormatString',optstr);
         end
