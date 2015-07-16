@@ -14,12 +14,10 @@ if nargin<3
 else
     hilite = true;
 end
-if ~isempty(console) && isfield(console.SessionPara, 'DataType')
-    dt = console.SessionPara.DataType;
-end
+
 if isempty(dt)
     majprop = obj.GetMajorProperty;
-    if ~isempty(majprop)
+    if ~isempty(majprop) % analyzed take priority over default RunOption
         dt = analyze_datatype(get_param(blkhdl, majprop));
     end
 end
@@ -36,7 +34,7 @@ if isa(setdtmethod, 'function_handle')
     else
         setdtmethod(setdtmethod(argsin{1:ni}));
     end
-elseif isstr(setdtmethod) % if string, it shall be the data type property
+elseif ischar(setdtmethod) % if string, it shall be the data type property
     if ~isempty(dt)
         if hilite
             actrec.SetParamHighlight(blkhdl, setdtmethod, dt);

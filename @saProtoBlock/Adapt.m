@@ -21,9 +21,10 @@ if option.Refine && ~isempty(obj.RefineMethod)
     actrec.Merge(obj.Refine(blkhdl));
 end
 % note that SetDataType method uses SetParamHighlight, it shall be last executed
-if isfield(option, 'DataType')
-    actrec.Merge(obj.SetDataType(blkhdl, option.DataType));
+if ~isempty(obj.Console) && isfield(obj.Console.SessionPara, 'DataType') && ~isempty(obj.Console.SessionPara.DataType)
+    actrec.Merge(obj.SetDataType(blkhdl, obj.Console.SessionPara.DataType));
 elseif option.AutoDataType && ~isempty(obj.DataTypeMethod)
     actrec.Merge(obj.SetDataType(blkhdl));
+else
 end
 end
