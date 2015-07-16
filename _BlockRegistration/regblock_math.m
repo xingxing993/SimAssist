@@ -7,6 +7,8 @@ sabt = saBlock('Math');
 sabt.RoutineMethod = @routine_math;
 sabt.RoutinePattern = '^(exp|log|log10|square|sqrt|reciprocal|pow|rem|mod)';
 
+sabt.BlockSize = [25, 25];
+
 sabt.MajorProperty = 'Operator';
 sabt.RollPropertyMethod = -1;
 end
