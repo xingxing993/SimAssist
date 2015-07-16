@@ -231,14 +231,18 @@ if optnum>0 && side(2)
     end
 end
 %function-call
-fcblk = find_system(subsys, 'FollowLinks','on', 'LookUnderMasks', 'on', 'FindAll', 'on', 'SearchDepth',1, 'BlockType', 'TriggerPort');
-if ~isempty(fcblk)
-    delete_block(fcblk);
+if fc
+    fcblk = find_system(subsys, 'FollowLinks','on', 'LookUnderMasks', 'on', 'FindAll', 'on', 'SearchDepth',1, 'BlockType', 'TriggerPort');
+    if ~isempty(fcblk)
+        delete_block(fcblk);
+    end
 end
 %enable
-enblk = find_system(subsys, 'FollowLinks','on', 'LookUnderMasks', 'on', 'FindAll', 'on', 'SearchDepth',1, 'BlockType', 'EnablePort');
-if ~isempty(enblk)
-    delete_block(enblk);
+if en
+    enblk = find_system(subsys, 'FollowLinks','on', 'LookUnderMasks', 'on', 'FindAll', 'on', 'SearchDepth',1, 'BlockType', 'EnablePort');
+    if ~isempty(enblk)
+        delete_block(enblk);
+    end
 end
 end
 
