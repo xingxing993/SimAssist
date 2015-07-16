@@ -57,9 +57,10 @@ function saDlg_AddNewBlock_OpeningFcn(hObject, eventdata, handles, varargin)
 dd = dir('.\+Routines');
 routinenames = regexprep({dd(~[dd.isdir]).name}', '\..*', '');
 set(handles.pop_routine, 'String', routinenames, 'Value', strmatch('majorprop_value',routinenames,'exact'));
-if nargin>4
+if nargin>3
     initialize_uicontrols(handles, varargin{1});
 end
+handles.Cancel = true;
 % Update handles structure
 guidata(hObject, handles);
 
@@ -73,6 +74,9 @@ elseif isstruct(info)
     set(handles.edit_patternstr, 'String', safe_get(info, 'RoutinePattern'));
     set(handles.edit_priority, 'String', num2str(safe_get(info,'RoutinePriority')));
 %     set(handles.pop_routine, );
+elseif ischar(info)||isnumeric(info) %given only block handle or path
+    newbt = saBlock(info);
+    set(handles.blockpath, 'String', newbt.GetSourcePath);
 end
 
 function val = safe_get(h, prop)
@@ -95,29 +99,37 @@ function varargout = saDlg_AddNewBlock_OutputFcn(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Get default command line output from handles structure
-if ~handles.Cancel
-    info.RoutinePattern = get(handles.edit_patternstr, 'String');
-    info.RoutinePriority = str2double(get(handles.edit_priority, 'String'));
-    contents = cellstr(get(handles.pop_routine,'String'));
-    info.RoutineMethod = contents{get(handles.pop_routine,'Value')};
-    rttbldata = get(handles.tbl_routinepara, 'Data');
-    for i=1:size(rttbldata, 1)
-        if ~isempty(rttbldata{i,1}) && ischar(rttbldata{i,1})
-            info.RoutinePara.(rttbldata{i,1}) = rttbldata{i,2};
-        end
+if ~isempty(handles)
+    if ~handles.Cancel
+        info = collect_info(handles);
+        % RoutinePara
+        varargout{1} = info;
+    else
+        varargout{1} = [];
     end
-    majprop = get(handles.edit_majorprop, 'String');
-    if ~isempty(majprop)
-        info.MajorProperty = get(handles.edit_majorprop, 'String');
-    end
-    info.BlockPreferOption.ShowName = num2onoff(get(handles.chk_showname, 'Value'));
-    info.BlockPreferOption.Selected = num2onoff(get(handles.chk_select, 'Value'));
-    % RoutinePara
-    varargout{1} = info;
+    close(handles.sadlg_addnewblock);
 else
-    varargout{1} = hObject;
+    varargout{1} = [];
 end
-close(handles.sadlg_addnewblock);
+
+function info = collect_info(handles)
+info.RoutinePattern = get(handles.edit_patternstr, 'String');
+info.RoutinePriority = str2double(get(handles.edit_priority, 'String'));
+contents = cellstr(get(handles.pop_routine,'String'));
+info.RoutineMethod = contents{get(handles.pop_routine,'Value')};
+rttbldata = get(handles.tbl_routinepara, 'Data');
+for i=1:size(rttbldata, 1)
+    if ~isempty(rttbldata{i,1}) && ischar(rttbldata{i,1})
+        info.RoutinePara.(rttbldata{i,1}) = rttbldata{i,2};
+    end
+end
+majprop = get(handles.edit_majorprop, 'String');
+if ~isempty(majprop)
+    info.MajorProperty = get(handles.edit_majorprop, 'String');
+end
+info.BlockPreferOption.ShowName = num2onoff(get(handles.chk_showname, 'Value'));
+info.BlockPreferOption.Selected = num2onoff(get(handles.chk_select, 'Value'));
+
 
 function out = num2onoff(in)
 if ~ischar(in)
@@ -241,8 +253,15 @@ function btn_tom_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_tom (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
-
+newbt = saBlock(gcbh);
+info = collect_info(handles);
+if ~isempty(info) && ~isempty(info.RoutinePattern)
+    flds = fieldnames(info);
+    for i=1:numel(flds)
+        newbt.(flds{i}) = info.(flds{i});
+    end
+end
+newbt.CreateMFile;
 
 function edit_majorprop_Callback(hObject, eventdata, handles)
 % hObject    handle to edit_majorprop (see GCBO)

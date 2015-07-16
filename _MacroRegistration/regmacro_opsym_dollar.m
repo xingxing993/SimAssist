@@ -39,10 +39,13 @@ end
 end
 
 function add_new_block(console)
+if isempty(gcbh)
+    return;
+end
 newbt = saBlock(gcbh);
 console.AddsaBlock(newbt);
-info = saDlg_AddNewBlock;
-if ~isempty(info) && ~isempty(info.RoutinePattern)
+info = saDlg_AddNewBlock(gcbh);
+if isstruct(info) && ~isempty(info.RoutinePattern)
     flds = fieldnames(info);
     for i=1:numel(flds)
         newbt.(flds{i}) = info.(flds{i});
