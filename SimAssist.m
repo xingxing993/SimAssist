@@ -66,13 +66,13 @@ handles.output = hObject;
 %%%%%%%%%%%%% Licensing Code Begin %%%%%%%%%%%%%%%%%%%%%%%%%
 LIC_CHK.Enable = true;
 LIC_CHK.CheckUser = false;
-LIC_CHK.CheckDomain = true;
-LIC_CHK.CheckDate = false;
+LIC_CHK.CheckDomain = false;
+LIC_CHK.CheckDate = true;
 if LIC_CHK.Enable
     %-----------------------------------------------
     validusers={'ahlmq','iexsk','galfd','cnhfe','jiangxin'};
     validdomains = {'kslegion'};
-    expire_date = [2015,12,31];
+    expire_date = [2016,12,31];
     %------------------------------------------------
     [tmp, sysuser] = system('echo %username%');
     [tmp, sysdomain] = system('echo %userdomain%');
@@ -154,6 +154,7 @@ end
 sapath = fileparts(mfilename('fullpath'));
 addpath(fullfile(sapath, '_BlockRegistration'));
 addpath(fullfile(sapath, '_MacroRegistration'));
+addpath(fullfile(sapath, 'Dialogs'));
 if exist(fullfile(sapath, 'SimAssistBuffer.mat'))==2
     load SimAssistBuffer.mat Console
     handles.Console = Console;

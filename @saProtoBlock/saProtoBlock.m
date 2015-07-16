@@ -9,7 +9,7 @@ classdef saProtoBlock < saObject
         % Routine macro properties
         RoutinePattern
         RoutinePrompts = {};
-        RoutinePriority
+        RoutinePriority = 50;
         RoutineMethod
         RoutinePara = struct;
         % 
@@ -70,7 +70,6 @@ classdef saProtoBlock < saObject
         
         PlusMethod
         MinusMethod
-        MultiplyMethod
     end
     
     properties (Constant)
