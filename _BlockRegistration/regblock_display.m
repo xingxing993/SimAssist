@@ -5,7 +5,7 @@ function sabt = regblock_display
 sabt = saBlock('Display');
 
 sabt.RoutineMethod = 'num_only';
-sabt.RoutinePattern = '^(disp|display)';
+sabt.RoutinePattern = '^(display|disp)';
 
 
 sabt.ConnectPort = [1, 0];

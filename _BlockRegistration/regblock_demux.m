@@ -60,7 +60,7 @@ cmdpsr = saCmdParser(cmdstr, btobj.RoutinePattern);
 if ~bclean return; end
 
 if ~isempty(numopt)
-    actrec + btobj.AddBlock('Outputs', int2str(optstr));
+    actrec + btobj.AddBlock('Outputs', int2str(numopt));
 else
     dsthdls = saFindSystem(gcs,'line_receiver');
     if ~isempty(dsthdls)
