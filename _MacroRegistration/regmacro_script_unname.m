@@ -9,6 +9,8 @@ sam.Callback = @script_unname;
 end
 
 function [actrec, success] =script_unname(cmdstr, console)
+%%THE SECOND PARAMETER IS NOT MANDATORY WHEN PROVIDING THIS CALLBACK
+%%INTERFACE
 actrec=saRecorder;success = false;
 lns=saFindSystem(gcs, 'line');
 for i=1:numel(lns)

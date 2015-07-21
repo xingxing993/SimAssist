@@ -4,11 +4,11 @@ function sabt = regblock_product
 
 sabt = saBlock('Product');
 
-sabt.RoutinePattern = '^[*/]+';
-sabt.RoutineMethod = @routine_multiply_divide;
-
 parsabt = regblock_sum;
 sabt.Inherit(parsabt);
+
+sabt.RoutinePattern = '^[*/]+';
+sabt.RoutineMethod = @routine_multiply_divide;
 
 end
 
