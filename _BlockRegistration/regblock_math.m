@@ -5,7 +5,8 @@ function sabt = regblock_math
 sabt = saBlock('Math');
 
 sabt.RoutineMethod = @routine_math;
-sabt.RoutinePattern = '^(exp|log|log10|square|sqrt|reciprocal|pow|rem|mod)';
+sabt.RoutinePattern = '^(exp|log10|log|square|reciprocal|pow|rem|mod)';
+sabt.RoutinePriority = 51;
 
 sabt.BlockSize = [25, 25];
 
