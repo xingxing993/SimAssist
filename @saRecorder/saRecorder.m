@@ -10,6 +10,11 @@ classdef saRecorder < handle
         function tf = isempty(obj)
             tf = isempty(obj.ActionList);
         end
+        
+        function Dummy(obj)
+            sa = saAction('Dummy');
+            obj.PushItem(sa);
+        end
     end %methods
 end %classdef
 
