@@ -4,7 +4,7 @@ function sabt = regblock_terminator
 
 sabt = saBlock('Terminator');
 sabt.RoutineMethod = 'num_only';
-sabt.RoutinePattern = '^(term|terminator)';
+sabt.RoutinePattern = '^(terminator|term)';
 
 sabt.ConnectPort = [1, 0];
 end

@@ -4,7 +4,7 @@ function sabt = regblock_ratetransition
 
 sabt = saBlock('RateTransition');
 sabt.RoutineMethod = 'num_only';
-sabt.RoutinePattern = '^(rt|rate|ratetrans)';
+sabt.RoutinePattern = '^(ratetrans|rate|rt)';
 
 
 sabt.MajorProperty = '';

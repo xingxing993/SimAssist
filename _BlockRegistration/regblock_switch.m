@@ -4,7 +4,7 @@ function sabt = regblock_switch
 
 sabt = saBlock('Switch');
 
-sabt.RoutinePattern = '^(sw|switch)';
+sabt.RoutinePattern = '^(switch|sw)';
 sabt.RoutineMethod = @routine_switch;
 
 sabt.DefaultParameters = {'Criteria', 'u2 ~= 0'};
@@ -14,6 +14,7 @@ sabt.OutportStringMethod = 3; % pass through the 3rd inport
 
 sabt.RefineMethod = @refine_method;
 sabt.AnnotationMethod = '%<Criteria>';
+sabt.DataTypeMethod = [];
 
 sabt.ConnectPort = [2, 1];
 

@@ -4,7 +4,7 @@ function sabt = regblock_triggerport
 
 sabt = saBlock('TriggerPort');
 
-sabt.RoutinePattern = '^(trig|trigger|fc)';
+sabt.RoutinePattern = '^(trigger|trig|fc)';
 sabt.RoutineMethod = @routine_trigger;
 
 sabt.BlockSize = [20, 20];
@@ -35,7 +35,7 @@ elseif ~isempty(cmdpsr.OptionStr)
         case 'e' %either
             pvpair = {'TriggerType', 'either', 'Name', 'TrigEither'};
         otherwise
-            success = false; return;
+            pvpair = {'TriggerType', 'function-call', 'Name', cmdpsr.OptionStr};
     end
 else
     pvpair = {};
