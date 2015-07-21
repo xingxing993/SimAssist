@@ -67,7 +67,12 @@ regtmp = regexp(cmdstr, testpattern, 'tokens','once');
 if ~isempty(regtmp)
     nmulti = str2double(regtmp{1});
     obj.SessionPara.MultiSuffix = nmulti;
-    cmdstr = regexprep(cmdstr, testpattern, '', 'once');
+    tmpcmdstr = regexprep(cmdstr, testpattern, '', 'once');
+    if isempty(tmpcmdstr) % if given only *N form, shall not be recognized as cmdstr*N pattern
+        nmulti = 1;
+    else
+        cmdstr = tmpcmdstr;
+    end
 else
     nmulti = 1;
 end
