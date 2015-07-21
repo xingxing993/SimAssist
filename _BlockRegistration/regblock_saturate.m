@@ -4,10 +4,10 @@ function sabt = regblock_saturate
 
 sabt = saBlock('Saturate');
 sabt.RoutineMethod = 'multiprop';
-sabt.RoutinePattern = '^(sat|saturate)';
+sabt.RoutinePattern = '^(saturate|sat)';
 
 
-sabt.MajorProperty = {'UpperLimit','_Hi';'LowerLimit','_Lo'};
+sabt.MajorProperty = {'LowerLimit','_Lo';'UpperLimit','_Hi'};
 sabt.DictRenameMethod = {'UpperLimit','LowerLimit'};
 
 sabt.PropagateUpstreamStringMethod = @set_string;

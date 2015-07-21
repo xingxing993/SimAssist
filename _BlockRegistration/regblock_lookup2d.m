@@ -4,12 +4,12 @@ function sabt = regblock_lookup2d
 
 sabt = saBlock('Lookup2D');
 sabt.RoutineMethod = 'multiprop';
-sabt.RoutinePattern = '^(l2|lookup2d|lu2d)';
+sabt.RoutinePattern = '^(lookup2d|l2|lu2d)';
 
 
 
 sabt.ConnectPort = [0, 1];
-sabt.MajorProperty = {'Table',''; 'RowIndex','_X';'ColumnIndex','_Y'};
+sabt.MajorProperty = {'RowIndex','_X';'ColumnIndex','_Y';'Table',''};
 sabt.DictRenameMethod = {'Table','RowIndex','ColumnIndex'};
 sabt.DefaultParameters = {...
     'AttributesFormatString', sprintf('X:%%<x>\nY:%%<y>\nZ:%%<t>'), ...

@@ -6,8 +6,9 @@ sabt = saBlock('Lookup');
 
 sabt.RoutineMethod = 'multiprop';
 sabt.RoutinePattern = '^(l1|lookup|lu1d)';
+sabt.RoutinePriority = 51;
 
-sabt.MajorProperty = {'Table','';'InputValues','_X'};
+sabt.MajorProperty = {'InputValues','_X';'Table',''};
 sabt.DictRenameMethod = {'Table','InputValues'};
 
 sabt.DefaultParameters = {...
