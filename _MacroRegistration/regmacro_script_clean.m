@@ -9,7 +9,7 @@ sam.Callback = @script_clean;
 end
 
 function [actrec, success] =script_clean(cmdstr, console)
-actrec=saRecorder;success = false;
+actrec=saRecorder;
 % 1. clean unconnected lines
 lns = saFindSystem(gcs, 'line_unconnected');
 actrec.DeleteLine(lns);
@@ -27,6 +27,7 @@ for i=1:numel(blocks)
         end
     end
     if ~haveline
+        actrec.Dummy;% use this trick to make actrec not empty (otherwise this action may be taken as unsuccessful)
         delete(blocks(i));
     end
 end

@@ -183,7 +183,8 @@ end
 end
 
 function actrec = subsys_minus(blkhdl, optstr, console)
-actrec = saRecorder;
+actrec = saRecorder; 
+actrec.Dummy;% use this trick to make actrec not empty (otherwise this action may be taken as unsuccessful)
 if nargin<3 || isempty(console)
     side = [true, true];
 else

@@ -150,7 +150,8 @@ end
 
 
 function actrec = stateflow_plus(blkhdl, optstr, console)
-actrec = saRecorder;
+actrec = saRecorder;  
+actrec.Dummy;% use this trick to make actrec not empty (otherwise this action may be taken as unsuccessful)
 % command parse
 [iptnum, optnum, fc, eventnum] = parse_stateflow(optstr);
 % execution
@@ -199,7 +200,8 @@ end
 end
 
 function actrec = stateflow_minus(blkhdl, optstr, console)
-actrec = saRecorder;
+actrec = saRecorder;  
+actrec.Dummy;% use this trick to make actrec not empty (otherwise this action may be taken as unsuccessful)
 if nargin<3 || isempty(console)
     side = [true, true];
 else
@@ -229,7 +231,7 @@ if ~isempty(iptnum)&&iptnum>0 && side(1)
     end
 end
 %outport
-tmpobjs = chartobj.find('Scope','Output');
+tmpobjs = chartobj.find('-isa', 'Stateflow.Data', 'Scope','Output');
 cntr = 0;
 if isequal(optstr, '-')
     optnum = numel(tmpobjs);
@@ -241,6 +243,23 @@ if ~isempty(optnum) && optnum>0 && side(2)
             cntr = cntr+1;
         end
         if cntr==optnum
+            break;
+        end
+    end
+end
+%output trigger
+tmpobjs = chartobj.find('-isa', 'Stateflow.Event', 'Scope','Output');
+cntr = 0;
+if isequal(optstr, '-')
+    eventnum = numel(tmpobjs);
+end
+if ~isempty(eventnum) && eventnum>0 && side(2)
+    for i=numel(tmpobjs):-1:1
+        if lns.Outport(tmpobjs(i).Port)<0
+            delete(tmpobjs(i));
+            cntr = cntr+1;
+        end
+        if cntr==eventnum
             break;
         end
     end
