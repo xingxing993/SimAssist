@@ -3,10 +3,10 @@ function sam = regmacro_script_colorit
 % Registration of ??? macro in SimAssist
 
 sam = saMacro('script_colorit');
-sam.Pattern = '^b?color';
+sam.Pattern = '^[bf]?color';
 sam.PromptMethod = {'bcolor','color','fcolor','color=='};
 sam.Callback = @script_colorit;
-
+sam.Priority = 19;
 end
 
 function [actrec, success] =script_colorit(cmdstr, console)
@@ -17,7 +17,7 @@ if cmdstr(1)=='b'
 else
     bg = false;
 end
-optstr=strtrim(regexprep(cmdstr,'^b?color\s*','','once'));
+optstr=strtrim(regexprep(cmdstr,'^[bf]?color\s*','','once'));
 if ismember(optstr, {'same','=', '=='})
     optstr = mat2str(rand(1,3));
 end
