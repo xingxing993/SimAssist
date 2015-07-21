@@ -64,7 +64,7 @@ classdef saProtoBlock < saObject
         AlignMethod = -1
         ColorMethod = -1
         CleanMethod
-        DataTypeMethod% = -1
+        DataTypeMethod = -1
         ArrangePortMethod = {[], []}
         
         

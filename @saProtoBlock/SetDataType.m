@@ -9,8 +9,7 @@ if isempty(setdtmethod)
 end
 
 if nargin<3
-    dt='';
-    hilite = false;
+    dt=''; hilite = false;
 else
     hilite = true;
 end
@@ -21,7 +20,7 @@ if isempty(dt)
         dt = analyze_datatype(get_param(blkhdl, majprop));
     end
 end
-if isempty(dt)
+if isempty(dt) && ~isempty(console)
     dt = console.RunOption.DataType;
 end
 

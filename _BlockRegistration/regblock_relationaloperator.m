@@ -18,6 +18,7 @@ sabt.BlockPreferOption.AutoDataType = false;
 sabt.BlockSize = [25, 70];
 
 sabt.AutoSizeMethod = []; % no need for auto size
+sabt.DataTypeMethod = [];
 
 end
 

@@ -19,6 +19,7 @@ sabt.RollPropertyMethod = -1;
 
 sabt.BlockSize = [25, 70];
 sabt.AutoSizeMethod = -1;
+sabt.DataTypeMethod = [];
 
 sabt.LayoutSize.ToLineOffset = [50 100];
 
