@@ -1,15 +1,13 @@
 function varargout = TemporaryCurrentBlockBased(obj, varargin)
-if nargout>0 % varargin should be {blkhdl} in this condition
-    if isequal(obj.AutoSizeMethod, -1)
-        info.LayoutSize = obj.LayoutSize;
-        % modify default port spacing
-        ps = gcps(varargin{1});
-        if ps>0
-            obj.LayoutSize.PortSpacing = ps;
-        end
+if nargout>0 % backup action: varargin should be {blkhdl} in this condition
+    info.LayoutSize = obj.LayoutSize;
+    % modify default port spacing
+    ps = gcps(varargin{1});
+    if ps>0
+        obj.LayoutSize.PortSpacing = ps;
     end
     varargout = {info};
-else % varargin should be structure to be restored
+else % restore action: varargin should be structure to be restored
     stru = varargin{1};
     flds = fieldnames(stru);
     for i=1:numel(flds)
