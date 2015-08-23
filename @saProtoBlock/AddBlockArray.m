@@ -5,6 +5,7 @@ function [actrec, blkhdls] = AddBlockArray(obj, varargin)
 % obj.AddBlockArray(startpos, N, ...);
 % obj.AddBlockArray(startpos, N, blksize, ...);
 % obj.AddBlockArray(N, startpos, 'PROP1', 'VAL1', ... blksize, ... POSTFUN);
+% obj.AddBlockArray(N, startpos, 'PROP1', {'VAL1','VAL2','VAL3'}, ... blksize, ... POSTFUN);
 
 actrec = saRecorder;blkhdls = [];
 
@@ -32,11 +33,20 @@ else
     startpos = szpara{1};
 end
 
+
 DH = obj.LayoutSize.VerticalMargin + blksize(2);
 for i=1:N
     ltpos = startpos+[0, DH*(i-1)];
     blkpos = [ltpos, ltpos+blksize];
-    [actrec2, blkhdl] = obj.AddBlock(blkpos, argnnum{:});  actrec + actrec2;
+    argnnum_decell = cellfun(@(arg)get_nth_cell(arg, i), argnnum, 'UniformOutput', false);
+    [actrec2, blkhdl] = obj.AddBlock(blkpos, argnnum_decell{:});  actrec + actrec2;
     blkhdls = [blkhdls; blkhdl];
+end
+end
+
+function argout = get_nth_cell(arg, n)
+argout = arg;
+if iscell(arg)
+    argout = arg{min(n,end)};
 end
 end

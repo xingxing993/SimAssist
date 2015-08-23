@@ -1,4 +1,4 @@
-function [result, bclean] = ParseStringAndInteger(obj)
+function [result, bclean] = ParseValuesAndInteger(obj)
 % float numbers will also be considered as string, e.g., 1e-3, 12.345, etc.
 
 % find isolated integers, i.e., not trailing "." ,"-" or letters, and not
@@ -14,9 +14,9 @@ else
 end
 reststr = strtrim(regexprep(obj.OptionStr, numpattern, ' ', 'once'));
 
-valpattern = '[^0-9]\w+';
-result.String = regexp(reststr, valpattern, 'match','once');
+valpattern = '([-+]?\d+[.]?\d*([eE][-+]?\d+)?)|\w+';
+result.Values = regexp(reststr, valpattern, 'match');
 
 reststr = strtrim(regexprep(reststr, valpattern, ''));
-bclean = isempty(reststr);
+bclean = isempty(regexp(reststr, '[^,|\./]'));
 end

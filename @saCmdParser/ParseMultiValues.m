@@ -4,7 +4,7 @@ function [result, bclean] = ParseMultiValues(obj, nmax)
 if isempty(obj.OptionStr)
     result = {};
 else
-    result = regexp(obj.OptionStr, ',|\s+' ,'split');
+    result = regexp(obj.OptionStr, '[,\s]+' ,'split');
 end
 if nargin>1 && numel(result)>nmax
     bclean = false;

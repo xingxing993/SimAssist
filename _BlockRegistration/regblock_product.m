@@ -22,7 +22,7 @@ if numel(cmdpsr.PatternStr)==1
 else
     operator = cmdpsr.PatternStr;
 end
-[operand, bclean] = cmdpsr.ParseValueString;
+[operand, bclean] = cmdpsr.ParseSingleValue;
 if ~bclean [actrec, success]=deal(saRecorder, false); return; end
 
 [actrec2, block] = btobj.AddBlock('Inputs', operator); actrec.Merge(actrec2);

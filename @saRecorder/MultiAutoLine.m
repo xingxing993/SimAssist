@@ -74,7 +74,7 @@ for i=1:numel(srchdls)
         continue;
     else
         obj.AutoLine(srchdls(i), dsthdls(dstidx), overlap_offset(dstidx,:), varargin{:});
-        dsthdls(dstidx)=[];dstpos(dstidx) = [];overlap_offset(dstidx,:) = []; %remove from destination list
+        dsthdls(dstidx)=[];dstpos(dstidx,:) = [];overlap_offset(dstidx,:) = []; %remove from destination list
     end
 end
 end

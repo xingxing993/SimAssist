@@ -72,7 +72,7 @@ if LIC_CHK.Enable
     %-----------------------------------------------
     validusers={'ahlmq','iexsk','galfd','cnhfe','jiangxin'};
     validdomains = {'kslegion'};
-    expire_date = [2016,12,31];
+    expire_date = [2015,12,31];
     %------------------------------------------------
     [tmp, sysuser] = system('echo %username%');
     [tmp, sysdomain] = system('echo %userdomain%');
