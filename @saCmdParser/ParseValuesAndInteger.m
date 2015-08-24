@@ -14,9 +14,13 @@ else
 end
 reststr = strtrim(regexprep(obj.OptionStr, numpattern, ' ', 'once'));
 
-valpattern = '([-+]?\d+[.]?\d*([eE][-+]?\d+)?)|\w+';
-result.Values = regexp(reststr, valpattern, 'match');
-
-reststr = strtrim(regexprep(reststr, valpattern, ''));
-bclean = isempty(regexp(reststr, '[^,|\./]'));
+if ~isempty(strfind(reststr, ','))
+    result.Values = regexp(reststr, ',' ,'split');
+else
+    result.Values = regexp(reststr, '\s+' ,'split');
+end
+if isempty(result.Values{end})
+    result.Values(end) = [];
+end
+bclean = true;
 end

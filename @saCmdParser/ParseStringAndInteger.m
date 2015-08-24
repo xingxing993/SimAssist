@@ -14,7 +14,7 @@ else
 end
 reststr = strtrim(regexprep(obj.OptionStr, numpattern, ' ', 'once'));
 
-valpattern = '[^0-9]\w+';
+valpattern = '[^0-9]\w+\s*';
 result.String = regexp(reststr, valpattern, 'match','once');
 
 reststr = strtrim(regexprep(reststr, valpattern, ''));

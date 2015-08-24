@@ -6,5 +6,5 @@ else
     result = str2double(result);
 end
 reststr = regexprep(obj.OptionStr, '\d+', '', 'once');
-bclean = isempty(reststr);
+bclean = isempty(strtrim(reststr));
 end
