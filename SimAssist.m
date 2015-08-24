@@ -407,16 +407,17 @@ function ExpandBtn_Callback(hObject, eventdata, handles)
 % hObject    handle to ExpandBtn (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-widthexp=293;
-widthorg=123;
+pospanel = get(handles.uipanel3, 'Position');
+posbtn = get(hObject, 'Position');
+
 if strcmpi(get(hObject,'String'),'>')
     figpos=get(handles.SimAssist,'Position');
-    figpos(3)=widthexp;
+    figpos(3)=pospanel(1)+pospanel(3)+5;
     set(handles.SimAssist,'Position',figpos);
     set(hObject,'String','<');
 elseif strcmpi(get(hObject,'String'),'<')
     figpos=get(handles.SimAssist,'Position');
-    figpos(3)=widthorg;
+    figpos(3)=posbtn(1)+posbtn(3)+5;
     set(handles.SimAssist,'Position',figpos);
     set(hObject,'String','>');
 end
