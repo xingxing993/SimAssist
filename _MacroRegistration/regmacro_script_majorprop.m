@@ -24,6 +24,8 @@ else
 end
 
 blks=saFindSystem(gcs, 'block');
+lns = saFindSystem(gcs, 'line');
+blks = [blks; lns];
 for i=1:numel(blks)
     if iscellstr(opt)
         propval = opt{min(i, end)};
