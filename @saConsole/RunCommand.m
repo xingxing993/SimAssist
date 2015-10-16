@@ -91,6 +91,9 @@ for i=1:nmulti
     obj.SessionPara.IndexOfMulti = i;
     if isempty(strtrim(cmdstr))
         return;
+    else
+        % replace '#clipboard, #cp keyword'
+        cmdstr = regexprep(cmdstr, '#(clip|clipboard|cb)', get_clipboard);
     end
     submacros = obj.Macros.MatchPattern(cmdstr);
     if numel(submacros)>0
@@ -118,4 +121,15 @@ elseif b2 && ~b1
 else
 end
 cmdstr = regexprep(cmdstr, '\[|\]', '');
+end
+
+function str = get_clipboard
+rawstr = clipboard('paste');
+if isempty(rawstr)
+    str='';return;
+end
+str = regexprep(rawstr, '\n+', ',');
+if str(end)==','
+    str(end)=[];
+end
 end
