@@ -624,7 +624,7 @@ if isempty(alldlgparas)
     alldlgparas={'---'};
     set(handles.popmenu_prop,'String',alldlgparas,'Value',1);
 elseif ~isempty(oldprop)&&~isempty(strmatch(oldprop,alldlgparas))
-    set(handles.popmenu_prop,'String',alldlgparas,'Value',strmatch(oldprop,alldlgparas));
+    set(handles.popmenu_prop,'String',alldlgparas,'Value',strmatch(oldprop,alldlgparas, 'exact'));
 else
     set(handles.popmenu_prop,'String',alldlgparas,'Value',1);
 end
@@ -1135,7 +1135,9 @@ end
 function show_promptlist(hObject, liststr)
 if ~isempty(liststr)
     pos = get(hObject, 'Position');
-    pos(4) = min(numel(liststr)+1, 10);
+    hfig = get(hObject,'Parent');
+    figpos = get(hfig,'Position');
+    pos(4) = min((numel(liststr)+1)*10, figpos(4)-30);
     oldval = get(hObject, 'Value');
     set(hObject, 'Value', min(oldval, numel(liststr)), 'String', liststr, 'Position', pos, 'Visible', 'on');
 else
@@ -1184,6 +1186,7 @@ if strcmp(eventdata.Key, 'return')
     set(hObject, 'Visible', 'off', 'Value', 1, 'String', {'#None#'});
 elseif strcmp(eventdata.Key, 'escape')
     set(hObject, 'Visible', 'off', 'Value', 1, 'String', {'#None#'});
+    uicontrol(handles.edit_cmdstr);
 end
 end
 
