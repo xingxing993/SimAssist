@@ -10,7 +10,7 @@ else
         result = regexp(obj.OptionStr, '\s+' ,'split');
     end
 end
-if isempty(result{end})
+if ~isempty(result) && isempty(result{end})
     result(end) = [];
 end
 if nargin>1 && numel(result)>nmax
