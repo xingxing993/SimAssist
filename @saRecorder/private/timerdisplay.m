@@ -1,5 +1,9 @@
 function timerdisplay(hblk,properties,newvals)
-oldcolor=get_param(hblk,'ForegroundColor');
+try
+    oldcolor=get_param(hblk,'ForegroundColor');
+catch
+    return;
+end
 oldannotation=get_param(hblk,'AttributesFormatString');
 set_param(hblk,'ForegroundColor','green');
 if isstr(properties)

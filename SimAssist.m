@@ -729,6 +729,9 @@ function mi_fb_specify_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 ud=get(handles.btn_fmtbrush,'UserData');
+if isfield(ud, 'MultiValues')&&~isempty(ud.MultiValues) % this menu doesn't work in multi brush mode
+    return;
+end
 if isfield(ud, 'Handle')&&~isempty(ud.Handle)
     extraprops = {'ForegroundColor';'BackgroundColor';'AttributesFormatString'};
     liststr = [fieldnames(get_param(ud.Handle,'DialogParameters'));extraprops];
@@ -1217,42 +1220,49 @@ function btn_fmtbrush_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 ud = get(hObject, 'UserData');
-if isfield(ud, 'Handle') && ~isempty(ud.Handle)
-    actrec = fmtbrush_brush(hObject);
+if (isfield(ud, 'Handle') && ~isempty(ud.Handle)) || (isfield(ud, 'MultiValues') && ~isempty(ud.MultiValues))
+    if (isfield(ud, 'Handle') && ~isempty(ud.Handle))
+        actrec = fmtbrush_brush(hObject);
+    else
+        actrec = fmtbrush_multibrush(hObject, handles);
+    end
     savehistory(handles,actrec);
     % restore state
     if strcmp(get(handles.mi_fmtbrushlock, 'Checked'), 'off')
         ud.Handle = [];
         ud.Properties = {};
+        ud.MultiValues = {}; % multi mode
         %Change icon
-        tmp=get(hObject,'CData');
         set(hObject,'CData',ud.CData);
-        ud.CData=tmp;
         set(hObject,'TooltipString','No template block');
         set(hObject,'UserData',ud);
+        set(hObject, 'String', ''); % multi mode
     end
 else
-    fmtbrush_lock(hObject);
+    fmtbrush_lock(hObject, handles);
 end
 end
 
 
-function fmtbrush_lock(hObject)
+function fmtbrush_lock(hObject, handles)
 ud = get(hObject, 'UserData');
-fmtblk=saFindSystem(gcs,'block');
-if numel(fmtblk)>1
-    warndlg('Multiple block selected');
-    return;
+fmtblk = saFindSystem(gcs,'block');
+fmtlns = saFindSystem(gcs,'line');
+if numel(fmtblk)>1 || numel(fmtlns)>0 % multi mode
+    %Change icon and ID
+    set(hObject,'CData',ud.CData2);
+    set(hObject,'TooltipString','Multi mode');
+    srcobjs = [fmtblk; fmtlns];
+    for i=1:numel(srcobjs)
+        btobj = handles.Console.MapTo(srcobjs(i));
+        ud.MultiValues{i} = get_param(srcobjs(i), btobj.GetMajorProperty);
+    end
 elseif numel(fmtblk)==0
-%     warndlg('No template block selected');
-%     return;
 else
     ud.Handle = fmtblk;
     ud.Properties = {};
     %Change icon
-    tmp=get(hObject,'CData');
-    set(hObject,'CData',ud.CData);
-    ud.CData=tmp;
+    set(hObject,'CData',ud.CData1);
     set(hObject,'TooltipString',['Template block: ',getfullname(fmtblk)]);
 end
 set(hObject,'UserData',ud);
@@ -1279,6 +1289,21 @@ for i=1:numel(tgtblks)
     tmppairs = [sameparas, sameparavals']'; % must be [2, N] in size
     try
         actrec.SetParamHighlight(tgtblks(i),tmppairs{:});
+    end
+end
+end
+
+function actrec = fmtbrush_multibrush(hObject, handles)
+actrec=saRecorder;
+ud = get(hObject, 'UserData');
+tgtblks = saFindSystem(gcs,'block');
+tgtlns = saFindSystem(gcs,'line');
+tgtobjs = [tgtblks; tgtlns];
+for i=1:numel(tgtobjs)
+    btobj = handles.Console.MapTo(tgtobjs(i));
+    majprop = btobj.GetMajorProperty;
+    if ~isempty(majprop)
+        actrec.SetParamHighlight(tgtobjs(i), majprop, ud.MultiValues{min(i,end)});
     end
 end
 end
