@@ -114,10 +114,14 @@ if LIC_CHK.Enable
     end
     if expire_date(1)<sysdate(1) %check date then
         datepass = false;
-    else
+    elseif expire_date(1)>sysdate(1)
+        datepass = true;
+    else % equal
         if expire_date(2)<sysdate(2)
-            datepass=false;
-        else
+            datepass = false;
+        elseif expire_date(2)>sysdate(2)
+            datepass = true;
+        else % equal
             if expire_date(3)<sysdate(3)
                 datepass=false;
             else
