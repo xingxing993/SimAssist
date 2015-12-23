@@ -31,11 +31,16 @@ elseif strcmpi(get_param(hdl,'Type'),'port')
         thestr = obj.GetDownstreamString(lnofpt);
     elseif strcmp(pttyp, 'inport')
         thestr = getdownstreamstr_inport(obj, hdl);
+    elseif strcmp(pttyp, 'trigger')
+        thestr = getdownstreamstr_trigger(obj,hdl);
+    elseif strcmp(pttyp, 'enable')
+        thestr = getdownstreamstr_enable(obj,hdl);
     else
         thestr = '';
     end
 end
 end
+
 
 function thestr = getdownstreamstr_block(obj, blkhdl)
 if strcmp(get_param(blkhdl,'BlockType'), 'Outport')
@@ -103,4 +108,23 @@ end
 if isempty(thestr)
     thestr = get_param(parblk, 'Name');
 end
+end
+
+function thestr = getdownstreamstr_trigger(obj,pthdl)
+parsys = get_param(pthdl, 'Parent');
+partyp = get_param(parsys, 'MaskType');
+if strcmp(partyp, 'Stateflow')
+    sfchart = get_param(parsys, 'Object');
+    trigobj = sfchart.find('-isa','Stateflow.Event','Scope','Input');
+    thestr = trigobj.Name;
+else
+    trigblk = find_system(parsys, 'LookUnderMasks','on', 'FollowLinks', 'on', 'BlockType', 'TriggerPort');
+    thestr = get_param(trigblk, 'Name');
+end
+end
+
+function thestr = getdownstreamstr_enable(obj,pthdl)
+parsys = get_param(pthdl, 'Parent');
+enblk = find_system(parsys, 'LookUnderMasks','on', 'FollowLinks', 'on', 'BlockType', 'EnablePort');
+thestr = get_param(enblk, 'Name');
 end

@@ -7,6 +7,8 @@ sabt = saBlock('TriggerPort');
 sabt.RoutinePattern = '^(trigger|trig|fc)';
 sabt.RoutineMethod = @routine_trigger;
 
+sabt.PropagateUpstreamStringMethod = @trigpropupstream;
+
 sabt.BlockSize = [20, 20];
 sabt.BlockPreferOption.ShowName = 'on';
 
@@ -42,4 +44,12 @@ else
 end
 actrec + btobj.AddBlock(pvpair{:});
 success = true;
+end
+
+function actrec = trigpropupstream(blkhdl, ~, console)
+actrec = saRecorder;
+parsys = get_param(blkhdl, 'Parent');
+pts = get_param(parsys,'PortHandles');
+thestr = console.GetUpstreamString(pts.Trigger);
+actrec.SetParam(blkhdl, 'Name', thestr);
 end

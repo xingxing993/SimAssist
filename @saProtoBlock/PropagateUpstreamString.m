@@ -8,8 +8,12 @@ end
 console = obj.Console;
 if isstruct(up_prpg_method) % struct: StringPortNum, Method
     pts = get_param(blkhdl, 'PortHandles');
-    blkistr = console.GetUpstreamString(pts.Inport(up_prpg_method.StringPortNum));
-    up_prpg_method = up_prpg_method.Method;
+    if ischar(up_prpg_method.StringPortNum) % Trigger or Enable
+        blkistr = console.GetUpstreamString(pts.(up_prpg_method.StringPortNum));
+    else
+        blkistr = console.GetUpstreamString(pts.Inport(up_prpg_method.StringPortNum));
+        up_prpg_method = up_prpg_method.Method;
+    end
 else
     blkistr = console.GetUpstreamString(blkhdl);
 end
@@ -17,7 +21,7 @@ end
 if isa(up_prpg_method, 'function_handle')
     nn = nargout(up_prpg_method);
     ni = nargin(up_prpg_method);
-    argsin = {blkhdl, blkistr};
+    argsin = {blkhdl, blkistr, console};
     if nn~=0 %if mandatory output exist, must be saRecorder
         actrec.Merge(up_prpg_method(argsin{1:ni}));
     else
