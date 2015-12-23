@@ -21,6 +21,7 @@ end
 btfrom = console.MapTo('From');
 btgoto = console.MapTo('Goto');
 option.PropagateString = false; % do not propagate
+option.GetMarginByMouse = false;
 for i=1:numel(lnhdls)
     % collect informations
     if isempty(givenname)
