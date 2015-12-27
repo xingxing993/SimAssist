@@ -1,4 +1,10 @@
 function [bestsplit,opt]=parse_string(ts,dict)
+if isempty(ts)
+    bestsplit = struct('String', '', 'StrangeCharCount', 0, 'StrangerList', {{}});
+    opt = bestsplit;
+    return;
+end
+
 charcnt=numel(ts);
 maxlen=max(cellfun(@numel,dict));
 minlen=min(cellfun(@numel,dict));
