@@ -21,6 +21,7 @@ sabt.BlockSize = [30 14];
 sabt.BlockPreferOption.ShowName = 'on';
 sabt.BlockPreferOption.AutoDataType = false;
 
+sabt.AnnotationMethod = 'Disable Action: %<OutputWhenDisabled>';
 
 sabt.DataTypeMethod = -1;
 sabt.DefaultDataType = 'Inherit: auto';
