@@ -72,7 +72,7 @@ if LIC_CHK.Enable
     %-----------------------------------------------
     validusers={'ahlmq','iexsk','galfd','cnhfe','jiangxin'};
     validdomains = {'kslegion'};
-    expire_date = [2015,12,31];
+    expire_date = [2016,06,30];
     %------------------------------------------------
     [tmp, sysuser] = system('echo %username%');
     [tmp, sysdomain] = system('echo %userdomain%');
@@ -101,7 +101,7 @@ if LIC_CHK.Enable
             if ispref('SimAssist_Pref','DateValid')
                 if ~getpref('SimAssist_Pref','DateValid') && LIC_CHK.CheckDate
                     datepass=false;
-                    errordlg('SimAssist : Time expired for usage, contact jiangxin@szlegion.com for information');
+                    errordlg('SimAssist : Time expired for usage, contact jiangxinauto@163.com for information');
                     close(hObject);
                     return;
                 end
@@ -130,7 +130,7 @@ if LIC_CHK.Enable
         end
     end
     if ~datepass && LIC_CHK.CheckDate
-        errordlg('SimAssist : Time expired for usage, contact jiangxin@szlegion.com for information');
+        errordlg('SimAssist : Time expired for usage, contact jiangxinauto@163.com for information');
         setpref('SimAssist_Pref', 'DateValid',false);
         close(hObject);
         return;
