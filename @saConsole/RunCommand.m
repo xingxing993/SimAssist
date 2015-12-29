@@ -48,7 +48,7 @@ if ~isempty(regtmp)
 end
 
 % >> test explicit data type :datatypestr
-testpattern  = '\s*:(single|sgl|double|dbl|boolean|bool|uint8|u8|uint16|u16|uint32|u32|int8|i8|int16|i16|int32|i32)\s*';
+testpattern  = '\s*:(single|sgl|double|dbl|boolean|bool|uint8|u8|uint16|u16|uint32|u32|int8|i8|int16|i16|int32|i32)?\s*$';
 regtmp = regexp(cmdstr, testpattern, 'tokens','once');
 if ~isempty(regtmp)
     session_dt = saStandardDataTypeStr(regtmp{1});% convert to standard string
