@@ -95,6 +95,9 @@ indataobjs = chartobj.find('-isa','Stateflow.Data','Scope','Input');
 srcinfo = [];
 for i=1:numel(indataobjs)
     idx = indataobjs(i).Port;
+    if isnan(idx) % embedded simulink function
+        continue;
+    end
     if lns.Inport(idx)>0
         tmplnpos = get_param(lns.Inport(idx), 'Points');
         srcinfo = [srcinfo; struct('Y', tmplnpos(1,2), 'sfObject', indataobjs(i))];
@@ -120,6 +123,9 @@ outeventobjs = chartobj.find('-isa','Stateflow.Event','Scope','Output');
 dstinfo = [];
 for i=1:nodata
     idx = outdataobjs(i).Port;
+    if isnan(idx) % embedded simulink function
+        continue;
+    end
     if lns.Outport(idx)>0
         tmplnpos = get_param(lns.Outport(idx), 'Points');
         dstinfo = [dstinfo; struct('Y', tmplnpos(end,2), 'sfObject', outdataobjs(i))];
@@ -221,6 +227,9 @@ if isequal(optstr, '-')
 end
 if ~isempty(iptnum)&&iptnum>0 && side(1)
     for i=numel(tmpobjs):-1:1
+        if isnan(tmpobjs(i).Port) % embedded simulink function
+            continue;
+        end
         if lns.Inport(tmpobjs(i).Port)<0
             delete(tmpobjs(i));
             cntr = cntr+1;
@@ -238,6 +247,9 @@ if isequal(optstr, '-')
 end
 if ~isempty(optnum) && optnum>0 && side(2)
     for i=numel(tmpobjs):-1:1
+        if isnan(tmpobjs(i).Port) % embedded simulink function
+            continue;
+        end
         if lns.Outport(tmpobjs(i).Port)<0
             delete(tmpobjs(i));
             cntr = cntr+1;
