@@ -35,6 +35,18 @@ if ~isempty(regtmp)
     cmdstr = regexprep(cmdstr, testpattern, '', 'once');
 end
 
+% >> test GetMarginByMouse option
+testpattern = '(?!^)\s*([+-])ms\s*';
+regtmp = regexp(cmdstr, testpattern, 'tokens', 'once');
+if ~isempty(regtmp)
+    if regtmp{1} == '+'
+        obj.SessionPara.GetMarginByMouse = true;
+    else
+        obj.SessionPara.GetMarginByMouse = false;
+    end
+    cmdstr = regexprep(cmdstr, testpattern, '', 'once');
+end
+
 % >> test AutoDataType option
 testpattern = '(?!^)\s*([+-])dt\s*';
 regtmp = regexp(cmdstr, testpattern, 'tokens', 'once');

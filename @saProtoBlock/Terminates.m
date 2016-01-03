@@ -9,19 +9,23 @@ end
 if numel(hdls)>0
     lnhdls = hdls(strcmp(get_param(hdls, 'Type'), 'line'));
     if ~isempty(lnhdls)
-        c_lnpts = get_param(lnhdls, 'Points');
-        if ~iscell(c_lnpts)
-            c_lnpts = {c_lnpts};
-        end
-        ps = cat(1, c_lnpts{:});
-        ymx = max(ps(:,2)); ymn = min(ps(:,2));
-        xy0 = saGetMousePosition;
-        % prepare local option
-        local_opt.ToLineOffset = obj.LayoutSize.ToLineOffset;
-        if xy0(2)>ymx
-            local_opt.ToLineOffset(2) = xy0(2)-ymx;
-        elseif xy0(2)<ymn
-            local_opt.ToLineOffset(2) = xy0(2)-ymn;
+        if obj.Console.RunOption.GetMarginByMouse
+            c_lnpts = get_param(lnhdls, 'Points');
+            if ~iscell(c_lnpts)
+                c_lnpts = {c_lnpts};
+            end
+            ps = cat(1, c_lnpts{:});
+            ymx = max(ps(:,2)); ymn = min(ps(:,2));
+            xy0 = saGetMousePosition;
+            % prepare local option
+            local_opt.ToLineOffset = obj.LayoutSize.ToLineOffset;
+            if xy0(2)>ymx
+                local_opt.ToLineOffset(2) = xy0(2)-ymx;
+            elseif xy0(2)<ymn
+                local_opt.ToLineOffset(2) = xy0(2)-ymn;
+            end
+        else
+            local_opt.ToLineOffset = obj.LayoutSize.ToLineOffset;
         end
         local_opt.PropagateString = true;
         [option, argsin, optarg] = override_option(varargin, obj, local_opt);
