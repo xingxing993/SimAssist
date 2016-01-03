@@ -84,11 +84,13 @@ for l=1:numel(lnhdls)
     end
 end
 % sort by start point position
-y_srcpt = [reroutelines.SrcPoint];
-y_srcpt = y_srcpt(2:2:end);
-[tmp, iorder] = sort(y_srcpt);
-reroutelines = reroutelines(iorder);
-for l=1:numel(reroutelines)
-    actrec.AddLine(rtsys, reroutelines(l).SrcPortHandle, pthdls.Inport(l),reroutelines(l).Name);
+if ~isempty(reroutelines)
+    y_srcpt = [reroutelines.SrcPoint];
+    y_srcpt = y_srcpt(2:2:end);
+    [tmp, iorder] = sort(y_srcpt);
+    reroutelines = reroutelines(iorder);
+    for l=1:numel(reroutelines)
+        actrec.AddLine(rtsys, reroutelines(l).SrcPortHandle, pthdls.Inport(l),reroutelines(l).Name);
+    end
 end
 end
