@@ -17,6 +17,8 @@ sabt.MajorProperty = 'Inputs';
 
 sabt.BlockSize = [25, 70];
 sabt.AutoSizeMethod = -1;
+sabt.DataTypeMethod = [];
+
 
 sabt.LayoutSize.PortSpacing = 35;
 sabt.LayoutSize.ToLineOffset = [50 100];

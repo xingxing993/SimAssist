@@ -23,6 +23,6 @@ sabt.BlockPreferOption.AutoDataType = false;
 
 sabt.AnnotationMethod = 'Disable Action: %<OutputWhenDisabled>';
 
-sabt.DataTypeMethod = -1;
+sabt.DataTypeMethod = [];
 sabt.DefaultDataType = 'Inherit: auto';
 end

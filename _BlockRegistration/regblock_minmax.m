@@ -10,6 +10,8 @@ sabt.RoutinePara.InportProperty = 'Inputs';
 sabt.MajorProperty = 'Function';
 sabt.ArrangePortMethod{1} = 1;
 sabt.RollPropertyMethod = -1;
+sabt.DataTypeMethod = [];
+
 
 btlogic = regblock_logic;
 sabt.Inherit(btlogic,...

@@ -19,6 +19,7 @@ sabt.BlockSize = [30, 30];
 
 sabt.BlockPreferOption.Annotation = true; % turn on annotation for this block type
 
+sabt.DataTypeMethod = [];
 sabt.DefaultDataType = 'Inherit: Same as input';
 
 end
