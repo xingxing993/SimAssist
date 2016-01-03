@@ -55,7 +55,10 @@ if out_cnnt
         else
             outpt = find_system(currsys, 'FollowLinks','on','LookUnderMasks','on','FindAll', 'on', 'SearchDepth',1,'BlockType','Outport','Name',ptname);
             if ~isempty(outpt)
-                actrec.AddLine(currsys, pts.Outport(i), outpt);
+                optlns = get_param(outpt, 'LineHandles');
+                if optlns.Inport<0
+                    actrec.AddLine(currsys, pts.Outport(i), outpt);
+                end
             end
         end
     end
