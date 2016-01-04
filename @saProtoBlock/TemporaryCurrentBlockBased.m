@@ -24,7 +24,8 @@ lns = get_param(blkhdl, 'LineHandles');
 blkpos = get_param(blkhdl, 'Position');
 ht = blkpos(4)-blkpos(2);
 ps = 0;
-if ptcnt(1)>ptcnt(2)
+if ptcnt(1)==0 && ptcnt(2)==0
+elseif ptcnt(1)>ptcnt(2)
     if sum(lns.Inport>0)>1
         ps = ceil(ht/ptcnt(1));
     end
