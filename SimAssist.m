@@ -24,7 +24,7 @@ function varargout = SimAssist(varargin)
 
 % Edit the above text to modify the response to help SimAssist
 
-% Last Modified by GUIDE v2.5 09-Apr-2015 23:04:36
+% Last Modified by GUIDE v2.5 04-Jan-2016 22:34:43
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -72,7 +72,7 @@ if LIC_CHK.Enable
     %-----------------------------------------------
     validusers={'ahlmq','iexsk','galfd','cnhfe','jiangxin'};
     validdomains = {'kslegion'};
-    expire_date = [2016,06,30];
+    expire_date = [2016,12,31];
     %------------------------------------------------
     [tmp, sysuser] = system('echo %username%');
     [tmp, sysdomain] = system('echo %userdomain%');
@@ -737,8 +737,7 @@ if isfield(ud, 'MultiValues')&&~isempty(ud.MultiValues) % this menu doesn't work
     return;
 end
 if isfield(ud, 'Handle')&&~isempty(ud.Handle)
-    extraprops = {'ForegroundColor';'BackgroundColor';'AttributesFormatString'};
-    liststr = [fieldnames(get_param(ud.Handle,'DialogParameters'));extraprops];
+    liststr = fieldnames(get_param(ud.Handle,'DialogParameters'));
     if isempty(ud.Properties)
         initval = {};
     else
@@ -826,8 +825,8 @@ end
 
 
 % --------------------------------------------------------------------
-function menu_formatbrush_Callback(hObject, eventdata, handles)
-% hObject    handle to menu_formatbrush (see GCBO)
+function menu_fmtbrush_Callback(hObject, eventdata, handles)
+% hObject    handle to menu_fmtbrush (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 end
@@ -1226,7 +1225,7 @@ function btn_fmtbrush_Callback(hObject, eventdata, handles)
 ud = get(hObject, 'UserData');
 if (isfield(ud, 'Handle') && ~isempty(ud.Handle)) || (isfield(ud, 'MultiValues') && ~isempty(ud.MultiValues))
     if (isfield(ud, 'Handle') && ~isempty(ud.Handle))
-        actrec = fmtbrush_brush(hObject);
+        actrec = fmtbrush_brush(hObject, handles);
     else
         actrec = fmtbrush_multibrush(hObject, handles);
     end
@@ -1243,12 +1242,12 @@ if (isfield(ud, 'Handle') && ~isempty(ud.Handle)) || (isfield(ud, 'MultiValues')
         set(hObject, 'String', ''); % multi mode
     end
 else
-    fmtbrush_lock(hObject, handles);
+    fmtbrush_buffer(hObject, handles);
 end
 end
 
 
-function fmtbrush_lock(hObject, handles)
+function fmtbrush_buffer(hObject, handles)
 ud = get(hObject, 'UserData');
 fmtblk = saFindSystem(gcs,'block');
 fmtlns = saFindSystem(gcs,'line');
@@ -1272,27 +1271,50 @@ end
 set(hObject,'UserData',ud);
 end
 
-function actrec = fmtbrush_brush(hObject)
+function actrec = fmtbrush_brush(hObject, handles)
 actrec=saRecorder;
 ud = get(hObject, 'UserData');
 tgtblks=saFindSystem(gcs,'block');
-extraprops = {'ForegroundColor';'BackgroundColor';'AttributesFormatString'};
-f_getparas = @(blkhdl) [fieldnames(get_param(blkhdl,'DialogParameters'));extraprops];
-if isempty(ud.Properties)
-    tgtparas = f_getparas(ud.Handle);
-else
-    tgtparas = ud.Properties;
-end
-for i=1:numel(tgtblks)
-    thisparas=f_getparas(tgtblks(i));
-    sameparas=intersect(thisparas,tgtparas);
-    sameparavals = cell(1,numel(sameparas));
-    for j=1:numel(sameparas)
-        sameparavals{j}=get_param(ud.Handle, sameparas{j});
+f_getparas = @(blkhdl)fieldnames(get_param(blkhdl,'DialogParameters'));
+if strcmp(get(handles.mi_fmt_dlgpara, 'Checked'), 'on')
+    if isempty(ud.Properties)
+        tgtparas = f_getparas(ud.Handle);
+    else
+        tgtparas = ud.Properties;
     end
-    tmppairs = [sameparas, sameparavals']'; % must be [2, N] in size
-    try
-        actrec.SetParamHighlight(tgtblks(i),tmppairs{:});
+    for i=1:numel(tgtblks)
+        thisparas=f_getparas(tgtblks(i));
+        sameparas=intersect(thisparas,tgtparas);
+        sameparavals = cell(1,numel(sameparas));
+        for j=1:numel(sameparas)
+            sameparavals{j}=get_param(ud.Handle, sameparas{j});
+        end
+        tmppairs = [sameparas, sameparavals']'; % must be [2, N] in size
+        try
+            actrec.SetParamHighlight(tgtblks(i),tmppairs{:});
+        end
+    end
+end
+if strcmp(get(handles.mi_fmt_color, 'Checked'), 'on')
+    for i=1:numel(tgtblks)
+        actrec.SetParam(tgtblks(i), ...
+            'ForegroundColor', get_param(ud.Handle, 'ForegroundColor'), ...
+            'BackgroundColor', get_param(ud.Handle, 'BackgroundColor'));
+    end
+end
+if strcmp(get(handles.mi_fmt_size, 'Checked'), 'on')
+    refpos = get_param(ud.Handle, 'Position');
+    WH = refpos(3:4) - refpos(1:2);
+    for i=1:numel(tgtblks)
+        tmppos = get_param(tgtblks(i), 'Position');
+        newpos = [tmppos(1:2), tmppos(1:2)+WH];
+        actrec.SetParam(tgtblks(i), 'Position',newpos);
+    end
+end
+if strcmp(get(handles.mi_fmt_anno, 'Checked'), 'on')
+    for i=1:numel(tgtblks)
+        actrec.SetParam(tgtblks(i), ...
+            'AttributesFormatString', get_param(ud.Handle, 'AttributesFormatString'));
     end
 end
 end
@@ -1343,4 +1365,17 @@ function menu_dictrename_Callback(hObject, eventdata, handles)
 % hObject    handle to menu_dictrename (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+end
+
+
+% --------------------------------------------------------------------
+function mi_checkstatus_Callback(hObject, eventdata, handles)
+% hObject    handle to mi_fmt_dlgpara (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+if strcmp(get(hObject, 'Checked'), 'off')
+    set(hObject, 'Checked', 'on');
+else
+    set(hObject, 'Checked', 'off');
+end
 end
