@@ -120,6 +120,7 @@ if strcmp(partyp, 'Stateflow')
 else
     trigblk = find_system(parsys, 'LookUnderMasks','on', 'FollowLinks', 'on', 'BlockType', 'TriggerPort');
     thestr = get_param(trigblk, 'Name');
+    if iscell(thestr) thestr=thestr{:}; end
 end
 end
 
@@ -127,4 +128,5 @@ function thestr = getdownstreamstr_enable(obj,pthdl)
 parsys = get_param(pthdl, 'Parent');
 enblk = find_system(parsys, 'LookUnderMasks','on', 'FollowLinks', 'on', 'BlockType', 'EnablePort');
 thestr = get_param(enblk, 'Name');
+if iscell(thestr) thestr=thestr{:}; end
 end
