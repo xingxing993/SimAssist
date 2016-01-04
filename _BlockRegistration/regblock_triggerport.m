@@ -12,6 +12,8 @@ sabt.PropagateUpstreamStringMethod = @trigpropupstream;
 sabt.BlockSize = [20, 20];
 sabt.BlockPreferOption.ShowName = 'on';
 
+sabt.AnnotationMethod = 'Upon enable: %<StatesWhenEnabling>';
+
 sabt.DefaultParameters = {'TriggerType', 'function-call'};
 end
 
