@@ -11,12 +11,18 @@ if any(side==']')
 end
 end
 
-function actrec = layout_upstreamwards(blkhdl)
+function actrec = layout_upstreamwards(blkhdl, originblk)
+if nargin<2
+    originblk = blkhdl; % add this 2nd parameter to avoid loop
+end
 actrec = saRecorder;
 subblks = getSubBlocks(blkhdl, 'upstream');
 lns = get_param(blkhdl, 'LineHandles');
 ptnum = get_param(blkhdl, 'Ports');
 for i=1:numel(subblks)
+    if ~strcmp(get_param(subblks(i), 'Orientation'), 'right')
+        continue;
+    end
     srclns = get_param(subblks(i), 'LineHandles');
     % adjust port spacing for multiple outport blocks
     if numel(srclns.Outport)>1 && ptnum(1)>1
@@ -47,7 +53,9 @@ for i=1:numel(subblks)
         end
     end
     % continue to recursion
-    actrec + layout_upstreamwards(subblks(i));
+    if subblks(i)~=originblk
+        actrec + layout_upstreamwards(subblks(i), originblk);
+    end
 end
 % straighten line
 for k=1:numel(lns.Inport)
@@ -58,12 +66,18 @@ end
 end
 
 
-function actrec = layout_downstreamwards(blkhdl)
+function actrec = layout_downstreamwards(blkhdl, originblk)
+if nargin<2
+    originblk = blkhdl; % add this 2nd parameter to avoid loop
+end
 actrec = saRecorder;
 subblks = getSubBlocks(blkhdl, 'downstream');
 lns = get_param(blkhdl, 'LineHandles');
 ptnum = get_param(blkhdl, 'Ports');
 for i=1:numel(subblks)
+    if ~strcmp(get_param(subblks(i), 'Orientation'), 'right')
+        continue;
+    end
     dstlns = get_param(subblks(i), 'LineHandles');
     % adjust port spacing for multiple inport blocks
     if numel(dstlns.Inport)>1 && ptnum(2)>1
@@ -84,7 +98,9 @@ for i=1:numel(subblks)
         end
     end
     % continue to recursion
-    actrec + layout_downstreamwards(subblks(i));
+    if subblks(i)~=originblk
+        actrec + layout_downstreamwards(subblks(i), originblk);
+    end
 end
 % straighten line
 for k=1:numel(lns.Outport)
