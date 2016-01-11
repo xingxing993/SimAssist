@@ -32,11 +32,11 @@ for i=1:numel(tgtblks)
         rgb = {[], rgb};
     end
     btobj = console.MapTo(tgtblks(i));
-    btobj.Color(tgtblks(i), rgb);
+    actrec + btobj.Color(tgtblks(i), rgb);
     broblks = btobj.GetBroBlocks(tgtblks(i));
     for k=1:numel(broblks)
         brobtobj = console.MapTo(broblks(k));
-        brobtobj.Color(broblks(k), rgb);
+        actrec + brobtobj.Color(broblks(k), rgb);
     end
 end
 success = true;
