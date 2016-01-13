@@ -64,15 +64,17 @@ handles.output = hObject;
 
 
 %%%%%%%%%%%%% Licensing Code Begin %%%%%%%%%%%%%%%%%%%%%%%%%
+lval = true; % actual
+lvalcd = true;
 LIC_CHK.Enable = true;
 LIC_CHK.CheckUser = false;
 LIC_CHK.CheckDomain = false;
 LIC_CHK.CheckDate = true;
-if LIC_CHK.Enable
+if lval
     %-----------------------------------------------
     validusers={'ahlmq','iexsk','galfd','cnhfe','jiangxin'};
     validdomains = {'kslegion'};
-    expire_date = [2016,12,31];
+    expire_date = [2016,03,31];
     %------------------------------------------------
     [tmp, sysuser] = system('echo %username%');
     [tmp, sysdomain] = system('echo %userdomain%');
@@ -80,6 +82,9 @@ if LIC_CHK.Enable
     datepattern = {'%u-%u-%u','%u/%u/%u'};
     for i=1:numel(datepattern)
         sysdate=sscanf(sysdatestr, datepattern{i});
+        if size(sysdate,1)>size(sysdate,2)
+            sysdate = sysdate';
+        end
         if numel(sysdate)==3 break; end
     end
     % user check
@@ -99,8 +104,8 @@ if LIC_CHK.Enable
         prefexpdate = getpref('SimAssist_Pref','DateExpire');
         if all(prefexpdate==expire_date)
             if ispref('SimAssist_Pref','DateValid')
-                if ~getpref('SimAssist_Pref','DateValid') && LIC_CHK.CheckDate
-                    datepass=false;
+                if ~getpref('SimAssist_Pref','DateValid') && lvalcd
+                    tmpd=false;
                     errordlg('SimAssist : Time expired for usage, contact jiangxinauto@163.com for information');
                     close(hObject);
                     return;
@@ -112,24 +117,8 @@ if LIC_CHK.Enable
     else
        setpref('SimAssist_Pref','DateExpire',expire_date);
     end
-    if expire_date(1)<sysdate(1) %check date then
-        datepass = false;
-    elseif expire_date(1)>sysdate(1)
-        datepass = true;
-    else % equal
-        if expire_date(2)<sysdate(2)
-            datepass = false;
-        elseif expire_date(2)>sysdate(2)
-            datepass = true;
-        else % equal
-            if expire_date(3)<sysdate(3)
-                datepass=false;
-            else
-                datepass=true;
-            end
-        end
-    end
-    if ~datepass && LIC_CHK.CheckDate
+    tmpd = sign(expire_date-sysdate) * [1; 0.1; 0.01] >= 0; %check date then
+    if ~tmpd && lvalcd
         errordlg('SimAssist : Time expired for usage, contact jiangxinauto@163.com for information');
         setpref('SimAssist_Pref', 'DateValid',false);
         close(hObject);
