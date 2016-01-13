@@ -108,12 +108,20 @@ for i=1:nmulti
     end
     submacros = obj.Macros.MatchPattern(cmdstr);
     if numel(submacros)>0
-        [actrec, success] = submacros.Run(cmdstr);
+        try
+            [actrec_this, success] = submacros.Run(cmdstr);
+            actrec + actrec_this;
+        catch me
+            fprintf(2, 'SimAssist:ExecutionError (%s)\nThe following error occured while executing command "%s":\n', me.identifier, cmdstr);
+            fprintf(2, '[Error Message] %s\n', me.message);
+            return;
+        end
     else
         success = false;
     end
     if ~success
-        [actrec, success] = Routines.majorprop_value(obj.MapTo('Constant'), cmdstr, '');
+        [actrec_this, success] = Routines.majorprop_value(obj.MapTo('Constant'), cmdstr, '');
+        actrec + actrec_this;
         return;
     end
 end
