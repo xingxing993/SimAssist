@@ -29,6 +29,7 @@ local_opt =struct(...
 % get option parameter
 xy0 = saGetMousePosition;
 ptpos = get_param(pthdl, 'Position');
+defaultHM = option.HorizontalMargin;
 if strcmp(get_param(pthdl,'PortType'),'inport')  && option.GetMarginByMouse
     HM = max(option.HorizontalMargin, ptpos(1)-xy0(1));
 elseif strcmp(get_param(pthdl,'PortType'),'outport') && option.GetMarginByMouse
@@ -46,12 +47,12 @@ optarg.Refine = false;
 i_szpara = find(cellfun(@isnumeric, argsin), 1);% first numeric value
 if ~isempty(i_szpara)
     W = argsin{i_szpara}(1);H = argsin{i_szpara}(2);
-    blockpos = calculate_block_position(pthdl, HM, W, H);
+    blockpos = calculate_block_position(pthdl, HM, W, H, defaultHM);
     argsin{i_szpara} = blockpos;
 else
     blksize = obj.GetBlockSize;
     W = blksize(1);    H = blksize(2);
-    blockpos = calculate_block_position(pthdl, HM, W, H);
+    blockpos = calculate_block_position(pthdl, HM, W, H, defaultHM);
     argsin = [blockpos, argsin];
 end
 
@@ -79,19 +80,30 @@ else
 end
 
 actrec + obj.Adapt(blkhdl, option);
+
 end
 
 
-function blockpos = calculate_block_position(pthdl, HM, W, H)
+function blockpos = calculate_block_position(pthdl, HM, W, H, defaultHM)
 % HM: horizontal margine
 % W: width
 % H: height
 basepos = get_param(pthdl, 'Position');
 if strcmp(get_param(pthdl,'PortType'),'inport')
-    blockpos = [max(basepos(1)-HM-W, 0),...
-        basepos(2)-H/2,...
-        max(basepos(1)-HM, 0),...
-        basepos(2)+H/2];
+    if verLessThan('Simulink', '8.0')
+        if basepos(1)<HM
+            HM = defaultHM;
+        end
+        blockpos = [max(basepos(1)-HM-W, 5),...
+            basepos(2)-H/2,...
+            max(basepos(1)-HM, 5+W),...
+            basepos(2)+H/2];
+    else % Simulink allows negative value after V8.0
+        blockpos = [basepos(1)-HM-W,...
+            basepos(2)-H/2,...
+            basepos(1)-HM,...
+            basepos(2)+H/2];
+    end
 else
     blockpos = [basepos(1)+HM,...
         basepos(2)-H/2,...
