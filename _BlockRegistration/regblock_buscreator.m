@@ -77,7 +77,11 @@ ptnum = get_param(pthdl, 'PortNumber');
 parblk = get_param(pthdl, 'Parent');
 pttyp = get_param(pthdl, 'PortType');
 bussigs = saBusTraceForward(parblk);
-thestr = bussigs{min(ptnum, end)};
+if ~isempty(bussigs)
+    thestr = bussigs{min(ptnum, end)};
+else
+    thestr = '';
+end
 end
 
 
@@ -95,7 +99,11 @@ else
     lnhdls=get_param(blkhdl,'LineHandles');
     pthdls=get_param(blkhdl,'PortHandles');
     tmppos=get_param(pthdls.Inport(1),'Position');
-    x_pt=max(tmppos(1)-150,0);
+    if verLessThan('Simulink', '8.0')
+        x_pt = max(tmppos(1)-150,0);
+    else
+        x_pt = tmppos(1)-150;
+    end
     for kk=1:numel(pthdls.Inport) %add line and name it for each inport
         if lnhdls.Inport(kk)>0
             actrec.SetParam(lnhdls.Inport(kk), 'Name', bussigs{kk});
