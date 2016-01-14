@@ -71,12 +71,12 @@ function blkpos = calculate_block_position(lnhdl, OFS, W, H)
 lnpos = get_param(lnhdl, 'Points');
 if strcmp(get_param(lnhdl, 'Connected'),'off')
     if get_param(lnhdl, 'SrcBlockHandle')<0
-        blkpos = [max(lnpos(1,1)-W,0), max(lnpos(1,2)-H/2,0), lnpos(1,1), lnpos(1,2)+H/2];
+        blkpos = saRectifyPos([lnpos(1,1)-W, lnpos(1,2)-H/2, lnpos(1,1), lnpos(1,2)+H/2]);
     else %get_param(lnhdl, 'DstBlockHandle')<0
-        blkpos = [lnpos(end,1), max(lnpos(end,2)-H/2,0), lnpos(end,1)+W, lnpos(end,2)+H/2];
+        blkpos = saRectifyPos([lnpos(end,1), lnpos(end,2)-H/2, lnpos(end,1)+W, lnpos(end,2)+H/2]);
     end
 else
     branchendpoint = lnpos(1,:) + OFS;
-    blkpos = [branchendpoint(1), max(branchendpoint(2)-H/2,0), branchendpoint(1)+W, branchendpoint(2)+H/2];
+    blkpos = saRectifyPos([branchendpoint(1), branchendpoint(2)-H/2, branchendpoint(1)+W, branchendpoint(2)+H/2]);
 end
 end

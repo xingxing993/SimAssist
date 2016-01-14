@@ -59,8 +59,8 @@ lninfo = backup_lineinfo(lnhdl);
 % delete old line
 actrec.DeleteLine(lnhdl);
 % add block
-ltpos = [ln1pos(end, 1), ceil(max(ln1pos(end, 2)-blksz(2)/2, 0))];
-[actrec2, blkhdl] = obj.AddBlock(ltpos,blksz,newvars{:},'Orientation',orient);
+ltpos = [ln1pos(end, 1), ceil(ln1pos(end, 2)-blksz(2)/2)];
+[actrec2, blkhdl] = obj.AddBlock(saRectifyPos(ltpos),blksz,newvars{:},'Orientation',orient);
 actrec.Merge(actrec2);
 set_param(blkhdl, 'Selected', 'on');
 % add incoming line
@@ -73,8 +73,8 @@ else
 end
 yofs = newlnpos(end,2)-iptpos(2);
 blkpos = get_param(blkhdl,'Position');
-blkpos([2,4]) = max(blkpos([2,4])+yofs, 0);
-set_param(blkhdl, 'Position', blkpos);%adjust block position to align the inport with the line
+blkpos([2,4]) = blkpos([2,4])+yofs;
+set_param(blkhdl, 'Position', saRectifyPos(blkpos));%adjust block position to align the inport with the line
 newlnpos(end,1) = iptpos(1); % extend X to inport
 newlnhdl = actrec.AddLine(parsys, newlnpos);
 actrec.SetParam(newlnhdl, 'Name', lnname);
@@ -111,7 +111,7 @@ for r=1:size(lnpos,1)-1 % traverse each segment to find the first X projected
     end
 end
 if isempty(ln1pos)
-    ln1pos = [[x0, ln2pos(1,2)]; ln2pos(1,:)]
+    ln1pos = [[x0, ln2pos(1,2)]; ln2pos(1,:)];
 end
 wd = max(wd, 10); % at least 10
 end

@@ -42,8 +42,8 @@ actrec = saRecorder;
 oldpos = get_param(blkhdl, 'Position');
 w2 = szlayout.CharWidth*(numel(majorpropval)+3);
 newpos = oldpos;
-newpos(1) = max(newpos(3)-w2, 0);
-actrec.SetParam(blkhdl, 'Position', newpos);
+newpos(1) = newpos(3)-w2;
+actrec.SetParam(blkhdl, 'Position', saRectifyPos(newpos));
 end
 
 function actrec = resize_rightwards(blkhdl, szlayout, majorpropval)
