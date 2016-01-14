@@ -5,7 +5,7 @@ if nargin<4
     overlap_offset = [0, 0];
 end
 dstpos = get_param(dsthdl,'Points');
-points_layout = get_line_layout(srchdl, dstpos(1,:), overlap_offset);
+points_layout = saLineRouteLineToDst(srchdl, dstpos(1,:), overlap_offset);
 parsys = get_param(srchdl,'Parent');
 % backup line info to restore change of state after add_line
 lnname = regexprep(get_param(srchdl, 'Name'), '[<>]', '');

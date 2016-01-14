@@ -7,7 +7,7 @@ end
 dstpos = get_param(dsthdl,'Position');
 % offset by -10 to create horizontal segment before inport,
 % in future the offset may be calculated dynamically
-points_layout = get_line_layout(srchdl, dstpos, [overlap_offset+[-10,0]]);
+points_layout = saLineRouteLineToDst(srchdl, dstpos, [overlap_offset+[-10,0]]);
 parsys = get_param(srchdl,'Parent');
 % backup line info to restore change of state after add_line
 lnname = regexprep(get_param(srchdl, 'Name'), '[<>]', '');
