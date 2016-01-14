@@ -21,6 +21,8 @@ catch err
             act = 'ignore';
         case {'Simulink:SL_BlkParamEvalErr','Simulink:blocks:BusSelectorCantChangeSignalLabel'}
             act = 'ignore';
+        case 'Simulink:SL_InvGotoFromTagName'
+            obj.NewValue = genvarname(obj.NewValue);
         otherwise
     end
     if strcmp(act, 'retry')
