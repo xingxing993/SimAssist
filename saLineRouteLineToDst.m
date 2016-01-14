@@ -1,10 +1,10 @@
-function points_layout = get_line_layout(lnhdl, dstpos, overlap_offset)
+function points_layout = saLineRouteLineToDst(lnhdl, dstpos, overlap_offset)
 if nargin<2
     overlap_offset = [0, 0];
 end
-dstpos2 = max(dstpos + overlap_offset, [0,0]);
+dstpos2 = saRectifyPos(dstpos + overlap_offset);
 [lnpos, weight, direction] = extract_line_info(lnhdl, dstpos2);
-avail = logical(zeros(numel(weight), 1)); %initialize
+avail = false(numel(weight), 1); %initialize
 for i=1:size(lnpos, 1)
     vec = dstpos - lnpos(i, :);
     req = vec2direction(vec);
