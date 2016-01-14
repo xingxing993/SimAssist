@@ -25,26 +25,32 @@ for i=1:numel(objhdls)
     oldpos = get_param(objhdls(i),'Position');
     oldsz = oldpos(3:4)-oldpos(1:2);
     W0 = oldsz(1);   H0 = oldsz(2);
+    dW = 0; dH = 0;
     switch type
         case 'long'
-            H1 = H0*scale;
-            vt_mid=(oldpos(2)+oldpos(4))/2;
-            newpos = [oldpos(1), vt_mid-H1/2, oldpos(3), vt_mid+H1/2];
+            dH = max(H0*scale-H0, 1);
         case 'short'
-            H1 = H0/scale;
-            vt_mid=(oldpos(2)+oldpos(4))/2;
-            newpos = [oldpos(1), vt_mid-H1/2, oldpos(3), vt_mid+H1/2];
+            dH = min(H0/scale-H0, -1);
         case 'narrow'
-            W1 = W0/scale;
-            hz_mid=(oldpos(1)+oldpos(3))/2;
-            newpos = [hz_mid-W1/2, oldpos(2), hz_mid+W1/2, oldpos(4)];
+            dW = min(W0/scale-W0, -1);
         case 'wide'
-            W1 = W0*scale;
-            hz_mid=(oldpos(1)+oldpos(3))/2;
-            newpos = [hz_mid-W1/2, oldpos(2), hz_mid+W1/2, oldpos(4)];
+            dW = max(W0*scale-W0, 1);
         otherwise
     end
+    newpos = saRectifyPos(oldpos + [-dW, -dH, dW, dH]);
     actrec.SetParam(objhdls(i), 'Position', newpos);
+    % ## some times position change fails if delta value too small, the
+    % following code segment intends to handle this situation
+    retrymax = 8;
+    for k=1:retrymax
+        rdbkpos = get_param(objhdls(i), 'Position');
+        if all(rdbkpos == oldpos)
+            retrypos = saRectifyPos(oldpos+ 2^(k+1)*[-dW, -dH, dW, dH]);
+            actrec.SetParam(objhdls(i), 'Position', retrypos);
+        else
+            break;
+        end
+    end
 end
 success = true;
 end
