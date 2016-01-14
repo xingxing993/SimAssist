@@ -1,5 +1,4 @@
 function LayoutAroundBlock(obj, blkhdl, side)
-actrec = saRecorder;
 if nargin<3 || isempty(side)
     side = '[]';
 end
