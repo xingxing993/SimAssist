@@ -12,7 +12,7 @@ obj.SessionPara = struct;
 % Some commonly used options for command execution
 % ######SESSION PARAMETER, EFFCTIVE ONLY IN CURRET SESSION #################
 % >> test Color option
-testpattern = '(?!^)\s*([+-])c\s*';
+testpattern = '(?!^)\s*([+-])c(\s+|,|$)*';
 regtmp = regexp(cmdstr, testpattern, 'tokens', 'once');
 if ~isempty(regtmp)
     if regtmp{1} == '+'
@@ -24,7 +24,7 @@ if ~isempty(regtmp)
 end
 
 % >> test Annotation option
-testpattern = '(?!^)\s*([+-])a\s*';
+testpattern = '(?!^)\s*([+-])a(\s+|,|$)';
 regtmp = regexp(cmdstr, testpattern, 'tokens', 'once');
 if ~isempty(regtmp)
     if regtmp{1} == '+'
@@ -36,7 +36,7 @@ if ~isempty(regtmp)
 end
 
 % >> test GetMarginByMouse option
-testpattern = '(?!^)\s*([+-])ms\s*';
+testpattern = '(?!^)\s*([+-])ms(\s+|,|$)';
 regtmp = regexp(cmdstr, testpattern, 'tokens', 'once');
 if ~isempty(regtmp)
     if regtmp{1} == '+'
@@ -48,7 +48,7 @@ if ~isempty(regtmp)
 end
 
 % >> test AutoDataType option
-testpattern = '(?!^)\s*([+-])dt\s*';
+testpattern = '(?!^)\s*([+-])dt(\s+|,|$)';
 regtmp = regexp(cmdstr, testpattern, 'tokens', 'once');
 if ~isempty(regtmp)
     if regtmp{1} == '+'
