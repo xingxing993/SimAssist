@@ -37,7 +37,7 @@ for i=1:numel(objhdls)
             dW = max(W0*scale-W0, 1);
         otherwise
     end
-    newpos = saRectifyPos(oldpos + [-dW, -dH, dW, dH]);
+    newpos = saRectifyPos(oldpos + round([-dW, -dH, dW, dH]/2));
     actrec.SetParam(objhdls(i), 'Position', newpos);
     % ## some times position change fails if delta value too small, the
     % following code segment intends to handle this situation
