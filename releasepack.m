@@ -7,7 +7,7 @@ packdir = ['.\releases\SimAssist_V', datestr(now, 'yyyymmddHHMM')];
 mkdir(packdir);
 
 df = dir;
-copy_exlist = {'releases','demos','releasepack','^\.git','\.asv$'};
+copy_exlist = {'releases','demos','releasepack','Version.txt','^\.git','\.asv$'};
 for i=1:numel(df)
     if ismember(df(i).name, {'.', '..'})
         continue;
