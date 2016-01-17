@@ -339,17 +339,12 @@ set(hObject,'UserData',tmp);
 % Get JavaFrame of Figure.
 warning('off','MATLAB:HandleGraphics:ObsoletedProperty:JavaFrame');
 fJFrame = get(handles.SimAssist,'JavaFrame');
-verinfo=ver('MATLAB');
-vernum=verinfo.Version;
-currver=regexp(vernum,'^(?<major>\d+)\.(?<middle>\d+)','names');
-if str2num(currver.major)>7
-    figclient='fHG1Client';
+if verLessThan('matlab', '7.10')
+    figclient='fFigureClient';
+elseif verLessThan('matlab', '8.4')
+    figclient = 'fHG1Client';
 else
-    if str2num(currver.middle)>10
-        figclient='fHG1Client';
-    else
-        figclient='fFigureClient';
-    end
+    figclient = 'fHG2Client';
 end
 % Set JavaFrame Always-On-Top-Setting.
 if strcmpi(get(hObject,'State'),'on')
