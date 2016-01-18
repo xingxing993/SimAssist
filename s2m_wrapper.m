@@ -241,12 +241,10 @@ tgts=find_system(rtsys,'FollowLinks',flink_flg,'LookUnderMasks','on','FindAll','
 for i=1:numel(tgts)
     set_param(tgts(i),'OutDataTypeStr','double');
 end
-sfs=find_system(rtsys,'FollowLinks',flink_flg,'LookUnderMasks','on','FindAll','on','BlockType','SubSystem','MaskType','Stateflow',sel{:});
-for i=1:numel(sfs)
-    rtobj=get_param(sfs(i),'Object');
-    tgts=rtobj.find('-isa','Stateflow.Data','DataType','single');
-    for j=1:numel(tgts)
-        tgts(j).DataType='double';
-    end
+% stateflow data
+rtobj=get_param(rtsys,'Object');
+tgts=rtobj.find('-isa','Stateflow.Data','DataType','single');
+for j=1:numel(tgts)
+    tgts(j).DataType='double';
 end
 end

@@ -22,15 +22,20 @@ if ~isempty(msktyp)
     mapkey = msktyp;
 else
     if ismember(blktyp, {'S-Function','SubSystem'})
-        refblk = get_param(blkhdl, 'ReferenceBlock');
-        ancblk = get_param(blkhdl, 'AncestorBlock');
-        if ~isempty(refblk)
-            mapkey = refblk;
-        elseif ~isempty(ancblk)
-            mapkey = ancblk;
-%         elseif
+        [issf, sftyp] = saIsStateflow(blkhdl);
+        if issf % bug fix for version after 2012b wherein "Stateflow" is not MaskType property anymore
+            mapkey = sftyp;
         else
-            mapkey = blktyp;
+            refblk = get_param(blkhdl, 'ReferenceBlock');
+            ancblk = get_param(blkhdl, 'AncestorBlock');
+            if ~isempty(refblk)
+                mapkey = refblk;
+            elseif ~isempty(ancblk)
+                mapkey = ancblk;
+                %         elseif
+            else
+                mapkey = blktyp;
+            end
         end
     else
         mapkey = blktyp;

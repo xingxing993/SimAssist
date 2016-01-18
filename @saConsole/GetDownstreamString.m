@@ -112,8 +112,7 @@ end
 
 function thestr = getdownstreamstr_trigger(obj,pthdl)
 parsys = get_param(pthdl, 'Parent');
-partyp = get_param(parsys, 'MaskType');
-if strcmp(partyp, 'Stateflow')
+if  saIsStateflow(parsys)
     sfchart = get_param(parsys, 'Object');
     trigobj = sfchart.find('-isa','Stateflow.Event','Scope','Input');
     thestr = trigobj.Name;
