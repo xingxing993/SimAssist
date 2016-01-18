@@ -16,6 +16,10 @@ switch type
     case 'line'
         hdls=find_system(rtsys,option{:},'Type','line','Selected','on', varargin{:});
         hdls = saRemoveBranchLine(hdls);
+    case 'block&line'
+        lns = saFindSystem(rtsys, 'line');
+        blks = saFindSystem(rtsys, 'block');
+        hdls = [blks;lns];
     case 'line_unconnected'
         hdls=find_system(rtsys,option{:},'Type','line','Selected','on', 'Connected','off',varargin{:});
         hdls = saRemoveBranchLine(hdls);

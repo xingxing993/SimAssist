@@ -12,15 +12,21 @@ elseif isa(obj.StrReplaceMethod, 'function_handle')
     else
         strrep_method(blkhdl, oldstr, newstr);
     end
-else
+else % number of string
     if isequal(obj.StrReplaceMethod, 1) || ismember(oldstr, {'^','$'}) % set to 1 to use major property by default
-        props = cellstr(obj.MajorProperty);
+        if ischar(obj.MajorProperty)
+            props = cellstr(obj.MajorProperty);
+        else
+            props={};
+        end
     elseif isequal(obj.StrReplaceMethod, -1) % set to -1 to use auto generated string parameter list
         props = saGetStringDialogParameter(blkhdl);
     elseif isequal(obj.StrReplaceMethod, 2)
         props = obj.StrReplaceDefaults;
-    else
+    elseif ischar(obj.StrReplaceMethod)
         props = cellstr(obj.StrReplaceMethod);
+    elseif iscellstr(obj.StrReplaceMethod)
+        props = obj.StrReplaceMethod;
     end
     objprops=get_param(blkhdl,'ObjectParameters');
     for k=1:numel(props)

@@ -30,7 +30,7 @@ function actrec = subsys_propagate_inport(sshdl, strarr)
 % strarr : cell of strings at inports
 actrec = saRecorder;
 inportblks=find_system(sshdl,'SearchDepth',1,'LookUnderMasks','on','FollowLinks','on','BlockType','Inport');
-if isstr(strarr)
+if ischar(strarr)
     strarr = {strarr};
 end
 for i=1:numel(strarr)
