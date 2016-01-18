@@ -23,7 +23,7 @@ if isnumeric(recvr)
             end
         otherwise
     end
-elseif isstr(recvr)
+elseif ischar(recvr)
     mapkey = saGetBlockMapKey(recvr);
     if obj.BlockMap.isKey(mapkey)
         saobj = obj.BlockMap(mapkey);

@@ -17,6 +17,7 @@ function [actrec, blkhdl] = AddBlock(obj, varargin)
 
 actrec = saRecorder;
 if isempty(obj.SourcePath)
+    blkhdl = [];
     return;
 end
 % Input parameter parsing
