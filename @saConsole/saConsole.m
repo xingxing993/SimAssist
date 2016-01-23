@@ -4,7 +4,7 @@ classdef saConsole < handle
     properties
         % All block regeistration info are collected in the following:
         ProtoBlocks % list array of saProtoBlock in order
-        BlockMap = containers.Map % map of saBlock
+        BlockMap = {} % map of saBlock
         
         % All macro regeistration info are collected in the following:
         Macros

@@ -1,7 +1,8 @@
 function varargout = BuildMap(obj)
 pold = pwd;
 
-regmap = containers.Map;
+% regmap = containers.Map;
+regmap = {};
 p = mfilename('fullpath');
 sepidx = strfind(p, filesep);
 regfolder = [p(1:sepidx(end-1)), '_BlockRegistration'];
@@ -13,7 +14,7 @@ cd(regfolder);
 
 
 % run proto block files first
-protofls = regfs(strmatch('regprotoblock_', regfs));
+protofls = regfs(strncmp('regprotoblock_', regfs, numel('regprotoblock_')));
 protos = [];
 for i=1:numel(protofls)
     regobjs = eval(protofls{i});
@@ -30,7 +31,11 @@ for i=1:numel(regfs)
     for k=1:numel(regobjs)
         if ~isempty(regobjs(k).MapKey)
             regobjs(k).Console = obj;
-            regmap(regobjs(k).MapKey) = regobjs(k);
+            if isempty(regmap) || ~any(strcmp(regobjs(k).MapKey, regmap(:,1)))
+                regmap = [regmap; {regobjs(k).MapKey, regobjs(k)}];
+            else
+                warning('SimAssist:ImportIgnore', 'Map key <%s> already exists in the list', regobjs(k).MapKey);
+            end
         end
     end
 end
@@ -42,8 +47,11 @@ for i=1:numel(regfs_mat)
         regobjs = newer;
         for k=1:numel(regobjs)
             if ~isempty(regobjs(k).MapKey)
-                regobjs(k).Console = obj;
-                regmap(regobjs(k).MapKey) = regobjs(k);
+                if ~any(strcmp(regobjs(k).MapKey, regmap(:,1)))
+                    regmap = [regmap; {regobjs(k).MapKey, regobjs(k)}];
+                else
+                    warning('SimAssist:ImportIgnore', 'Map key <%s> already exists in the list', regobjs(k).MapKey);
+                end
             end
         end
     end
@@ -57,7 +65,7 @@ for i=1:numel(obj.ProtoBlocks)
         routinemacros = [routinemacros; obj.ProtoBlocks(i).CreateRoutineMacro];
     end
 end
-btobjs = regmap.values;
+btobjs = regmap(:,2);
 for i=1:numel(btobjs)
     if ismember(btobjs{i}.ObjectType, {'block','protoblock'})&&~isempty(btobjs{i}.RoutinePattern)
         routinemacros = [routinemacros; btobjs{i}.CreateRoutineMacro];

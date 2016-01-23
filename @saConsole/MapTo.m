@@ -13,21 +13,15 @@ if isnumeric(recvr)
     typ = get_param(recvr,'Type');
     switch typ
         case {'line','port','annotation'}
-            if obj.BlockMap.isKey(typ)
-                saobj = obj.BlockMap(typ);
-            end
+            saobj = getkey(obj.BlockMap, typ);
         case 'block'
             mapkey = saGetBlockMapKey(recvr);
-            if obj.BlockMap.isKey(mapkey)
-                saobj = obj.BlockMap(mapkey);
-            end
+            saobj = getkey(obj.BlockMap, mapkey);
         otherwise
     end
 elseif ischar(recvr)
     mapkey = saGetBlockMapKey(recvr);
-    if obj.BlockMap.isKey(mapkey)
-        saobj = obj.BlockMap(mapkey);
-    end
+    saobj = getkey(obj.BlockMap,mapkey);
 else
     % DEAD CODE
 end
@@ -36,7 +30,7 @@ end
 if isempty(saobj)
     for i=1:numel(obj.ProtoBlocks)
         mapkey = obj.ProtoBlocks(i).MapKey; 
-        if isstr(recvr) && ismember(mapkey, {recvr, ['#',recvr]})
+        if ischar(recvr) && ismember(mapkey, {recvr, ['#',recvr]})
             saobj = obj.ProtoBlocks(i);break;
         else
             try
@@ -54,3 +48,17 @@ if isempty(saobj)
     saobj = saBlock('#NO_MATCH#');
 end
 varargout{1} = saobj;
+end
+
+function res = getkey(map, key)
+    ir = strcmp(map(:,1), key);
+    if any(ir)
+        res = map{ir, 2};
+    else
+        res = [];
+    end
+end
+
+% function tf = iskey(map, key)
+%     tf = any(strcmp(map(:,1), key));
+% end
