@@ -74,7 +74,7 @@ if lval
     %-----------------------------------------------
     validusers={'ahlmq','iexsk','galfd','cnhfe','jiangxin'};
     validdomains = {'kslegion'};
-    expire_date = [2016,03,31];
+    expire_date = [2016,12,31];
     %------------------------------------------------
     [tmp, sysuser] = system('echo %username%');
     [tmp, sysdomain] = system('echo %userdomain%');
@@ -1012,7 +1012,12 @@ prompton = strcmp(get(handles.promptlistbox, 'Visible'), 'on');
 if isempty(cmdstr) || prompton
     return;
 end
-actrec = handles.Console.RunCommand(cmdstr);
+% try
+    actrec = handles.Console.RunCommand(cmdstr);
+% catch me
+%     fprintf(2, 'SimAssist:ExecutionError (%s)\nThe following error occured while executing command "%s":\n', me.identifier, cmdstr);
+%     fprintf(2, '[Error Message] %s\n', me.message);
+% end
 savehistory(handles,actrec);
 % add to command string history
 ud = get(hObject, 'UserData');

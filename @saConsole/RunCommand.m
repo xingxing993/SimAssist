@@ -69,8 +69,7 @@ if ~isempty(regtmp)
 end
 
 % >> test Inport/Outport side specification ([])
-cnnt_side = [true, true];
-[obj.SessionPara.ConnectSide, cmdstr] = determine_cnnt_side(cnnt_side, cmdstr);
+[obj.SessionPara.ConnectSide, cmdstr] = determine_cnnt_side(cmdstr);
 
 % >> test suffix with *N
 testpattern  = '\*\s*(\d+)$';
@@ -88,6 +87,11 @@ else
     nmulti = 1;
 end
 
+% >> test sequential operation '#' operand
+% expand '#' command
+% replace '#clipboard, #cp keyword'
+cmdstr = regexprep(cmdstr, '#(clip|clipboard|cb)', get_clipboard);
+
 % ###### PERSISTENT SESSION PARAMETER SHALL BE STORED INTO RUNOPTION #################
 flds = fieldnames(obj.RunOption);
 for i=1:numel(flds)
@@ -101,26 +105,26 @@ end
 for i=1:nmulti
     obj.SessionPara.IndexOfMulti = i;
     if isempty(strtrim(cmdstr))
-        return;
-    else
-        % replace '#clipboard, #cp keyword'
-        cmdstr = regexprep(cmdstr, '#(clip|clipboard|cb)', get_clipboard);
+        return;      
     end
     submacros = obj.Macros.MatchPattern(cmdstr);
     if numel(submacros)>0
-        try
-            [actrec_this, success] = submacros.Run(cmdstr);
-            actrec + actrec_this;
-        catch me
-            fprintf(2, 'SimAssist:ExecutionError (%s)\nThe following error occured while executing command "%s":\n', me.identifier, cmdstr);
-            fprintf(2, '[Error Message] %s\n', me.message);
-            return;
-        end
+        [actrec_this, success] = submacros.Run(cmdstr);
+        actrec + actrec_this;
     else
         success = false;
     end
     if ~success
-        [actrec_this, success] = Routines.majorprop_value(obj.MapTo('Constant'), cmdstr, '');
+        blks = saFindSystem(gcs,'block');
+        if isempty(blks) % if got no selection
+            [actrec_this, success] = Routines.majorprop_value(obj.MapTo('Constant'), cmdstr, '');
+        else % current selection exists, add "\" prefix and retry
+            newcmdstr = ['\', cmdstr];
+            submacros = obj.Macros.MatchPattern(newcmdstr);
+            if numel(submacros)>0
+                [actrec_this, success] = submacros.Run(newcmdstr);
+            end
+        end
         actrec + actrec_this;
         return;
     end
@@ -130,7 +134,9 @@ end
 
 
 %%  ########## BEGIN OF SUB-FUNCTIONS
-function [cnnt_side, cmdstr] = determine_cnnt_side(cnnt_side, cmdstr)
+function [cnnt_side, cmdstr] = determine_cnnt_side(cmdstr)
+% only one cnnt side will be considered as side specification
+cnnt_side = [true, true];
 b1 = any(cmdstr=='[');
 b2 = any(cmdstr==']');
 if b1 && ~b2
@@ -138,8 +144,11 @@ if b1 && ~b2
 elseif b2 && ~b1
     cnnt_side(1) = false;
 else
+    return;
 end
-cmdstr = regexprep(cmdstr, '\[|\]', '');
+if xor(b1,b2)
+    cmdstr = regexprep(cmdstr, '\[|\]', '');
+end 
 end
 
 function str = get_clipboard
