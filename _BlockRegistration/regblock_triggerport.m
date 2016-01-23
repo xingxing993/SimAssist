@@ -48,7 +48,7 @@ actrec + btobj.AddBlock(pvpair{:});
 success = true;
 end
 
-function actrec = trigpropupstream(blkhdl, ~, console)
+function actrec = trigpropupstream(blkhdl, dummy, console)
 actrec = saRecorder;
 parsys = get_param(blkhdl, 'Parent');
 pts = get_param(parsys,'PortHandles');

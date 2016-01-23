@@ -31,7 +31,7 @@ if ~isempty(srchdls)
     end
 end
 if exist('srcinfo','var')
-    [~,ia,ib] = intersect({srcinfo.name}, {dstinfo.name});
+    [dummy,ia,ib] = intersect({srcinfo.name}, {dstinfo.name});
     lnsrc = [srcinfo(ia).handle]';
     lndst = [dstinfo(ib).handle]';
     for i=1:numel(lnsrc)

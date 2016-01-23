@@ -15,7 +15,7 @@ sabt.MajorProperty = 'Name';
 sabt.BlockSize = [20, 20];
 end
 
-function actrec = enpropupstream(blkhdl, ~, console)
+function actrec = enpropupstream(blkhdl, dummy, console)
 actrec = saRecorder;
 parsys = get_param(blkhdl, 'Parent');
 pts = get_param(parsys,'PortHandles');
