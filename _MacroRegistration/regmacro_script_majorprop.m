@@ -20,7 +20,8 @@ if numel(cmdstr)<n
     opt='';
 else
     optstr = cmdstr(n:end);
-    opt = regexp(optstr, '\s+|,', 'split');
+    cmdpsr = saCmdParser(optstr, '');
+    [opt, bclean] = cmdpsr.ParseMultiValues;
 end
 
 blks=saFindSystem(gcs, 'block');
