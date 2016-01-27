@@ -28,7 +28,7 @@ for i=1:numel(sfobjs)
             end
             actrec.StateflowSetParam(sfobjs(i), renameprops{k}, newpropstr);
         end
-        break; % CAUTION: Temporary solution: 'Name', 'LabelString' always changes as binding pair
+%         break; % CAUTION: Temporary solution: 'Name', 'LabelString' always changes as binding pair
     end
 end
 success = true;
