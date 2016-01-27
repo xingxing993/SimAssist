@@ -15,7 +15,7 @@ else
 end
 
 if isempty(dt)
-    majprop = obj.GetMajorProperty;
+    majprop = obj.GetMajorProperty(blkhdl);
     if ~isempty(majprop) % analyzed take priority over default RunOption
         dt = analyze_datatype(get_param(blkhdl, majprop));
     end

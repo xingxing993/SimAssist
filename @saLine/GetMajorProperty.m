@@ -1,3 +1,3 @@
-function majprop = GetMajorProperty(obj)
+function majprop = GetMajorProperty(obj, lnhdl)
 majprop = 'Name';
 end

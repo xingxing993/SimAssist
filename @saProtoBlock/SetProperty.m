@@ -15,8 +15,9 @@ if isa(setpropmethod, 'function_handle')
         setpropmethod(blkhdl, propval);
     end
 elseif isequal(setpropmethod, -1)
-    if ~isempty(obj.GetMajorProperty) && nthprop==1
-        actrec.SetParamHighlight(blkhdl, obj.GetMajorProperty, propval);
+    dynmajprop = obj.GetMajorProperty(blkhdl);
+    if ~isempty(dynmajprop) && nthprop==1
+        actrec.SetParamHighlight(blkhdl, dynmajprop, propval);
     elseif ~isempty(obj.PropertyList)
         actrec.SetParamHighlight(blkhdl, obj.PropertyList{min(nthprop,end)}, propval);
     else

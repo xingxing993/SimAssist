@@ -13,7 +13,7 @@ classdef saProtoBlock < saObject
         RoutineMethod
         RoutinePara = struct;
         % 
-        MajorProperty % string or cell of strings with 2 column {Prop, StringAdaptMethod}
+        MajorProperty = -1% string or cell of strings with 2 column {Prop, StringAdaptMethod}
         
         % if have other bro-blocks, like From/Goto/GotoVisibility, DataStoreRead/Write/Memory
         BroBlockType % combined with ConnectPort to determine BroType

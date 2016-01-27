@@ -31,24 +31,29 @@ if isempty(saobj)
     for i=1:numel(obj.ProtoBlocks)
         mapkey = obj.ProtoBlocks(i).MapKey; 
         if ischar(recvr) && ismember(mapkey, {recvr, ['#',recvr]})
-            saobj = obj.ProtoBlocks(i);break;
+            saprotoobj = obj.ProtoBlocks(i);break;
         else
             try
                 blkhdl = get_param(recvr, 'Handle');
                 if obj.ProtoBlocks(i).Check(blkhdl)
-                    saobj = obj.ProtoBlocks(i);break;
+                    saprotoobj = obj.ProtoBlocks(i);break;
                 end
             end
         end
     end
 end
 
-% if still failed to map, return an empty saBlock object
+% if still failed to map, return a new saBlock object
 if isempty(saobj)
-    saobj = saBlock('#NO_MATCH#');
+    saobj = saBlock(recvr);
+    if exist('saprotoobj', 'var')==1 && ~isempty(saprotoobj)
+        saobj.UseProto(saprotoobj);
+    end
 end
 varargout{1} = saobj;
 end
+
+
 
 function res = getkey(map, key)
     ir = strcmp(map(:,1), key);

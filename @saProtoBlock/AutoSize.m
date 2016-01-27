@@ -6,9 +6,9 @@ else
     if isequal(obj.AutoSizeMethod, -1) % downwards extend based on port spacing
         actrec = resize_height(blkhdl, obj.LayoutSize);
     elseif isequal(obj.AutoSizeMethod, -2) % leftwards extend based on string of major property
-        actrec = resize_leftwards(blkhdl, obj.LayoutSize, get_param(blkhdl, obj.GetMajorProperty));
+        actrec = resize_leftwards(blkhdl, obj.LayoutSize, get_param(blkhdl, obj.GetMajorProperty(blkhdl)));
     elseif isequal(obj.AutoSizeMethod, -3) % rightwards extend based on string of major property
-        actrec = resize_rightwards(blkhdl, obj.LayoutSize, get_param(blkhdl, obj.GetMajorProperty));
+        actrec = resize_rightwards(blkhdl, obj.LayoutSize, get_param(blkhdl, obj.GetMajorProperty(blkhdl)));
     elseif isa(obj.AutoSizeMethod, 'function_handle')
         nn = nargout(obj.AutoSizeMethod);
         ni = nargin(obj.AutoSizeMethod);

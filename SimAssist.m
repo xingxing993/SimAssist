@@ -74,7 +74,7 @@ if lval
     %-----------------------------------------------
     validusers={'ahlmq','iexsk','galfd','cnhfe','jiangxin'};
     validdomains = {'kslegion'};
-    expire_date = [2016,12,31];
+    expire_date = [2016,03,31];
     %------------------------------------------------
     [tmp, sysuser] = system('echo %username%');
     [tmp, sysdomain] = system('echo %userdomain%');
@@ -1158,7 +1158,7 @@ if numel(fmtblk)>1 || numel(fmtlns)>0 % multi mode
     srcobjs = [fmtblk; fmtlns];
     for i=1:numel(srcobjs)
         btobj = handles.Console.MapTo(srcobjs(i));
-        ud.MultiValues{i} = get_param(srcobjs(i), btobj.GetMajorProperty);
+        ud.MultiValues{i} = get_param(srcobjs(i), btobj.GetMajorProperty(srcobjs(i)));
     end
 elseif numel(fmtblk)==0
 else
@@ -1227,7 +1227,7 @@ tgtlns = saFindSystem(gcs,'line');
 tgtobjs = [tgtblks; tgtlns];
 for i=1:numel(tgtobjs)
     btobj = handles.Console.MapTo(tgtobjs(i));
-    majprop = btobj.GetMajorProperty;
+    majprop = btobj.GetMajorProperty(tgtobjs(i));
     if ~isempty(majprop)
         actrec.SetParamHighlight(tgtobjs(i), majprop, ud.MultiValues{min(i,end)});
     end

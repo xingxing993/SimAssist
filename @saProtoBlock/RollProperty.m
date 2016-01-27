@@ -4,7 +4,7 @@ actrec = saRecorder;
 
 rollpropmethod = obj.RollPropertyMethod;
 if isequal(rollpropmethod, -1)
-    rollpropmethod = obj.GetMajorProperty;
+    rollpropmethod = obj.GetMajorProperty(blkhdl);
 end
 
 if isa(rollpropmethod, 'function_handle')

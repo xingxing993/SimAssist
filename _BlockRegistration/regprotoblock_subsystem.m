@@ -11,7 +11,7 @@ sabt.ProtoProperty = {'MajorProperty','DictRenameMethod','InportStringMethod', '
     'BlockSize','AutoSizeMethod', 'BlockPreferOption', 'LayoutSize',...
     'CleanMethod','PlusMethod','MinusMethod','ArrangePortMethod'};
 
-sabt.MajorProperty = 'Name';
+sabt.MajorProperty = -1;
 sabt.DictRenameMethod = 1;
 
 sabt.PropagateUpstreamStringMethod = @subsys_propagate_inport;
