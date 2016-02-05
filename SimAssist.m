@@ -667,12 +667,19 @@ try
 catch
     return;
 end
+%parse property value for any sequential expression
+cmdpsr = saCmdParser(val, '');
+[opt, bclean] = cmdpsr.ParseMultiValues;
+
 for i=1:numel(filtblks)
+    if iscellstr(opt)
+        propval = opt{min(i, end)};
+    else
+        propval = opt;
+    end
     objhdl=get_param(filtblks{i},'Handle');
-    property=prop;
-    newval=val;
     try
-    	actrec.SetParamHighlight(objhdl,property,newval);
+    	actrec.SetParamHighlight(objhdl,prop,propval);
     catch
     	continue;
     end
