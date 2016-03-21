@@ -32,7 +32,9 @@ switch blktyp
                 rtsys = bdroot(startsys); %
                 gotoblks = [{};find_system(rtsys,'FollowLinks','on','LookUnderMasks','on','BlockType','Goto','GotoTag',tag)];
                 if isempty(gotoblks) % no Goto in the entire model
+                    nogotofromblks = find_system(startsys, 'SearchDepth',1,'FollowLinks','on','LookUnderMasks','on','FindAll','on','BlockType','From','GotoTag',tag);
                     blkset = cellfun(@(h)get_param(h,'Handle'), blkset);
+                    blkset = union(blkset, nogotofromblks);
                     return;
                 else % scoped goto at higher level or global goto
                     gotoblk = find_within_same_branch(blk, gotoblks, 'lowest');
