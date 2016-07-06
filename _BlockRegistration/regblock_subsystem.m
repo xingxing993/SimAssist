@@ -6,6 +6,8 @@ sabt = saBlock('SubSystem');
 
 sabt.RoutinePattern = '^(ss|subsys|subsystem)';
 sabt.RoutineMethod = @routine_subsystem;
+sabt.MajorProperty = 'Name';
+sabt.PropertyList = {'Name'};
 
 ssproto = regprotoblock_subsystem;
 sabt.UseProto(ssproto);

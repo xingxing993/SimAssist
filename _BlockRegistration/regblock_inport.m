@@ -23,7 +23,7 @@ sabt.BlockPreferOption.AutoDataType = false;
 
 sabt.LayoutSize.VerticalMargin = 40;
 
-sabt.DataTypeMethod = [];
+sabt.DataTypeMethod = 'OutDataTypeStr';
 sabt.DefaultDataType = 'Inherit: auto';
 
 end
