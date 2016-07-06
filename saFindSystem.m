@@ -21,8 +21,9 @@ switch type
         blks = saFindSystem(rtsys, 'block');
         hdls = [blks;lns];
     case 'line_unconnected'
-        hdls=find_system(rtsys,option{:},'Type','line','Selected','on', 'Connected','off',varargin{:});
-        hdls = saRemoveBranchLine(hdls);
+        hdls1=find_system(rtsys,option{:},'Type','line','Selected','on', 'SrcPortHandle',-1,varargin{:});
+        hdls2=find_system(rtsys,option{:},'Type','line','Selected','on', 'DstPortHandle',-1,varargin{:});
+        hdls = saRemoveBranchLine([hdls1;hdls2]);
     case 'line_nosrc'
         hdls=find_system(rtsys,option{:},'Type','line','Selected','on', 'SrcPortHandle',-1,varargin{:});
         hdls = saRemoveBranchLine(hdls);
