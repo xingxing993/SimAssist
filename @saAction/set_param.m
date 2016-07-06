@@ -21,7 +21,7 @@ catch err
             act = 'ignore';
         case {'Simulink:SL_BlkParamEvalErr','Simulink:blocks:BusSelectorCantChangeSignalLabel'}
             act = 'ignore';
-        case 'Simulink:SL_InvGotoFromTagName'
+        case {'Simulink:SL_InvGotoFromTagName', 'Simulink:blocks:InvGotoFromTagName'}
             obj.NewValue = genvarname(obj.NewValue);
         otherwise
     end
