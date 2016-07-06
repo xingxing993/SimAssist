@@ -9,10 +9,11 @@ end
 
 function [actrec, success] = opsym_percent(cmdstr, console)
 actrec = saRecorder; success = false;
-if isempty(optstr)
+optstr = cmdstr(2:end);
+otherpattern = isempty(strfind(optstr, '=>'))||isempty(strfind(optstr, '>>'));
+if isempty(optstr)||otherpattern
     return;
 end
-cmdstr(1)='';
 actrec + simassist_usermacro(cmdstr);
 success = true;
 end

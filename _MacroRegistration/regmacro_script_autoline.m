@@ -47,6 +47,7 @@ for i=1:numel(dstinfo)
         actrec + btfrom.AddBlockToPort(dstinfo(i).handle);
     end
 end
+% third: automatically select from BusSelector
 
 success = true;
 end
