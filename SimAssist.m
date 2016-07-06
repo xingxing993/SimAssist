@@ -74,7 +74,7 @@ if lval
     %-----------------------------------------------
     validusers={'ahlmq','iexsk','galfd','cnhfe','jiangxin'};
     validdomains = {'kslegion'};
-    expire_date = [2016,03,31];
+    expire_date = [2016,12,31];
     %------------------------------------------------
     [tmp, sysuser] = system('echo %username%');
     [tmp, sysdomain] = system('echo %userdomain%');
@@ -157,12 +157,23 @@ else
     handles.Console.BuildMacros;
 end
 open_system(current_sys); % restore current system because it might have been changed by load_system
+% UPDATE EDIT MENU
+list = handles.Console.UIGetPromptList('');
+for i=1:numel(list)
+    uimenu(handles.menu_editcmd, 'Label', list{i}, ...
+        'Callback', @(hObj, eventdata)edit_contextmenu_callback(hObj, eventdata, guidata(hObj)));
+end
 % Update handles structure
 guidata(hObject, handles);
 
 % UIWAIT makes SimAssist wait for user response (see UIRESUME)
 % uiwait(handles.SimAssist);
 end
+
+function edit_contextmenu_callback(hObj, eventdata, handles)
+set(handles.edit_cmdstr, 'String',get(hObj,'Label'));
+end
+
 
 % --- Outputs from this function are returned to the command line.
 function varargout = SimAssist_OutputFcn(hObject, eventdata, handles) 
@@ -668,8 +679,12 @@ catch
     return;
 end
 %parse property value for any sequential expression
-cmdpsr = saCmdParser(val, '');
-[opt, bclean] = cmdpsr.ParseMultiValues;
+if ~isempty(regexp(val, '\[.*\]'))
+    cmdpsr = saCmdParser(val, '');
+    [opt, bclean] = cmdpsr.ParseMultiValues;
+else
+    opt = val;
+end
 
 for i=1:numel(filtblks)
     if iscellstr(opt)
@@ -1109,6 +1124,7 @@ function menu_editcmd_Callback(hObject, eventdata, handles)
 % hObject    handle to menu_editcmd (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
 end
 
 % --------------------------------------------------------------------
