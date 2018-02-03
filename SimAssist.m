@@ -24,7 +24,7 @@ function varargout = SimAssist(varargin)
 
 % Edit the above text to modify the response to help SimAssist
 
-% Last Modified by GUIDE v2.5 04-Jan-2016 22:34:43
+% Last Modified by GUIDE v2.5 30-Mar-2017 17:04:00
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -73,19 +73,18 @@ LIC_CHK.CheckDate = true;
 if lval
     %-----------------------------------------------
     validusers={'ahlmq','iexsk','galfd','cnhfe','jiangxin'};
-    validdomains = {'kslegion'};
-    expire_date = [2016,12,31];
+    validdomains = {'ecartronic'};
+    expire_date = [2018,12,31];
     %------------------------------------------------
     [tmp, sysuser] = system('echo %username%');
     [tmp, sysdomain] = system('echo %userdomain%');
     [tmp, sysdatestr] = system('echo %date%');
     datepattern = {'%u-%u-%u','%u/%u/%u'};
-    for i=1:numel(datepattern)
-        sysdate=sscanf(sysdatestr, datepattern{i});
-        if size(sysdate,1)>size(sysdate,2)
-            sysdate = sysdate';
-        end
-        if numel(sysdate)==3 break; end
+    tmpreg = regexp(sysdatestr, '(?<Y>\d+)(/|-)(?<M>\d+)(/|-)(?<D>\d+)','names','once');
+    if isempty(tmpreg)
+        error('Licensing Failure. Abort');
+    else
+        sysdate = str2double({tmpreg.Y, tmpreg.M, tmpreg.D});
     end
     % user check
     if LIC_CHK.CheckUser && ~any(strcmpi(strtrim(sysuser), validusers)) % if matches with any valid users
@@ -105,7 +104,6 @@ if lval
         if all(prefexpdate==expire_date)
             if ispref('SimAssist_Pref','DateValid')
                 if ~getpref('SimAssist_Pref','DateValid') && lvalcd
-                    tmpd=false;
                     errordlg('SimAssist : Time expired for usage, contact jiangxinauto@163.com for information');
                     close(hObject);
                     return;
@@ -117,7 +115,7 @@ if lval
     else
        setpref('SimAssist_Pref','DateExpire',expire_date);
     end
-    tmpd = sign(expire_date-sysdate) * [1; 0.1; 0.01] >= 0; %check date then
+    tmpd = sign([2018,12,31]-sysdate) * [1; 0.1; 0.01] >= 0; %check date then
     if ~tmpd && lvalcd
         errordlg('SimAssist : Time expired for usage, contact jiangxinauto@163.com for information');
         setpref('SimAssist_Pref', 'DateValid',false);
@@ -158,11 +156,11 @@ else
 end
 open_system(current_sys); % restore current system because it might have been changed by load_system
 % UPDATE EDIT MENU
-list = handles.Console.UIGetPromptList('');
-for i=1:numel(list)
-    uimenu(handles.menu_editcmd, 'Label', list{i}, ...
-        'Callback', @(hObj, eventdata)edit_contextmenu_callback(hObj, eventdata, guidata(hObj)));
-end
+% list = handles.Console.UIGetPromptList('');
+% for i=1:numel(list)
+%     uimenu(handles.menu_editcmd, 'Label', list{i}, ...
+%         'Callback', @(hObj, eventdata)edit_contextmenu_callback(hObj, eventdata, guidata(hObj)));
+% end
 % Update handles structure
 guidata(hObject, handles);
 
@@ -726,11 +724,11 @@ end
 end
 
 % --------------------------------------------------------------------
-function runsimreplace_ClickedCallback(hObject, eventdata, handles)
-% hObject    handle to runsimreplace (see GCBO)
+function btn_help_ClickedCallback(hObject, eventdata, handles)
+% hObject    handle to btn_help (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-run SimReplace
+web('http://note.youdao.com/noteshare?id=a417ec0f08651694fb31928168bb010c&sub=3DAB6E16C5F34B3E8C6B42A0088B0171', '-browser');
 end
 
 % --------------------------------------------------------------------
