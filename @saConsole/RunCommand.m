@@ -122,7 +122,11 @@ for i=1:nmulti
             newcmdstr = ['\', cmdstr];
             submacros = obj.Macros.MatchPattern(newcmdstr);
             if numel(submacros)>0
-                [actrec_this, success] = submacros.Run(newcmdstr);
+                try
+                    [actrec_this, success] = submacros.Run(newcmdstr);
+                catch
+                    [actrec_this, success] = Routines.majorprop_value(obj.MapTo('Constant'), cmdstr, '');
+                end
             end
         end
         actrec + actrec_this;

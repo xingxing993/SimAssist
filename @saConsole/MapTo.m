@@ -48,6 +48,7 @@ if isempty(saobj)
     saobj = saBlock(recvr);
     if exist('saprotoobj', 'var')==1 && ~isempty(saprotoobj)
         saobj.UseProto(saprotoobj);
+        saobj.Console = obj;
     end
 end
 varargout{1} = saobj;

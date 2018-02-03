@@ -7,8 +7,9 @@ if numel(lns.Outport)>1
     dstblks = []; dstpts = [];
     for k=1:numel(lns.Outport)
         if lns.Outport(k)>0
-            dstblks =[dstblks; get_param(lns.Outport(k),'DstBlockHandle')];
-            dstpts =[dstpts; get_param(lns.Outport(k),'DstPortHandle')];
+            [tmpblk, tmppt] = get_align_datum(lns.Outport(k), 'right');
+            dstblks =[dstblks; tmpblk];
+            dstpts =[dstpts; tmppt];
         end
     end
     dstblks = dstblks(dstblks>0);
@@ -40,8 +41,7 @@ if numel(lns.Inport)>1
     srcpts = zeros(size(lns.Inport));
     for k=1:numel(lns.Inport)
         if lns.Inport(k)>0
-            srcblks(k)=get_param(lns.Inport(k),'SrcBlockHandle');
-            srcpts(k)=get_param(lns.Inport(k),'SrcPortHandle');
+            [srcblks(k), srcpts(k)] = get_align_datum(lns.Inport(k), 'left');
         end
     end
     srcblks = srcblks(srcblks>0);
@@ -106,4 +106,51 @@ for k=1:numel(unq)
 end
 [tmp,idx]=max(cnt);
 val=unq(idx);
+end
+
+
+function [blk, pt] = get_align_datum(lnhdl, lr)
+if strcmp(lr,'right')
+    dstblk = get_param(lnhdl,'DstBlockHandle');
+    dstpt = get_param(lnhdl,'DstPortHandle');
+%     [blk, pt] = deal(dstblk, dstpt); return;
+    if numel(dstblk)>1 || dstblk<0
+        [blk, pt] = deal(dstblk, dstpt);
+        return;
+    end
+    ptcnt = get_param(dstblk,'Ports');
+    if ptcnt(1)==1 && ptcnt(2)==1 % SISO, bypass
+        lns = get_param(dstblk, 'LineHandles');
+        if lns.Outport>0
+            [blk, pt] = get_align_datum(lns.Outport, lr);
+        else
+            [blk, pt] = deal(-1);
+            return;
+        end
+    else
+        blk = dstblk;
+        pt = dstpt;
+    end
+else
+    srcblk = get_param(lnhdl,'SrcBlockHandle');
+    srcpt = get_param(lnhdl,'SrcPortHandle');
+%     [blk, pt] = deal(srcblk, srcpt);return;
+    if srcblk<0
+        [blk, pt] = deal(srcblk, srcpt);
+        return;
+    end
+    ptcnt = get_param(srcblk,'Ports');
+    if ptcnt(1)==1 && ptcnt(2)==1 % SISO, bypass
+        lns = get_param(srcblk, 'LineHandles');
+        if lns.Inport>0
+            [blk, pt] = get_align_datum(lns.Inport, lr);
+        else
+            [blk, pt] = deal(-1);
+            return;
+        end
+    else
+        blk = srcblk;
+        pt = srcpt;
+    end
+end
 end
