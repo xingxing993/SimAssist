@@ -176,14 +176,15 @@ for kk=1:numel(sigoutstrs)
     else
         tmpname=newnames{kk};
     end
-    nameparts=regexp(tmpname,'\.','split'); %split
     if ~isempty(sigoutstrs{kk})
+        nameparts=regexp(tmpname,'\.','split'); %split
         nameparts{end}=sigoutstrs{kk};
+        tmpname=sprintf('%s.',nameparts{:});tmpname(end)=''; %recreate string
+        newnames{kk}=tmpname;
     else
-        nameparts{end}=['signal', int2str(kk)];
+%         nameparts{end}=['signal', int2str(kk)];
     end
-    tmpname=sprintf('%s.',nameparts{:});tmpname(end)=''; %recreate string
-    newnames{kk}=tmpname;
+    
 end
 newnamestr=sprintf('%s,',newnames{:});newnamestr(end)='';
 actrec.SetParam(blkhdl, 'OutputSignals', newnamestr);

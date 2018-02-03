@@ -12,8 +12,8 @@ sabt.ConnectPort = [0, 1];
 sabt.MajorProperty = 'Value';
 sabt.DictRenameMethod = 1; % use major property
 
-sabt.PropagateDownstreamStringMethod = 'Value';
-sabt.OutportStringMethod = 'Value';
+sabt.PropagateDownstreamStringMethod = @dwnstream_prop;
+sabt.OutportStringMethod = @outportstr;
 sabt.AnnotationMethod = 'DT: %<OutDataTypeStr>';
 sabt.RefineMethod = @refine_constant;
 
@@ -38,4 +38,15 @@ function broblks = get_bro_blocks(blkhdl)
 parsys = get_param(blkhdl, 'Parent');
 val = get_param(blkhdl,'Value');
 broblks = find_system(parsys,'SearchDepth',1,'FindAll','on','FollowLinks','on','BlockType','Constant','Value',val);
+end
+
+
+function str = outportstr(hdl, appdata)
+rawstr = get_param(get_param(hdl,'Parent'), 'Value');
+str = regexprep(rawstr, '^K([A-Z]+_)', 'V$1');
+end
+
+function dwnstream_prop(blkhdl, instr)
+valstr = regexprep(instr, '^V([A-Z]+_)', 'K$1');
+set_param(blkhdl, 'Value',valstr);
 end
