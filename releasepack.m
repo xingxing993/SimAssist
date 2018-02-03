@@ -1,4 +1,7 @@
-function releasepack
+function releasepack(p)
+if nargin<1
+    p=true;
+end
 if ~isdir('releases')
     mkdir('releases');
 end
@@ -17,8 +20,10 @@ for i=1:numel(df)
     end
 end
 cd(packdir);
-pcode_exlist = {'^SACFG_', 'whichtorun'};
-pfolder(pwd, pcode_exlist);
+pcode_exlist = {'^SACFG_', 'whichtorun', 'findjobj'};
+if p
+    pfolder(pwd, pcode_exlist);
+end
 cd(rtdir);
 
 function pfolder(fd, pcode_exlist)
