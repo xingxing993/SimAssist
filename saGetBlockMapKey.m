@@ -3,7 +3,7 @@ if isstr(blkhdl)
     if ~isempty(strfind(blkhdl, '/'))
         libname = strtok(blkhdl, '/');
         if ~bdIsLoaded(libname)
-            if exist(libname)==4
+            if exist(libname, 'file')==4
                 load_system(libname);
             else %if given string but cannot find corresponding MDL file
                 mapkey = []; % return mapkey as empty

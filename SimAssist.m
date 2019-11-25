@@ -74,7 +74,7 @@ if lval
     %-----------------------------------------------
     validusers={'ahlmq','iexsk','galfd','cnhfe','jiangxin'};
     validdomains = {'ecartronic'};
-    expire_date = [2018,12,31];
+    expire_date = [2020,1,1];
     %------------------------------------------------
     [tmp, sysuser] = system('echo %username%');
     [tmp, sysdomain] = system('echo %userdomain%');
@@ -115,7 +115,7 @@ if lval
     else
        setpref('SimAssist_Pref','DateExpire',expire_date);
     end
-    tmpd = sign([2018,12,31]-sysdate) * [1; 0.1; 0.01] >= 0; %check date then
+    tmpd = sign([2020,1,1]-sysdate) * [1; 0.1; 0.01] >= 0; %check date then
     if ~tmpd && lvalcd
         errordlg('SimAssist : Time expired for usage, contact jiangxinauto@163.com for information');
         setpref('SimAssist_Pref', 'DateValid',false);
