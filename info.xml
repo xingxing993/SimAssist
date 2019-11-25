@@ -1,0 +1,34 @@
+<productinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="optional">
+    <?xml-stylesheet type="text/xsl"href="optional"?>
+    <!-- info.xml file for the SimAssist toolbox -->
+    <!-- Author: Jiang Xin -->
+    <!-- Copyright jiangxinauto@163.com -->
+
+    <matlabrelease>2008a-2015b</matlabrelease>
+    <!-- (Required) The name element appears in the Contents pane -->
+    <name>SimAssist</name>
+    <!-- (Required) The type elementidentifies your package; pick one: -->
+    <!-- matlab, toolbox, simulink, blockset, links_targets  -->
+    <type>toolbox</type>
+    <!-- The icon element is used in the Start button -->
+    <icon>\help\book.gif</icon>
+    <!-- (Required) The help_location is relative path to help (HTML) file folder -->
+    <help_location>\help\html</help_location>
+    <!-- Optional list of entries to display on Start Menu -->
+    <!-- Callback items are function calls or commands for toolbox -->
+    <!-- You must Refresh the Start button to see your entries -->
+    <!-- Remove this entire list if you do not want a Start button entry -->
+    <list>
+         <listitem>
+            <!-- Include call to open your documentation, if any -->
+            <label>SimAssist Toolbox Documentation</label>
+            <callback>disp('SimAssist Help Documentation')
+            </callback>
+        <icon>$toolbox/matlab/icons/bookicon.gif</icon>
+        </listitem>
+
+        <!-- Add listitems for other features of your toolbox... -->
+
+    </list>
+</productinfo>
