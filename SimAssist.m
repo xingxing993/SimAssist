@@ -930,6 +930,7 @@ actrec=saRecorder;
 prompton = strcmp(get(handles.promptlistbox, 'Visible'), 'on');
 ud = get(hObject,'UserData');
 % if prompt listbox is shown, key press shall be dispathed for listbox
+prompton = false;
 if prompton
     if strcmp(eventdata.Key, 'return')
         contents = get(handles.promptlistbox, 'String');
@@ -1036,12 +1037,12 @@ end
 
 function cmdstr_return_callback(hObject, handles)
 actrec=saRecorder;
-try
-    jEditbox = findjobj(hObject); % get java object
-    cmdstr = char(jEditbox.getText);
-catch
+% try
+%     jEditbox = findjobj(hObject); % get java object
+%     cmdstr = char(jEditbox.getText);
+% catch
     cmdstr = get(handles.edit_cmdstr, 'String');
-end
+% end
 prompton = strcmp(get(handles.promptlistbox, 'Visible'), 'on');
 if isempty(cmdstr) || prompton
     return;
