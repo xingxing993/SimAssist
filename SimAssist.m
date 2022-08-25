@@ -74,7 +74,7 @@ if lval
     %-----------------------------------------------
     validusers={'ahlmq','iexsk','galfd','cnhfe','jiangxin'};
     validdomains = {'ecartronic'};
-    expire_date = [2020,1,1];
+    expire_date = [2023,1,1];
     %------------------------------------------------
     [tmp, sysuser] = system('echo %username%');
     [tmp, sysdomain] = system('echo %userdomain%');
@@ -115,7 +115,7 @@ if lval
     else
        setpref('SimAssist_Pref','DateExpire',expire_date);
     end
-    tmpd = sign([2020,1,1]-sysdate) * [1; 0.1; 0.01] >= 0; %check date then
+    tmpd = sign([2023,1,1]-sysdate) * [1; 0.1; 0.01] >= 0; %check date then
     if ~tmpd && lvalcd
         errordlg('SimAssist : Time expired for usage, contact jiangxinauto@163.com for information');
         setpref('SimAssist_Pref', 'DateValid',false);
@@ -947,8 +947,12 @@ if prompton
         index = get(handles.promptlistbox, 'Value');
         set(handles.promptlistbox, 'Value', max(1, index-1));
     elseif numel(eventdata.Character)==1
-        jEditbox = findjobj(hObject); % get java object
-        partstr = char(jEditbox.getText); % attention
+        try
+            jEditbox = findjobj(hObject); % get java object
+            partstr = char(jEditbox.getText); % attention
+        catch
+            partstr = '';
+        end
         if isempty(partstr)
             set(handles.promptlistbox, 'Visible', 'off');
         else
@@ -987,10 +991,12 @@ else
     elseif isequal(eventdata.Modifier, {'control'})
         actrec.Merge(handles.Console.RunCommand('line'));
     elseif isequal(eventdata.Key, 'f1')
-        jEditbox = findjobj(hObject); % get java object
-        partstr = char(jEditbox.getText); % attention
-        liststr = handles.Console.UIGetPromptList(partstr); % show all
-        show_promptlist(handles.promptlistbox, liststr);
+        try
+            jEditbox = findjobj(hObject); % get java object
+            partstr = char(jEditbox.getText); % attention
+            liststr = handles.Console.UIGetPromptList(partstr); % show all
+            show_promptlist(handles.promptlistbox, liststr);
+        end
     elseif ismember(eventdata.Key, {'downarrow','pagedown','uparrow','pageup'})% History command
         % eventdata
         if ~isempty(ud) && isfield(ud, 'History')
@@ -1008,8 +1014,12 @@ else
         end
         set(hObject,'UserData',ud);
     elseif numel(eventdata.Character)==1 && strcmp(get(handles.menu_showprompt, 'Checked'), 'on')
-        jEditbox = findjobj(hObject); % get java object
-        partstr = char(jEditbox.getText); % attention
+        try
+            jEditbox = findjobj(hObject); % get java object
+            partstr = char(jEditbox.getText); % attention
+        catch
+            partstr = '';
+        end
         if isempty(partstr)
             set(handles.promptlistbox, 'Visible', 'off');
         else
@@ -1026,8 +1036,12 @@ end
 
 function cmdstr_return_callback(hObject, handles)
 actrec=saRecorder;
-jEditbox = findjobj(hObject); % get java object
-cmdstr = char(jEditbox.getText);
+try
+    jEditbox = findjobj(hObject); % get java object
+    cmdstr = char(jEditbox.getText);
+catch
+    cmdstr = get(handles.edit_cmdstr, 'String');
+end
 prompton = strcmp(get(handles.promptlistbox, 'Visible'), 'on');
 if isempty(cmdstr) || prompton
     return;

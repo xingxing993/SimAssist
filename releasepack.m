@@ -24,7 +24,14 @@ pcode_exlist = {'^SACFG_', 'whichtorun', 'findjobj'};
 if p
     pfolder(pwd, pcode_exlist);
 end
+cd('..');
+
+% zip file
+[~, packname] = fileparts(packdir);
+zip(packname, packname);
+
 cd(rtdir);
+
 
 function pfolder(fd, pcode_exlist)
 dfs = dir(fd);
