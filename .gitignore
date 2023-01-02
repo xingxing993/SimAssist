@@ -1,4 +1,4 @@
 releases/
 *.asv
-demos/
+/demos/
 help/
