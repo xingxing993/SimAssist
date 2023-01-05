@@ -27,7 +27,11 @@ obj.ProtoBlocks = protos(iprio);
 % run block type files
 regfs = setdiff(regfs, protofls);
 for i=1:numel(regfs)
+try
     regobjs = eval(regfs{i});
+catch
+	continue;
+end
     for k=1:numel(regobjs)
         if ~isempty(regobjs(k).MapKey)
             regobjs(k).Console = obj;
