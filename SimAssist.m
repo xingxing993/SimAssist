@@ -101,6 +101,7 @@ guidata(hObject, handles);
 
 % UIWAIT makes SimAssist wait for user response (see UIRESUME)
 % uiwait(handles.SimAssist);
+warning('off','MATLAB:ui:javaframe:PropertyToBeRemoved');
 end
 
 function edit_contextmenu_callback(hObj, eventdata, handles)
@@ -864,8 +865,7 @@ function edit_cmdstr_KeyPressFcn(hObject, eventdata, handles)
 actrec=saRecorder;
 prompton = strcmp(get(handles.promptlistbox, 'Visible'), 'on');
 ud = get(hObject,'UserData');
-% if prompt listbox is shown, key press shall be dispathed for listbox
-prompton = false;
+% if prompt listbox is shown, key press shall be dispatched for listbox
 if prompton
     if strcmp(eventdata.Key, 'return')
         contents = get(handles.promptlistbox, 'String');
@@ -972,22 +972,22 @@ end
 
 function cmdstr_return_callback(hObject, handles)
 actrec=saRecorder;
-% try
-%     jEditbox = findjobj(hObject); % get java object
-%     cmdstr = char(jEditbox.getText);
-% catch
+try
+    jEditbox = findjobj(hObject); % get java object
+    cmdstr = char(jEditbox.getText);
+catch
     cmdstr = get(handles.edit_cmdstr, 'String');
-% end
+end
 prompton = strcmp(get(handles.promptlistbox, 'Visible'), 'on');
 if isempty(cmdstr) || prompton
     return;
 end
-% try
+try
     actrec = handles.Console.RunCommand(cmdstr);
-% catch me
-%     fprintf(2, 'SimAssist:ExecutionError (%s)\nThe following error occured while executing command "%s":\n', me.identifier, cmdstr);
-%     fprintf(2, '[Error Message] %s\n', me.message);
-% end
+catch me
+    fprintf(2, 'SimAssist:ExecutionError (%s)\nThe following error occured while executing command "%s":\n', me.identifier, cmdstr);
+    fprintf(2, '[Error Message] %s\n', me.message);
+end
 savehistory(handles,actrec);
 % add to command string history
 ud = get(hObject, 'UserData');
